@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
+    <!-- Chart.js script is no longer needed as all charts are removed -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script> -->
     <style>
         * {
             margin: 0;
@@ -382,66 +384,68 @@
         <div id="ai-max" class="tab-content active">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value win-rate">32.5%</div>
+                    <div class="stat-value win-rate">30.56%</div>
                     <div class="stat-label">Win Rate</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value total-signals">40</div>
+                    <div class="stat-value total-signals">36</div>
                     <div class="stat-label">Tradable Signals</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value confidence">31.5%</div>
-                    <div class="stat-label">Success Rate</div>
+                    <div class="stat-value confidence">75.0%</div>
+                    <div class="stat-label">Avg Confidence</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value pending">25</div>
-                    <div class="stat-label">Pending Verification</div>
+                    <div class="stat-value pending">78</div>
+                    <div class="stat-label">Too Recent</div>
                 </div>
             </div>
 
             <div class="symbol-performance">
-                <h2 class="section-title">Symbol Performance</h2>
+                <h2 class="section-title">Signal Type Performance</h2>
                 <div class="performance-grid">
                     <div class="symbol-card">
-                        <div class="symbol-name">SOLUSDT</div>
+                        <div class="symbol-name">Sell Signals</div>
                         <div class="symbol-stats">
                             <span>Win Rate:</span>
-                            <span class="win-rate">46.67%</span>
+                            <span class="win-rate">31.43%</span>
                         </div>
                         <div class="symbol-stats">
                             <span>Trades:</span>
-                            <span>15</span>
+                            <span>35</span>
+                        </div>
+                        <div class="symbol-stats">
+                            <span>Avg MFE:</span>
+                            <span class="detail-value">0.59</span>
+                        </div>
+                        <div class="symbol-stats">
+                            <span>Avg MAE:</span>
+                            <span class="detail-value">-0.91</span>
                         </div>
                         <div class="win-rate-bar">
-                            <div class="win-rate-fill" style="width: 46.67%; background: linear-gradient(90deg, #4ecdc4, #45b7d1);"></div>
+                            <div class="win-rate-fill" style="width: 31.43%; background: linear-gradient(90deg, #ffa726, #ff9800);"></div>
                         </div>
                     </div>
                     <div class="symbol-card">
-                        <div class="symbol-name">BTCUSDT</div>
+                        <div class="symbol-name">Buy Signals</div>
                         <div class="symbol-stats">
                             <span>Win Rate:</span>
-                            <span class="win-rate">28.57%</span>
+                            <span class="win-rate">0.0%</span>
                         </div>
                         <div class="symbol-stats">
                             <span>Trades:</span>
-                            <span>14</span>
-                        </div>
-                        <div class="win-rate-bar">
-                            <div class="win-rate-fill" style="width: 28.57%; background: linear-gradient(90deg, #ffa726, #ff9800);"></div>
-                        </div>
-                    </div>
-                    <div class="symbol-card">
-                        <div class="symbol-name">ETHUSDT</div>
-                        <div class="symbol-stats">
-                            <span>Win Rate:</span>
-                            <span class="win-rate">18.18%</span>
+                            <span>1</span>
                         </div>
                         <div class="symbol-stats">
-                            <span>Trades:</span>
-                            <span>11</span>
+                            <span>Avg MFE:</span>
+                            <span class="detail-value">0.00</span>
+                        </div>
+                        <div class="symbol-stats">
+                            <span>Avg MAE:</span>
+                            <span class="detail-value">-1.88</span>
                         </div>
                         <div class="win-rate-bar">
-                            <div class="win-rate-fill" style="width: 18.18%; background: linear-gradient(90deg, #ff6b6b, #e57373);"></div>
+                            <div class="win-rate-fill" style="width: 0.0%; background: linear-gradient(90deg, #ff6b6b, #e57373);"></div>
                         </div>
                     </div>
                 </div>
@@ -452,68 +456,61 @@
                     <h3 class="section-title">Signal Breakdown</h3>
                     <div class="detail-item">
                         <span class="detail-label">Total Signals:</span>
-                        <span class="detail-value">92</span>
+                        <span class="detail-value">114</span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Hold Signals:</span>
-                        <span class="detail-value">58</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Sell Signals:</span>
-                        <span class="detail-value">31</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Buy Signals:</span>
-                        <span class="detail-value">1</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Tradable Outcomes:</span>
-                        <span class="detail-value">40</span>
+                        <span class="detail-label">Evaluated Signals:</span>
+                        <span class="detail-value">36</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Wins:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">13</span>
+                        <span class="detail-value" style="color: #4ecdc4;">11</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Losses:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">27</span>
+                        <span class="detail-value" style="color: #ff6b6b;">25</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Too Recent:</span>
+                        <span class="detail-value">78</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Avg Win Confidence:</span>
+                        <span class="detail-value" style="color: #4ecdc4;">75.36%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Avg Loss Confidence:</span>
+                        <span class="detail-value" style="color: #ff6b6b;">74.84%</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Last Updated:</span>
-                        <span class="detail-value">2025-06-04 16:01 UTC</span>
+                        <span class="detail-value">2025-06-05 17:44 UTC</span>
                     </div>
                 </div>
                 <div class="details-card">
-                    <h3 class="section-title">Common Scenarios</h3>
+                    <h3 class="section-title">Scenario Performance</h3>
                     <div class="detail-item">
                         <span class="detail-label">Range-Bound:</span>
-                        <span class="detail-value">58</span>
+                        <span class="detail-value" style="color: #4ecdc4;">100% <small>(1 trade)</small></span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Trend Continuation:</span>
-                        <span class="detail-value">29</span>
+                        <span class="detail-value" style="color: #ff6b6b;">28.57% <small>(35 trades)</small></span>
+                    </div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title">Performance by Confidence Level</h3>
+                    <div class="detail-item">
+                        <span class="detail-label">60-69% Confidence:</span>
+                        <span class="detail-value" style="color: #ff6b6b;">0.0% <small>(2 trades)</small></span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">API Error:</span>
-                        <span class="detail-value">5</span>
-                    </div>
-                    <br>
-                    <h4 style="color: #4ecdc4; margin-bottom: 15px; font-size: 1.2rem;">Trade Setup Types</h4>
-                    <div class="detail-item">
-                        <span class="detail-label">Swing:</span>
-                        <span class="detail-value">17</span>
+                        <span class="detail-label">70-79% Confidence:</span>
+                        <span class="detail-value" style="color: #4ecdc4;">31.25% <small>(32 trades)</small></span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">SMC:</span>
-                        <span class="detail-value">14</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Momentum:</span>
-                        <span class="detail-value">3</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Mean Reversion:</span>
-                        <span class="detail-value">1</span>
+                        <span class="detail-label">80-89% Confidence:</span>
+                        <span class="detail-value" style="color: #4ecdc4;">50.0% <small>(2 trades)</small></span>
                     </div>
                 </div>
             </div>
@@ -534,7 +531,7 @@
                     <div class="stat-label">Avg Confidence</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value pending">87</div> <div class="stat-label">Pending Verification</div>
+                    <div class="stat-value pending">87</div> <div class="stat-label">Too Recent</div>
                 </div>
             </div>
 
@@ -608,7 +605,7 @@
                         <span class="detail-value" style="color: #ff6b6b;">35</span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Pending Verification:</span>
+                        <span class="detail-label">Too Recent:</span>
                         <span class="detail-value">87</span>
                     </div>
                     <div class="detail-item">
