@@ -824,12 +824,6 @@
              // Ensure the default tab's content is displayed, but no chart calls are made
              const activeTabButton = document.querySelector('.tab-button.active');
              if (activeTabButton) {
-                // We still might want to call switchTab if it does other UI setup,
-                // but ensure the event object has currentTarget for the function.
-                // For now, if switchTab only handles chart logic that's removed, this call isn't strictly needed.
-                // However, keeping it for structural consistency if switchTab might do more later.
-                // switchTab({ currentTarget: activeTabButton }, activeTabButton.getAttribute('onclick').match(/'([^']+)'/)[1]);
-                // Simpler: just ensure the default tab content is shown, which is handled by CSS 'active' class.
              }
         });
 
