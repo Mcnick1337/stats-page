@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
+    <!-- Chart.js script is no longer needed as all charts are removed -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script> -->
     <style>
         * {
             margin: 0;
@@ -355,6 +357,7 @@
 </head>
 <body>
     <div class="floating-elements">
+        <!-- Decorative floating emojis for background -->
         <div class="floating-element" style="left: 10%; animation-delay: 0s; animation-duration: 25s;">📈</div>
         <div class="floating-element" style="left: 20%; animation-delay: -5s; animation-duration: 30s;">💹</div>
         <div class="floating-element" style="left: 30%; animation-delay: -10s; animation-duration: 22s;">📊</div>
@@ -374,13 +377,16 @@
 
         <div class="tabs-container">
             <div class="tab-nav">
+                <!-- Tab buttons to switch between AI Max and AI Bob views -->
                 <button class="tab-button active" onclick="switchTab(event, 'ai-max')">AI Max</button>
                 <button class="tab-button" onclick="switchTab(event, 'ai-bob')">AI Bob</button>
             </div>
         </div>
 
+        <!-- AI Max Tab Content -->
         <div id="ai-max" class="tab-content active">
             <div class="stats-grid">
+                <!-- Overall statistics for AI Max -->
                 <div class="stat-card">
                     <div class="stat-value win-rate">32.5%</div>
                     <div class="stat-label">Win Rate</div>
@@ -402,6 +408,7 @@
             <div class="symbol-performance">
                 <h2 class="section-title">Symbol Performance</h2>
                 <div class="performance-grid">
+                    <!-- Performance card for SOLUSDT -->
                     <div class="symbol-card">
                         <div class="symbol-name">SOLUSDT</div>
                         <div class="symbol-stats">
@@ -416,6 +423,7 @@
                             <div class="win-rate-fill" style="width: 46.67%; background: linear-gradient(90deg, #4ecdc4, #45b7d1);"></div>
                         </div>
                     </div>
+                    <!-- Performance card for BTCUSDT -->
                     <div class="symbol-card">
                         <div class="symbol-name">BTCUSDT</div>
                         <div class="symbol-stats">
@@ -430,6 +438,7 @@
                             <div class="win-rate-fill" style="width: 28.57%; background: linear-gradient(90deg, #ffa726, #ff9800);"></div>
                         </div>
                     </div>
+                    <!-- Performance card for ETHUSDT -->
                     <div class="symbol-card">
                         <div class="symbol-name">ETHUSDT</div>
                         <div class="symbol-stats">
@@ -447,7 +456,10 @@
                 </div>
             </div>
 
+            <!-- Charts section for AI Max has been removed -->
+
             <div class="details-section">
+                <!-- Detailed breakdown of signals for AI Max -->
                 <div class="details-card">
                     <h3 class="section-title">Signal Breakdown</h3>
                     <div class="detail-item">
@@ -479,6 +491,7 @@
                         <span class="detail-value" style="color: #ff6b6b;">27</span>
                     </div>
                 </div>
+                <!-- Common scenarios observed for AI Max -->
                 <div class="details-card">
                     <h3 class="section-title">Common Scenarios</h3>
                     <div class="detail-item">
@@ -515,8 +528,10 @@
             </div>
         </div>
 
+        <!-- AI Bob Tab Content -->
         <div id="ai-bob" class="tab-content">
             <div class="stats-grid">
+                <!-- Overall statistics for AI Bob -->
                 <div class="stat-card">
                     <div class="stat-value win-rate">56.79%</div>
                     <div class="stat-label">Win Rate</div>
@@ -530,13 +545,15 @@
                     <div class="stat-label">Avg Confidence</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value pending">87</div> <div class="stat-label">Too Recent</div>
+                    <div class="stat-value pending">87</div> <!-- Assuming 168 total signals for context -->
+                    <div class="stat-label">Too Recent</div>
                 </div>
             </div>
 
             <div class="symbol-performance">
                 <h2 class="section-title">Signal Type Performance</h2>
                 <div class="performance-grid">
+                    <!-- Performance card for Sell Signals -->
                     <div class="symbol-card">
                         <div class="symbol-name">Sell Signals</div>
                         <div class="symbol-stats">
@@ -547,11 +564,20 @@
                             <span>Trades:</span>
                             <span>46</span>
                         </div>
+                        <div class="symbol-stats">
+                            <span>Avg MFE:</span>
+                            <span class="detail-value">1.17</span>
+                        </div>
+                        <div class="symbol-stats">
+                            <span>Avg MAE:</span>
+                            <span class="detail-value">-0.67</span>
+                        </div>
                         <div class="win-rate-bar">
                             <div class="win-rate-fill" style="width: 69.57%; background: linear-gradient(90deg, #4ecdc4, #45b7d1);"></div>
                         </div>
                     </div>
-                     <div class="symbol-card">
+                     <!-- Performance card for Buy Signals -->
+                    <div class="symbol-card">
                         <div class="symbol-name">Buy Signals</div>
                         <div class="symbol-stats">
                             <span>Win Rate:</span>
@@ -561,6 +587,14 @@
                             <span>Trades:</span>
                             <span>35</span>
                         </div>
+                        <div class="symbol-stats">
+                            <span>Avg MFE:</span>
+                            <span class="detail-value">1.00</span>
+                        </div>
+                        <div class="symbol-stats">
+                            <span>Avg MAE:</span>
+                            <span class="detail-value">-0.80</span>
+                        </div>
                         <div class="win-rate-bar">
                             <div class="win-rate-fill" style="width: 40.0%; background: linear-gradient(90deg, #ffa726, #ff9800);"></div>
                         </div>
@@ -569,6 +603,7 @@
             </div>
 
             <div class="details-section">
+                <!-- Detailed breakdown of signals for AI Bob -->
                 <div class="details-card">
                     <h3 class="section-title">Signal Breakdown</h3>
                     <div class="detail-item">
@@ -604,6 +639,7 @@
                         <span class="detail-value">2025-06-05 16:14 UTC</span>
                     </div>
                 </div>
+                <!-- Scenario performance for AI Bob -->
                 <div class="details-card">
                     <h3 class="section-title">Scenario Performance</h3>
                     <div class="detail-item">
@@ -629,6 +665,22 @@
                     <div class="detail-item">
                         <span class="detail-label">Breakout Continuation:</span>
                         <span class="detail-value" style="color: #ff6b6b;">0% <small>(2 trades)</small></span>
+                    </div>
+                </div>
+                <!-- Performance by Confidence Level for AI Bob -->
+                <div class="details-card">
+                    <h3 class="section-title">Performance by Confidence Level</h3>
+                    <div class="detail-item">
+                        <span class="detail-label">40-49% Confidence:</span>
+                        <span class="detail-value" style="color: #4ecdc4;">53.70% <small>(54 trades)</small></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">50-59% Confidence:</span>
+                        <span class="detail-value" style="color: #4ecdc4;">64.71% <small>(17 trades)</small></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">60-69% Confidence:</span>
+                        <span class="detail-value" style="color: #4ecdc4;">60.0% <small>(10 trades)</small></span>
                     </div>
                 </div>
             </div>
