@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
     <style>
-        /* ... (Your existing CSS, no changes needed here for this specific request) ... */
         * {
             margin: 0;
             padding: 0;
@@ -18,12 +17,15 @@
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden; 
+            display: flex; /* For sticky footer */
+            flex-direction: column; /* For sticky footer */
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
+            flex-grow: 1; /* For sticky footer */
         }
 
         header {
@@ -227,8 +229,9 @@
 
         .details-section {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 30px;
+            margin-bottom: 30px; /* MODIFIED: Consistent spacing before filters */
         }
 
         .details-card {
@@ -236,8 +239,30 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 30px;
+            padding: 25px; 
+            display: flex; 
+            flex-direction: column; 
         }
+        .details-card .symbol-winrate-list {
+            max-height: 250px; 
+            overflow-y: auto;
+            padding-right: 10px; 
+        }
+        .details-card .symbol-winrate-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .details-card .symbol-winrate-list::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+        .details-card .symbol-winrate-list::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+        .details-card .symbol-winrate-list::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
 
         .section-title {
             font-size: 1.5rem;
@@ -259,21 +284,27 @@
 
         .detail-label {
             color: #a0a0a0;
+            margin-right: 10px; 
         }
 
         .detail-value {
             font-weight: 600;
             color: #ffffff;
+            text-align: right; 
+            flex-shrink: 0; 
         }
+        .detail-value .win { color: #4ecdc4; }
+        .detail-value .loss { color: #ff6b6b; }
+        .detail-value .neutral { color: #a0a0a0; }
 
-        /* Signal Catalog Styles */
+
         .signal-controls {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 25px;
+            padding: 25px; /* MODIFIED: Increased padding */
+            margin-bottom: 30px; /* MODIFIED: Consistent spacing before catalog */
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
@@ -302,9 +333,8 @@
             background: #1a1a3e;
             color: #ffffff;
         }
-        /* Allow number input to shrink a bit more if needed */
         .control-group input[type="number"] {
-            min-width: 100px; /* Adjust as needed */
+            min-width: 100px; 
         }
 
 
@@ -314,7 +344,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 30px;
-            margin-top: 30px; 
+            /* margin-top: 30px; REMOVED */
         }
 
         .signal-grid {
@@ -481,10 +511,28 @@
             0% { transform: translateY(100vh) rotate(0deg) translateX(-50%); }
             100% { transform: translateY(-100px) rotate(360deg) translateX(-50%); }
         }
+        
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #707080; /* Subtler color */
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 30px; /* Space above footer */
+        }
+
+
+        @media (max-width: 1200px) { 
+            .details-section {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            }
+        }
+
 
         @media (max-width: 992px) {
             .details-section {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             }
              .signal-item-body { 
                 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -521,6 +569,9 @@
                 grid-template-columns: 1fr;
             }
             .signal-item-body { 
+                grid-template-columns: 1fr;
+            }
+            .details-section { 
                 grid-template-columns: 1fr;
             }
         }
@@ -571,7 +622,6 @@
     </style>
 </head>
 <body>
-    <!-- ... Floating elements ... -->
     <div class="floating-elements">
         <div class="floating-element" style="left: 10%; animation-delay: 0s; animation-duration: 25s;">📈</div>
         <div class="floating-element" style="left: 20%; animation-delay: -5s; animation-duration: 30s;">💹</div>
@@ -598,7 +648,7 @@
         </div>
 
         <div id="ai-max" class="tab-content active">
-            <!-- Stats, Symbol Performance, Details Section for AI Max (unchanged) -->
+            <!-- Stats, Symbol Performance -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-value win-rate">34.21%</div>
@@ -617,7 +667,6 @@
                     <div class="stat-label">Too Recent</div>
                 </div>
             </div>
-
             <div class="symbol-performance">
                 <h2 class="section-title">Signal Type Performance</h2>
                 <div class="performance-grid">
@@ -668,6 +717,7 @@
                 </div>
             </div>
 
+            <!-- Details Section for AI Max -->
             <div class="details-section">
                  <div class="details-card">
                     <h3 class="section-title">Signal Breakdown</h3>
@@ -730,6 +780,12 @@
                         <span class="detail-value" style="color: #4ecdc4;">50.0% <small>(2 trades)</small></span>
                     </div>
                 </div>
+                <div class="details-card">
+                    <h3 class="section-title">Win Rate by Symbol</h3>
+                    <div class="symbol-winrate-list" id="symbol-winrate-list-ai-max">
+                        <p style="text-align:center; color: #a0a0a0;">Loading symbol win rates...</p>
+                    </div>
+                </div>
             </div>
             
             <!-- AI Max Signal Controls -->
@@ -756,7 +812,6 @@
                         <option value="ACTIVE">Active</option> 
                     </select>
                 </div>
-                <!-- New Min Confidence Filter -->
                 <div class="control-group">
                     <label for="min-confidence-filter-ai-max">Min Confidence (%):</label>
                     <input type="number" id="min-confidence-filter-ai-max" placeholder="e.g., 50" min="0" max="100">
@@ -765,9 +820,7 @@
                     <label for="sort-by-ai-max">Sort By:</label>
                     <select id="sort-by-ai-max">
                         <option value="timestamp">Timestamp</option>
-                        <!-- <option value="confidence">Confidence</option> REMOVED -->
                         <option value="entryPrice">Entry Price</option>
-                        <!-- <option value="symbol">Symbol</option> REMOVED -->
                     </select>
                 </div>
                 <div class="control-group">
@@ -781,18 +834,14 @@
 
             <div class="signal-catalog-section">
                 <h2 class="section-title">AI Max - Live Signal Catalog</h2>
-                <div class="signal-grid" id="signal-grid-ai-max">
-                    <!-- Signals for AI Max will be injected here -->
-                </div>
-                <div class="pagination-controls" id="pagination-controls-ai-max">
-                    <!-- Pagination for AI Max will be injected here -->
-                </div>
+                <div class="signal-grid" id="signal-grid-ai-max"></div>
+                <div class="pagination-controls" id="pagination-controls-ai-max"></div>
             </div>
         </div>
 
         <div id="ai-bob" class="tab-content">
-            <!-- Stats, Symbol Performance, Details Section for AI Bob (unchanged) -->
-             <div class="stats-grid">
+            <!-- Stats, Symbol Performance for AI Bob -->
+            <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-value win-rate">58.10%</div>
                     <div class="stat-label">Win Rate</div>
@@ -810,7 +859,6 @@
                     <div class="stat-label">Too Recent</div>
                 </div>
             </div>
-
             <div class="symbol-performance">
                 <h2 class="section-title">Signal Type Performance</h2>
                 <div class="performance-grid">
@@ -860,7 +908,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Details Section for AI Bob -->
             <div class="details-section">
                 <div class="details-card">
                     <h3 class="section-title">Signal Breakdown</h3>
@@ -951,6 +999,12 @@
                         <span class="detail-value" style="color: #4ecdc4;">80.0% <small>(5 trades)</small></span>
                     </div>
                 </div>
+                <div class="details-card">
+                    <h3 class="section-title">Win Rate by Symbol</h3>
+                    <div class="symbol-winrate-list" id="symbol-winrate-list-ai-bob">
+                        <p style="text-align:center; color: #a0a0a0;">Loading symbol win rates...</p>
+                    </div>
+                </div>
             </div>
 
             <!-- AI Bob Signal Controls -->
@@ -977,7 +1031,6 @@
                         <option value="ACTIVE">Active</option>
                     </select>
                 </div>
-                <!-- New Min Confidence Filter -->
                 <div class="control-group">
                     <label for="min-confidence-filter-ai-bob">Min Confidence (%):</label>
                     <input type="number" id="min-confidence-filter-ai-bob" placeholder="e.g., 50" min="0" max="100">
@@ -986,9 +1039,7 @@
                     <label for="sort-by-ai-bob">Sort By:</label>
                     <select id="sort-by-ai-bob">
                         <option value="timestamp">Timestamp</option>
-                        <!-- <option value="confidence">Confidence</option> REMOVED -->
                         <option value="entryPrice">Entry Price</option>
-                        <!-- <option value="symbol">Symbol</option> REMOVED -->
                     </select>
                 </div>
                  <div class="control-group">
@@ -1002,15 +1053,15 @@
 
             <div class="signal-catalog-section">
                 <h2 class="section-title">AI Bob - Live Signal Catalog</h2>
-                <div class="signal-grid" id="signal-grid-ai-bob">
-                    <!-- Signals for AI Bob will be injected here -->
-                </div>
-                <div class="pagination-controls" id="pagination-controls-ai-bob">
-                    <!-- Pagination for AI Bob will be injected here -->
-                </div>
+                <div class="signal-grid" id="signal-grid-ai-bob"></div>
+                <div class="pagination-controls" id="pagination-controls-ai-bob"></div>
             </div>
         </div>
     </div>
+
+    <footer>
+        By Mcnick1 In 2025
+    </footer>
 
     <script>
         // --- Global State Object ---
@@ -1018,13 +1069,14 @@
             'ai-max': {
                 allSignals: [], 
                 displayedSignals: [], 
+                symbolWinRates: [], 
                 currentPage: 1,
                 itemsPerPage: 10, 
                 filters: {
                     symbol: '',
                     signalType: '', 
                     status: '',
-                    minConfidence: '' // New filter
+                    minConfidence: '' 
                 },
                 sort: {
                     by: 'timestamp', 
@@ -1034,13 +1086,14 @@
             'ai-bob': { 
                 allSignals: [],
                 displayedSignals: [],
+                symbolWinRates: [], 
                 currentPage: 1,
                 itemsPerPage: 10,
                 filters: {
                     symbol: '',
                     signalType: '',
                     status: '',
-                    minConfidence: '' // New filter
+                    minConfidence: '' 
                 },
                 sort: {
                     by: 'timestamp',
@@ -1144,6 +1197,72 @@
             `;
         }
 
+        function calculateSymbolWinRates(signals) {
+            const symbolStats = {};
+            const relevantSignals = signals.filter(s => {
+                const signalType = s.Signal ? s.Signal.toLowerCase() : '';
+                const status = s.performance && s.performance.status ? s.performance.status.toLowerCase() : '';
+                return signalType !== 'hold' && (status === 'win' || status === 'loss');
+            });
+
+            relevantSignals.forEach(signal => {
+                if (!signal.symbol) return; 
+                if (!symbolStats[signal.symbol]) {
+                    symbolStats[signal.symbol] = { wins: 0, losses: 0, totalEvaluated: 0 };
+                }
+                symbolStats[signal.symbol].totalEvaluated++;
+                if (signal.performance && signal.performance.status && signal.performance.status.toLowerCase() === 'win') {
+                    symbolStats[signal.symbol].wins++;
+                } else if (signal.performance && signal.performance.status && signal.performance.status.toLowerCase() === 'loss') {
+                    symbolStats[signal.symbol].losses++;
+                }
+            });
+
+            const result = [];
+            for (const symbol in symbolStats) {
+                const stats = symbolStats[symbol];
+                const winRate = stats.totalEvaluated > 0 ? (stats.wins / stats.totalEvaluated) * 100 : 0;
+                result.push({
+                    symbol: symbol,
+                    winRate: winRate.toFixed(2),
+                    wins: stats.wins,
+                    losses: stats.losses,
+                    totalEvaluated: stats.totalEvaluated
+                });
+            }
+            return result.sort((a,b) => a.symbol.localeCompare(b.symbol));
+        }
+
+        function renderSymbolWinRates(aiId) {
+            const state = appState[aiId];
+            const container = document.getElementById(`symbol-winrate-list-${aiId}`);
+            if (!container) return;
+
+            if (state.symbolWinRates.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No symbol data to display.</p>';
+                return;
+            }
+
+            let html = '';
+            state.symbolWinRates.forEach(item => {
+                let winRateClass = 'neutral';
+                if (parseFloat(item.winRate) > 50) winRateClass = 'win';
+                else if (parseFloat(item.winRate) < 50 && item.totalEvaluated > 0) winRateClass = 'loss';
+                
+                html += `
+                    <div class="detail-item">
+                        <span class="detail-label">${item.symbol}</span>
+                        <span class="detail-value">
+                            <span class="${winRateClass}">${item.winRate}%</span> 
+                            <small>(${item.wins}W / ${item.losses}L of ${item.totalEvaluated})</small>
+                        </span>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+
         async function fetchSignals(aiId, jsonFilename) {
             const signalGrid = document.getElementById(`signal-grid-${aiId}`);
             if (!signalGrid) {
@@ -1151,6 +1270,8 @@
                 return;
             }
             signalGrid.innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading signals...</p>';
+             document.getElementById(`symbol-winrate-list-${aiId}`).innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading symbol win rates...</p>';
+
 
             try {
                 const response = await fetch(jsonFilename); 
@@ -1160,11 +1281,15 @@
                 const signals = await response.json();
                 
                 appState[aiId].allSignals = signals;
+                appState[aiId].symbolWinRates = calculateSymbolWinRates(signals); 
+                
                 updateFullDisplay(aiId); 
+                renderSymbolWinRates(aiId); 
 
             } catch (error) {
                 console.error(`Could not load signals from ${jsonFilename}:`, error);
                 signalGrid.innerHTML = `<p style="text-align:center; color: #ff6b6b;">Failed to load signals from ${jsonFilename}.</p>`;
+                document.getElementById(`symbol-winrate-list-${aiId}`).innerHTML = `<p style="text-align:center; color: #ff6b6b;">Failed to load symbol win rates.</p>`;
             }
         }
 
@@ -1183,7 +1308,6 @@
             if (state.filters.status) {
                 signalsToProcess = signalsToProcess.filter(s => s.performance && s.performance.status && s.performance.status.toLowerCase() === state.filters.status.toLowerCase());
             }
-            // New: Filter by Minimum Confidence
             if (state.filters.minConfidence !== '' && !isNaN(parseFloat(state.filters.minConfidence))) {
                 const minConf = parseFloat(state.filters.minConfidence);
                 signalsToProcess = signalsToProcess.filter(s => s.Confidence !== undefined && s.Confidence >= minConf);
@@ -1196,19 +1320,11 @@
                         valA = new Date(a.timestamp);
                         valB = new Date(b.timestamp);
                         break;
-                    // case 'confidence': // REMOVED from sort
-                    //     valA = a.Confidence;
-                    //     valB = b.Confidence;
-                    //     break;
                     case 'entryPrice':
                         valA = parseFloat(a["Entry Price"]);
                         valB = parseFloat(b["Entry Price"]);
                         break;
-                    // case 'symbol': // REMOVED from sort
-                    //     valA = a.symbol || '';
-                    //     valB = b.symbol || '';
-                    //     break;
-                    default: // Should default to timestamp if sort.by is invalid
+                    default: 
                         valA = new Date(a.timestamp);
                         valB = new Date(b.timestamp);
                 }
@@ -1246,7 +1362,6 @@
 
             const totalSignals = state.displayedSignals.length;
             const totalPages = Math.ceil(totalSignals / state.itemsPerPage);
-            // Ensure currentPage is not out of bounds if totalPages decreased
             if (state.currentPage > totalPages && totalPages > 0) {
                 state.currentPage = totalPages;
             } else if (totalPages === 0) {
@@ -1298,9 +1413,9 @@
         }
         
         function updateFullDisplay(aiId) {
-            processSignals(aiId); // Apply filters and sorting
-            renderSignalsForPage(aiId); // Render the current page of signals
-            renderPaginationControls(aiId); // Update pagination display
+            processSignals(aiId); 
+            renderSignalsForPage(aiId); 
+            renderPaginationControls(aiId); 
         }
 
         function setupEventListeners(aiId) {
@@ -1318,7 +1433,6 @@
                 state.filters.status = e.target.value;
                 state.currentPage = 1; updateFullDisplay(aiId);
             });
-            // New: Min Confidence filter listener
             document.getElementById(`min-confidence-filter-${aiId}`)?.addEventListener('input', (e) => {
                 state.filters.minConfidence = e.target.value;
                 state.currentPage = 1; updateFullDisplay(aiId);
