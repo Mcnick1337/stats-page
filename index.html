@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
     <style>
-        /* ... (Your existing CSS, I will add new styles for controls later) ... */
+        /* ... (Your existing CSS, no changes needed here for this specific request) ... */
         * {
             margin: 0;
             padding: 0;
@@ -289,7 +289,7 @@
             color: #b0b0c0;
             margin-bottom: 3px;
         }
-        .control-group select, .control-group input[type="text"] {
+        .control-group select, .control-group input[type="text"], .control-group input[type="number"] {
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -301,6 +301,10 @@
         .control-group select option {
             background: #1a1a3e;
             color: #ffffff;
+        }
+        /* Allow number input to shrink a bit more if needed */
+        .control-group input[type="number"] {
+            min-width: 100px; /* Adjust as needed */
         }
 
 
@@ -487,10 +491,10 @@
             }
             .signal-controls {
                 flex-direction: column;
-                align-items: stretch; /* Make control groups take full width */
+                align-items: stretch;
             }
-            .control-group select, .control-group input[type="text"] {
-                width: 100%; /* Make inputs full width on smaller screens */
+            .control-group select, .control-group input[type="text"], .control-group input[type="number"] {
+                width: 100%; 
             }
         }
 
@@ -567,6 +571,7 @@
     </style>
 </head>
 <body>
+    <!-- ... Floating elements ... -->
     <div class="floating-elements">
         <div class="floating-element" style="left: 10%; animation-delay: 0s; animation-duration: 25s;">📈</div>
         <div class="floating-element" style="left: 20%; animation-delay: -5s; animation-duration: 30s;">💹</div>
@@ -751,13 +756,18 @@
                         <option value="ACTIVE">Active</option> 
                     </select>
                 </div>
+                <!-- New Min Confidence Filter -->
+                <div class="control-group">
+                    <label for="min-confidence-filter-ai-max">Min Confidence (%):</label>
+                    <input type="number" id="min-confidence-filter-ai-max" placeholder="e.g., 50" min="0" max="100">
+                </div>
                 <div class="control-group">
                     <label for="sort-by-ai-max">Sort By:</label>
                     <select id="sort-by-ai-max">
                         <option value="timestamp">Timestamp</option>
-                        <option value="confidence">Confidence</option>
+                        <!-- <option value="confidence">Confidence</option> REMOVED -->
                         <option value="entryPrice">Entry Price</option>
-                        <option value="symbol">Symbol</option>
+                        <!-- <option value="symbol">Symbol</option> REMOVED -->
                     </select>
                 </div>
                 <div class="control-group">
@@ -967,13 +977,18 @@
                         <option value="ACTIVE">Active</option>
                     </select>
                 </div>
+                <!-- New Min Confidence Filter -->
+                <div class="control-group">
+                    <label for="min-confidence-filter-ai-bob">Min Confidence (%):</label>
+                    <input type="number" id="min-confidence-filter-ai-bob" placeholder="e.g., 50" min="0" max="100">
+                </div>
                 <div class="control-group">
                     <label for="sort-by-ai-bob">Sort By:</label>
                     <select id="sort-by-ai-bob">
                         <option value="timestamp">Timestamp</option>
-                        <option value="confidence">Confidence</option>
+                        <!-- <option value="confidence">Confidence</option> REMOVED -->
                         <option value="entryPrice">Entry Price</option>
-                        <option value="symbol">Symbol</option>
+                        <!-- <option value="symbol">Symbol</option> REMOVED -->
                     </select>
                 </div>
                  <div class="control-group">
@@ -1001,21 +1016,22 @@
         // --- Global State Object ---
         let appState = {
             'ai-max': {
-                allSignals: [], // Raw signals from JSON
-                displayedSignals: [], // Signals after filtering and sorting
+                allSignals: [], 
+                displayedSignals: [], 
                 currentPage: 1,
-                itemsPerPage: 10, // Default items per page
+                itemsPerPage: 10, 
                 filters: {
                     symbol: '',
                     signalType: '', 
-                    status: '' 
+                    status: '',
+                    minConfidence: '' // New filter
                 },
                 sort: {
                     by: 'timestamp', 
                     order: 'desc' 
                 }
             },
-            'ai-bob': { // Identical structure for AI Bob
+            'ai-bob': { 
                 allSignals: [],
                 displayedSignals: [],
                 currentPage: 1,
@@ -1023,7 +1039,8 @@
                 filters: {
                     symbol: '',
                     signalType: '',
-                    status: ''
+                    status: '',
+                    minConfidence: '' // New filter
                 },
                 sort: {
                     by: 'timestamp',
@@ -1045,9 +1062,6 @@
 
             document.getElementById(tabName).classList.add('active');
             event.currentTarget.classList.add('active');
-            // Optionally, trigger a re-render if needed when switching tabs,
-            // though initial load already handles this.
-            // updateFullDisplay(tabName); 
         }
 
         function getPerformanceStatusClass(status) {
@@ -1073,7 +1087,7 @@
             }
         }
 
-        function renderSignalCard(signal) { // Renamed from renderSignal to avoid conflict
+        function renderSignalCard(signal) {
             const performance = signal.performance || {};
             const mfe = typeof performance.mfe_percentage === 'number' ? `${performance.mfe_percentage.toFixed(2)}%` : 'N/A';
             const mae = typeof performance.mae_percentage === 'number' ? `${performance.mae_percentage.toFixed(2)}%` : 'N/A';
@@ -1145,9 +1159,8 @@
                 }
                 const signals = await response.json();
                 
-                // Store fetched signals in the global state
                 appState[aiId].allSignals = signals;
-                updateFullDisplay(aiId); // Initial processing and rendering
+                updateFullDisplay(aiId); 
 
             } catch (error) {
                 console.error(`Could not load signals from ${jsonFilename}:`, error);
@@ -1159,10 +1172,8 @@
             const state = appState[aiId];
             let signalsToProcess = [...state.allSignals];
 
-            // 1. Filter out "Hold" signals (assuming "Hold" is a value for signal.Signal)
             signalsToProcess = signalsToProcess.filter(s => s.Signal && s.Signal.toLowerCase() !== 'hold');
 
-            // 2. Apply user filters
             if (state.filters.symbol) {
                 signalsToProcess = signalsToProcess.filter(s => s.symbol && s.symbol.toLowerCase().includes(state.filters.symbol.toLowerCase()));
             }
@@ -1172,8 +1183,12 @@
             if (state.filters.status) {
                 signalsToProcess = signalsToProcess.filter(s => s.performance && s.performance.status && s.performance.status.toLowerCase() === state.filters.status.toLowerCase());
             }
+            // New: Filter by Minimum Confidence
+            if (state.filters.minConfidence !== '' && !isNaN(parseFloat(state.filters.minConfidence))) {
+                const minConf = parseFloat(state.filters.minConfidence);
+                signalsToProcess = signalsToProcess.filter(s => s.Confidence !== undefined && s.Confidence >= minConf);
+            }
 
-            // 3. Apply sorting
             signalsToProcess.sort((a, b) => {
                 let valA, valB;
                 switch (state.sort.by) {
@@ -1181,25 +1196,26 @@
                         valA = new Date(a.timestamp);
                         valB = new Date(b.timestamp);
                         break;
-                    case 'confidence':
-                        valA = a.Confidence;
-                        valB = b.Confidence;
-                        break;
+                    // case 'confidence': // REMOVED from sort
+                    //     valA = a.Confidence;
+                    //     valB = b.Confidence;
+                    //     break;
                     case 'entryPrice':
                         valA = parseFloat(a["Entry Price"]);
                         valB = parseFloat(b["Entry Price"]);
                         break;
-                    case 'symbol':
-                        valA = a.symbol || '';
-                        valB = b.symbol || '';
-                        break;
-                    default:
-                        return 0;
+                    // case 'symbol': // REMOVED from sort
+                    //     valA = a.symbol || '';
+                    //     valB = b.symbol || '';
+                    //     break;
+                    default: // Should default to timestamp if sort.by is invalid
+                        valA = new Date(a.timestamp);
+                        valB = new Date(b.timestamp);
                 }
 
                 if (state.sort.order === 'asc') {
                     return valA > valB ? 1 : (valA < valB ? -1 : 0);
-                } else { // desc
+                } else { 
                     return valA < valB ? 1 : (valA > valB ? -1 : 0);
                 }
             });
@@ -1230,13 +1246,20 @@
 
             const totalSignals = state.displayedSignals.length;
             const totalPages = Math.ceil(totalSignals / state.itemsPerPage);
+            // Ensure currentPage is not out of bounds if totalPages decreased
+            if (state.currentPage > totalPages && totalPages > 0) {
+                state.currentPage = totalPages;
+            } else if (totalPages === 0) {
+                state.currentPage = 1;
+            }
+
 
             let paginationHTML = '';
             if (totalSignals > 0) {
                  paginationHTML = `
                     <button id="prev-page-${aiId}" ${state.currentPage === 1 ? 'disabled' : ''}>Previous</button>
-                    <span class="page-info">Page ${state.currentPage} of ${totalPages} (Total: ${totalSignals})</span>
-                    <button id="next-page-${aiId}" ${state.currentPage === totalPages ? 'disabled' : ''}>Next</button>
+                    <span class="page-info">Page ${state.currentPage} of ${totalPages > 0 ? totalPages : 1} (Total: ${totalSignals})</span>
+                    <button id="next-page-${aiId}" ${state.currentPage === totalPages || totalPages === 0 ? 'disabled' : ''}>Next</button>
                     <div class="control-group">
                         <label for="items-per-page-${aiId}" style="margin-bottom:0; margin-right:5px;">Per Page:</label>
                         <select id="items-per-page-${aiId}">
@@ -1244,7 +1267,7 @@
                             <option value="25" ${state.itemsPerPage === 25 ? 'selected' : ''}>25</option>
                             <option value="50" ${state.itemsPerPage === 50 ? 'selected' : ''}>50</option>
                             <option value="100" ${state.itemsPerPage === 100 ? 'selected' : ''}>100</option>
-                            <option value="${totalSignals > 0 ? totalSignals : 99999}" ${state.itemsPerPage >= totalSignals && totalSignals > 0 ? 'selected' : ''}>All</option>
+                            <option value="${totalSignals > 0 ? Math.max(totalSignals,1) : 99999}" ${state.itemsPerPage >= totalSignals && totalSignals > 0 ? 'selected' : ''}>All</option>
                         </select>
                     </div>
                 `;
@@ -1253,7 +1276,6 @@
             }
             controlsContainer.innerHTML = paginationHTML;
 
-            // Add event listeners for new pagination controls
             if (totalSignals > 0) {
                 document.getElementById(`prev-page-${aiId}`)?.addEventListener('click', () => {
                     if (state.currentPage > 1) {
@@ -1269,22 +1291,21 @@
                 });
                 document.getElementById(`items-per-page-${aiId}`)?.addEventListener('change', (e) => {
                     state.itemsPerPage = parseInt(e.target.value, 10);
-                    state.currentPage = 1; // Reset to first page
+                    state.currentPage = 1; 
                     updateFullDisplay(aiId);
                 });
             }
         }
         
         function updateFullDisplay(aiId) {
-            processSignals(aiId);
-            renderSignalsForPage(aiId);
-            renderPaginationControls(aiId);
+            processSignals(aiId); // Apply filters and sorting
+            renderSignalsForPage(aiId); // Render the current page of signals
+            renderPaginationControls(aiId); // Update pagination display
         }
 
         function setupEventListeners(aiId) {
             const state = appState[aiId];
             
-            // Filters
             document.getElementById(`symbol-filter-${aiId}`)?.addEventListener('input', (e) => {
                 state.filters.symbol = e.target.value;
                 state.currentPage = 1; updateFullDisplay(aiId);
@@ -1297,8 +1318,12 @@
                 state.filters.status = e.target.value;
                 state.currentPage = 1; updateFullDisplay(aiId);
             });
+            // New: Min Confidence filter listener
+            document.getElementById(`min-confidence-filter-${aiId}`)?.addEventListener('input', (e) => {
+                state.filters.minConfidence = e.target.value;
+                state.currentPage = 1; updateFullDisplay(aiId);
+            });
 
-            // Sorting
             document.getElementById(`sort-by-${aiId}`)?.addEventListener('change', (e) => {
                 state.sort.by = e.target.value;
                 state.currentPage = 1; updateFullDisplay(aiId);
