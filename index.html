@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
     <style>
+        /* ... (Your existing CSS, I will add new styles for controls later) ... */
         * {
             margin: 0;
             padding: 0;
@@ -16,7 +17,7 @@
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
             color: #ffffff;
             min-height: 100vh;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden; 
         }
 
         .container {
@@ -94,7 +95,7 @@
         .tab-button.active {
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             color: white;
-            transform: scale(1.05); /* Slight zoom for active tab */
+            transform: scale(1.05);
         }
 
         .tab-button:hover:not(.active) {
@@ -126,10 +127,10 @@
             text-align: center;
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden; /* For shine effect */
+            overflow: hidden;
         }
 
-        .stat-card::before { /* Shine effect */
+        .stat-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -140,12 +141,12 @@
             transition: left 0.5s;
         }
 
-        .stat-card:hover::before { /* Shine effect on hover */
+        .stat-card:hover::before {
             left: 100%;
         }
 
         .stat-card:hover {
-            transform: translateY(-5px); /* Slight lift on hover */
+            transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
@@ -207,7 +208,7 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
-            font-size: 0.9rem; /* Adjusted for better fit */
+            font-size: 0.9rem;
         }
 
         .win-rate-bar {
@@ -226,7 +227,7 @@
 
         .details-section {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Default for larger screens */
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
@@ -266,23 +267,60 @@
         }
 
         /* Signal Catalog Styles */
+        .signal-controls {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .control-group label {
+            font-size: 0.9rem;
+            color: #b0b0c0;
+            margin-bottom: 3px;
+        }
+        .control-group select, .control-group input[type="text"] {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.95rem;
+            min-width: 150px;
+        }
+        .control-group select option {
+            background: #1a1a3e;
+            color: #ffffff;
+        }
+
+
         .signal-catalog-section {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 30px;
-            margin-top: 30px; /* Space from details section */
+            margin-top: 30px; 
         }
 
         .signal-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Makes each signal card take full width */
+            grid-template-columns: 1fr; 
             gap: 25px;
         }
 
         .signal-item-card {
-            background: rgba(40, 40, 70, 0.7); /* Slightly darker, more opaque */
+            background: rgba(40, 40, 70, 0.7); 
             backdrop-filter: blur(5px);
             border-radius: 15px;
             padding: 20px;
@@ -306,17 +344,17 @@
         }
 
         .signal-symbol {
-            font-size: 1.4rem; /* Slightly larger symbol */
+            font-size: 1.4rem; 
             font-weight: 700;
             color: #ffffff;
         }
 
         .signal-action {
-            padding: 7px 14px; /* Slightly larger padding */
+            padding: 7px 14px; 
             border-radius: 8px;
             color: white;
             font-weight: bold;
-            font-size: 1rem; /* Slightly larger font */
+            font-size: 1rem; 
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -328,20 +366,20 @@
         .signal-item-body {
             margin-bottom: 15px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Allow wrapping for params */
-            gap: 10px 20px; /* Row and column gap */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 10px 20px; 
         }
 
         .signal-param {
-            margin-bottom: 5px; /* Reduced margin */
+            margin-bottom: 5px; 
             font-size: 0.95rem;
             padding: 5px 0;
         }
 
         .signal-param .label {
-            color: #b0b0b0; /* Lighter gray */
+            color: #b0b0b0; 
             margin-right: 10px;
-            display: block; /* Make label take full width above value */
+            display: block; 
             margin-bottom: 3px;
             font-size: 0.85rem;
         }
@@ -353,7 +391,7 @@
 
         .signal-param .value.tp-list {
             font-size: 0.9em;
-            word-break: break-all; /* For long TP lists */
+            word-break: break-all; 
         }
 
 
@@ -374,10 +412,10 @@
 
         .signal-status {
             font-weight: bold;
-            padding: 6px 12px; /* Adjusted padding */
+            padding: 6px 12px; 
             border-radius: 8px;
             color: #fff;
-            font-size: 0.9rem; /* Adjusted font size */
+            font-size: 0.9rem; 
             text-transform: uppercase;
         }
 
@@ -386,6 +424,36 @@
         .signal-status-pending { background-color: #ffa726; }
         .signal-status-active { background-color: #45b7d1; } 
         .signal-status-default { background-color: #78909c; } 
+
+        .pagination-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+        }
+        .pagination-controls button, .pagination-controls select {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .pagination-controls button:hover, .pagination-controls select:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .pagination-controls button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .pagination-controls .page-info {
+            color: #c0c0d0;
+        }
 
 
         .floating-elements {
@@ -416,6 +484,13 @@
             }
              .signal-item-body { 
                 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+            .signal-controls {
+                flex-direction: column;
+                align-items: stretch; /* Make control groups take full width */
+            }
+            .control-group select, .control-group input[type="text"] {
+                width: 100%; /* Make inputs full width on smaller screens */
             }
         }
 
@@ -469,8 +544,11 @@
             .details-card {
                 padding: 20px;
             }
-            .signal-catalog-section {
-                 padding: 20px;
+            .signal-catalog-section, .signal-controls {
+                 padding: 15px;
+            }
+            .signal-controls {
+                gap: 15px;
             }
             .signal-item-card {
                 padding: 15px;
@@ -480,6 +558,10 @@
             }
             .signal-symbol { font-size: 1.2rem; }
             .signal-action { font-size: 0.9rem; padding: 6px 10px; }
+            .pagination-controls {
+                flex-direction: column;
+                gap: 15px;
+            }
 
          }
     </style>
@@ -511,7 +593,7 @@
         </div>
 
         <div id="ai-max" class="tab-content active">
-            <!-- Stats, Symbol Performance, Details Section for AI Max (unchanged from your previous version) -->
+            <!-- Stats, Symbol Performance, Details Section for AI Max (unchanged) -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-value win-rate">34.21%</div>
@@ -582,7 +664,7 @@
             </div>
 
             <div class="details-section">
-                <div class="details-card">
+                 <div class="details-card">
                     <h3 class="section-title">Signal Breakdown</h3>
                     <div class="detail-item">
                         <span class="detail-label">Total Signals:</span>
@@ -644,21 +726,63 @@
                     </div>
                 </div>
             </div>
-
-            <!-- AI Max Signal Catalog Start -->
-            <div class="signal-catalog-section">
-                <h2 class="section-title">AI Max - Live Signal Catalog</h2>
-                <div class="signal-grid">
-                    <!-- Signals for AI Max will be injected here by JS -->
+            
+            <!-- AI Max Signal Controls -->
+            <div class="signal-controls" id="signal-controls-ai-max">
+                <div class="control-group">
+                    <label for="symbol-filter-ai-max">Symbol:</label>
+                    <input type="text" id="symbol-filter-ai-max" placeholder="e.g., BTCUSDT">
+                </div>
+                <div class="control-group">
+                    <label for="signal-type-filter-ai-max">Type:</label>
+                    <select id="signal-type-filter-ai-max">
+                        <option value="">All</option>
+                        <option value="Buy">Buy</option>
+                        <option value="Sell">Sell</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="status-filter-ai-max">Status:</label>
+                    <select id="status-filter-ai-max">
+                        <option value="">All</option>
+                        <option value="WIN">Win</option>
+                        <option value="LOSS">Loss</option>
+                        <option value="PENDING">Pending</option>
+                        <option value="ACTIVE">Active</option> 
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="sort-by-ai-max">Sort By:</label>
+                    <select id="sort-by-ai-max">
+                        <option value="timestamp">Timestamp</option>
+                        <option value="confidence">Confidence</option>
+                        <option value="entryPrice">Entry Price</option>
+                        <option value="symbol">Symbol</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="sort-order-ai-max">Order:</label>
+                    <select id="sort-order-ai-max">
+                        <option value="desc">Descending</option>
+                        <option value="asc">Ascending</option>
+                    </select>
                 </div>
             </div>
-            <!-- AI Max Signal Catalog End -->
 
+            <div class="signal-catalog-section">
+                <h2 class="section-title">AI Max - Live Signal Catalog</h2>
+                <div class="signal-grid" id="signal-grid-ai-max">
+                    <!-- Signals for AI Max will be injected here -->
+                </div>
+                <div class="pagination-controls" id="pagination-controls-ai-max">
+                    <!-- Pagination for AI Max will be injected here -->
+                </div>
+            </div>
         </div>
 
         <div id="ai-bob" class="tab-content">
-            <!-- Stats, Symbol Performance, Details Section for AI Bob (unchanged from your previous version) -->
-            <div class="stats-grid">
+            <!-- Stats, Symbol Performance, Details Section for AI Bob (unchanged) -->
+             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-value win-rate">58.10%</div>
                     <div class="stat-label">Win Rate</div>
@@ -819,19 +943,95 @@
                 </div>
             </div>
 
-            <!-- AI Bob Signal Catalog Start -->
-            <div class="signal-catalog-section">
-                <h2 class="section-title">AI Bob - Live Signal Catalog</h2>
-                <div class="signal-grid">
-                    <!-- Signals for AI Bob will be injected here by JS -->
+            <!-- AI Bob Signal Controls -->
+            <div class="signal-controls" id="signal-controls-ai-bob">
+                <div class="control-group">
+                    <label for="symbol-filter-ai-bob">Symbol:</label>
+                    <input type="text" id="symbol-filter-ai-bob" placeholder="e.g., ETHUSDT">
+                </div>
+                <div class="control-group">
+                    <label for="signal-type-filter-ai-bob">Type:</label>
+                    <select id="signal-type-filter-ai-bob">
+                        <option value="">All</option>
+                        <option value="Buy">Buy</option>
+                        <option value="Sell">Sell</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="status-filter-ai-bob">Status:</label>
+                    <select id="status-filter-ai-bob">
+                        <option value="">All</option>
+                        <option value="WIN">Win</option>
+                        <option value="LOSS">Loss</option>
+                        <option value="PENDING">Pending</option>
+                        <option value="ACTIVE">Active</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="sort-by-ai-bob">Sort By:</label>
+                    <select id="sort-by-ai-bob">
+                        <option value="timestamp">Timestamp</option>
+                        <option value="confidence">Confidence</option>
+                        <option value="entryPrice">Entry Price</option>
+                        <option value="symbol">Symbol</option>
+                    </select>
+                </div>
+                 <div class="control-group">
+                    <label for="sort-order-ai-bob">Order:</label>
+                    <select id="sort-order-ai-bob">
+                        <option value="desc">Descending</option>
+                        <option value="asc">Ascending</option>
+                    </select>
                 </div>
             </div>
-            <!-- AI Bob Signal Catalog End -->
 
+            <div class="signal-catalog-section">
+                <h2 class="section-title">AI Bob - Live Signal Catalog</h2>
+                <div class="signal-grid" id="signal-grid-ai-bob">
+                    <!-- Signals for AI Bob will be injected here -->
+                </div>
+                <div class="pagination-controls" id="pagination-controls-ai-bob">
+                    <!-- Pagination for AI Bob will be injected here -->
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
+        // --- Global State Object ---
+        let appState = {
+            'ai-max': {
+                allSignals: [], // Raw signals from JSON
+                displayedSignals: [], // Signals after filtering and sorting
+                currentPage: 1,
+                itemsPerPage: 10, // Default items per page
+                filters: {
+                    symbol: '',
+                    signalType: '', 
+                    status: '' 
+                },
+                sort: {
+                    by: 'timestamp', 
+                    order: 'desc' 
+                }
+            },
+            'ai-bob': { // Identical structure for AI Bob
+                allSignals: [],
+                displayedSignals: [],
+                currentPage: 1,
+                itemsPerPage: 10,
+                filters: {
+                    symbol: '',
+                    signalType: '',
+                    status: ''
+                },
+                sort: {
+                    by: 'timestamp',
+                    order: 'desc'
+                }
+            }
+        };
+
         function switchTab(event, tabName) {
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(content => {
@@ -845,6 +1045,9 @@
 
             document.getElementById(tabName).classList.add('active');
             event.currentTarget.classList.add('active');
+            // Optionally, trigger a re-render if needed when switching tabs,
+            // though initial load already handles this.
+            // updateFullDisplay(tabName); 
         }
 
         function getPerformanceStatusClass(status) {
@@ -870,7 +1073,7 @@
             }
         }
 
-        function renderSignal(signal) {
+        function renderSignalCard(signal) { // Renamed from renderSignal to avoid conflict
             const performance = signal.performance || {};
             const mfe = typeof performance.mfe_percentage === 'number' ? `${performance.mfe_percentage.toFixed(2)}%` : 'N/A';
             const mae = typeof performance.mae_percentage === 'number' ? `${performance.mae_percentage.toFixed(2)}%` : 'N/A';
@@ -927,8 +1130,8 @@
             `;
         }
 
-        async function loadAndDisplaySignals(aiId, jsonFilename) {
-            const signalGrid = document.querySelector(`#${aiId} .signal-grid`);
+        async function fetchSignals(aiId, jsonFilename) {
+            const signalGrid = document.getElementById(`signal-grid-${aiId}`);
             if (!signalGrid) {
                 console.error(`Signal grid for ${aiId} not found.`);
                 return;
@@ -941,24 +1144,178 @@
                     throw new Error(`HTTP error! status: ${response.status} while fetching ${jsonFilename}`);
                 }
                 const signals = await response.json();
+                
+                // Store fetched signals in the global state
+                appState[aiId].allSignals = signals;
+                updateFullDisplay(aiId); // Initial processing and rendering
 
-                if (signals && signals.length > 0) {
-                    signalGrid.innerHTML = signals.map(signal => renderSignal(signal)).join('');
-                } else {
-                    signalGrid.innerHTML = `<p style="text-align:center; color: #a0a0a0;">No signals available in ${jsonFilename}.</p>`;
-                }
             } catch (error) {
                 console.error(`Could not load signals from ${jsonFilename}:`, error);
-                signalGrid.innerHTML = `<p style="text-align:center; color: #ff6b6b;">Failed to load signals from ${jsonFilename}. Please check the file and console.</p>`;
+                signalGrid.innerHTML = `<p style="text-align:center; color: #ff6b6b;">Failed to load signals from ${jsonFilename}.</p>`;
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load signals for AI Max from signals_claude_log.json
-            loadAndDisplaySignals('ai-max', 'signals_claude_log.json');
+        function processSignals(aiId) {
+            const state = appState[aiId];
+            let signalsToProcess = [...state.allSignals];
+
+            // 1. Filter out "Hold" signals (assuming "Hold" is a value for signal.Signal)
+            signalsToProcess = signalsToProcess.filter(s => s.Signal && s.Signal.toLowerCase() !== 'hold');
+
+            // 2. Apply user filters
+            if (state.filters.symbol) {
+                signalsToProcess = signalsToProcess.filter(s => s.symbol && s.symbol.toLowerCase().includes(state.filters.symbol.toLowerCase()));
+            }
+            if (state.filters.signalType) {
+                signalsToProcess = signalsToProcess.filter(s => s.Signal && s.Signal.toLowerCase() === state.filters.signalType.toLowerCase());
+            }
+            if (state.filters.status) {
+                signalsToProcess = signalsToProcess.filter(s => s.performance && s.performance.status && s.performance.status.toLowerCase() === state.filters.status.toLowerCase());
+            }
+
+            // 3. Apply sorting
+            signalsToProcess.sort((a, b) => {
+                let valA, valB;
+                switch (state.sort.by) {
+                    case 'timestamp':
+                        valA = new Date(a.timestamp);
+                        valB = new Date(b.timestamp);
+                        break;
+                    case 'confidence':
+                        valA = a.Confidence;
+                        valB = b.Confidence;
+                        break;
+                    case 'entryPrice':
+                        valA = parseFloat(a["Entry Price"]);
+                        valB = parseFloat(b["Entry Price"]);
+                        break;
+                    case 'symbol':
+                        valA = a.symbol || '';
+                        valB = b.symbol || '';
+                        break;
+                    default:
+                        return 0;
+                }
+
+                if (state.sort.order === 'asc') {
+                    return valA > valB ? 1 : (valA < valB ? -1 : 0);
+                } else { // desc
+                    return valA < valB ? 1 : (valA > valB ? -1 : 0);
+                }
+            });
             
-            // Load signals for AI Bob from signals_gemini_log.json
-            loadAndDisplaySignals('ai-bob', 'signals_gemini_log.json'); 
+            state.displayedSignals = signalsToProcess;
+        }
+
+        function renderSignalsForPage(aiId) {
+            const state = appState[aiId];
+            const signalGrid = document.getElementById(`signal-grid-${aiId}`);
+            if (!signalGrid) return;
+
+            const startIndex = (state.currentPage - 1) * state.itemsPerPage;
+            const endIndex = startIndex + state.itemsPerPage;
+            const paginatedSignals = state.displayedSignals.slice(startIndex, endIndex);
+
+            if (paginatedSignals.length > 0) {
+                signalGrid.innerHTML = paginatedSignals.map(signal => renderSignalCard(signal)).join('');
+            } else {
+                signalGrid.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No signals match your criteria.</p>';
+            }
+        }
+
+        function renderPaginationControls(aiId) {
+            const state = appState[aiId];
+            const controlsContainer = document.getElementById(`pagination-controls-${aiId}`);
+            if (!controlsContainer) return;
+
+            const totalSignals = state.displayedSignals.length;
+            const totalPages = Math.ceil(totalSignals / state.itemsPerPage);
+
+            let paginationHTML = '';
+            if (totalSignals > 0) {
+                 paginationHTML = `
+                    <button id="prev-page-${aiId}" ${state.currentPage === 1 ? 'disabled' : ''}>Previous</button>
+                    <span class="page-info">Page ${state.currentPage} of ${totalPages} (Total: ${totalSignals})</span>
+                    <button id="next-page-${aiId}" ${state.currentPage === totalPages ? 'disabled' : ''}>Next</button>
+                    <div class="control-group">
+                        <label for="items-per-page-${aiId}" style="margin-bottom:0; margin-right:5px;">Per Page:</label>
+                        <select id="items-per-page-${aiId}">
+                            <option value="10" ${state.itemsPerPage === 10 ? 'selected' : ''}>10</option>
+                            <option value="25" ${state.itemsPerPage === 25 ? 'selected' : ''}>25</option>
+                            <option value="50" ${state.itemsPerPage === 50 ? 'selected' : ''}>50</option>
+                            <option value="100" ${state.itemsPerPage === 100 ? 'selected' : ''}>100</option>
+                            <option value="${totalSignals > 0 ? totalSignals : 99999}" ${state.itemsPerPage >= totalSignals && totalSignals > 0 ? 'selected' : ''}>All</option>
+                        </select>
+                    </div>
+                `;
+            } else {
+                paginationHTML = '<span class="page-info">No signals to display.</span>';
+            }
+            controlsContainer.innerHTML = paginationHTML;
+
+            // Add event listeners for new pagination controls
+            if (totalSignals > 0) {
+                document.getElementById(`prev-page-${aiId}`)?.addEventListener('click', () => {
+                    if (state.currentPage > 1) {
+                        state.currentPage--;
+                        updateFullDisplay(aiId);
+                    }
+                });
+                document.getElementById(`next-page-${aiId}`)?.addEventListener('click', () => {
+                    if (state.currentPage < totalPages) {
+                        state.currentPage++;
+                        updateFullDisplay(aiId);
+                    }
+                });
+                document.getElementById(`items-per-page-${aiId}`)?.addEventListener('change', (e) => {
+                    state.itemsPerPage = parseInt(e.target.value, 10);
+                    state.currentPage = 1; // Reset to first page
+                    updateFullDisplay(aiId);
+                });
+            }
+        }
+        
+        function updateFullDisplay(aiId) {
+            processSignals(aiId);
+            renderSignalsForPage(aiId);
+            renderPaginationControls(aiId);
+        }
+
+        function setupEventListeners(aiId) {
+            const state = appState[aiId];
+            
+            // Filters
+            document.getElementById(`symbol-filter-${aiId}`)?.addEventListener('input', (e) => {
+                state.filters.symbol = e.target.value;
+                state.currentPage = 1; updateFullDisplay(aiId);
+            });
+            document.getElementById(`signal-type-filter-${aiId}`)?.addEventListener('change', (e) => {
+                state.filters.signalType = e.target.value;
+                state.currentPage = 1; updateFullDisplay(aiId);
+            });
+            document.getElementById(`status-filter-${aiId}`)?.addEventListener('change', (e) => {
+                state.filters.status = e.target.value;
+                state.currentPage = 1; updateFullDisplay(aiId);
+            });
+
+            // Sorting
+            document.getElementById(`sort-by-${aiId}`)?.addEventListener('change', (e) => {
+                state.sort.by = e.target.value;
+                state.currentPage = 1; updateFullDisplay(aiId);
+            });
+            document.getElementById(`sort-order-${aiId}`)?.addEventListener('change', (e) => {
+                state.sort.order = e.target.value;
+                state.currentPage = 1; updateFullDisplay(aiId);
+            });
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchSignals('ai-max', 'signals_claude_log.json');
+            fetchSignals('ai-bob', 'signals_gemini_log.json'); 
+            
+            setupEventListeners('ai-max');
+            setupEventListeners('ai-bob');
         });
 
     </script>
