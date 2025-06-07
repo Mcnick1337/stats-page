@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
-    <!-- Chart.js script is no longer needed as all charts are removed -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script> -->
     <style>
         * {
             margin: 0;
@@ -169,15 +167,13 @@
             letter-spacing: 1px;
         }
 
-        /* CSS rules for .charts-section, .charts-section-single, .chart-container, .chart-title are removed as charts are removed */
-
         .symbol-performance {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 30px;
-            margin-bottom: 30px; /* Adjusted margin as charts section is removed */
+            margin-bottom: 30px;
         }
 
         .performance-grid {
@@ -232,7 +228,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr; /* Default for larger screens */
             gap: 30px;
-            /* margin-bottom removed as it was related to the charts section below it */
         }
 
         .details-card {
@@ -257,10 +252,9 @@
             padding: 10px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .detail-item:last-child { /* Remove border for last item in a group */
+        .detail-item:last-child {
             border-bottom: none;
         }
-
 
         .detail-label {
             color: #a0a0a0;
@@ -271,46 +265,170 @@
             color: #ffffff;
         }
 
-        .floating-elements { /* Background floating emojis */
+        /* Signal Catalog Styles */
+        .signal-catalog-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px; /* Space from details section */
+        }
+
+        .signal-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Makes each signal card take full width */
+            gap: 25px;
+        }
+
+        .signal-item-card {
+            background: rgba(40, 40, 70, 0.7); /* Slightly darker, more opaque */
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .signal-item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .signal-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .signal-symbol {
+            font-size: 1.4rem; /* Slightly larger symbol */
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .signal-action {
+            padding: 7px 14px; /* Slightly larger padding */
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem; /* Slightly larger font */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .signal-buy { background: linear-gradient(45deg, #4ecdc4, #45b7d1); }
+        .signal-sell { background: linear-gradient(45deg, #ff6b6b, #f06292); }
+
+
+        .signal-item-body {
+            margin-bottom: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Allow wrapping for params */
+            gap: 10px 20px; /* Row and column gap */
+        }
+
+        .signal-param {
+            margin-bottom: 5px; /* Reduced margin */
+            font-size: 0.95rem;
+            padding: 5px 0;
+        }
+
+        .signal-param .label {
+            color: #b0b0b0; /* Lighter gray */
+            margin-right: 10px;
+            display: block; /* Make label take full width above value */
+            margin-bottom: 3px;
+            font-size: 0.85rem;
+        }
+
+        .signal-param .value {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .signal-param .value.tp-list {
+            font-size: 0.9em;
+            word-break: break-all; /* For long TP lists */
+        }
+
+
+        .signal-item-footer {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+        
+        .signal-timestamp {
+            font-size: 0.85rem;
+        }
+
+        .signal-status {
+            font-weight: bold;
+            padding: 6px 12px; /* Adjusted padding */
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.9rem; /* Adjusted font size */
+            text-transform: uppercase;
+        }
+
+        .signal-status-win { background-color: #4ecdc4; }
+        .signal-status-loss { background-color: #ff6b6b; }
+        .signal-status-pending { background-color: #ffa726; }
+        .signal-status-active { background-color: #45b7d1; } 
+        .signal-status-default { background-color: #78909c; } 
+
+
+        .floating-elements {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Allow clicks to pass through */
-            z-index: -1; /* Behind content */
+            pointer-events: none;
+            z-index: -1;
         }
 
         .floating-element {
             position: absolute;
             opacity: 0.1;
-            font-size: 3rem; /* Made emojis larger */
+            font-size: 3rem;
             animation: float 20s infinite linear;
         }
 
         @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg) translateX(-50%); } /* Start from bottom */
-            100% { transform: translateY(-100px) rotate(360deg) translateX(-50%); } /* End above screen */
+            0% { transform: translateY(100vh) rotate(0deg) translateX(-50%); }
+            100% { transform: translateY(-100px) rotate(360deg) translateX(-50%); }
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 992px) { /* Medium devices (tablets, less than 992px) */
-            /* .charts-section related media query removed */
+        @media (max-width: 992px) {
             .details-section {
-                grid-template-columns: 1fr; /* Stack detail cards */
+                grid-template-columns: 1fr;
+            }
+             .signal-item-body { 
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             }
         }
 
 
-        @media (max-width: 768px) { /* Small devices (landscape phones, 768px and down) */
+        @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem; /* Adjust title size */
+                font-size: 2.5rem;
             }
             .stat-value {
-                font-size: 2rem; /* Adjust stat value size */
+                font-size: 2rem;
             }
              .tab-nav {
-                flex-direction: column; /* Stack tab buttons */
+                flex-direction: column;
                 width: 100%;
             }
             .tab-button {
@@ -321,11 +439,14 @@
                 margin-bottom: 0;
             }
             .performance-grid {
-                grid-template-columns: 1fr; /* Stack symbol cards */
+                grid-template-columns: 1fr;
+            }
+            .signal-item-body { 
+                grid-template-columns: 1fr;
             }
         }
 
-         @media (max-width: 576px) { /* Extra small devices (portrait phones, less than 576px) */
+         @media (max-width: 576px) {
             h1 {
                 font-size: 2rem;
             }
@@ -345,13 +466,21 @@
             .stat-label {
                 font-size: 0.9rem;
             }
-            /* .chart-container and .chart-title related media queries removed */
             .details-card {
                 padding: 20px;
+            }
+            .signal-catalog-section {
+                 padding: 20px;
+            }
+            .signal-item-card {
+                padding: 15px;
             }
             .section-title {
                 font-size: 1.3rem;
             }
+            .signal-symbol { font-size: 1.2rem; }
+            .signal-action { font-size: 0.9rem; padding: 6px 10px; }
+
          }
     </style>
 </head>
@@ -382,6 +511,7 @@
         </div>
 
         <div id="ai-max" class="tab-content active">
+            <!-- Stats, Symbol Performance, Details Section for AI Max (unchanged from your previous version) -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-value win-rate">34.21%</div>
@@ -514,9 +644,20 @@
                     </div>
                 </div>
             </div>
+
+            <!-- AI Max Signal Catalog Start -->
+            <div class="signal-catalog-section">
+                <h2 class="section-title">AI Max - Live Signal Catalog</h2>
+                <div class="signal-grid">
+                    <!-- Signals for AI Max will be injected here by JS -->
+                </div>
+            </div>
+            <!-- AI Max Signal Catalog End -->
+
         </div>
 
         <div id="ai-bob" class="tab-content">
+            <!-- Stats, Symbol Performance, Details Section for AI Bob (unchanged from your previous version) -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-value win-rate">58.10%</div>
@@ -677,173 +818,147 @@
                     </div>
                 </div>
             </div>
+
+            <!-- AI Bob Signal Catalog Start -->
+            <div class="signal-catalog-section">
+                <h2 class="section-title">AI Bob - Live Signal Catalog</h2>
+                <div class="signal-grid">
+                    <!-- Signals for AI Bob will be injected here by JS -->
+                </div>
+            </div>
+            <!-- AI Bob Signal Catalog End -->
+
         </div>
     </div>
 
     <script>
-        // Object to store chart instances, though it will remain empty now.
-        let charts = {};
-
-        /**
-         * Handles switching between tabs.
-         * @param {Event} event - The click event.
-         * @param {string} tabName - The ID of the tab to switch to.
-         */
         function switchTab(event, tabName) {
-            // Hide all tab contents
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(content => {
                 content.classList.remove('active');
             });
 
-            // Remove active class from all tab buttons
             const tabButtons = document.querySelectorAll('.tab-button');
             tabButtons.forEach(button => {
                 button.classList.remove('active');
             });
 
-            // Show the selected tab content and set the button to active
             document.getElementById(tabName).classList.add('active');
             event.currentTarget.classList.add('active');
-
-            // Chart initialization is no longer needed here as all charts are removed.
-            // setTimeout(() => {
-            //     if (tabName === 'ai-max') {
-            //         initMaxCharts();
-            //     } else if (tabName === 'ai-bob') {
-            //         initBobCharts();
-            //     }
-            // }, 100);
         }
 
-        /**
-         * Initializes or re-initializes charts for the AI Max tab.
-         * This function is now empty as charts are removed.
-         */
-        function initMaxCharts() {
-            // Destroy existing charts if they exist (though none should be initialized now)
-            if (charts.outcomeMax) {
-                charts.outcomeMax.destroy();
-                delete charts.outcomeMax;
-            }
-            if (charts.typeMax) {
-                charts.typeMax.destroy();
-                delete charts.typeMax;
-            }
-            // All chart initialization code removed for AI Max.
+        function getPerformanceStatusClass(status) {
+            if (!status) return 'signal-status-default';
+            const lowerStatus = status.toLowerCase();
+            if (lowerStatus === 'win') return 'signal-status-win';
+            if (lowerStatus === 'loss') return 'signal-status-loss';
+            if (lowerStatus === 'pending') return 'signal-status-pending';
+            if (lowerStatus === 'active' || lowerStatus === 'open') return 'signal-status-active';
+            return 'signal-status-default';
         }
 
-        /**
-         * Initializes or re-initializes charts for the AI Bob tab.
-         * This function is now empty as charts are removed.
-         */
-        function initBobCharts() {
-            // Destroy existing charts if they exist
-            if (charts.outcomeBob) {
-                charts.outcomeBob.destroy();
-                delete charts.outcomeBob;
+        function formatSignalTimestamp(isoTimestamp) {
+            if (!isoTimestamp) return 'N/A';
+            try {
+                const date = new Date(isoTimestamp);
+                return date.toLocaleString(undefined, { 
+                    year: 'numeric', month: 'short', day: 'numeric', 
+                    hour: '2-digit', minute: '2-digit' 
+                });
+            } catch (e) {
+                return isoTimestamp; 
             }
-            // All chart initialization code removed for AI Bob.
         }
 
-        /**
-         * Generates common chart options for styling and responsiveness.
-         * This function is kept for potential future use if charts are re-added.
-         * @param {string} chartType - The type of chart ('doughnut', 'bar', etc.).
-         * @returns {object} Chart.js options object.
-         */
-        function getChartOptions(chartType) {
-            const options = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: chartType === 'doughnut' ? 'bottom' : 'top',
-                        labels: {
-                            color: '#e0e0e0',
-                            padding: 20,
-                            font: {
-                                size: 14,
-                                family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
-                            }
-                        }
-                    },
-                    tooltip: {
-                        backgroundColor: 'rgba(0,0,0,0.7)',
-                        titleColor: '#fff',
-                        bodyColor: '#fff',
-                        borderColor: 'rgba(255,255,255,0.2)',
-                        borderWidth: 1,
-                        padding: 10,
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) {
-                                    label += ': ';
-                                }
-                                if (context.parsed.y !== null && chartType === 'bar') {
-                                     label += context.parsed.y;
-                                } else if (context.parsed !== null && chartType === 'doughnut') {
-                                    label += context.parsed;
-                                } else if (context.raw !== null) {
-                                    label += context.raw;
-                                }
-                                return label;
-                            }
-                        }
-                    }
+        function renderSignal(signal) {
+            const performance = signal.performance || {};
+            const mfe = typeof performance.mfe_percentage === 'number' ? `${performance.mfe_percentage.toFixed(2)}%` : 'N/A';
+            const mae = typeof performance.mae_percentage === 'number' ? `${performance.mae_percentage.toFixed(2)}%` : 'N/A';
+            
+            return `
+                <div class="signal-item-card">
+                    <div class="signal-item-header">
+                        <span class="signal-symbol">${signal.symbol || 'N/A'}</span>
+                        <span class="signal-action ${signal.Signal && signal.Signal.toLowerCase() === 'buy' ? 'signal-buy' : 'signal-sell'}">
+                            ${signal.Signal || 'N/A'}
+                        </span>
+                    </div>
+                    <div class="signal-item-body">
+                        <div class="signal-param">
+                            <span class="label">Entry Price:</span>
+                            <span class="value">${signal["Entry Price"] || 'N/A'}</span>
+                        </div>
+                        <div class="signal-param">
+                            <span class="label">Take Profit:</span>
+                            <span class="value tp-list">${Array.isArray(signal["Take Profit Targets"]) ? signal["Take Profit Targets"].join(', ') : 'N/A'}</span>
+                        </div>
+                        <div class="signal-param">
+                            <span class="label">Stop Loss:</span>
+                            <span class="value">${signal["Stop Loss"] || 'N/A'}</span>
+                        </div>
+                        <div class="signal-param">
+                            <span class="label">Confidence:</span>
+                            <span class="value">${signal.Confidence !== undefined ? signal.Confidence + '%' : 'N/A'}</span>
+                        </div>
+                        <div class="signal-param">
+                            <span class="label">Scenario:</span>
+                            <span class="value">${signal.Scenario || 'N/A'}</span>
+                        </div>
+                        <div class="signal-param">
+                            <span class="label">Setup Type:</span>
+                            <span class="value">${signal["Trade Setup Type"] || 'N/A'}</span>
+                        </div>
+                        <div class="signal-param">
+                            <span class="label">MFE %:</span>
+                            <span class="value">${mfe}</span>
+                        </div>
+                        <div class="signal-param">
+                            <span class="label">MAE %:</span>
+                            <span class="value">${mae}</span>
+                        </div>
+                    </div>
+                    <div class="signal-item-footer">
+                        <span class="signal-timestamp">${formatSignalTimestamp(signal.timestamp)}</span>
+                        <span class="signal-status ${getPerformanceStatusClass(performance.status)}">
+                            ${performance.status || 'N/A'} ${performance.closed_by ? `(${performance.closed_by})` : ''}
+                        </span>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function loadAndDisplaySignals(aiId, jsonFilename) {
+            const signalGrid = document.querySelector(`#${aiId} .signal-grid`);
+            if (!signalGrid) {
+                console.error(`Signal grid for ${aiId} not found.`);
+                return;
+            }
+            signalGrid.innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading signals...</p>';
+
+            try {
+                const response = await fetch(jsonFilename); 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status} while fetching ${jsonFilename}`);
                 }
-            };
+                const signals = await response.json();
 
-            if (chartType === 'bar') {
-                options.scales = {
-                    y: {
-                        beginAtZero: true,
-                        position: 'left',
-                        title: {
-                            display: true,
-                            text: 'Count',
-                            color: '#e0e0e0',
-                             font: { size: 14 }
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        },
-                        ticks: {
-                            color: '#e0e0e0',
-                            font: { size: 12 }
-                        }
-                    },
-                    x: {
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        },
-                        ticks: {
-                            color: '#e0e0e0',
-                             font: { size: 12 }
-                        }
-                    }
-                };
+                if (signals && signals.length > 0) {
+                    signalGrid.innerHTML = signals.map(signal => renderSignal(signal)).join('');
+                } else {
+                    signalGrid.innerHTML = `<p style="text-align:center; color: #a0a0a0;">No signals available in ${jsonFilename}.</p>`;
+                }
+            } catch (error) {
+                console.error(`Could not load signals from ${jsonFilename}:`, error);
+                signalGrid.innerHTML = `<p style="text-align:center; color: #ff6b6b;">Failed to load signals from ${jsonFilename}. Please check the file and console.</p>`;
             }
-            if (chartType === 'doughnut') {
-                 options.cutout = '60%';
-            }
-            return options;
         }
 
-
-        // Initial call to set up the active tab (no chart initialization needed now)
         document.addEventListener('DOMContentLoaded', () => {
-             // Ensure the default tab's content is displayed, but no chart calls are made
-             const activeTabButton = document.querySelector('.tab-button.active');
-             if (activeTabButton) {
-                // We still might want to call switchTab if it does other UI setup,
-                // but ensure the event object has currentTarget for the function.
-                // For now, if switchTab only handles chart logic that's removed, this call isn't strictly needed.
-                // However, keeping it for structural consistency if switchTab might do more later.
-                // switchTab({ currentTarget: activeTabButton }, activeTabButton.getAttribute('onclick').match(/'([^']+)'/)[1]);
-                // Simpler: just ensure the default tab content is shown, which is handled by CSS 'active' class.
-             }
+            // Load signals for AI Max from signals_claude_log.json
+            loadAndDisplaySignals('ai-max', 'signals_claude_log.json');
+            
+            // Load signals for AI Bob from signals_gemini_log.json
+            loadAndDisplaySignals('ai-bob', 'signals_gemini_log.json'); 
         });
 
     </script>
