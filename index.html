@@ -112,6 +112,38 @@
         .tab-content.active {
             display: block;
         }
+        
+        .refresh-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .action-button {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .action-button:active {
+            transform: translateY(0px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .action-button:disabled {
+            background: #555;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
 
         .stats-grid {
             display: grid;
@@ -657,6 +689,11 @@
                 <button class="tab-button active" onclick="switchTab(event, 'ai-max')">AI Max</button>
                 <button class="tab-button" onclick="switchTab(event, 'ai-bob')">AI Bob</button>
             </div>
+        </div>
+
+        <!-- NEW: Refresh Button Container -->
+        <div class="refresh-container">
+            <button id="refresh-data-button" class="action-button">Refresh Active Tab Data</button>
         </div>
 
         <div id="ai-max" class="tab-content active">
@@ -1298,11 +1335,53 @@
             });
         }
 
+        // --- NEW Function: Handle Refresh Button Click ---
+        async function handleRefreshData() {
+            const refreshButton = document.getElementById('refresh-data-button');
+            if (!refreshButton) return;
+            refreshButton.disabled = true; // Disable button during refresh
+            refreshButton.textContent = 'Refreshing...';
+
+            let activeAiId = null;
+            let jsonFilename = null;
+
+            const activeTabButton = document.querySelector('.tab-button.active');
+            if (activeTabButton) {
+                const tabNameMatch = activeTabButton.getAttribute('onclick').match(/'([^']+)'/);
+                if (tabNameMatch) {
+                    activeAiId = tabNameMatch[1]; // Extracts 'ai-max' or 'ai-bob'
+                }
+                if (activeAiId === 'ai-max') {
+                    jsonFilename = 'signals_claude_log.json';
+                } else if (activeAiId === 'ai-bob') {
+                    jsonFilename = 'signals_gemini_log.json';
+                }
+            }
+
+            if (activeAiId && jsonFilename) {
+                console.log(`Refreshing data for ${activeAiId} from ${jsonFilename}`);
+                // Re-fetch signals for the active tab. The fetchSignals function already handles clearing old data and re-rendering.
+                await fetchSignals(activeAiId, jsonFilename); 
+            } else {
+                console.error("Could not determine active tab for refresh.");
+            }
+            
+            refreshButton.disabled = false; // Re-enable button
+            refreshButton.textContent = 'Refresh Active Tab Data';
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             fetchSignals('ai-max', 'signals_claude_log.json');
             fetchSignals('ai-bob', 'signals_gemini_log.json'); 
+            
             setupEventListeners('ai-max');
             setupEventListeners('ai-bob');
+
+            // --- NEW: Add Event Listener for Refresh Button ---
+            const refreshButton = document.getElementById('refresh-data-button');
+            if (refreshButton) {
+                refreshButton.addEventListener('click', handleRefreshData);
+            }
         });
     </script>
 </body>
