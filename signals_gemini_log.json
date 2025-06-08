@@ -11128,7 +11128,11 @@
       "Trump touts memecoin as sentiment gauge as $520M u..."
     ],
     "timestamp": "2025-06-08T10:00:20.441620",
-    "symbol": "BTCUSDT"
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   },
   {
     "Signal": "Sell",
@@ -11148,7 +11152,11 @@
       "Trump touts memecoin as sentiment gauge as $520M u..."
     ],
     "timestamp": "2025-06-08T10:01:18.500416",
-    "symbol": "ETHUSDT"
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   },
   {
     "Signal": "Sell",
@@ -11168,6 +11176,142 @@
       "Trump touts memecoin as sentiment gauge as $520M u..."
     ],
     "timestamp": "2025-06-08T10:02:35.999431",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Buy",
+    "Entry Price": "105100.00",
+    "Take Profit Targets": [
+      "105500.00",
+      "105800.00"
+    ],
+    "Stop Loss": "104800.00",
+    "Confidence": 45,
+    "Scenario": "Range-Bound",
+    "Trade Setup Type": "Swing",
+    "Reasoning": "Price consolidating. Anticipating a dip towards range support (near EMA50 $105,044 & BB Lower $105,180) due to short-term bearish pressure (MACD cross, ask dominance) within a broader uptrend. Entry planned for a bounce from this support zone. 'Range-Bound' scenario has strong historical performance. Low confluence (15/100) suggests moderate confidence. Favorable R/R (TP1 ~1.33:1, TP2 ~2.33:1).",
+    "Relevant News Headlines": [
+      "Bitcoin Repeating 2024 Rally? Analysts Eye \u2018Real B...",
+      "Widely Followed Analyst Outlines Bullish Path for ...",
+      "Nimanode Launches $NMA Token Presale, Pioneering t..."
+    ],
+    "timestamp": "2025-06-08T10:49:52.805696",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Sell",
+    "Entry Price": "2499.00",
+    "Take Profit Targets": [
+      "2478.00",
+      "2457.00"
+    ],
+    "Stop Loss": "2520.00",
+    "Confidence": 70,
+    "Scenario": "Trend Continuation",
+    "Trade Setup Type": "Short-Term",
+    "Reasoning": "Price is below key short-term EMAs (20, 50) and VWAP, with a bearish MACD cross and negative histogram. Strong ask-side order book imbalance (-59.04%) and multiple bearish indicators (Primary Trend: BEARISH, Confluence Score: -45, MTF Bearish Alignment) support further downside. Entry anticipates a breakdown of the $2500 psychological support and high-volume node. Technical factors are deemed to outweigh conflicting bullish news sentiment for this short-term setup.",
+    "Relevant News Headlines": [
+      "Nimanode Launches $NMA Token Presale, Pioneering t...",
+      "Bitcoin Repeating 2024 Rally? Analysts Eye \u2018Real B...",
+      "Widely Followed Analyst Outlines Bullish Path for ..."
+    ],
+    "timestamp": "2025-06-08T10:51:12.981463",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Sell",
+    "Entry Price": "149.40",
+    "Take Profit Targets": [
+      "147.75",
+      "146.10"
+    ],
+    "Stop Loss": "150.50",
+    "Confidence": 75,
+    "Scenario": "Trend Continuation",
+    "Trade Setup Type": "Swing",
+    "Reasoning": "Price is below key EMAs (20, 50, 200) on H1, H4, and D1 timeframes, indicating a strong bearish trend. MACD is bearish with a negative histogram, and Multi-Timeframe analysis shows bearish alignment. Entry planned on a potential retest of VWAP (approx. $149.48) acting as resistance. While ADX (18.53) indicates low current trend strength, the confluence of other bearish signals supports further downside. The primary trend is assessed as bearish.",
+    "Relevant News Headlines": [
+      "Nimanode Launches $NMA Token Presale, Pioneering t...",
+      "Bitcoin Repeating 2024 Rally? Analysts Eye \u2018Real B...",
+      "Widely Followed Analyst Outlines Bullish Path for ..."
+    ],
+    "timestamp": "2025-06-08T10:52:38.841000",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Buy",
+    "Entry Price": "105550.00",
+    "Take Profit Targets": [
+      "106150.00",
+      "106750.00"
+    ],
+    "Stop Loss": "104950.00",
+    "Confidence": 45,
+    "Scenario": "Trend Continuation",
+    "Trade Setup Type": "Swing",
+    "Reasoning": "The primary trend is bullish, with price holding above key EMAs (20, 50, 200) which are bullishly stacked, and ADX (26.59) indicating trend strength. Multi-timeframe analysis shows price above key moving averages. Entry is set anticipating a minor pullback. However, confidence is low due to a bearish MACD cross, negative order book imbalance (ask dominance), a very low overall confluence score (15/100), and notably low 24h trading volume which increases execution risk.",
+    "Relevant News Headlines": [
+      "Bitcoin Solaris Announces Final Day of Phase 6 Pre...",
+      "Is It Worth Reporting Scams? Why I Do and Why You ...",
+      "Nimanode Launches $NMA Token Presale, Pioneering t..."
+    ],
+    "timestamp": "2025-06-08T11:39:09.611854",
+    "symbol": "BTCUSDT"
+  },
+  {
+    "Signal": "Buy",
+    "Entry Price": "2516.00",
+    "Take Profit Targets": [
+      "2529.50",
+      "2543.00"
+    ],
+    "Stop Loss": "2507.00",
+    "Confidence": 48,
+    "Scenario": "Range-Bound",
+    "Trade Setup Type": "Day Trade",
+    "Reasoning": "Price consolidating above key short-term supports (1H EMA20/50, VWAP approx $2510). Strong bid dominance (+81.80%) and bullish news sentiment suggest potential for upward movement on a break of immediate resistance at $2515.50. Targeting upper Bollinger Band area. MACD bearish cross and very low overall confluence score (-5) warrant caution and a modest confidence level.",
+    "Relevant News Headlines": [
+      "Bitcoin Solaris Announces Final Day of Phase 6 Pre...",
+      "Is It Worth Reporting Scams? Why I Do and Why You ...",
+      "Nimanode Launches $NMA Token Presale, Pioneering t..."
+    ],
+    "timestamp": "2025-06-08T11:40:25.685791",
+    "symbol": "ETHUSDT"
+  },
+  {
+    "Signal": "Sell",
+    "Entry Price": "149.75",
+    "Take Profit Targets": [
+      "149.27",
+      "148.55"
+    ],
+    "Stop Loss": "150.30",
+    "Confidence": 48,
+    "Scenario": "Range-Bound",
+    "Trade Setup Type": "Swing",
+    "Reasoning": "Higher timeframe trend is bearish (price below key EMAs, MACD bearish). Low volatility (ADX < 20, tight Bollinger Bands) suggests a range-bound environment. Proposing a short entry near the upper part of the current micro-range and 1H EMA20 resistance. Stop loss is placed above this resistance and 1H EMA50. Favorable Risk/Reward ratio to TP2 (approx 2.18:1). Technicals are prioritized over generally bullish but non-specific news sentiment.",
+    "Relevant News Headlines": [
+      "Bitcoin Solaris Announces Final Day of Phase 6 Pre...",
+      "Is It Worth Reporting Scams? Why I Do and Why You ...",
+      "Nimanode Launches $NMA Token Presale, Pioneering t..."
+    ],
+    "timestamp": "2025-06-08T11:41:50.848891",
     "symbol": "SOLUSDT"
   }
 ]
