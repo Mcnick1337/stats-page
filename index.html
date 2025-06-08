@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
     <style>
+        /* ... (Your existing CSS from the previous step) ... */
         * {
             margin: 0;
             padding: 0;
@@ -646,136 +647,47 @@
         </div>
 
         <div id="ai-max" class="tab-content active">
-            <!-- Stats, Symbol Performance -->
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value win-rate">34.21%</div>
+                    <div class="stat-value win-rate" id="stat-win-rate-ai-max">0%</div>
                     <div class="stat-label">Win Rate</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value total-signals">38</div>
+                    <div class="stat-value total-signals" id="stat-tradable-signals-ai-max">0</div>
                     <div class="stat-label">Tradable Signals</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value confidence">74.66%</div>
+                    <div class="stat-value confidence" id="stat-avg-confidence-ai-max">0%</div>
                     <div class="stat-label">Avg Confidence</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value pending">79</div>
-                    <div class="stat-label">Pending Eval</div>
+                    <div class="stat-value pending" id="stat-too-recent-ai-max">0</div>
+                    <div class="stat-label">Too Recent</div>
                 </div>
             </div>
             <div class="symbol-performance">
                 <h2 class="section-title">Signal Type Performance</h2>
-                <div class="performance-grid">
-                    <div class="symbol-card">
-                        <div class="symbol-name">Sell Signals</div>
-                        <div class="symbol-stats">
-                            <span>Win Rate:</span>
-                            <span class="win-rate">35.14%</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Trades:</span>
-                            <span>37</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Avg MFE:</span>
-                            <span class="detail-value">0.69</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Avg MAE:</span>
-                            <span class="detail-value">-0.87</span>
-                        </div>
-                        <div class="win-rate-bar">
-                            <div class="win-rate-fill" style="width: 35.14%; background: linear-gradient(90deg, #ffa726, #ff9800);"></div>
-                        </div>
-                    </div>
-                    <div class="symbol-card">
-                        <div class="symbol-name">Buy Signals</div>
-                        <div class="symbol-stats">
-                            <span>Win Rate:</span>
-                            <span class="win-rate">0.0%</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Trades:</span>
-                            <span>1</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Avg MFE:</span>
-                            <span class="detail-value">0.00</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Avg MAE:</span>
-                            <span class="detail-value">-1.88</span>
-                        </div>
-                        <div class="win-rate-bar">
-                            <div class="win-rate-fill" style="width: 0.0%; background: linear-gradient(90deg, #ff6b6b, #e57373);"></div>
-                        </div>
-                    </div>
+                <div class="performance-grid" id="signal-type-performance-ai-max">
+                     {/* Content will be dynamically generated */}
                 </div>
             </div>
-
-            <!-- Details Section for AI Max -->
             <div class="details-section">
                  <div class="details-card">
                     <h3 class="section-title">Signal Breakdown</h3>
-                    <div class="detail-item">
-                        <span class="detail-label">Total Signals:</span>
-                        <span class="detail-value">117</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Evaluated Signals:</span>
-                        <span class="detail-value">38</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Wins:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">13</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Losses:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">25</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Pending Eval:</span>
-                        <span class="detail-value">79</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Avg Win Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">74.31%</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Avg Loss Confidence:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">74.84%</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Last Updated:</span>
-                        <span class="detail-value">2025-06-06 23:31 UTC</span>
+                    <div id="signal-breakdown-ai-max">
+                        {/* Content will be dynamically generated */}
                     </div>
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Scenario Performance</h3>
-                    <div class="detail-item">
-                        <span class="detail-label">Range-Bound:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">100.0% <small>(1 trade)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Trend Continuation:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">32.43% <small>(37 trades)</small></span>
+                     <div class="symbol-winrate-list" id="scenario-performance-ai-max">
+                        {/* Content will be dynamically generated */}
                     </div>
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Performance by Confidence Level</h3>
-                    <div class="detail-item">
-                        <span class="detail-label">60-69% Confidence:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">33.33% <small>(3 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">70-79% Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">33.33% <small>(33 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">80-89% Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">50.0% <small>(2 trades)</small></span>
+                     <div class="symbol-winrate-list" id="confidence-performance-ai-max">
+                        {/* Content will be dynamically generated */}
                     </div>
                 </div>
                 <div class="details-card">
@@ -785,8 +697,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- AI Max Signal Controls -->
             <div class="signal-controls" id="signal-controls-ai-max">
                 <div class="control-group">
                     <label for="symbol-filter-ai-max">Symbol:</label>
@@ -829,7 +739,6 @@
                     </select>
                 </div>
             </div>
-
             <div class="signal-catalog-section">
                 <h2 class="section-title">AI Max - Live Signal Catalog</h2>
                 <div class="signal-grid" id="signal-grid-ai-max"></div>
@@ -838,163 +747,47 @@
         </div>
 
         <div id="ai-bob" class="tab-content">
-            <!-- Stats, Symbol Performance for AI Bob -->
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value win-rate">58.10%</div>
+                    <div class="stat-value win-rate" id="stat-win-rate-ai-bob">0%</div>
                     <div class="stat-label">Win Rate</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value total-signals">210</div>
+                    <div class="stat-value total-signals" id="stat-tradable-signals-ai-bob">0</div>
                     <div class="stat-label">Tradable Signals</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value confidence">54.08%</div>
+                    <div class="stat-value confidence" id="stat-avg-confidence-ai-bob">0%</div>
                     <div class="stat-label">Avg Confidence</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value pending">86</div>
-                    <div class="stat-label">Pending Eval</div>
+                    <div class="stat-value pending" id="stat-too-recent-ai-bob">0</div>
+                    <div class="stat-label">Too Recent</div>
                 </div>
             </div>
-            <div class="symbol-performance">
+             <div class="symbol-performance">
                 <h2 class="section-title">Signal Type Performance</h2>
-                <div class="performance-grid">
-                    <div class="symbol-card">
-                        <div class="symbol-name">Sell Signals</div>
-                        <div class="symbol-stats">
-                            <span>Win Rate:</span>
-                            <span class="win-rate">67.38%</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Trades:</span>
-                            <span>141</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Avg MFE:</span>
-                            <span class="detail-value">1.39</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Avg MAE:</span>
-                            <span class="detail-value">-0.69</span>
-                        </div>
-                        <div class="win-rate-bar">
-                            <div class="win-rate-fill" style="width: 67.38%; background: linear-gradient(90deg, #4ecdc4, #45b7d1);"></div>
-                        </div>
-                    </div>
-                     <div class="symbol-card">
-                        <div class="symbol-name">Buy Signals</div>
-                        <div class="symbol-stats">
-                            <span>Win Rate:</span>
-                            <span class="win-rate">39.13%</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Trades:</span>
-                            <span>69</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Avg MFE:</span>
-                            <span class="detail-value">0.80</span>
-                        </div>
-                        <div class="symbol-stats">
-                            <span>Avg MAE:</span>
-                            <span class="detail-value">-0.81</span>
-                        </div>
-                        <div class="win-rate-bar">
-                            <div class="win-rate-fill" style="width: 39.13%; background: linear-gradient(90deg, #ffa726, #ff9800);"></div>
-                        </div>
-                    </div>
-                </div>
+                 <div class="performance-grid" id="signal-type-performance-ai-bob">
+                     {/* Content will be dynamically generated */}
+                 </div>
             </div>
-            <!-- Details Section for AI Bob -->
             <div class="details-section">
                 <div class="details-card">
                     <h3 class="section-title">Signal Breakdown</h3>
-                    <div class="detail-item">
-                        <span class="detail-label">Total Signals:</span>
-                        <span class="detail-value">296</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Evaluated Signals:</span>
-                        <span class="detail-value">210</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Wins:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">122</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Losses:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">88</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Pending Eval:</span>
-                        <span class="detail-value">86</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Avg Win Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">54.89%</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Avg Loss Confidence:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">52.95%</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Last Updated:</span>
-                        <span class="detail-value">2025-06-06 23:24 UTC</span>
+                     <div id="signal-breakdown-ai-bob">
+                        {/* Content will be dynamically generated */}
                     </div>
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Scenario Performance</h3>
-                    <div class="detail-item">
-                        <span class="detail-label">Range-Bound:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">65.75% <small>(73 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Trend Continuation:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">60.0% <small>(105 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Breakout:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">30.0% <small>(20 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Breakout Attempt:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">0.0% <small>(1 trade)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Breakout Continuation:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">0.0% <small>(3 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Short-term Reversal:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">0.0% <small>(1 trade)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Reversal:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">71.43% <small>(7 trades)</small></span>
+                    <div class="symbol-winrate-list" id="scenario-performance-ai-bob">
+                        {/* Content will be dynamically generated */}
                     </div>
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Performance by Confidence Level</h3>
-                    <div class="detail-item">
-                        <span class="detail-label">40-49% Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">53.85% <small>(91 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">50-59% Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">62.30% <small>(61 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">60-69% Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">55.56% <small>(45 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">70-79% Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">75.0% <small>(8 trades)</small></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">80-89% Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">80.0% <small>(5 trades)</small></span>
+                    <div class="symbol-winrate-list" id="confidence-performance-ai-bob">
+                        {/* Content will be dynamically generated */}
                     </div>
                 </div>
                 <div class="details-card">
@@ -1004,8 +797,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- AI Bob Signal Controls -->
             <div class="signal-controls" id="signal-controls-ai-bob">
                 <div class="control-group">
                     <label for="symbol-filter-ai-bob">Symbol:</label>
@@ -1048,7 +839,6 @@
                     </select>
                 </div>
             </div>
-
             <div class="signal-catalog-section">
                 <h2 class="section-title">AI Bob - Live Signal Catalog</h2>
                 <div class="signal-grid" id="signal-grid-ai-bob"></div>
@@ -1068,6 +858,25 @@
                 allSignals: [], 
                 displayedSignals: [], 
                 symbolWinRates: [], 
+                overallStats: { // New object for overall stats
+                    winRate: 0,
+                    tradableSignals: 0,
+                    avgConfidence: 0,
+                    tooRecent: 0,
+                    // For Signal Breakdown card
+                    totalSignals: 0,
+                    wins: 0,
+                    losses: 0,
+                    avgWinConfidence: 0,
+                    avgLossConfidence: 0,
+                    // For Signal Type Performance
+                    buySignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0 },
+                    sellSignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0 },
+                    // For Scenario Performance
+                    scenarioPerformance: {},
+                    // For Confidence Performance
+                    confidencePerformance: {}
+                },
                 currentPage: 1,
                 itemsPerPage: 10, 
                 filters: {
@@ -1081,10 +890,25 @@
                     order: 'desc' 
                 }
             },
-            'ai-bob': { 
+            'ai-bob': { // Identical structure for AI Bob
                 allSignals: [],
                 displayedSignals: [],
                 symbolWinRates: [], 
+                overallStats: {
+                    winRate: 0,
+                    tradableSignals: 0,
+                    avgConfidence: 0,
+                    tooRecent: 0,
+                    totalSignals: 0,
+                    wins: 0,
+                    losses: 0,
+                    avgWinConfidence: 0,
+                    avgLossConfidence: 0,
+                    buySignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0 },
+                    sellSignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0 },
+                    scenarioPerformance: {},
+                    confidencePerformance: {}
+                },
                 currentPage: 1,
                 itemsPerPage: 10,
                 filters: {
@@ -1120,7 +944,7 @@
             const lowerStatus = status.toLowerCase();
             if (lowerStatus === 'win') return 'signal-status-win';
             if (lowerStatus === 'loss') return 'signal-status-loss';
-            if (lowerStatus === 'pending') return 'signal-status-pending'; // Covers TOO_RECENT as well
+            if (lowerStatus === 'pending' || lowerStatus === 'too_recent') return 'signal-status-pending';
             if (lowerStatus === 'active' || lowerStatus === 'open') return 'signal-status-active';
             return 'signal-status-default';
         }
@@ -1144,11 +968,11 @@
             const mae = typeof performance.mae_percentage === 'number' ? `${performance.mae_percentage.toFixed(2)}%` : 'N/A';
             
             let displayStatus = performance.status || 'N/A';
-            let originalStatusForClass = performance.status; // Keep original for class mapping if needed
+            let originalStatusForClass = performance.status; 
 
             if (displayStatus.toUpperCase() === 'TOO_RECENT') {
                 displayStatus = 'Pending Eval';
-                originalStatusForClass = 'PENDING'; // Map to PENDING for styling
+                originalStatusForClass = 'PENDING'; 
             }
             
             return `
@@ -1202,6 +1026,281 @@
                 </div>
             `;
         }
+        
+        // --- New Function: Calculate ALL Stats ---
+        function calculateAllStats(signals) {
+            let wins = 0;
+            let losses = 0;
+            let evaluatedConfidenceSum = 0;
+            let evaluatedConfidenceCount = 0;
+            let winConfidenceSum = 0;
+            let winConfidenceCount = 0;
+            let lossConfidenceSum = 0;
+            let lossConfidenceCount = 0;
+            let tooRecentCount = 0;
+            let totalSignals = signals.length; // All signals from file
+
+            const buySignalStats = { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0, countWithMfeMae: 0 };
+            const sellSignalStats = { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0, countWithMfeMae: 0 };
+            const scenarioPerformance = {};
+            const confidencePerformance = {
+                "0-9": { wins: 0, total: 0 }, "10-19": { wins: 0, total: 0 },
+                "20-29": { wins: 0, total: 0 }, "30-39": { wins: 0, total: 0 },
+                "40-49": { wins: 0, total: 0 }, "50-59": { wins: 0, total: 0 },
+                "60-69": { wins: 0, total: 0 }, "70-79": { wins: 0, total: 0 },
+                "80-89": { wins: 0, total: 0 }, "90-100": { wins: 0, total: 0 }
+            };
+
+
+            signals.forEach(signal => {
+                if (signal.Signal && signal.Signal.toLowerCase() === 'hold') {
+                    totalSignals--; // Decrement if "Hold" is not considered a signal for the total count
+                    return; // Skip "Hold" signals for performance calculation
+                }
+
+                const status = (signal.performance && signal.performance.status) ? signal.performance.status.toLowerCase() : null;
+                const confidence = signal.Confidence;
+                const signalType = signal.Signal ? signal.Signal.toLowerCase() : null;
+                const scenario = signal.Scenario || "Unknown";
+
+                // For overall stats cards
+                if (status === 'win' || status === 'loss') {
+                    if (confidence !== undefined) {
+                        evaluatedConfidenceSum += confidence;
+                        evaluatedConfidenceCount++;
+                    }
+                    if (status === 'win') {
+                        wins++;
+                        if (confidence !== undefined) {
+                            winConfidenceSum += confidence;
+                            winConfidenceCount++;
+                        }
+                    } else {
+                        losses++;
+                         if (confidence !== undefined) {
+                            lossConfidenceSum += confidence;
+                            lossConfidenceCount++;
+                        }
+                    }
+                } else if (status === 'too_recent') {
+                    tooRecentCount++;
+                }
+
+                // For Signal Type Performance
+                const mfe = signal.performance?.mfe_percentage;
+                const mae = signal.performance?.mae_percentage;
+                let currentTypeStats = null;
+                if (signalType === 'buy') currentTypeStats = buySignalStats;
+                else if (signalType === 'sell') currentTypeStats = sellSignalStats;
+
+                if (currentTypeStats && (status === 'win' || status === 'loss')) {
+                    currentTypeStats.total++;
+                    if (status === 'win') currentTypeStats.wins++;
+                    else currentTypeStats.losses++;
+                    
+                    if (typeof mfe === 'number' && typeof mae === 'number') {
+                        currentTypeStats.mfeSum += mfe;
+                        currentTypeStats.maeSum += mae;
+                        currentTypeStats.countWithMfeMae++;
+                    }
+                }
+                
+                // For Scenario Performance
+                if (status === 'win' || status === 'loss') {
+                    if (!scenarioPerformance[scenario]) {
+                        scenarioPerformance[scenario] = { wins: 0, total: 0 };
+                    }
+                    scenarioPerformance[scenario].total++;
+                    if (status === 'win') {
+                        scenarioPerformance[scenario].wins++;
+                    }
+                }
+
+                // For Confidence Performance
+                if ((status === 'win' || status === 'loss') && confidence !== undefined) {
+                    const confBucket = Math.floor(confidence / 10) * 10;
+                    let bucketKey = `${confBucket}-${confBucket + 9}`;
+                    if (confBucket === 90) bucketKey = "90-100"; // Handle 90-100 range
+                    if (confBucket === 100) bucketKey = "90-100"; // Treat 100 as 90-100
+                    if (confidencePerformance[bucketKey]) {
+                         confidencePerformance[bucketKey].total++;
+                        if (status === 'win') {
+                            confidencePerformance[bucketKey].wins++;
+                        }
+                    }
+                }
+            });
+
+            const tradableSignals = wins + losses;
+            const winRate = tradableSignals > 0 ? (wins / tradableSignals) * 100 : 0;
+            const avgConfidence = evaluatedConfidenceCount > 0 ? (evaluatedConfidenceSum / evaluatedConfidenceCount) : 0;
+            const avgWinConfidence = winConfidenceCount > 0 ? (winConfidenceSum / winConfidenceCount) : 0;
+            const avgLossConfidence = lossConfidenceCount > 0 ? (lossConfidenceSum / lossConfidenceCount) : 0;
+            
+            // Calculate averages for MFE/MAE for buy/sell signals
+            buySignalStats.avgMfe = buySignalStats.countWithMfeMae > 0 ? buySignalStats.mfeSum / buySignalStats.countWithMfeMae : 0;
+            buySignalStats.avgMae = buySignalStats.countWithMfeMae > 0 ? buySignalStats.maeSum / buySignalStats.countWithMfeMae : 0;
+            sellSignalStats.avgMfe = sellSignalStats.countWithMfeMae > 0 ? sellSignalStats.mfeSum / sellSignalStats.countWithMfeMae : 0;
+            sellSignalStats.avgMae = sellSignalStats.countWithMfeMae > 0 ? sellSignalStats.maeSum / sellSignalStats.countWithMfeMae : 0;
+
+
+            return {
+                winRate,
+                tradableSignals, // This is evaluated signals for the card
+                avgConfidence,
+                tooRecent: tooRecentCount, // For the "Too Recent" card
+                // For Signal Breakdown card
+                totalSignals, // Total from file (excluding 'hold' if decided so)
+                evaluatedSignals: tradableSignals, // Renaming for clarity in breakdown
+                wins,
+                losses,
+                avgWinConfidence,
+                avgLossConfidence,
+                // For Signal Type Performance
+                buySignalStats,
+                sellSignalStats,
+                // For Scenario Performance
+                scenarioPerformance,
+                // For Confidence Performance
+                confidencePerformance
+            };
+        }
+
+        // --- New Function: Render Overall Stats Cards ---
+        function renderOverallStats(aiId) {
+            const stats = appState[aiId].overallStats;
+
+            document.getElementById(`stat-win-rate-${aiId}`).textContent = `${stats.winRate.toFixed(2)}%`;
+            document.getElementById(`stat-tradable-signals-${aiId}`).textContent = stats.tradableSignals;
+            document.getElementById(`stat-avg-confidence-${aiId}`).textContent = `${stats.avgConfidence.toFixed(2)}%`;
+            document.getElementById(`stat-too-recent-${aiId}`).textContent = stats.tooRecent;
+            
+            // Render Signal Breakdown
+            const breakdownContainer = document.getElementById(`signal-breakdown-${aiId}`);
+            if(breakdownContainer) {
+                breakdownContainer.innerHTML = `
+                    <div class="detail-item">
+                        <span class="detail-label">Total Signals (Source):</span>
+                        <span class="detail-value">${stats.totalSignals}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Evaluated Signals:</span>
+                        <span class="detail-value">${stats.evaluatedSignals}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Wins:</span>
+                        <span class="detail-value" style="color: #4ecdc4;">${stats.wins}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Losses:</span>
+                        <span class="detail-value" style="color: #ff6b6b;">${stats.losses}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Too Recent to Eval:</span>
+                        <span class="detail-value">${stats.tooRecent}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Avg Win Confidence:</span>
+                        <span class="detail-value" style="color: #4ecdc4;">${stats.avgWinConfidence.toFixed(2)}%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Avg Loss Confidence:</span>
+                        <span class="detail-value" style="color: #ff6b6b;">${stats.avgLossConfidence.toFixed(2)}%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Last Updated:</span>
+                        <span class="detail-value">${new Date().toLocaleString()}</span>
+                    </div>
+                `;
+            }
+
+            // Render Signal Type Performance
+            const signalTypeContainer = document.getElementById(`signal-type-performance-${aiId}`);
+            if (signalTypeContainer) {
+                signalTypeContainer.innerHTML = ''; // Clear previous
+                const types = [
+                    { name: 'Buy Signals', stats: stats.buySignalStats, color: '#4ecdc4' },
+                    { name: 'Sell Signals', stats: stats.sellSignalStats, color: '#ff6b6b' }
+                ];
+                types.forEach(type => {
+                    if (type.stats.total > 0) {
+                        const winRate = type.stats.total > 0 ? (type.stats.wins / type.stats.total * 100) : 0;
+                        const cardHTML = `
+                            <div class="symbol-card">
+                                <div class="symbol-name">${type.name}</div>
+                                <div class="symbol-stats">
+                                    <span>Win Rate:</span>
+                                    <span class="win-rate">${winRate.toFixed(2)}%</span>
+                                </div>
+                                <div class="symbol-stats">
+                                    <span>Trades:</span>
+                                    <span>${type.stats.total}</span>
+                                </div>
+                                <div class="symbol-stats">
+                                    <span>Avg MFE:</span>
+                                    <span class="detail-value">${type.stats.avgMfe.toFixed(2)}</span>
+                                </div>
+                                <div class="symbol-stats">
+                                    <span>Avg MAE:</span>
+                                    <span class="detail-value">${type.stats.avgMae.toFixed(2)}</span>
+                                </div>
+                                <div class="win-rate-bar">
+                                    <div class="win-rate-fill" style="width: ${winRate.toFixed(2)}%; background: ${type.color};"></div>
+                                </div>
+                            </div>
+                        `;
+                        signalTypeContainer.innerHTML += cardHTML;
+                    }
+                });
+                 if (!signalTypeContainer.innerHTML) {
+                    signalTypeContainer.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No signal type data.</p>';
+                }
+            }
+
+            // Render Scenario Performance
+            const scenarioContainer = document.getElementById(`scenario-performance-${aiId}`);
+            if (scenarioContainer) {
+                scenarioContainer.innerHTML = '';
+                const sortedScenarios = Object.entries(stats.scenarioPerformance)
+                    .sort(([,a],[,b]) => b.total - a.total); // Sort by total trades desc
+
+                sortedScenarios.forEach(([scenario, data]) => {
+                    const winRate = data.total > 0 ? (data.wins / data.total * 100) : 0;
+                    let winRateClass = winRate > 50 ? 'win' : (data.total > 0 ? 'loss' : 'neutral');
+                    scenarioContainer.innerHTML += `
+                        <div class="detail-item">
+                            <span class="detail-label">${scenario}:</span>
+                            <span class="detail-value ${winRateClass}">${winRate.toFixed(2)}% <small>(${data.wins}/${data.total})</small></span>
+                        </div>
+                    `;
+                });
+                if (!scenarioContainer.innerHTML) {
+                    scenarioContainer.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No scenario data.</p>';
+                }
+            }
+            
+            // Render Confidence Performance
+            const confidenceContainer = document.getElementById(`confidence-performance-${aiId}`);
+            if (confidenceContainer) {
+                confidenceContainer.innerHTML = '';
+                 Object.entries(stats.confidencePerformance).forEach(([bucket, data]) => {
+                    if (data.total > 0) {
+                        const winRate = (data.wins / data.total) * 100;
+                        let winRateClass = winRate > 50 ? 'win' : 'loss';
+                        confidenceContainer.innerHTML += `
+                            <div class="detail-item">
+                                <span class="detail-label">${bucket}% Confidence:</span>
+                                <span class="detail-value ${winRateClass}">${winRate.toFixed(2)}% <small>(${data.wins}/${data.total} trades)</small></span>
+                            </div>
+                        `;
+                    }
+                });
+                if (!confidenceContainer.innerHTML) {
+                    confidenceContainer.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No confidence data.</p>';
+                }
+            }
+        }
+
 
         function calculateSymbolWinRates(signals) {
             const symbolStats = {};
@@ -1275,8 +1374,19 @@
                 console.error(`Signal grid for ${aiId} not found.`);
                 return;
             }
+            // Set loading messages
+            document.getElementById(`stat-win-rate-${aiId}`).textContent = '...';
+            document.getElementById(`stat-tradable-signals-${aiId}`).textContent = '...';
+            document.getElementById(`stat-avg-confidence-${aiId}`).textContent = '...';
+            document.getElementById(`stat-too-recent-${aiId}`).textContent = '...';
             signalGrid.innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading signals...</p>';
-             document.getElementById(`symbol-winrate-list-${aiId}`).innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading symbol win rates...</p>';
+            document.getElementById(`symbol-winrate-list-${aiId}`).innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading symbol win rates...</p>';
+            // Clear other dynamic sections
+            const dynamicSections = ['signal-breakdown', 'signal-type-performance', 'scenario-performance', 'confidence-performance'];
+            dynamicSections.forEach(section => {
+                const el = document.getElementById(`${section}-${aiId}`);
+                if (el) el.innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading data...</p>';
+            });
 
 
             try {
@@ -1287,15 +1397,26 @@
                 const signals = await response.json();
                 
                 appState[aiId].allSignals = signals;
-                appState[aiId].symbolWinRates = calculateSymbolWinRates(signals); 
+                appState[aiId].overallStats = calculateAllStats(signals); // Calculate all overall stats
+                appState[aiId].symbolWinRates = calculateSymbolWinRates(signals); // Separate for specific widget
                 
-                updateFullDisplay(aiId); 
-                renderSymbolWinRates(aiId); 
+                renderOverallStats(aiId); // Render the top stat cards and other detail cards
+                updateFullDisplay(aiId); // Processes signals for catalog and renders it + pagination
+                renderSymbolWinRates(aiId); // Render the symbol win rate widget
 
             } catch (error) {
                 console.error(`Could not load signals from ${jsonFilename}:`, error);
-                signalGrid.innerHTML = `<p style="text-align:center; color: #ff6b6b;">Failed to load signals from ${jsonFilename}.</p>`;
-                document.getElementById(`symbol-winrate-list-${aiId}`).innerHTML = `<p style="text-align:center; color: #ff6b6b;">Failed to load symbol win rates.</p>`;
+                const errorMsg = `<p style="text-align:center; color: #ff6b6b;">Failed to load data from ${jsonFilename}.</p>`;
+                document.getElementById(`stat-win-rate-${aiId}`).textContent = 'Error';
+                document.getElementById(`stat-tradable-signals-${aiId}`).textContent = 'Error';
+                document.getElementById(`stat-avg-confidence-${aiId}`).textContent = 'Error';
+                document.getElementById(`stat-too-recent-${aiId}`).textContent = 'Error';
+                signalGrid.innerHTML = errorMsg;
+                document.getElementById(`symbol-winrate-list-${aiId}`).innerHTML = errorMsg;
+                dynamicSections.forEach(section => {
+                    const el = document.getElementById(`${section}-${aiId}`);
+                    if (el) el.innerHTML = errorMsg;
+                });
             }
         }
 
@@ -1312,7 +1433,6 @@
                 signalsToProcess = signalsToProcess.filter(s => s.Signal && s.Signal.toLowerCase() === state.filters.signalType.toLowerCase());
             }
             if (state.filters.status) {
-                // Handle "TOO_RECENT" as "PENDING" for filtering purposes if the filter value is "PENDING"
                 if (state.filters.status.toLowerCase() === 'pending') {
                     signalsToProcess = signalsToProcess.filter(s => 
                         s.performance && s.performance.status && 
@@ -1433,6 +1553,8 @@
             processSignals(aiId); 
             renderSignalsForPage(aiId); 
             renderPaginationControls(aiId); 
+            // Note: Overall stats and symbol win rates are rendered once after fetch
+            // unless you want them to update with filters (which they currently don't)
         }
 
         function setupEventListeners(aiId) {
