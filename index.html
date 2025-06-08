@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
     <style>
-        /* ... (Your existing CSS from the previous step) ... */
         * {
             margin: 0;
             padding: 0;
@@ -244,24 +243,38 @@
             display: flex; 
             flex-direction: column; 
         }
-        .details-card .symbol-winrate-list {
-            max-height: 250px; 
+        
+        /* Apply scrollbar styling ONLY to the symbol win rate lists by ID */
+        #symbol-winrate-list-ai-max, 
+        #symbol-winrate-list-ai-bob {
+            max-height: 250px; /* Or your preferred height */
             overflow-y: auto;
-            padding-right: 10px; 
+            padding-right: 10px; /* For scrollbar spacing */
         }
-        .details-card .symbol-winrate-list::-webkit-scrollbar {
+
+        #symbol-winrate-list-ai-max::-webkit-scrollbar,
+        #symbol-winrate-list-ai-bob::-webkit-scrollbar {
             width: 6px;
         }
-        .details-card .symbol-winrate-list::-webkit-scrollbar-track {
+        #symbol-winrate-list-ai-max::-webkit-scrollbar-track,
+        #symbol-winrate-list-ai-bob::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 3px;
         }
-        .details-card .symbol-winrate-list::-webkit-scrollbar-thumb {
+        #symbol-winrate-list-ai-max::-webkit-scrollbar-thumb,
+        #symbol-winrate-list-ai-bob::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 3px;
         }
-        .details-card .symbol-winrate-list::-webkit-scrollbar-thumb:hover {
+        #symbol-winrate-list-ai-max::-webkit-scrollbar-thumb:hover,
+        #symbol-winrate-list-ai-bob::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Ensure other detail item lists within details-card don't scroll unless explicitly set */
+        .details-card > div:not(#symbol-winrate-list-ai-max):not(#symbol-winrate-list-ai-bob) {
+            overflow-y: visible; 
+            max-height: none;
         }
 
 
@@ -680,13 +693,13 @@
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Scenario Performance</h3>
-                     <div class="symbol-winrate-list" id="scenario-performance-ai-max">
+                     <div id="scenario-performance-ai-max"> {/* Changed class to ID for clarity */}
                         {/* Content will be dynamically generated */}
                     </div>
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Performance by Confidence Level</h3>
-                     <div class="symbol-winrate-list" id="confidence-performance-ai-max">
+                     <div id="confidence-performance-ai-max"> {/* Changed class to ID */}
                         {/* Content will be dynamically generated */}
                     </div>
                 </div>
@@ -780,13 +793,13 @@
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Scenario Performance</h3>
-                    <div class="symbol-winrate-list" id="scenario-performance-ai-bob">
+                    <div id="scenario-performance-ai-bob"> {/* Changed class to ID */}
                         {/* Content will be dynamically generated */}
                     </div>
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Performance by Confidence Level</h3>
-                    <div class="symbol-winrate-list" id="confidence-performance-ai-bob">
+                    <div id="confidence-performance-ai-bob"> {/* Changed class to ID */}
                         {/* Content will be dynamically generated */}
                     </div>
                 </div>
@@ -858,83 +871,37 @@
                 allSignals: [], 
                 displayedSignals: [], 
                 symbolWinRates: [], 
-                overallStats: { // New object for overall stats
-                    winRate: 0,
-                    tradableSignals: 0,
-                    avgConfidence: 0,
-                    tooRecent: 0,
-                    // For Signal Breakdown card
-                    totalSignals: 0,
-                    wins: 0,
-                    losses: 0,
-                    avgWinConfidence: 0,
-                    avgLossConfidence: 0,
-                    // For Signal Type Performance
-                    buySignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0 },
-                    sellSignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0 },
-                    // For Scenario Performance
-                    scenarioPerformance: {},
-                    // For Confidence Performance
-                    confidencePerformance: {}
+                overallStats: { 
+                    winRate: 0, tradableSignals: 0, avgConfidence: 0, tooRecent: 0,
+                    totalSignals: 0, wins: 0, losses: 0, avgWinConfidence: 0, avgLossConfidence: 0,
+                    buySignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0, countWithMfeMae: 0 },
+                    sellSignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0, countWithMfeMae: 0 },
+                    scenarioPerformance: {}, confidencePerformance: {}
                 },
-                currentPage: 1,
-                itemsPerPage: 10, 
-                filters: {
-                    symbol: '',
-                    signalType: '', 
-                    status: '',
-                    minConfidence: '' 
-                },
-                sort: {
-                    by: 'timestamp', 
-                    order: 'desc' 
-                }
+                currentPage: 1, itemsPerPage: 10, 
+                filters: { symbol: '', signalType: '', status: '', minConfidence: '' },
+                sort: { by: 'timestamp', order: 'desc' }
             },
-            'ai-bob': { // Identical structure for AI Bob
-                allSignals: [],
-                displayedSignals: [],
-                symbolWinRates: [], 
+            'ai-bob': { 
+                allSignals: [], displayedSignals: [], symbolWinRates: [], 
                 overallStats: {
-                    winRate: 0,
-                    tradableSignals: 0,
-                    avgConfidence: 0,
-                    tooRecent: 0,
-                    totalSignals: 0,
-                    wins: 0,
-                    losses: 0,
-                    avgWinConfidence: 0,
-                    avgLossConfidence: 0,
-                    buySignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0 },
-                    sellSignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0 },
-                    scenarioPerformance: {},
-                    confidencePerformance: {}
+                    winRate: 0, tradableSignals: 0, avgConfidence: 0, tooRecent: 0,
+                    totalSignals: 0, wins: 0, losses: 0, avgWinConfidence: 0, avgLossConfidence: 0,
+                    buySignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0, countWithMfeMae: 0 },
+                    sellSignalStats: { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0, countWithMfeMae: 0 },
+                    scenarioPerformance: {}, confidencePerformance: {}
                 },
-                currentPage: 1,
-                itemsPerPage: 10,
-                filters: {
-                    symbol: '',
-                    signalType: '',
-                    status: '',
-                    minConfidence: '' 
-                },
-                sort: {
-                    by: 'timestamp',
-                    order: 'desc'
-                }
+                currentPage: 1, itemsPerPage: 10,
+                filters: { symbol: '', signalType: '', status: '', minConfidence: '' },
+                sort: { by: 'timestamp', order: 'desc' }
             }
         };
 
         function switchTab(event, tabName) {
             const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-            });
-
+            tabContents.forEach(content => content.classList.remove('active'));
             const tabButtons = document.querySelectorAll('.tab-button');
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-            });
-
+            tabButtons.forEach(button => button.classList.remove('active'));
             document.getElementById(tabName).classList.add('active');
             event.currentTarget.classList.add('active');
         }
@@ -957,24 +924,19 @@
                     year: 'numeric', month: 'short', day: 'numeric', 
                     hour: '2-digit', minute: '2-digit' 
                 });
-            } catch (e) {
-                return isoTimestamp; 
-            }
+            } catch (e) { return isoTimestamp; }
         }
 
         function renderSignalCard(signal) {
             const performance = signal.performance || {};
             const mfe = typeof performance.mfe_percentage === 'number' ? `${performance.mfe_percentage.toFixed(2)}%` : 'N/A';
             const mae = typeof performance.mae_percentage === 'number' ? `${performance.mae_percentage.toFixed(2)}%` : 'N/A';
-            
             let displayStatus = performance.status || 'N/A';
             let originalStatusForClass = performance.status; 
-
             if (displayStatus.toUpperCase() === 'TOO_RECENT') {
                 displayStatus = 'Pending Eval';
                 originalStatusForClass = 'PENDING'; 
             }
-            
             return `
                 <div class="signal-item-card">
                     <div class="signal-item-header">
@@ -984,38 +946,14 @@
                         </span>
                     </div>
                     <div class="signal-item-body">
-                        <div class="signal-param">
-                            <span class="label">Entry Price:</span>
-                            <span class="value">${signal["Entry Price"] || 'N/A'}</span>
-                        </div>
-                        <div class="signal-param">
-                            <span class="label">Take Profit:</span>
-                            <span class="value tp-list">${Array.isArray(signal["Take Profit Targets"]) ? signal["Take Profit Targets"].join(', ') : 'N/A'}</span>
-                        </div>
-                        <div class="signal-param">
-                            <span class="label">Stop Loss:</span>
-                            <span class="value">${signal["Stop Loss"] || 'N/A'}</span>
-                        </div>
-                        <div class="signal-param">
-                            <span class="label">Confidence:</span>
-                            <span class="value">${signal.Confidence !== undefined ? signal.Confidence + '%' : 'N/A'}</span>
-                        </div>
-                        <div class="signal-param">
-                            <span class="label">Scenario:</span>
-                            <span class="value">${signal.Scenario || 'N/A'}</span>
-                        </div>
-                        <div class="signal-param">
-                            <span class="label">Setup Type:</span>
-                            <span class="value">${signal["Trade Setup Type"] || 'N/A'}</span>
-                        </div>
-                        <div class="signal-param">
-                            <span class="label">MFE %:</span>
-                            <span class="value">${mfe}</span>
-                        </div>
-                        <div class="signal-param">
-                            <span class="label">MAE %:</span>
-                            <span class="value">${mae}</span>
-                        </div>
+                        <div class="signal-param"><span class="label">Entry Price:</span><span class="value">${signal["Entry Price"] || 'N/A'}</span></div>
+                        <div class="signal-param"><span class="label">Take Profit:</span><span class="value tp-list">${Array.isArray(signal["Take Profit Targets"]) ? signal["Take Profit Targets"].join(', ') : 'N/A'}</span></div>
+                        <div class="signal-param"><span class="label">Stop Loss:</span><span class="value">${signal["Stop Loss"] || 'N/A'}</span></div>
+                        <div class="signal-param"><span class="label">Confidence:</span><span class="value">${signal.Confidence !== undefined ? signal.Confidence + '%' : 'N/A'}</span></div>
+                        <div class="signal-param"><span class="label">Scenario:</span><span class="value">${signal.Scenario || 'N/A'}</span></div>
+                        <div class="signal-param"><span class="label">Setup Type:</span><span class="value">${signal["Trade Setup Type"] || 'N/A'}</span></div>
+                        <div class="signal-param"><span class="label">MFE %:</span><span class="value">${mfe}</span></div>
+                        <div class="signal-param"><span class="label">MAE %:</span><span class="value">${mae}</span></div>
                     </div>
                     <div class="signal-item-footer">
                         <span class="signal-timestamp">${formatSignalTimestamp(signal.timestamp)}</span>
@@ -1023,284 +961,159 @@
                             ${displayStatus} ${performance.closed_by ? `(${performance.closed_by})` : ''}
                         </span>
                     </div>
-                </div>
-            `;
+                </div>`;
         }
         
-        // --- New Function: Calculate ALL Stats ---
         function calculateAllStats(signals) {
-            let wins = 0;
-            let losses = 0;
-            let evaluatedConfidenceSum = 0;
-            let evaluatedConfidenceCount = 0;
-            let winConfidenceSum = 0;
-            let winConfidenceCount = 0;
-            let lossConfidenceSum = 0;
-            let lossConfidenceCount = 0;
-            let tooRecentCount = 0;
-            let totalSignals = signals.length; // All signals from file
-
+            let wins = 0, losses = 0, evaluatedConfidenceSum = 0, evaluatedConfidenceCount = 0;
+            let winConfidenceSum = 0, winConfidenceCount = 0, lossConfidenceSum = 0, lossConfidenceCount = 0;
+            let tooRecentCount = 0, totalSignals = signals.length;
             const buySignalStats = { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0, countWithMfeMae: 0 };
             const sellSignalStats = { wins: 0, losses: 0, total: 0, mfeSum: 0, maeSum: 0, countWithMfeMae: 0 };
             const scenarioPerformance = {};
             const confidencePerformance = {
-                "0-9": { wins: 0, total: 0 }, "10-19": { wins: 0, total: 0 },
-                "20-29": { wins: 0, total: 0 }, "30-39": { wins: 0, total: 0 },
-                "40-49": { wins: 0, total: 0 }, "50-59": { wins: 0, total: 0 },
-                "60-69": { wins: 0, total: 0 }, "70-79": { wins: 0, total: 0 },
-                "80-89": { wins: 0, total: 0 }, "90-100": { wins: 0, total: 0 }
+                "0-9": { wins: 0, total: 0 }, "10-19": { wins: 0, total: 0 }, "20-29": { wins: 0, total: 0 },
+                "30-39": { wins: 0, total: 0 }, "40-49": { wins: 0, total: 0 }, "50-59": { wins: 0, total: 0 },
+                "60-69": { wins: 0, total: 0 }, "70-79": { wins: 0, total: 0 }, "80-89": { wins: 0, total: 0 },
+                "90-100": { wins: 0, total: 0 }
             };
-
 
             signals.forEach(signal => {
                 if (signal.Signal && signal.Signal.toLowerCase() === 'hold') {
-                    totalSignals--; // Decrement if "Hold" is not considered a signal for the total count
-                    return; // Skip "Hold" signals for performance calculation
+                    totalSignals--; return;
                 }
-
                 const status = (signal.performance && signal.performance.status) ? signal.performance.status.toLowerCase() : null;
                 const confidence = signal.Confidence;
                 const signalType = signal.Signal ? signal.Signal.toLowerCase() : null;
                 const scenario = signal.Scenario || "Unknown";
 
-                // For overall stats cards
                 if (status === 'win' || status === 'loss') {
-                    if (confidence !== undefined) {
-                        evaluatedConfidenceSum += confidence;
-                        evaluatedConfidenceCount++;
-                    }
-                    if (status === 'win') {
-                        wins++;
-                        if (confidence !== undefined) {
-                            winConfidenceSum += confidence;
-                            winConfidenceCount++;
-                        }
-                    } else {
-                        losses++;
-                         if (confidence !== undefined) {
-                            lossConfidenceSum += confidence;
-                            lossConfidenceCount++;
-                        }
-                    }
-                } else if (status === 'too_recent') {
-                    tooRecentCount++;
-                }
+                    if (confidence !== undefined) { evaluatedConfidenceSum += confidence; evaluatedConfidenceCount++; }
+                    if (status === 'win') { wins++; if (confidence !== undefined) { winConfidenceSum += confidence; winConfidenceCount++; } }
+                    else { losses++; if (confidence !== undefined) { lossConfidenceSum += confidence; lossConfidenceCount++; } }
+                } else if (status === 'too_recent') { tooRecentCount++; }
 
-                // For Signal Type Performance
                 const mfe = signal.performance?.mfe_percentage;
                 const mae = signal.performance?.mae_percentage;
-                let currentTypeStats = null;
-                if (signalType === 'buy') currentTypeStats = buySignalStats;
-                else if (signalType === 'sell') currentTypeStats = sellSignalStats;
+                let currentTypeStats = (signalType === 'buy') ? buySignalStats : ((signalType === 'sell') ? sellSignalStats : null);
 
                 if (currentTypeStats && (status === 'win' || status === 'loss')) {
                     currentTypeStats.total++;
-                    if (status === 'win') currentTypeStats.wins++;
-                    else currentTypeStats.losses++;
-                    
+                    if (status === 'win') currentTypeStats.wins++; else currentTypeStats.losses++;
                     if (typeof mfe === 'number' && typeof mae === 'number') {
-                        currentTypeStats.mfeSum += mfe;
-                        currentTypeStats.maeSum += mae;
-                        currentTypeStats.countWithMfeMae++;
+                        currentTypeStats.mfeSum += mfe; currentTypeStats.maeSum += mae; currentTypeStats.countWithMfeMae++;
                     }
                 }
                 
-                // For Scenario Performance
                 if (status === 'win' || status === 'loss') {
-                    if (!scenarioPerformance[scenario]) {
-                        scenarioPerformance[scenario] = { wins: 0, total: 0 };
-                    }
+                    if (!scenarioPerformance[scenario]) scenarioPerformance[scenario] = { wins: 0, total: 0 };
                     scenarioPerformance[scenario].total++;
-                    if (status === 'win') {
-                        scenarioPerformance[scenario].wins++;
-                    }
+                    if (status === 'win') scenarioPerformance[scenario].wins++;
                 }
 
-                // For Confidence Performance
                 if ((status === 'win' || status === 'loss') && confidence !== undefined) {
                     const confBucket = Math.floor(confidence / 10) * 10;
                     let bucketKey = `${confBucket}-${confBucket + 9}`;
-                    if (confBucket === 90) bucketKey = "90-100"; // Handle 90-100 range
-                    if (confBucket === 100) bucketKey = "90-100"; // Treat 100 as 90-100
+                    if (confBucket >= 90) bucketKey = "90-100";
                     if (confidencePerformance[bucketKey]) {
                          confidencePerformance[bucketKey].total++;
-                        if (status === 'win') {
-                            confidencePerformance[bucketKey].wins++;
-                        }
+                        if (status === 'win') confidencePerformance[bucketKey].wins++;
                     }
                 }
             });
 
             const tradableSignals = wins + losses;
-            const winRate = tradableSignals > 0 ? (wins / tradableSignals) * 100 : 0;
-            const avgConfidence = evaluatedConfidenceCount > 0 ? (evaluatedConfidenceSum / evaluatedConfidenceCount) : 0;
-            const avgWinConfidence = winConfidenceCount > 0 ? (winConfidenceSum / winConfidenceCount) : 0;
-            const avgLossConfidence = lossConfidenceCount > 0 ? (lossConfidenceSum / lossConfidenceCount) : 0;
-            
-            // Calculate averages for MFE/MAE for buy/sell signals
-            buySignalStats.avgMfe = buySignalStats.countWithMfeMae > 0 ? buySignalStats.mfeSum / buySignalStats.countWithMfeMae : 0;
-            buySignalStats.avgMae = buySignalStats.countWithMfeMae > 0 ? buySignalStats.maeSum / buySignalStats.countWithMfeMae : 0;
-            sellSignalStats.avgMfe = sellSignalStats.countWithMfeMae > 0 ? sellSignalStats.mfeSum / sellSignalStats.countWithMfeMae : 0;
-            sellSignalStats.avgMae = sellSignalStats.countWithMfeMae > 0 ? sellSignalStats.maeSum / sellSignalStats.countWithMfeMae : 0;
-
-
             return {
-                winRate,
-                tradableSignals, // This is evaluated signals for the card
-                avgConfidence,
-                tooRecent: tooRecentCount, // For the "Too Recent" card
-                // For Signal Breakdown card
-                totalSignals, // Total from file (excluding 'hold' if decided so)
-                evaluatedSignals: tradableSignals, // Renaming for clarity in breakdown
-                wins,
-                losses,
-                avgWinConfidence,
-                avgLossConfidence,
-                // For Signal Type Performance
-                buySignalStats,
-                sellSignalStats,
-                // For Scenario Performance
-                scenarioPerformance,
-                // For Confidence Performance
-                confidencePerformance
+                winRate: tradableSignals > 0 ? (wins / tradableSignals) * 100 : 0,
+                tradableSignals, 
+                avgConfidence: evaluatedConfidenceCount > 0 ? (evaluatedConfidenceSum / evaluatedConfidenceCount) : 0,
+                tooRecent: tooRecentCount,
+                totalSignals, evaluatedSignals: tradableSignals, wins, losses,
+                avgWinConfidence: winConfidenceCount > 0 ? (winConfidenceSum / winConfidenceCount) : 0,
+                avgLossConfidence: lossConfidenceCount > 0 ? (lossConfidenceSum / lossConfidenceCount) : 0,
+                buySignalStats: { ...buySignalStats, avgMfe: buySignalStats.countWithMfeMae > 0 ? buySignalStats.mfeSum / buySignalStats.countWithMfeMae : 0, avgMae: buySignalStats.countWithMfeMae > 0 ? buySignalStats.maeSum / buySignalStats.countWithMfeMae : 0 },
+                sellSignalStats: { ...sellSignalStats, avgMfe: sellSignalStats.countWithMfeMae > 0 ? sellSignalStats.mfeSum / sellSignalStats.countWithMfeMae : 0, avgMae: sellSignalStats.countWithMfeMae > 0 ? sellSignalStats.maeSum / sellSignalStats.countWithMfeMae : 0 },
+                scenarioPerformance, confidencePerformance
             };
         }
 
-        // --- New Function: Render Overall Stats Cards ---
         function renderOverallStats(aiId) {
             const stats = appState[aiId].overallStats;
-
             document.getElementById(`stat-win-rate-${aiId}`).textContent = `${stats.winRate.toFixed(2)}%`;
             document.getElementById(`stat-tradable-signals-${aiId}`).textContent = stats.tradableSignals;
             document.getElementById(`stat-avg-confidence-${aiId}`).textContent = `${stats.avgConfidence.toFixed(2)}%`;
             document.getElementById(`stat-too-recent-${aiId}`).textContent = stats.tooRecent;
             
-            // Render Signal Breakdown
             const breakdownContainer = document.getElementById(`signal-breakdown-${aiId}`);
             if(breakdownContainer) {
-                breakdownContainer.innerHTML = `
-                    <div class="detail-item">
-                        <span class="detail-label">Total Signals (Source):</span>
-                        <span class="detail-value">${stats.totalSignals}</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Evaluated Signals:</span>
-                        <span class="detail-value">${stats.evaluatedSignals}</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Wins:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">${stats.wins}</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Losses:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">${stats.losses}</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Too Recent to Eval:</span>
-                        <span class="detail-value">${stats.tooRecent}</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Avg Win Confidence:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">${stats.avgWinConfidence.toFixed(2)}%</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Avg Loss Confidence:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">${stats.avgLossConfidence.toFixed(2)}%</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Last Updated:</span>
-                        <span class="detail-value">${new Date().toLocaleString()}</span>
-                    </div>
-                `;
+                 breakdownContainer.innerHTML = `
+                    <div class="detail-item"><span class="detail-label">Total Signals (Source):</span><span class="detail-value">${stats.totalSignals}</span></div>
+                    <div class="detail-item"><span class="detail-label">Evaluated Signals:</span><span class="detail-value">${stats.evaluatedSignals}</span></div>
+                    <div class="detail-item"><span class="detail-label">Wins:</span><span class="detail-value" style="color: #4ecdc4;">${stats.wins}</span></div>
+                    <div class="detail-item"><span class="detail-label">Losses:</span><span class="detail-value" style="color: #ff6b6b;">${stats.losses}</span></div>
+                    <div class="detail-item"><span class="detail-label">Too Recent to Eval:</span><span class="detail-value">${stats.tooRecent}</span></div>
+                    <div class="detail-item"><span class="detail-label">Avg Win Confidence:</span><span class="detail-value" style="color: #4ecdc4;">${stats.avgWinConfidence.toFixed(2)}%</span></div>
+                    <div class="detail-item"><span class="detail-label">Avg Loss Confidence:</span><span class="detail-value" style="color: #ff6b6b;">${stats.avgLossConfidence.toFixed(2)}%</span></div>
+                    <div class="detail-item"><span class="detail-label">Last Updated:</span><span class="detail-value">${new Date().toLocaleString()}</span></div>`;
             }
 
-            // Render Signal Type Performance
             const signalTypeContainer = document.getElementById(`signal-type-performance-${aiId}`);
             if (signalTypeContainer) {
-                signalTypeContainer.innerHTML = ''; // Clear previous
+                signalTypeContainer.innerHTML = ''; 
                 const types = [
-                    { name: 'Buy Signals', stats: stats.buySignalStats, color: '#4ecdc4' },
-                    { name: 'Sell Signals', stats: stats.sellSignalStats, color: '#ff6b6b' }
+                    { name: 'Buy Signals', stats: stats.buySignalStats, color: 'linear-gradient(90deg, #4ecdc4, #45b7d1)', idSuffix: 'buy' },
+                    { name: 'Sell Signals', stats: stats.sellSignalStats, color: 'linear-gradient(90deg, #ff6b6b, #e57373)', idSuffix: 'sell' }
                 ];
+                let hasTypeData = false;
                 types.forEach(type => {
                     if (type.stats.total > 0) {
+                        hasTypeData = true;
                         const winRate = type.stats.total > 0 ? (type.stats.wins / type.stats.total * 100) : 0;
+                        const fillBarId = `win-rate-fill-${aiId}-${type.idSuffix}`;
                         const cardHTML = `
                             <div class="symbol-card">
                                 <div class="symbol-name">${type.name}</div>
-                                <div class="symbol-stats">
-                                    <span>Win Rate:</span>
-                                    <span class="win-rate">${winRate.toFixed(2)}%</span>
-                                </div>
-                                <div class="symbol-stats">
-                                    <span>Trades:</span>
-                                    <span>${type.stats.total}</span>
-                                </div>
-                                <div class="symbol-stats">
-                                    <span>Avg MFE:</span>
-                                    <span class="detail-value">${type.stats.avgMfe.toFixed(2)}</span>
-                                </div>
-                                <div class="symbol-stats">
-                                    <span>Avg MAE:</span>
-                                    <span class="detail-value">${type.stats.avgMae.toFixed(2)}</span>
-                                </div>
-                                <div class="win-rate-bar">
-                                    <div class="win-rate-fill" style="width: ${winRate.toFixed(2)}%; background: ${type.color};"></div>
-                                </div>
-                            </div>
-                        `;
-                        signalTypeContainer.innerHTML += cardHTML;
+                                <div class="symbol-stats"><span>Win Rate:</span><span class="win-rate">${winRate.toFixed(2)}%</span></div>
+                                <div class="symbol-stats"><span>Trades:</span><span>${type.stats.total}</span></div>
+                                <div class="symbol-stats"><span>Avg MFE:</span><span class="detail-value">${type.stats.avgMfe.toFixed(2)}</span></div>
+                                <div class="symbol-stats"><span>Avg MAE:</span><span class="detail-value">${type.stats.avgMae.toFixed(2)}</span></div>
+                                <div class="win-rate-bar"><div class="win-rate-fill" id="${fillBarId}" style="width: 0%; background: ${type.color};"></div></div>
+                            </div>`;
+                        signalTypeContainer.insertAdjacentHTML('beforeend', cardHTML);
+                        setTimeout(() => { 
+                            const fillBar = document.getElementById(fillBarId);
+                            if (fillBar) { fillBar.style.width = `${winRate.toFixed(2)}%`; void fillBar.offsetHeight; }
+                        }, 0);
                     }
                 });
-                 if (!signalTypeContainer.innerHTML) {
-                    signalTypeContainer.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No signal type data.</p>';
-                }
+                 if (!hasTypeData) signalTypeContainer.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No signal type data.</p>';
             }
 
-            // Render Scenario Performance
             const scenarioContainer = document.getElementById(`scenario-performance-${aiId}`);
             if (scenarioContainer) {
                 scenarioContainer.innerHTML = '';
-                const sortedScenarios = Object.entries(stats.scenarioPerformance)
-                    .sort(([,a],[,b]) => b.total - a.total); // Sort by total trades desc
-
+                const sortedScenarios = Object.entries(stats.scenarioPerformance).sort(([,a],[,b]) => b.total - a.total); 
                 sortedScenarios.forEach(([scenario, data]) => {
                     const winRate = data.total > 0 ? (data.wins / data.total * 100) : 0;
-                    let winRateClass = winRate > 50 ? 'win' : (data.total > 0 ? 'loss' : 'neutral');
-                    scenarioContainer.innerHTML += `
-                        <div class="detail-item">
-                            <span class="detail-label">${scenario}:</span>
-                            <span class="detail-value ${winRateClass}">${winRate.toFixed(2)}% <small>(${data.wins}/${data.total})</small></span>
-                        </div>
-                    `;
+                    let wrClass = winRate > 50 ? 'win' : (data.total > 0 ? 'loss' : 'neutral');
+                    scenarioContainer.innerHTML += `<div class="detail-item"><span class="detail-label">${scenario}:</span><span class="detail-value ${wrClass}">${winRate.toFixed(2)}% <small>(${data.wins}/${data.total})</small></span></div>`;
                 });
-                if (!scenarioContainer.innerHTML) {
-                    scenarioContainer.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No scenario data.</p>';
-                }
+                if (!scenarioContainer.innerHTML) scenarioContainer.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No scenario data.</p>';
             }
             
-            // Render Confidence Performance
             const confidenceContainer = document.getElementById(`confidence-performance-${aiId}`);
             if (confidenceContainer) {
                 confidenceContainer.innerHTML = '';
                  Object.entries(stats.confidencePerformance).forEach(([bucket, data]) => {
                     if (data.total > 0) {
                         const winRate = (data.wins / data.total) * 100;
-                        let winRateClass = winRate > 50 ? 'win' : 'loss';
-                        confidenceContainer.innerHTML += `
-                            <div class="detail-item">
-                                <span class="detail-label">${bucket}% Confidence:</span>
-                                <span class="detail-value ${winRateClass}">${winRate.toFixed(2)}% <small>(${data.wins}/${data.total} trades)</small></span>
-                            </div>
-                        `;
+                        let wrClass = winRate > 50 ? 'win' : 'loss';
+                        confidenceContainer.innerHTML += `<div class="detail-item"><span class="detail-label">${bucket}% Confidence:</span><span class="detail-value ${wrClass}">${winRate.toFixed(2)}% <small>(${data.wins}/${data.total} trades)</small></span></div>`;
                     }
                 });
-                if (!confidenceContainer.innerHTML) {
-                    confidenceContainer.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No confidence data.</p>';
-                }
+                if (!confidenceContainer.innerHTML) confidenceContainer.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No confidence data.</p>';
             }
         }
-
 
         function calculateSymbolWinRates(signals) {
             const symbolStats = {};
@@ -1309,31 +1122,18 @@
                 const status = s.performance && s.performance.status ? s.performance.status.toLowerCase() : '';
                 return signalType !== 'hold' && (status === 'win' || status === 'loss');
             });
-
             relevantSignals.forEach(signal => {
                 if (!signal.symbol) return; 
-                if (!symbolStats[signal.symbol]) {
-                    symbolStats[signal.symbol] = { wins: 0, losses: 0, totalEvaluated: 0 };
-                }
+                if (!symbolStats[signal.symbol]) symbolStats[signal.symbol] = { wins: 0, losses: 0, totalEvaluated: 0 };
                 symbolStats[signal.symbol].totalEvaluated++;
-                if (signal.performance && signal.performance.status && signal.performance.status.toLowerCase() === 'win') {
-                    symbolStats[signal.symbol].wins++;
-                } else if (signal.performance && signal.performance.status && signal.performance.status.toLowerCase() === 'loss') {
-                    symbolStats[signal.symbol].losses++;
-                }
+                if (signal.performance.status.toLowerCase() === 'win') symbolStats[signal.symbol].wins++;
+                else if (signal.performance.status.toLowerCase() === 'loss') symbolStats[signal.symbol].losses++;
             });
-
             const result = [];
             for (const symbol in symbolStats) {
                 const stats = symbolStats[symbol];
                 const winRate = stats.totalEvaluated > 0 ? (stats.wins / stats.totalEvaluated) * 100 : 0;
-                result.push({
-                    symbol: symbol,
-                    winRate: winRate.toFixed(2),
-                    wins: stats.wins,
-                    losses: stats.losses,
-                    totalEvaluated: stats.totalEvaluated
-                });
+                result.push({ symbol, winRate: winRate.toFixed(2), wins: stats.wins, losses: stats.losses, totalEvaluated: stats.totalEvaluated });
             }
             return result.sort((a,b) => a.symbol.localeCompare(b.symbol));
         }
@@ -1342,107 +1142,76 @@
             const state = appState[aiId];
             const container = document.getElementById(`symbol-winrate-list-${aiId}`);
             if (!container) return;
-
             if (state.symbolWinRates.length === 0) {
-                container.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No symbol data to display.</p>';
-                return;
+                container.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No symbol data to display.</p>'; return;
             }
-
             let html = '';
             state.symbolWinRates.forEach(item => {
-                let winRateClass = 'neutral';
-                if (parseFloat(item.winRate) > 50) winRateClass = 'win';
-                else if (parseFloat(item.winRate) < 50 && item.totalEvaluated > 0) winRateClass = 'loss';
-                
-                html += `
-                    <div class="detail-item">
-                        <span class="detail-label">${item.symbol}</span>
-                        <span class="detail-value">
-                            <span class="${winRateClass}">${item.winRate}%</span> 
-                            <small>(${item.wins}W / ${item.losses}L of ${item.totalEvaluated})</small>
-                        </span>
-                    </div>
-                `;
+                let wrClass = 'neutral';
+                if (parseFloat(item.winRate) > 50) wrClass = 'win';
+                else if (parseFloat(item.winRate) < 50 && item.totalEvaluated > 0) wrClass = 'loss';
+                html += `<div class="detail-item"><span class="detail-label">${item.symbol}</span><span class="detail-value"><span class="${wrClass}">${item.winRate}%</span> <small>(${item.wins}W / ${item.losses}L of ${item.totalEvaluated})</small></span></div>`;
             });
             container.innerHTML = html;
         }
 
-
         async function fetchSignals(aiId, jsonFilename) {
             const signalGrid = document.getElementById(`signal-grid-${aiId}`);
-            if (!signalGrid) {
-                console.error(`Signal grid for ${aiId} not found.`);
-                return;
-            }
-            // Set loading messages
-            document.getElementById(`stat-win-rate-${aiId}`).textContent = '...';
-            document.getElementById(`stat-tradable-signals-${aiId}`).textContent = '...';
-            document.getElementById(`stat-avg-confidence-${aiId}`).textContent = '...';
-            document.getElementById(`stat-too-recent-${aiId}`).textContent = '...';
-            signalGrid.innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading signals...</p>';
-            document.getElementById(`symbol-winrate-list-${aiId}`).innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading symbol win rates...</p>';
-            // Clear other dynamic sections
-            const dynamicSections = ['signal-breakdown', 'signal-type-performance', 'scenario-performance', 'confidence-performance'];
-            dynamicSections.forEach(section => {
-                const el = document.getElementById(`${section}-${aiId}`);
-                if (el) el.innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading data...</p>';
+            if (!signalGrid) { console.error(`Signal grid for ${aiId} not found.`); return; }
+            
+            const elementsToClear = [
+                `stat-win-rate-${aiId}`, `stat-tradable-signals-${aiId}`, `stat-avg-confidence-${aiId}`, `stat-too-recent-${aiId}`,
+                `signal-breakdown-${aiId}`, `signal-type-performance-${aiId}`, `scenario-performance-${aiId}`, 
+                `confidence-performance-${aiId}`, `symbol-winrate-list-${aiId}`
+            ];
+            elementsToClear.forEach(elId => {
+                const el = document.getElementById(elId);
+                if (el) {
+                    if (elId.startsWith('stat-')) el.textContent = '...';
+                    else el.innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading data...</p>';
+                }
             });
-
+            signalGrid.innerHTML = '<p style="text-align:center; color: #a0a0a0;">Loading signals...</p>';
 
             try {
                 const response = await fetch(jsonFilename); 
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status} while fetching ${jsonFilename}`);
-                }
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status} fetching ${jsonFilename}`);
                 const signals = await response.json();
                 
                 appState[aiId].allSignals = signals;
-                appState[aiId].overallStats = calculateAllStats(signals); // Calculate all overall stats
-                appState[aiId].symbolWinRates = calculateSymbolWinRates(signals); // Separate for specific widget
+                appState[aiId].overallStats = calculateAllStats(signals); 
+                appState[aiId].symbolWinRates = calculateSymbolWinRates(signals); 
                 
-                renderOverallStats(aiId); // Render the top stat cards and other detail cards
-                updateFullDisplay(aiId); // Processes signals for catalog and renders it + pagination
-                renderSymbolWinRates(aiId); // Render the symbol win rate widget
+                renderOverallStats(aiId); 
+                updateFullDisplay(aiId); 
+                renderSymbolWinRates(aiId); 
 
             } catch (error) {
                 console.error(`Could not load signals from ${jsonFilename}:`, error);
-                const errorMsg = `<p style="text-align:center; color: #ff6b6b;">Failed to load data from ${jsonFilename}.</p>`;
-                document.getElementById(`stat-win-rate-${aiId}`).textContent = 'Error';
-                document.getElementById(`stat-tradable-signals-${aiId}`).textContent = 'Error';
-                document.getElementById(`stat-avg-confidence-${aiId}`).textContent = 'Error';
-                document.getElementById(`stat-too-recent-${aiId}`).textContent = 'Error';
-                signalGrid.innerHTML = errorMsg;
-                document.getElementById(`symbol-winrate-list-${aiId}`).innerHTML = errorMsg;
-                dynamicSections.forEach(section => {
-                    const el = document.getElementById(`${section}-${aiId}`);
-                    if (el) el.innerHTML = errorMsg;
+                const errorMsg = `<p style="text-align:center; color: #ff6b6b;">Failed to load data.</p>`;
+                elementsToClear.forEach(elId => {
+                    const el = document.getElementById(elId);
+                    if (el) {
+                        if (elId.startsWith('stat-')) el.textContent = 'Error';
+                        else el.innerHTML = errorMsg;
+                    }
                 });
+                signalGrid.innerHTML = errorMsg;
             }
         }
 
         function processSignals(aiId) {
             const state = appState[aiId];
             let signalsToProcess = [...state.allSignals];
-
             signalsToProcess = signalsToProcess.filter(s => s.Signal && s.Signal.toLowerCase() !== 'hold');
 
-            if (state.filters.symbol) {
-                signalsToProcess = signalsToProcess.filter(s => s.symbol && s.symbol.toLowerCase().includes(state.filters.symbol.toLowerCase()));
-            }
-            if (state.filters.signalType) {
-                signalsToProcess = signalsToProcess.filter(s => s.Signal && s.Signal.toLowerCase() === state.filters.signalType.toLowerCase());
-            }
+            if (state.filters.symbol) signalsToProcess = signalsToProcess.filter(s => s.symbol && s.symbol.toLowerCase().includes(state.filters.symbol.toLowerCase()));
+            if (state.filters.signalType) signalsToProcess = signalsToProcess.filter(s => s.Signal && s.Signal.toLowerCase() === state.filters.signalType.toLowerCase());
             if (state.filters.status) {
                 if (state.filters.status.toLowerCase() === 'pending') {
-                    signalsToProcess = signalsToProcess.filter(s => 
-                        s.performance && s.performance.status && 
-                        (s.performance.status.toLowerCase() === 'pending' || s.performance.status.toLowerCase() === 'too_recent')
-                    );
+                    signalsToProcess = signalsToProcess.filter(s => s.performance && s.performance.status && (s.performance.status.toLowerCase() === 'pending' || s.performance.status.toLowerCase() === 'too_recent'));
                 } else {
-                    signalsToProcess = signalsToProcess.filter(s => 
-                        s.performance && s.performance.status && 
-                        s.performance.status.toLowerCase() === state.filters.status.toLowerCase()
-                    );
+                    signalsToProcess = signalsToProcess.filter(s => s.performance && s.performance.status && s.performance.status.toLowerCase() === state.filters.status.toLowerCase());
                 }
             }
             if (state.filters.minConfidence !== '' && !isNaN(parseFloat(state.filters.minConfidence))) {
@@ -1453,26 +1222,12 @@
             signalsToProcess.sort((a, b) => {
                 let valA, valB;
                 switch (state.sort.by) {
-                    case 'timestamp':
-                        valA = new Date(a.timestamp);
-                        valB = new Date(b.timestamp);
-                        break;
-                    case 'entryPrice':
-                        valA = parseFloat(a["Entry Price"]);
-                        valB = parseFloat(b["Entry Price"]);
-                        break;
-                    default: 
-                        valA = new Date(a.timestamp);
-                        valB = new Date(b.timestamp);
+                    case 'timestamp': valA = new Date(a.timestamp); valB = new Date(b.timestamp); break;
+                    case 'entryPrice': valA = parseFloat(a["Entry Price"]); valB = parseFloat(b["Entry Price"]); break;
+                    default: valA = new Date(a.timestamp); valB = new Date(b.timestamp);
                 }
-
-                if (state.sort.order === 'asc') {
-                    return valA > valB ? 1 : (valA < valB ? -1 : 0);
-                } else { 
-                    return valA < valB ? 1 : (valA > valB ? -1 : 0);
-                }
+                return state.sort.order === 'asc' ? (valA > valB ? 1 : (valA < valB ? -1 : 0)) : (valA < valB ? 1 : (valA > valB ? -1 : 0));
             });
-            
             state.displayedSignals = signalsToProcess;
         }
 
@@ -1480,31 +1235,21 @@
             const state = appState[aiId];
             const signalGrid = document.getElementById(`signal-grid-${aiId}`);
             if (!signalGrid) return;
-
             const startIndex = (state.currentPage - 1) * state.itemsPerPage;
             const endIndex = startIndex + state.itemsPerPage;
             const paginatedSignals = state.displayedSignals.slice(startIndex, endIndex);
-
-            if (paginatedSignals.length > 0) {
-                signalGrid.innerHTML = paginatedSignals.map(signal => renderSignalCard(signal)).join('');
-            } else {
-                signalGrid.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No signals match your criteria.</p>';
-            }
+            if (paginatedSignals.length > 0) signalGrid.innerHTML = paginatedSignals.map(signal => renderSignalCard(signal)).join('');
+            else signalGrid.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No signals match your criteria.</p>';
         }
 
         function renderPaginationControls(aiId) {
             const state = appState[aiId];
             const controlsContainer = document.getElementById(`pagination-controls-${aiId}`);
             if (!controlsContainer) return;
-
             const totalSignals = state.displayedSignals.length;
             const totalPages = Math.ceil(totalSignals / state.itemsPerPage);
-            if (state.currentPage > totalPages && totalPages > 0) {
-                state.currentPage = totalPages;
-            } else if (totalPages === 0) {
-                state.currentPage = 1;
-            }
-
+            if (state.currentPage > totalPages && totalPages > 0) state.currentPage = totalPages;
+            else if (totalPages === 0) state.currentPage = 1;
 
             let paginationHTML = '';
             if (totalSignals > 0) {
@@ -1512,8 +1257,7 @@
                     <button id="prev-page-${aiId}" ${state.currentPage === 1 ? 'disabled' : ''}>Previous</button>
                     <span class="page-info">Page ${state.currentPage} of ${totalPages > 0 ? totalPages : 1} (Total: ${totalSignals})</span>
                     <button id="next-page-${aiId}" ${state.currentPage === totalPages || totalPages === 0 ? 'disabled' : ''}>Next</button>
-                    <div class="control-group">
-                        <label for="items-per-page-${aiId}" style="margin-bottom:0; margin-right:5px;">Per Page:</label>
+                    <div class="control-group"><label for="items-per-page-${aiId}" style="margin-bottom:0; margin-right:5px;">Per Page:</label>
                         <select id="items-per-page-${aiId}">
                             <option value="10" ${state.itemsPerPage === 10 ? 'selected' : ''}>10</option>
                             <option value="25" ${state.itemsPerPage === 25 ? 'selected' : ''}>25</option>
@@ -1521,81 +1265,45 @@
                             <option value="100" ${state.itemsPerPage === 100 ? 'selected' : ''}>100</option>
                             <option value="${totalSignals > 0 ? Math.max(totalSignals,1) : 99999}" ${state.itemsPerPage >= totalSignals && totalSignals > 0 ? 'selected' : ''}>All</option>
                         </select>
-                    </div>
-                `;
-            } else {
-                paginationHTML = '<span class="page-info">No signals to display.</span>';
-            }
+                    </div>`;
+            } else paginationHTML = '<span class="page-info">No signals to display.</span>';
             controlsContainer.innerHTML = paginationHTML;
 
             if (totalSignals > 0) {
-                document.getElementById(`prev-page-${aiId}`)?.addEventListener('click', () => {
-                    if (state.currentPage > 1) {
-                        state.currentPage--;
-                        updateFullDisplay(aiId);
-                    }
-                });
-                document.getElementById(`next-page-${aiId}`)?.addEventListener('click', () => {
-                    if (state.currentPage < totalPages) {
-                        state.currentPage++;
-                        updateFullDisplay(aiId);
-                    }
-                });
-                document.getElementById(`items-per-page-${aiId}`)?.addEventListener('change', (e) => {
-                    state.itemsPerPage = parseInt(e.target.value, 10);
-                    state.currentPage = 1; 
-                    updateFullDisplay(aiId);
-                });
+                document.getElementById(`prev-page-${aiId}`)?.addEventListener('click', () => { if (state.currentPage > 1) { state.currentPage--; updateFullDisplay(aiId); } });
+                document.getElementById(`next-page-${aiId}`)?.addEventListener('click', () => { if (state.currentPage < totalPages) { state.currentPage++; updateFullDisplay(aiId); } });
+                document.getElementById(`items-per-page-${aiId}`)?.addEventListener('change', (e) => { state.itemsPerPage = parseInt(e.target.value, 10); state.currentPage = 1; updateFullDisplay(aiId); });
             }
         }
         
         function updateFullDisplay(aiId) {
-            processSignals(aiId); 
-            renderSignalsForPage(aiId); 
-            renderPaginationControls(aiId); 
-            // Note: Overall stats and symbol win rates are rendered once after fetch
-            // unless you want them to update with filters (which they currently don't)
+            processSignals(aiId); renderSignalsForPage(aiId); renderPaginationControls(aiId); 
         }
 
         function setupEventListeners(aiId) {
             const state = appState[aiId];
-            
-            document.getElementById(`symbol-filter-${aiId}`)?.addEventListener('input', (e) => {
-                state.filters.symbol = e.target.value;
-                state.currentPage = 1; updateFullDisplay(aiId);
-            });
-            document.getElementById(`signal-type-filter-${aiId}`)?.addEventListener('change', (e) => {
-                state.filters.signalType = e.target.value;
-                state.currentPage = 1; updateFullDisplay(aiId);
-            });
-            document.getElementById(`status-filter-${aiId}`)?.addEventListener('change', (e) => {
-                state.filters.status = e.target.value;
-                state.currentPage = 1; updateFullDisplay(aiId);
-            });
-            document.getElementById(`min-confidence-filter-${aiId}`)?.addEventListener('input', (e) => {
-                state.filters.minConfidence = e.target.value;
-                state.currentPage = 1; updateFullDisplay(aiId);
-            });
-
-            document.getElementById(`sort-by-${aiId}`)?.addEventListener('change', (e) => {
-                state.sort.by = e.target.value;
-                state.currentPage = 1; updateFullDisplay(aiId);
-            });
-            document.getElementById(`sort-order-${aiId}`)?.addEventListener('change', (e) => {
-                state.sort.order = e.target.value;
-                state.currentPage = 1; updateFullDisplay(aiId);
+            const controls = [
+                {id: `symbol-filter-${aiId}`, prop: 'symbol', event: 'input'},
+                {id: `signal-type-filter-${aiId}`, prop: 'signalType', event: 'change'},
+                {id: `status-filter-${aiId}`, prop: 'status', event: 'change'},
+                {id: `min-confidence-filter-${aiId}`, prop: 'minConfidence', event: 'input'},
+                {id: `sort-by-${aiId}`, prop: 'by', target: state.sort, event: 'change'},
+                {id: `sort-order-${aiId}`, prop: 'order', target: state.sort, event: 'change'}
+            ];
+            controls.forEach(control => {
+                document.getElementById(control.id)?.addEventListener(control.event, (e) => {
+                    (control.target || state.filters)[control.prop] = e.target.value;
+                    state.currentPage = 1; updateFullDisplay(aiId);
+                });
             });
         }
-
 
         document.addEventListener('DOMContentLoaded', () => {
             fetchSignals('ai-max', 'signals_claude_log.json');
             fetchSignals('ai-bob', 'signals_gemini_log.json'); 
-            
             setupEventListeners('ai-max');
             setupEventListeners('ai-bob');
         });
-
     </script>
 </body>
 </html>
