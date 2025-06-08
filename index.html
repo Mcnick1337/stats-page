@@ -17,15 +17,15 @@
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden; 
-            display: flex; /* For sticky footer */
-            flex-direction: column; /* For sticky footer */
+            display: flex; 
+            flex-direction: column; 
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
-            flex-grow: 1; /* For sticky footer */
+            flex-grow: 1; 
         }
 
         header {
@@ -231,7 +231,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 30px;
-            margin-bottom: 30px; /* MODIFIED: Consistent spacing before filters */
+            margin-bottom: 30px; 
         }
 
         .details-card {
@@ -303,8 +303,8 @@
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 15px;
-            padding: 25px; /* MODIFIED: Increased padding */
-            margin-bottom: 30px; /* MODIFIED: Consistent spacing before catalog */
+            padding: 25px; 
+            margin-bottom: 30px; 
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
@@ -344,7 +344,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 30px;
-            /* margin-top: 30px; REMOVED */
         }
 
         .signal-grid {
@@ -512,14 +511,13 @@
             100% { transform: translateY(-100px) rotate(360deg) translateX(-50%); }
         }
         
-        /* Footer Styles */
         footer {
             text-align: center;
             padding: 20px;
             font-size: 0.85rem;
-            color: #707080; /* Subtler color */
+            color: #707080; 
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 30px; /* Space above footer */
+            margin-top: 30px; 
         }
 
 
@@ -664,7 +662,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-value pending">79</div>
-                    <div class="stat-label">Too Recent</div>
+                    <div class="stat-label">Pending Eval</div>
                 </div>
             </div>
             <div class="symbol-performance">
@@ -738,7 +736,7 @@
                         <span class="detail-value" style="color: #ff6b6b;">25</span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Too Recent:</span>
+                        <span class="detail-label">Pending Eval:</span>
                         <span class="detail-value">79</span>
                     </div>
                     <div class="detail-item">
@@ -856,7 +854,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-value pending">86</div>
-                    <div class="stat-label">Too Recent</div>
+                    <div class="stat-label">Pending Eval</div>
                 </div>
             </div>
             <div class="symbol-performance">
@@ -929,7 +927,7 @@
                         <span class="detail-value" style="color: #ff6b6b;">88</span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Too Recent:</span>
+                        <span class="detail-label">Pending Eval:</span>
                         <span class="detail-value">86</span>
                     </div>
                     <div class="detail-item">
@@ -1122,7 +1120,7 @@
             const lowerStatus = status.toLowerCase();
             if (lowerStatus === 'win') return 'signal-status-win';
             if (lowerStatus === 'loss') return 'signal-status-loss';
-            if (lowerStatus === 'pending') return 'signal-status-pending';
+            if (lowerStatus === 'pending') return 'signal-status-pending'; // Covers TOO_RECENT as well
             if (lowerStatus === 'active' || lowerStatus === 'open') return 'signal-status-active';
             return 'signal-status-default';
         }
@@ -1144,6 +1142,14 @@
             const performance = signal.performance || {};
             const mfe = typeof performance.mfe_percentage === 'number' ? `${performance.mfe_percentage.toFixed(2)}%` : 'N/A';
             const mae = typeof performance.mae_percentage === 'number' ? `${performance.mae_percentage.toFixed(2)}%` : 'N/A';
+            
+            let displayStatus = performance.status || 'N/A';
+            let originalStatusForClass = performance.status; // Keep original for class mapping if needed
+
+            if (displayStatus.toUpperCase() === 'TOO_RECENT') {
+                displayStatus = 'Pending Eval';
+                originalStatusForClass = 'PENDING'; // Map to PENDING for styling
+            }
             
             return `
                 <div class="signal-item-card">
@@ -1189,8 +1195,8 @@
                     </div>
                     <div class="signal-item-footer">
                         <span class="signal-timestamp">${formatSignalTimestamp(signal.timestamp)}</span>
-                        <span class="signal-status ${getPerformanceStatusClass(performance.status)}">
-                            ${performance.status || 'N/A'} ${performance.closed_by ? `(${performance.closed_by})` : ''}
+                        <span class="signal-status ${getPerformanceStatusClass(originalStatusForClass)}">
+                            ${displayStatus} ${performance.closed_by ? `(${performance.closed_by})` : ''}
                         </span>
                     </div>
                 </div>
@@ -1306,7 +1312,18 @@
                 signalsToProcess = signalsToProcess.filter(s => s.Signal && s.Signal.toLowerCase() === state.filters.signalType.toLowerCase());
             }
             if (state.filters.status) {
-                signalsToProcess = signalsToProcess.filter(s => s.performance && s.performance.status && s.performance.status.toLowerCase() === state.filters.status.toLowerCase());
+                // Handle "TOO_RECENT" as "PENDING" for filtering purposes if the filter value is "PENDING"
+                if (state.filters.status.toLowerCase() === 'pending') {
+                    signalsToProcess = signalsToProcess.filter(s => 
+                        s.performance && s.performance.status && 
+                        (s.performance.status.toLowerCase() === 'pending' || s.performance.status.toLowerCase() === 'too_recent')
+                    );
+                } else {
+                    signalsToProcess = signalsToProcess.filter(s => 
+                        s.performance && s.performance.status && 
+                        s.performance.status.toLowerCase() === state.filters.status.toLowerCase()
+                    );
+                }
             }
             if (state.filters.minConfidence !== '' && !isNaN(parseFloat(state.filters.minConfidence))) {
                 const minConf = parseFloat(state.filters.minConfidence);
