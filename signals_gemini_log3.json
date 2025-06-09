@@ -1,0 +1,92 @@
+[
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Neutral Market Regime with Low Confluence",
+    "Trade Setup Type": null,
+    "Reasoning": "The designated market regime is 'NEUTRAL' and overall multi-timeframe alignment is 'WEAK'. The Confluence Score is exceptionally low (-5/100), indicating a lack of confirming signals and presence of conflicting indicators (e.g., 1h MACD bearish vs. 4h/1D bullish EMA structure). Critically, the estimated Risk/Reward ratio is 0.00:1, failing a core trading requirement. Additionally, signal strength is 'LOW' and volatility is 'LOW'. Conditions are suboptimal, mandating a 'Hold' to preserve capital as per the trading philosophy.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-08T23:55:52.381986",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Market regime is unclear due to ADX (22.95) being below 25, indicating a weak trend or choppy conditions. Conflicting signals exist across higher timeframes (e.g., 4h price above its EMA200, while 1d price is below its EMA200). The provided Confluence Score is very low (-25/100), and the 'Estimated R/R Ratio' (0.00:1) does not meet the minimum 2.5:1 requirement. Staying flat to preserve capital is the prudent decision.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-08T23:56:33.685959",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Market regime is unclear. The provided 'Primary Trend: NEUTRAL' and 'Current market regime appears NEUTRAL' conflict with HTF EMA positioning (below 4h/1d EMA200s) and ADX > 25, indicating ambiguity. Multi-timeframe alignment is weak. Critically, the Confluence Score (5/100) and Estimated R/R Ratio (0.09:1) are significantly below the minimum required thresholds. Adhering to capital preservation and disciplined trading, conditions are suboptimal, mandating a 'Hold'.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-08T23:57:34.191279",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Primary veto condition met: Estimated Risk/Reward Ratio is 0.00:1, significantly below the 2.5:1 minimum requirement. Additional reasons for holding: Current Trading Session Character is 'Low - Weak / Choppy' (Strength Score 20/100), which advises against trend/breakout trades. Market regime is Neutral with an extremely low Confluence Score (-5/100) and conflicting technical signals (MACD bearish, Ask dominance vs. bullish HTF EMAs). Conditions are unsuitable for a trade; preserving capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-09T01:03:24.746900",
+    "symbol": "BTCUSDT"
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Suboptimal Conditions / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Market conditions are suboptimal. Session Character is 'Low - Weak / Choppy' (Strength 27/100), which vetoes trend-based strategies as per trading rules. The provided 'Estimated R/R Ratio' is 0.00:1, violating the minimum 2.5:1 requirement (Trade Veto Condition 1). ADX at 20.43 indicates a very weak trend, and the overall Confluence Score (-25/100) is poor. Staying flat to preserve capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-09T01:04:08.702996",
+    "symbol": "ETHUSDT"
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions met: Critically low estimated Risk/Reward ratio (0.03:1) is far below the 2.5:1 minimum requirement. The current 'Session Character' is 'Low - Weak / Choppy' with a 'Session Strength Score' of 23/100, making conditions unfavorable for trend or breakout trades. The market regime is 'Neutral' with conflicting multi-timeframe signals (e.g., 1-day trend is bearish, conflicting with potential 1-hour bullish signals like MACD cross) and an extremely low 'Confluence Score' (5/100). Holding to preserve capital.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-09T01:04:52.648887",
+    "symbol": "SOLUSDT"
+  }
+]
