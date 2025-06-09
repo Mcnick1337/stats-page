@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
     <style>
+        /* ... (All your existing CSS) ... */
         * {
             margin: 0;
             padding: 0;
@@ -70,7 +71,7 @@
         .tabs-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px; /* Adjusted margin */
             position: relative;
             z-index: 1;
         }
@@ -119,6 +120,82 @@
             color: white;
             background: rgba(255, 255, 255, 0.1);
         }
+
+        /* --- NEW: Collapsible Info Panel Styles --- */
+        .collapsible-info-panel {
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+        }
+
+        .collapsible-toggle-button {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .collapsible-toggle-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 93, 226, 0.3);
+        }
+
+        .collapsible-toggle-button .arrow {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .collapsible-info-panel.active .collapsible-toggle-button {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .collapsible-info-panel.active .collapsible-toggle-button .arrow {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            transition: max-height 0.5s ease-out, padding 0.4s ease-out;
+            padding: 0 20px; /* Start with no vertical padding */
+            color: #c0c0d0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .collapsible-info-panel.active .collapsible-content {
+            max-height: 500px; /* Adjust if content is taller */
+            padding: 20px; /* Add padding back when open */
+        }
+
+        .collapsible-content h4 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+        }
+        .collapsible-content p { margin-bottom: 8px; }
+        .collapsible-content strong { color: #e0e0e0; }
+        .collapsible-content ul { list-style: disc; margin-left: 20px; padding-left: 5px; }
+        .collapsible-content li { margin-bottom: 5px; }
+        /* --- End Collapsible Info Panel Styles --- */
+
 
         .tab-content {
             display: none;
@@ -276,6 +353,7 @@
             display: flex; 
             flex-direction: column; 
         }
+        
         .details-card .symbol-winrate-list {
             max-height: 250px; 
             overflow-y: auto;
@@ -634,6 +712,16 @@
             .signal-controls {
                 gap: 15px;
             }
+            .collapsible-toggle-button {
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
+            .collapsible-content {
+                font-size: 0.9rem;
+            }
+            .collapsible-content h4 {
+                font-size: 1.1rem;
+            }
             .signal-item-card {
                 padding: 15px;
             }
@@ -677,6 +765,18 @@
             </div>
         </div>
 
+        <!-- NEW: Collapsible Model Information Panel -->
+        <div class="collapsible-info-panel" id="model-info-container">
+            <button class="collapsible-toggle-button" id="info-toggle-button">
+                <span>Model Information</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="collapsible-content" id="model-info-content">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+        </div>
+
+
         <!-- AI Max Tab -->
         <div id="ai-max" class="tab-content active">
             <div class="stats-grid">
@@ -694,20 +794,26 @@
             <div class="details-section">
                  <div class="details-card" id="signal-breakdown-ai-max">
                     <h3 class="section-title">Signal Breakdown</h3>
-                    <div class="detail-item"><span class="detail-label">Total Signals:</span><span class="detail-value">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Evaluated Signals:</span><span class="detail-value">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Wins:</span><span class="detail-value" style="color: #4ecdc4;">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Losses:</span><span class="detail-value" style="color: #ff6b6b;">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Pending/Active:</span><span class="detail-value">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Last Updated:</span><span class="detail-value">N/A</span></div>
+                    <div id="signal-breakdown-list-ai-max">
+                        <div class="detail-item"><span class="detail-label">Total Signals:</span><span class="detail-value">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Evaluated Signals:</span><span class="detail-value">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Wins:</span><span class="detail-value" style="color: #4ecdc4;">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Losses:</span><span class="detail-value" style="color: #ff6b6b;">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Pending/Active:</span><span class="detail-value">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Last Updated:</span><span class="detail-value">N/A</span></div>
+                    </div>
                 </div>
-                <div class="details-card" id="scenario-performance-ai-max">
+                <div class="details-card" id="scenario-performance-card-ai-max">
                     <h3 class="section-title">Scenario Performance</h3>
-                    <p style="text-align:center; color: #a0a0a0;">Loading scenario performance...</p>
+                    <div id="scenario-performance-ai-max">
+                        <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    </div>
                 </div>
-                <div class="details-card" id="confidence-performance-ai-max">
-                    <h3 class="section-title">Performance by Confidence Level</h3>
-                     <p style="text-align:center; color: #a0a0a0;">Loading confidence performance...</p>
+                <div class="details-card" id="confidence-performance-card-ai-max">
+                    <h3 class="section-title">Performance by Confidence</h3>
+                     <div id="confidence-performance-ai-max">
+                        <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    </div>
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Win Rate by Symbol</h3>
@@ -782,20 +888,26 @@
             <div class="details-section">
                 <div class="details-card" id="signal-breakdown-ai-bob">
                     <h3 class="section-title">Signal Breakdown</h3>
-                    <div class="detail-item"><span class="detail-label">Total Signals:</span><span class="detail-value">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Evaluated Signals:</span><span class="detail-value">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Wins:</span><span class="detail-value" style="color: #4ecdc4;">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Losses:</span><span class="detail-value" style="color: #ff6b6b;">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Pending/Active:</span><span class="detail-value">N/A</span></div>
-                    <div class="detail-item"><span class="detail-label">Last Updated:</span><span class="detail-value">N/A</span></div>
+                    <div id="signal-breakdown-list-ai-bob">
+                        <div class="detail-item"><span class="detail-label">Total Signals:</span><span class="detail-value">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Evaluated Signals:</span><span class="detail-value">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Wins:</span><span class="detail-value" style="color: #4ecdc4;">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Losses:</span><span class="detail-value" style="color: #ff6b6b;">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Pending/Active:</span><span class="detail-value">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Last Updated:</span><span class="detail-value">N/A</span></div>
+                    </div>
                 </div>
-                <div class="details-card" id="scenario-performance-ai-bob">
+                <div class="details-card" id="scenario-performance-card-ai-bob">
                     <h3 class="section-title">Scenario Performance</h3>
-                    <p style="text-align:center; color: #a0a0a0;">Loading scenario performance...</p>
+                    <div id="scenario-performance-ai-bob">
+                        <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    </div>
                 </div>
-                <div class="details-card" id="confidence-performance-ai-bob">
-                    <h3 class="section-title">Performance by Confidence Level</h3>
-                    <p style="text-align:center; color: #a0a0a0;">Loading confidence performance...</p>
+                <div class="details-card" id="confidence-performance-card-ai-bob">
+                    <h3 class="section-title">Performance by Confidence</h3>
+                    <div id="confidence-performance-ai-bob">
+                        <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    </div>
                 </div>
                 <div class="details-card">
                     <h3 class="section-title">Win Rate by Symbol</h3>
@@ -856,67 +968,40 @@
         <!-- AI Bob-2 (Experimental) Tab Content -->
         <div id="ai-bob-2" class="tab-content">
             <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-value win-rate" id="stat-winrate-ai-bob-2">N/A</div>
-                    <div class="stat-label">Win Rate</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value total-signals" id="stat-tradable-ai-bob-2">N/A</div>
-                    <div class="stat-label">Tradable Signals</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value confidence" id="stat-avgconfidence-ai-bob-2">N/A</div>
-                    <div class="stat-label">Avg Confidence</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value pending" id="stat-toorecent-ai-bob-2">N/A</div>
-                    <div class="stat-label">Too Recent</div>
-                </div>
+                <div class="stat-card"><div class="stat-value win-rate" id="stat-winrate-ai-bob-2">N/A</div><div class="stat-label">Win Rate</div></div>
+                <div class="stat-card"><div class="stat-value total-signals" id="stat-tradable-ai-bob-2">N/A</div><div class="stat-label">Tradable Signals</div></div>
+                <div class="stat-card"><div class="stat-value confidence" id="stat-avgconfidence-ai-bob-2">N/A</div><div class="stat-label">Avg Confidence</div></div>
+                <div class="stat-card"><div class="stat-value pending" id="stat-toorecent-ai-bob-2">N/A</div><div class="stat-label">Too Recent</div></div>
             </div>
-
-            <!-- ADDED BACK: Symbol Performance Section for AI Bob-2 -->
             <div class="symbol-performance" id="symbol-performance-ai-bob-2">
                 <h2 class="section-title experimental-header">Signal Type Performance</h2>
                 <div class="performance-grid" id="performance-grid-ai-bob-2">
                     <p style="text-align:center; color: #a0a0a0;">Loading signal type performance...</p>
                 </div>
             </div>
-
-            <div class="details-section">
+             <div class="details-section">
                 <div class="details-card" id="signal-breakdown-ai-bob-2">
                     <h3 class="section-title experimental-header">Signal Breakdown</h3>
-                    <div class="detail-item">
-                        <span class="detail-label">Total Signals:</span>
-                        <span class="detail-value">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Evaluated Signals:</span>
-                        <span class="detail-value">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Wins:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Losses:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Pending/Active:</span>
-                        <span class="detail-value">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Last Updated:</span>
-                        <span class="detail-value">N/A</span>
+                    <div id="signal-breakdown-list-ai-bob-2">
+                        <div class="detail-item"><span class="detail-label">Total Signals:</span><span class="detail-value">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Evaluated Signals:</span><span class="detail-value">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Wins:</span><span class="detail-value" style="color: #4ecdc4;">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Losses:</span><span class="detail-value" style="color: #ff6b6b;">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Pending/Active:</span><span class="detail-value">N/A</span></div>
+                        <div class="detail-item"><span class="detail-label">Last Updated:</span><span class="detail-value">N/A</span></div>
                     </div>
                 </div>
-                <div class="details-card" id="scenario-performance-ai-bob-2">
+                <div class="details-card" id="scenario-performance-card-ai-bob-2">
                     <h3 class="section-title experimental-header">Scenario Performance</h3>
-                    <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    <div id="scenario-performance-ai-bob-2">
+                        <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    </div>
                 </div>
-                <div class="details-card" id="confidence-performance-ai-bob-2">
-                    <h3 class="section-title experimental-header">Performance by Confidence Level</h3>
-                    <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                <div class="details-card" id="confidence-performance-card-ai-bob-2">
+                    <h3 class="section-title experimental-header">Performance by Confidence</h3>
+                    <div id="confidence-performance-ai-bob-2">
+                        <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    </div>
                 </div>
                 <div class="details-card">
                     <h3 class="section-title experimental-header">Win Rate by Symbol</h3>
@@ -979,76 +1064,48 @@
         <!-- AI Bob-3 (Experimental) Tab Content -->
         <div id="ai-bob-3" class="tab-content">
             <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-value win-rate" id="stat-winrate-ai-bob-3">N/A</div>
-                    <div class="stat-label">Win Rate</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value total-signals" id="stat-tradable-ai-bob-3">N/A</div>
-                    <div class="stat-label">Tradable Signals</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value confidence" id="stat-avgconfidence-ai-bob-3">N/A</div>
-                    <div class="stat-label">Avg Confidence</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value pending" id="stat-toorecent-ai-bob-3">N/A</div>
-                    <div class="stat-label">Too Recent</div>
-                </div>
+                 <div class="stat-card"><div class="stat-value win-rate" id="stat-winrate-ai-bob-3">N/A</div><div class="stat-label">Win Rate</div></div>
+                <div class="stat-card"><div class="stat-value total-signals" id="stat-tradable-ai-bob-3">N/A</div><div class="stat-label">Tradable Signals</div></div>
+                <div class="stat-card"><div class="stat-value confidence" id="stat-avgconfidence-ai-bob-3">N/A</div><div class="stat-label">Avg Confidence</div></div>
+                <div class="stat-card"><div class="stat-value pending" id="stat-toorecent-ai-bob-3">N/A</div><div class="stat-label">Too Recent</div></div>
             </div>
-
-            <!-- ADDED BACK: Symbol Performance Section for AI Bob-3 -->
             <div class="symbol-performance" id="symbol-performance-ai-bob-3">
                 <h2 class="section-title experimental-header">Signal Type Performance</h2>
                 <div class="performance-grid" id="performance-grid-ai-bob-3">
                     <p style="text-align:center; color: #a0a0a0;">Loading signal type performance...</p>
                 </div>
             </div>
-
-            <div class="details-section">
+             <div class="details-section">
                 <div class="details-card" id="signal-breakdown-ai-bob-3">
                     <h3 class="section-title experimental-header">Signal Breakdown</h3>
-                    <div class="detail-item">
-                        <span class="detail-label">Total Signals:</span>
-                        <span class="detail-value">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Evaluated Signals:</span>
-                        <span class="detail-value">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Wins:</span>
-                        <span class="detail-value" style="color: #4ecdc4;">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Losses:</span>
-                        <span class="detail-value" style="color: #ff6b6b;">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Pending/Active:</span>
-                        <span class="detail-value">N/A</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Last Updated:</span>
-                        <span class="detail-value">N/A</span>
-                    </div>
+                     <div id="signal-breakdown-list-ai-bob-3">
+                         <div class="detail-item"><span class="detail-label">Total Signals:</span><span class="detail-value">N/A</span></div>
+                         <div class="detail-item"><span class="detail-label">Evaluated Signals:</span><span class="detail-value">N/A</span></div>
+                         <div class="detail-item"><span class="detail-label">Wins:</span><span class="detail-value" style="color: #4ecdc4;">N/A</span></div>
+                         <div class="detail-item"><span class="detail-label">Losses:</span><span class="detail-value" style="color: #ff6b6b;">N/A</span></div>
+                         <div class="detail-item"><span class="detail-label">Pending/Active:</span><span class="detail-value">N/A</span></div>
+                         <div class="detail-item"><span class="detail-label">Last Updated:</span><span class="detail-value">N/A</span></div>
+                     </div>
                 </div>
-                <div class="details-card" id="scenario-performance-ai-bob-3">
+                <div class="details-card" id="scenario-performance-card-ai-bob-3">
                     <h3 class="section-title experimental-header">Scenario Performance</h3>
-                    <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    <div id="scenario-performance-ai-bob-3">
+                        <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    </div>
                 </div>
-                <div class="details-card" id="confidence-performance-ai-bob-3">
-                    <h3 class="section-title experimental-header">Performance by Confidence Level</h3>
-                    <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                <div class="details-card" id="confidence-performance-card-ai-bob-3">
+                    <h3 class="section-title experimental-header">Performance by Confidence</h3>
+                    <div id="confidence-performance-ai-bob-3">
+                        <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>
+                    </div>
                 </div>
-                <div class="details-card">
+                 <div class="details-card">
                     <h3 class="section-title experimental-header">Win Rate by Symbol</h3>
                     <div class="symbol-winrate-list" id="symbol-winrate-list-ai-bob-3">
                         <p style="text-align:center; color: #a0a0a0;">Loading symbol win rates...</p>
                     </div>
                 </div>
             </div>
-            
              <div class="signal-controls" id="signal-controls-ai-bob-3">
                 <div class="control-group">
                     <label for="symbol-filter-ai-bob-3">Symbol:</label>
@@ -1130,6 +1187,75 @@
             'ai-bob-3': createDefaultAiState()
         };
 
+        const modelInfoData = {
+            'ai-max': {
+                title: "About AI Max",
+                description: "The AI Max is engineered to replicate the analytical precision of an elite institutional crypto trader. It performs a comprehensive, real-time analysis of the market by integrating technical indicators, multi-timeframe data, liquidity levels, order flow, and news sentiment.",
+                strengths: [
+                    "Confluence-Based Signals: Identifies high-probability setups by finding a confluence of technical and order flow signals.",
+                    "Adaptable Strategy: Dynamically identifies the market scenario (Breakout, Reversal, Trend, Range-Bound) to tailor its approach",
+                    "Data-Rich Analysis: Processes dozens of data points, from VWAP and order book imbalances to news sentiment, for a holistic market view.",
+                    "Risk-Managed Precision: Generates signals with specific entry, stop loss, and take profit levels based on a calculated risk/reward ratio."
+                ],
+                focus: "Breakout trades, momentum, reversals, and trend continuations.",
+            },
+            'ai-bob': {
+                title: "About AI Bob",
+                description: "AI Bob, Powered by a different LLM than AI  is designed to emulate an elite institutional trader. Its core function is to perform a comprehensive, multi-layered market analysis to identify high-conviction trading opportunities. Rather than focusing on high-frequency scalping, it specializes in identifying more structured and robust trade setups, such as swing trades and trend continuations.",
+                strengths: [
+                    "Comprehensive Data Synthesis: Integrates a wide array of data including multi-timeframe technicals, liquidity levels, order flow, fundamentals, and news sentiment.",
+                    "Confluence-Driven: Excels at identifying scenarios where multiple, independent analytical factors align to produce a strong signal",
+                    "Adaptive to Market Regimes: Systematically identifies the current market type (Breakout, Reversal, Trend, Range) and adapts its strategy accordingly.",
+                    "Disciplined & Systematic: Operates with institutional-grade precision, providing clear and structured trade plans with specific entry, stop-loss, and take-profit levels."
+                ],
+                focus: "Swing Trades, Trend Continuation, Reversals, and Breakout Scenarios.",
+            },
+            'ai-bob-2': {
+                title: "About AI Bob-2 (Experimental)",
+                description: "AI Bob-2, a sophisticated evolution operates as an elite institutional trading analyst. It performs an exhaustive, data-driven analysis of the market, synthesizing everything from multi-timeframe indicators and order flow to news sentiment. This version is enhanced with an explicit directive for patience, allowing it to issue a **HOLD** signal and remain on the sidelines when trade conditions are not optimal.",
+                strengths: [
+                    "Enhanced Patience and Selectivity: Uniquely capable of issuing a HOLD signal, ensuring it only engages in high-conviction setups and actively avoids uncertain market conditions.",
+                    "Comprehensive Data Synthesis: Integrates a vast array of data for a complete market picture before making a decision.",
+                    "Adaptive to Market Regimes: Systematically identifies the prevailing market conditions (Breakout, Reversal, Trend, Range) to apply the appropriate strategy.",
+                    "Disciplined & Systematic: Delivers institutional-grade trade plans with precise, actionable levels for entry, exit, and risk management."
+                ],
+                focus: "High-conviction Swing Trades, Trend Continuation, Reversals, and Breakout Scenarios.",
+            },
+            'ai-bob-3': {
+                title: "About AI Bob-3 (Experimental)",
+                description: "AI Bob-3 embodies the persona of a risk-averse institutional portfolio manager. Its primary directive is **capital expansion**, which it achieves through extreme patience, discipline, and a highly selective trading model. It is explicitly designed to filter out mediocre setups and only engage when market conditions present a clear, high-probability opportunity that meets its strict, multi-layered criteria.",
+                strengths: [
+                    "Risk-Averse by Design: Its core philosophy is built on a non-negotiable set of Trade Veto Conditions. It will automatically issue a Hold signal if critical requirements, such as a minimum 2.5:1 risk-reward ratio or strong trend alignment, are not met.",
+                    "Systematic & Patient Framework: Follows a precise, five-step decision-making process that analyzes the market regime, session strength, and signal confluence before considering an entry. It understands that often the best trade is no trade at all.",
+                    "Performance-Aware & Adaptive: Uniquely, it reviews its own past performance feedback to adjust its confidence and will veto trade setups that have been historically unprofitable in similar conditions.",
+                    "High-Timeframe & Trend Focused: Prioritizes aligning with the dominant trend on higher timeframes (4h, 1d), viewing it as its primary ally for generating consistent returns."
+                ],
+                focus: "Capital preservation, high-probability trend continuation, and swing trading during optimal, high-strength market sessions. Actively avoids unclear, choppy, or low-probability environments.",
+            }
+        };
+
+        function updateModelInfoPanel(aiId) {
+            const contentDiv = document.getElementById('model-info-content');
+            const info = modelInfoData[aiId];
+
+            if (info) {
+                let strengthsHTML = '';
+                if (info.strengths && info.strengths.length > 0) {
+                    strengthsHTML = '<ul>' + info.strengths.map(s => `<li>${s}</li>`).join('') + '</ul>';
+                }
+
+                contentDiv.innerHTML = `
+                    <h4>${info.title}</h4>
+                    <p>${info.description}</p>
+                    ${strengthsHTML ? `<p><strong>Key Characteristics/Strengths:</strong></p>${strengthsHTML}` : ''}
+                    ${info.focus ? `<p><strong>Primary Focus:</strong> ${info.focus}</p>` : ''}
+                `;
+            } else {
+                contentDiv.innerHTML = `<h4>Model Information</h4><p>Details for this model are not yet available.</p>`;
+            }
+        }
+
+
         function switchTab(event, tabName) {
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(content => {
@@ -1143,6 +1269,12 @@
 
             document.getElementById(tabName).classList.add('active');
             event.currentTarget.classList.add('active');
+
+            // Update the model info panel content
+            updateModelInfoPanel(tabName);
+            
+            // --- NEW: Close the info panel when switching tabs ---
+            document.getElementById('model-info-container').classList.remove('active');
         }
 
         function getPerformanceStatusClass(status) {
@@ -1314,7 +1446,7 @@
                     tooRecentCount++;
                 }
 
-                if (s.Confidence !== undefined && typeof s.Confidence === 'number') { // Ensure Confidence is a number
+                if (s.Confidence !== undefined && typeof s.Confidence === 'number') {
                     totalConfidence += s.Confidence;
                     confidenceSignalsCount++;
                 }
@@ -1324,21 +1456,15 @@
             const avgConfidence = confidenceSignalsCount > 0 ? (totalConfidence / confidenceSignalsCount) : 0;
 
             document.getElementById(`stat-winrate-${aiId}`).textContent = evaluatedCount > 0 ? `${winRate.toFixed(2)}%` : 'N/A';
-            document.getElementById(`stat-tradable-${aiId}`).textContent = evaluatedCount > 0 ? evaluatedCount : 'N/A';
+            document.getElementById(`stat-tradable-${aiId}`).textContent = evaluatedCount > 0 ? evaluatedCount : (allSignals.length > 0 ? '0' : 'N/A');
             document.getElementById(`stat-avgconfidence-${aiId}`).textContent = confidenceSignalsCount > 0 ? `${avgConfidence.toFixed(2)}%` : 'N/A';
             document.getElementById(`stat-toorecent-${aiId}`).textContent = tooRecentCount > 0 || allSignals.length > 0 ? tooRecentCount : 'N/A';
 
 
-            const breakdownCard = document.getElementById(`signal-breakdown-${aiId}`);
-            if (breakdownCard) {
+            const breakdownList = document.getElementById(`signal-breakdown-list-${aiId}`);
+            if (breakdownList) {
                 const hasData = allSignals.length > 0;
-                let breakdownHTML = `<h3 class="section-title ${aiId.includes('bob-2') || aiId.includes('bob-3') ? 'experimental-header' : ''}">Signal Breakdown</h3>`;
-                // The overlay span is only needed if the h3 doesn't have the experimental-header class,
-                // but since it does, we don't need the span here.
-                // if ((aiId.includes('bob-2') || aiId.includes('bob-3')) && !breakdownCard.querySelector('.experimental-title-overlay')) {
-                //    breakdownHTML += '<span class="experimental-title-overlay">Experimental</span>';
-                // }
-                breakdownHTML += `
+                let breakdownHTML = `
                     <div class="detail-item"><span class="detail-label">Total Signals (excl. Hold):</span><span class="detail-value">${hasData ? allSignals.length : 'N/A'}</span></div>
                     <div class="detail-item"><span class="detail-label">Evaluated Signals:</span><span class="detail-value">${hasData && evaluatedCount > 0 ? evaluatedCount : (hasData ? '0' : 'N/A')}</span></div>
                     <div class="detail-item"><span class="detail-label">Wins:</span><span class="detail-value" style="color: #4ecdc4;">${hasData && wins > 0 ? wins : (hasData ? '0' : 'N/A')}</span></div>
@@ -1346,18 +1472,107 @@
                     <div class="detail-item"><span class="detail-label">Pending/Active:</span><span class="detail-value">${hasData && tooRecentCount > 0 ? tooRecentCount : (hasData ? '0' : 'N/A')}</span></div>
                     <div class="detail-item"><span class="detail-label">Last Updated:</span><span class="detail-value">${hasData ? new Date().toLocaleString() : 'N/A'}</span></div>
                 `;
-                breakdownCard.innerHTML = breakdownHTML;
+                breakdownList.innerHTML = breakdownHTML;
             }
+            
             calculateAndRenderSignalTypePerformance(aiId);
-            // Placeholder for other summary cards - you'll need to create similar functions
-            const scenarioCard = document.getElementById(`scenario-performance-${aiId}`);
-            if(scenarioCard && !scenarioCard.querySelector('.detail-item')) { // Check if not already populated
-                 scenarioCard.innerHTML = `<h3 class="section-title ${aiId.includes('bob-2') || aiId.includes('bob-3') ? 'experimental-header' : ''}">Scenario Performance</h3> <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>`;
+            calculateAndRenderScenarioPerformance(aiId);
+            calculateAndRenderConfidencePerformance(aiId);
+        }
+
+        function calculateAndRenderScenarioPerformance(aiId) {
+            const state = appState[aiId];
+            const container = document.getElementById(`scenario-performance-${aiId}`);
+            if (!container) return;
+
+            const signals = state.allSignals.filter(s => s.performance && (s.performance.status === 'WIN' || s.performance.status === 'LOSS'));
+            if (signals.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No scenario data to display.</p>';
+                return;
             }
-            const confidencePerfCard = document.getElementById(`confidence-performance-${aiId}`);
-            if(confidencePerfCard && !confidencePerfCard.querySelector('.detail-item')) {
-                confidencePerfCard.innerHTML = `<h3 class="section-title ${aiId.includes('bob-2') || aiId.includes('bob-3') ? 'experimental-header' : ''}">Performance by Confidence</h3> <p style="text-align:center; color: #a0a0a0;">Data not yet available.</p>`;
+
+            const scenarioStats = {};
+            signals.forEach(s => {
+                const scenario = s.Scenario || 'Unknown';
+                if (!scenarioStats[scenario]) {
+                    scenarioStats[scenario] = { wins: 0, total: 0 };
+                }
+                scenarioStats[scenario].total++;
+                if (s.performance.status === 'WIN') {
+                    scenarioStats[scenario].wins++;
+                }
+            });
+
+            const sortedScenarios = Object.entries(scenarioStats).sort(([,a], [,b]) => b.total - a.total);
+            
+            let html = '';
+            sortedScenarios.forEach(([scenario, data]) => {
+                const winRate = data.total > 0 ? (data.wins / data.total * 100) : 0;
+                let wrClass = winRate > 50 ? 'win' : (data.total > 0 ? 'loss' : 'neutral');
+                html += `
+                    <div class="detail-item">
+                        <span class="detail-label">${scenario}</span>
+                        <span class="detail-value">
+                            <span class="${wrClass}">${winRate.toFixed(2)}%</span> 
+                            <small>(${data.wins}/${data.total})</small>
+                        </span>
+                    </div>`;
+            });
+
+            container.innerHTML = html || '<p style="text-align:center; color: #a0a0a0;">No scenario data to display.</p>';
+        }
+
+        function calculateAndRenderConfidencePerformance(aiId) {
+            const state = appState[aiId];
+            const container = document.getElementById(`confidence-performance-${aiId}`);
+            if (!container) return;
+
+            const signals = state.allSignals.filter(s => s.performance && (s.performance.status === 'WIN' || s.performance.status === 'LOSS') && typeof s.Confidence === 'number');
+            if (signals.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color: #a0a0a0;">No confidence data to display.</p>';
+                return;
             }
+
+            const confidenceBuckets = {
+                "81-100%": { wins: 0, total: 0 }, "61-80%": { wins: 0, total: 0 },
+                "41-60%": { wins: 0, total: 0 }, "21-40%": { wins: 0, total: 0 },
+                "0-20%": { wins: 0, total: 0 }
+            };
+
+            signals.forEach(s => {
+                const conf = s.Confidence;
+                let bucketKey = null;
+                if (conf > 80) bucketKey = "81-100%";
+                else if (conf > 60) bucketKey = "61-80%";
+                else if (conf > 40) bucketKey = "41-60%";
+                else if (conf > 20) bucketKey = "21-40%";
+                else bucketKey = "0-20%";
+                
+                if (bucketKey) {
+                    confidenceBuckets[bucketKey].total++;
+                    if (s.performance.status === 'WIN') {
+                        confidenceBuckets[bucketKey].wins++;
+                    }
+                }
+            });
+
+            let html = '';
+            Object.entries(confidenceBuckets).forEach(([bucket, data]) => {
+                if (data.total > 0) {
+                    const winRate = (data.wins / data.total) * 100;
+                    let wrClass = winRate > 50 ? 'win' : 'loss';
+                    html += `
+                        <div class="detail-item">
+                            <span class="detail-label">${bucket}</span>
+                            <span class="detail-value">
+                                <span class="${wrClass}">${winRate.toFixed(2)}%</span> 
+                                <small>(${data.wins}/${data.total} trades)</small>
+                            </span>
+                        </div>`;
+                }
+            });
+
+            container.innerHTML = html || '<p style="text-align:center; color: #a0a0a0;">No confidence data to display.</p>';
         }
 
         function calculateAndRenderSignalTypePerformance(aiId) {
@@ -1434,10 +1649,14 @@
             document.getElementById(`stat-tradable-${aiId}`).textContent = `N/A`;
             document.getElementById(`stat-avgconfidence-${aiId}`).textContent = `N/A`;
             document.getElementById(`stat-toorecent-${aiId}`).textContent = `N/A`;
-            const breakdownCard = document.getElementById(`signal-breakdown-${aiId}`);
-            if(breakdownCard) breakdownCard.innerHTML = `<h3 class="section-title ${aiId.includes('bob-2') || aiId.includes('bob-3') ? 'experimental-header' : ''}">Signal Breakdown</h3><p style="text-align:center; color: #a0a0a0;">Loading...</p>`;
+            const breakdownList = document.getElementById(`signal-breakdown-list-${aiId}`);
+            if(breakdownList) breakdownList.innerHTML = `<p style="text-align:center; color: #a0a0a0;">Loading...</p>`;
             const perfGrid = document.getElementById(`performance-grid-${aiId}`);
             if(perfGrid) perfGrid.innerHTML = `<p style="text-align:center; color: #a0a0a0;">Loading signal type performance...</p>`;
+            const scenarioCard = document.getElementById(`scenario-performance-${aiId}`);
+            if(scenarioCard) scenarioCard.innerHTML = `<p style="text-align:center; color: #a0a0a0;">Loading scenario data...</p>`;
+            const confidenceCard = document.getElementById(`confidence-performance-${aiId}`);
+            if(confidenceCard) confidenceCard.innerHTML = `<p style="text-align:center; color: #a0a0a0;">Loading confidence data...</p>`;
 
 
             if ((aiId === 'ai-bob-2' || aiId === 'ai-bob-3') && !jsonFilename) {
@@ -1645,6 +1864,26 @@
 
 
         document.addEventListener('DOMContentLoaded', () => {
+            // --- NEW: Setup for collapsible info panel ---
+            const infoContainer = document.getElementById('model-info-container');
+            const infoToggleButton = document.getElementById('info-toggle-button');
+            
+            if(infoToggleButton && infoContainer) {
+                infoToggleButton.addEventListener('click', () => {
+                    infoContainer.classList.toggle('active');
+                });
+            }
+
+            // Initial info panel update for the default active tab
+            const activeTabButton = document.querySelector('.tab-button.active');
+            if (activeTabButton) {
+                const initialTabId = activeTabButton.getAttribute('onclick').match(/'([^']+)'/)[1];
+                 updateModelInfoPanel(initialTabId);
+            } else { // Fallback
+                updateModelInfoPanel('ai-max'); 
+            }
+
+
             fetchSignals('ai-max', 'signals_claude_log.json');
             fetchSignals('ai-bob', 'signals_gemini_log.json'); 
             fetchSignals('ai-bob-2', 'signals_gemini_log2.json'); 
