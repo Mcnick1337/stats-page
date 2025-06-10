@@ -1050,8 +1050,8 @@
     "timestamp": "2025-06-09T07:11:27.659529",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1067,8 +1067,8 @@
     "timestamp": "2025-06-09T07:12:13.952755",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1084,8 +1084,8 @@
     "timestamp": "2025-06-09T07:13:02.175113",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1101,8 +1101,8 @@
     "timestamp": "2025-06-09T07:28:59.702202",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1118,8 +1118,8 @@
     "timestamp": "2025-06-09T07:29:48.622168",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1135,8 +1135,8 @@
     "timestamp": "2025-06-09T07:30:24.433506",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1152,8 +1152,8 @@
     "timestamp": "2025-06-09T07:46:28.389047",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1169,8 +1169,8 @@
     "timestamp": "2025-06-09T07:47:04.511807",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1186,8 +1186,8 @@
     "timestamp": "2025-06-09T07:47:50.640091",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1203,8 +1203,8 @@
     "timestamp": "2025-06-09T08:03:46.085597",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1220,8 +1220,8 @@
     "timestamp": "2025-06-09T08:04:33.858529",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1237,8 +1237,8 @@
     "timestamp": "2025-06-09T08:05:17.260194",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1254,8 +1254,8 @@
     "timestamp": "2025-06-09T08:21:12.304471",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1271,8 +1271,8 @@
     "timestamp": "2025-06-09T08:22:00.669843",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1292,8 +1292,8 @@
     "timestamp": "2025-06-09T08:22:44.101702",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1309,8 +1309,8 @@
     "timestamp": "2025-06-09T08:38:43.024963",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1330,8 +1330,8 @@
     "timestamp": "2025-06-09T08:39:25.676960",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1347,8 +1347,8 @@
     "timestamp": "2025-06-09T08:40:04.324798",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1364,8 +1364,8 @@
     "timestamp": "2025-06-09T08:56:05.050034",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1381,8 +1381,8 @@
     "timestamp": "2025-06-09T08:56:41.693918",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1398,8 +1398,8 @@
     "timestamp": "2025-06-09T08:57:18.351117",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1415,8 +1415,8 @@
     "timestamp": "2025-06-09T09:13:16.946152",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1432,8 +1432,8 @@
     "timestamp": "2025-06-09T09:13:54.545147",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1449,8 +1449,8 @@
     "timestamp": "2025-06-09T09:14:31.300337",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1466,8 +1466,8 @@
     "timestamp": "2025-06-09T09:30:49.880140",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1483,8 +1483,8 @@
     "timestamp": "2025-06-09T09:31:33.835392",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1500,8 +1500,8 @@
     "timestamp": "2025-06-09T09:32:08.300665",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1517,8 +1517,8 @@
     "timestamp": "2025-06-09T09:48:41.190032",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1534,8 +1534,8 @@
     "timestamp": "2025-06-09T09:49:39.689136",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1551,8 +1551,8 @@
     "timestamp": "2025-06-09T09:50:37.205296",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1568,8 +1568,8 @@
     "timestamp": "2025-06-09T10:06:42.855460",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1585,8 +1585,8 @@
     "timestamp": "2025-06-09T10:07:19.625741",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1602,8 +1602,8 @@
     "timestamp": "2025-06-09T10:08:00.007348",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1619,8 +1619,8 @@
     "timestamp": "2025-06-09T10:24:33.969756",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1636,8 +1636,8 @@
     "timestamp": "2025-06-09T10:25:30.325869",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1653,8 +1653,8 @@
     "timestamp": "2025-06-09T10:26:15.160327",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1670,8 +1670,8 @@
     "timestamp": "2025-06-09T10:42:42.785326",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1687,8 +1687,8 @@
     "timestamp": "2025-06-09T10:43:39.546572",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1704,8 +1704,8 @@
     "timestamp": "2025-06-09T10:44:31.148220",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1721,8 +1721,8 @@
     "timestamp": "2025-06-09T11:01:02.386505",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1738,8 +1738,8 @@
     "timestamp": "2025-06-09T11:01:44.668354",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1755,8 +1755,8 @@
     "timestamp": "2025-06-09T11:02:18.792028",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1772,8 +1772,8 @@
     "timestamp": "2025-06-09T11:19:04.026019",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1789,8 +1789,8 @@
     "timestamp": "2025-06-09T11:19:46.874026",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1806,8 +1806,8 @@
     "timestamp": "2025-06-09T11:20:22.767277",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1823,8 +1823,8 @@
     "timestamp": "2025-06-09T11:36:35.965475",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1840,8 +1840,8 @@
     "timestamp": "2025-06-09T11:37:31.795990",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1857,8 +1857,8 @@
     "timestamp": "2025-06-09T11:38:36.044358",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1874,8 +1874,8 @@
     "timestamp": "2025-06-09T11:55:38.754792",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1891,8 +1891,8 @@
     "timestamp": "2025-06-09T11:56:35.733813",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1908,8 +1908,8 @@
     "timestamp": "2025-06-09T11:57:25.363965",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1925,8 +1925,8 @@
     "timestamp": "2025-06-09T12:13:27.997342",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1942,8 +1942,8 @@
     "timestamp": "2025-06-09T12:14:04.336198",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1959,8 +1959,8 @@
     "timestamp": "2025-06-09T12:14:41.323751",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1976,8 +1976,8 @@
     "timestamp": "2025-06-09T12:31:03.387136",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -1993,8 +1993,8 @@
     "timestamp": "2025-06-09T12:31:43.969323",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2010,8 +2010,8 @@
     "timestamp": "2025-06-09T12:32:25.664824",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2031,8 +2031,8 @@
     "timestamp": "2025-06-09T12:49:18.920792",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2048,8 +2048,8 @@
     "timestamp": "2025-06-09T12:50:03.666075",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2065,8 +2065,8 @@
     "timestamp": "2025-06-09T12:50:47.412219",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2082,8 +2082,8 @@
     "timestamp": "2025-06-09T13:01:57.329639",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2099,8 +2099,8 @@
     "timestamp": "2025-06-09T13:02:45.136191",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2116,8 +2116,8 @@
     "timestamp": "2025-06-09T13:03:17.360375",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2137,8 +2137,8 @@
     "timestamp": "2025-06-09T13:14:28.514834",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2154,8 +2154,8 @@
     "timestamp": "2025-06-09T13:15:23.601637",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2171,8 +2171,8 @@
     "timestamp": "2025-06-09T13:15:57.950293",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2188,8 +2188,8 @@
     "timestamp": "2025-06-09T13:27:23.080956",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2205,8 +2205,8 @@
     "timestamp": "2025-06-09T13:28:22.922628",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2222,8 +2222,8 @@
     "timestamp": "2025-06-09T13:29:20.578793",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2239,8 +2239,8 @@
     "timestamp": "2025-06-09T13:34:30.686079",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2256,8 +2256,8 @@
     "timestamp": "2025-06-09T13:35:32.850218",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2273,8 +2273,8 @@
     "timestamp": "2025-06-09T13:36:42.891716",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2290,8 +2290,8 @@
     "timestamp": "2025-06-09T13:43:06.922596",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2307,8 +2307,8 @@
     "timestamp": "2025-06-09T13:44:01.558271",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2324,8 +2324,8 @@
     "timestamp": "2025-06-09T13:45:04.405476",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2345,8 +2345,8 @@
     "timestamp": "2025-06-09T13:52:01.802411",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2366,8 +2366,8 @@
     "timestamp": "2025-06-09T13:53:05.891633",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2387,8 +2387,8 @@
     "timestamp": "2025-06-09T13:54:03.520043",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2408,8 +2408,8 @@
     "timestamp": "2025-06-09T14:00:47.194385",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2429,8 +2429,8 @@
     "timestamp": "2025-06-09T14:01:22.193215",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2450,8 +2450,8 @@
     "timestamp": "2025-06-09T14:02:14.119347",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2467,8 +2467,8 @@
     "timestamp": "2025-06-09T14:08:42.301762",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2484,8 +2484,8 @@
     "timestamp": "2025-06-09T14:09:34.961687",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2505,8 +2505,8 @@
     "timestamp": "2025-06-09T14:16:54.687578",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2522,8 +2522,8 @@
     "timestamp": "2025-06-09T14:17:41.255266",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2539,8 +2539,8 @@
     "timestamp": "2025-06-09T14:18:24.912521",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2563,12 +2563,8 @@
     "timestamp": "2025-06-09T14:25:07.298957",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "TIMEOUT_POSITIVE",
-      "closed_at_price": 108620.01,
-      "closed_by": "TIMEOUT",
-      "mfe_percentage": 2.71,
-      "mae_percentage": -0.09,
-      "evaluation_details": "Signal timed out after 24 hours."
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2584,8 +2580,8 @@
     "timestamp": "2025-06-09T14:25:48.954297",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2601,8 +2597,8 @@
     "timestamp": "2025-06-09T14:26:24.569935",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2625,12 +2621,8 @@
     "timestamp": "2025-06-09T14:33:05.715797",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "TIMEOUT_POSITIVE",
-      "closed_at_price": 108620.01,
-      "closed_by": "TIMEOUT",
-      "mfe_percentage": 2.61,
-      "mae_percentage": -0.18,
-      "evaluation_details": "Signal timed out after 24 hours."
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2646,8 +2638,8 @@
     "timestamp": "2025-06-09T14:33:53.751814",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2663,8 +2655,8 @@
     "timestamp": "2025-06-09T14:34:36.424848",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2680,8 +2672,8 @@
     "timestamp": "2025-06-09T14:40:45.291041",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2697,8 +2689,8 @@
     "timestamp": "2025-06-09T14:41:42.064940",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2714,8 +2706,8 @@
     "timestamp": "2025-06-09T14:42:27.035894",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2735,8 +2727,8 @@
     "timestamp": "2025-06-09T14:49:17.943206",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2752,8 +2744,8 @@
     "timestamp": "2025-06-09T14:50:10.822512",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2769,8 +2761,8 @@
     "timestamp": "2025-06-09T14:50:54.510902",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2788,8 +2780,8 @@
     "timestamp": "2025-06-09T14:57:57.307441",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2805,8 +2797,8 @@
     "timestamp": "2025-06-09T14:58:49.640160",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2822,8 +2814,8 @@
     "timestamp": "2025-06-09T14:59:56.434938",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2843,8 +2835,8 @@
     "timestamp": "2025-06-09T15:06:08.043335",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2860,8 +2852,8 @@
     "timestamp": "2025-06-09T15:06:42.336674",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2881,8 +2873,8 @@
     "timestamp": "2025-06-09T15:07:22.381297",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2902,8 +2894,8 @@
     "timestamp": "2025-06-09T15:13:29.220597",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2919,8 +2911,8 @@
     "timestamp": "2025-06-09T15:14:20.950637",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2936,8 +2928,8 @@
     "timestamp": "2025-06-09T15:15:10.838301",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2953,8 +2945,8 @@
     "timestamp": "2025-06-09T15:21:35.055317",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2974,8 +2966,8 @@
     "timestamp": "2025-06-09T15:22:12.812673",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -2995,8 +2987,8 @@
     "timestamp": "2025-06-09T15:23:18.452344",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3012,8 +3004,8 @@
     "timestamp": "2025-06-09T15:29:46.098377",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3029,8 +3021,8 @@
     "timestamp": "2025-06-09T15:30:26.723521",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3050,8 +3042,8 @@
     "timestamp": "2025-06-09T15:31:11.232030",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3071,8 +3063,8 @@
     "timestamp": "2025-06-09T15:37:37.773783",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3088,8 +3080,8 @@
     "timestamp": "2025-06-09T15:38:26.548865",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3109,8 +3101,8 @@
     "timestamp": "2025-06-09T15:39:07.695102",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3129,8 +3121,8 @@
     "timestamp": "2025-06-09T15:45:33.137218",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3146,8 +3138,8 @@
     "timestamp": "2025-06-09T15:46:31.901611",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3163,8 +3155,8 @@
     "timestamp": "2025-06-09T15:47:31.782961",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3184,8 +3176,8 @@
     "timestamp": "2025-06-09T15:53:50.680949",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3201,8 +3193,8 @@
     "timestamp": "2025-06-09T15:54:39.297629",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3218,8 +3210,8 @@
     "timestamp": "2025-06-09T15:55:34.896893",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3235,8 +3227,8 @@
     "timestamp": "2025-06-09T16:01:40.130895",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3252,8 +3244,8 @@
     "timestamp": "2025-06-09T16:02:15.617708",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3269,8 +3261,8 @@
     "timestamp": "2025-06-09T16:02:53.203609",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3286,8 +3278,8 @@
     "timestamp": "2025-06-09T16:08:51.147059",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3303,8 +3295,8 @@
     "timestamp": "2025-06-09T16:09:30.343914",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3320,8 +3312,8 @@
     "timestamp": "2025-06-09T16:10:04.269264",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3337,8 +3329,8 @@
     "timestamp": "2025-06-09T16:16:05.910110",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3354,8 +3346,8 @@
     "timestamp": "2025-06-09T16:16:49.406351",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3371,8 +3363,8 @@
     "timestamp": "2025-06-09T16:17:31.371914",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3388,8 +3380,8 @@
     "timestamp": "2025-06-09T16:23:45.634270",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3409,8 +3401,8 @@
     "timestamp": "2025-06-09T16:24:37.226720",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3426,8 +3418,8 @@
     "timestamp": "2025-06-09T16:25:22.693407",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3443,8 +3435,8 @@
     "timestamp": "2025-06-09T16:31:52.338177",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3460,8 +3452,8 @@
     "timestamp": "2025-06-09T16:32:44.422939",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3477,8 +3469,8 @@
     "timestamp": "2025-06-09T16:33:30.912977",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3498,8 +3490,8 @@
     "timestamp": "2025-06-09T16:39:45.851843",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3519,8 +3511,8 @@
     "timestamp": "2025-06-09T16:40:33.609131",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3536,8 +3528,8 @@
     "timestamp": "2025-06-09T16:41:21.288529",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3553,8 +3545,8 @@
     "timestamp": "2025-06-09T16:47:47.913382",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3570,8 +3562,8 @@
     "timestamp": "2025-06-09T16:48:45.694499",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3587,8 +3579,8 @@
     "timestamp": "2025-06-09T16:49:28.973331",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3610,12 +3602,8 @@
     "timestamp": "2025-06-09T16:56:21.001989",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "TIMEOUT_POSITIVE",
-      "closed_at_price": 108720.61,
-      "closed_by": "TIMEOUT",
-      "mfe_percentage": 2.49,
-      "mae_percentage": -0.18,
-      "evaluation_details": "Signal timed out after 24 hours."
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3631,8 +3619,8 @@
     "timestamp": "2025-06-09T16:57:08.844182",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -3648,8 +3636,8 @@
     "timestamp": "2025-06-09T16:57:54.929878",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -12954,7 +12942,11 @@
     "Reasoning": "Primary Veto: Estimated Risk/Reward ratio is 0.00:1, significantly below the 2.5:1 minimum requirement. Additionally, the 'Low - Weak / Choppy' session character (Session Strength 20/100), Neutral market regime, and extremely low signal confluence (10/100) make current conditions unsuitable for deploying capital.",
     "Relevant News Headlines": [],
     "timestamp": "2025-06-10T17:01:01.881255",
-    "symbol": "BTCUSDT"
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   },
   {
     "Signal": "Hold",
@@ -12967,7 +12959,11 @@
     "Reasoning": "Trade vetoed due to: 1. Session Character is 'Low - Weak / Choppy' (Session Strength 23/100), which is unsuitable for trend or breakout strategies as per trading philosophy. 2. The achievable Risk/Reward ratio to logical near-term targets is significantly below the 2.5:1 minimum requirement; the provided 'Estimated R/R Ratio: 0.00:1' supports this. 3. The 1h MACD shows a bearish cross, indicating potential short-term weakness or consolidation, which is unfavorable for immediate long entries in current choppy conditions.",
     "Relevant News Headlines": [],
     "timestamp": "2025-06-10T17:01:45.776592",
-    "symbol": "ETHUSDT"
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   },
   {
     "Signal": "Hold",
@@ -12980,6 +12976,624 @@
     "Stop Loss": null,
     "Relevant News Headlines": [],
     "timestamp": "2025-06-10T17:02:30.240510",
-    "symbol": "SOLUSDT"
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market & Veto Conditions Met",
+    "Trade Setup Type": null,
+    "Reasoning": "Market conditions are unsuitable for trading. Key veto condition met: Estimated Risk/Reward ratio (0.00:1) is below the 2.5:1 minimum. Additionally, the current 'Low - Weak / Choppy' session character (Session Strength 23/100) advises against active trading, especially trend or breakout strategies. Confluence Score is 0/100, indicating no high-probability setup.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:09:37.149616",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Suboptimal Conditions: Low Session Strength & Poor R/R",
+    "Trade Setup Type": null,
+    "Reasoning": "The current 'New York Session' has a 'Low - Weak / Choppy' character with a strength score of 25/100. As per trading philosophy, these conditions veto trend-following strategies. Furthermore, the 'Estimated R/R Ratio' is 0.00:1, which is critically below the minimum required 2.5:1. These factors violate non-negotiable trade veto conditions, mandating a 'Hold' to preserve capital and await a higher probability setup.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:10:23.994421",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Low R/R & Unfavorable Market Conditions",
+    "Trade Setup Type": null,
+    "Reasoning": "The primary reason for holding is the `Estimated R/R Ratio` of 0.05:1, which is drastically below the minimum requirement of 2.5:1, triggering a VETO. Additionally, the `Session Character` is 'Low - Weak / Choppy' with a `Session Strength Score` of 27/100, making trend or breakout trades highly unfavorable. The ADX at 20.66 indicates a very weak trend. The `Confluence Score` is -15, and `Signal Strength` is LOW. Overall market conditions are suboptimal for deploying capital.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:11:02.728628",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Veto Conditions Met / Low Probability Environment",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions met: 1) Session Character is 'Low - Weak / Choppy' (Session Strength Score 24/100), which vetoes trend or breakout strategies. 2) The Estimated Risk/Reward Ratio (0.00:1) is significantly below the required 2.5:1 minimum. Market conditions are suboptimal with a Confluence Score of 0/100, a stated 'Primary Trend: NEUTRAL', and conflicting technical signals (e.g., bearish 1h MACD vs. bullish HTF EMAs). Holding to preserve capital.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:18:20.785078",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Low Strength Session & Unfavorable R:R",
+    "Trade Setup Type": null,
+    "Reasoning": "Trade vetoed: Session Character is 'Low - Weak / Choppy' (Session Strength 28/100), which is unsuitable for trend or breakout strategies as per trading philosophy. Critically, the estimated Risk/Reward ratio of 0.75:1 is significantly below the mandatory 2.5:1 minimum. Confluence score is very low (20/100). Holding to preserve capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:19:08.280435",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Hold signal due to multiple critical veto conditions being met: 1. The `Session Character` is 'Low - Weak / Choppy' with a `Session Strength Score` of 29/100, which vetos trend or breakout strategies. 2. The `Estimated R/R Ratio` is 0.03:1, significantly below the mandatory minimum of 2.5:1. Additionally, the `Primary Trend` is NEUTRAL, ADX is low (20.66), and the `Confluence Score` is -25, indicating unfavorable and unclear market conditions for high-probability trades. Capital preservation is paramount.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:19:45.092488",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "The primary veto condition met is an unacceptable Risk/Reward ratio (0.00:1), far below the 2.5:1 minimum. Additionally, the 'Session Character' is 'Low - Weak / Choppy' (Strength 25/100), which vetos trend/breakout strategies and strongly favors holding. Confluence is non-existent (Score 0/100) with mixed signals, failing the requirement for at least three strong confirming factors. Capital preservation is prioritized in these suboptimal conditions.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:26:50.940324",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Suboptimal Trade Conditions / Low R/R",
+    "Trade Setup Type": null,
+    "Reasoning": "The estimated Risk/Reward ratio of 0.75:1 is below the minimum requirement of 2.5:1, triggering a trade veto. Additionally, the 'Low - Weak / Choppy' session character discourages trend-based strategies, and the overall confluence of signals is very low (5/100) with conflicting technical indicators.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:27:36.251298",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Low Probability Environment / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Primary veto condition met: Estimated Risk/Reward ratio (0.03:1) is significantly below the 2.5:1 minimum requirement. Additionally, the current 'Session Character' is 'Low - Weak / Choppy' with a Session Strength Score of 31/100, which vetoes trend or breakout strategies. Confluence score is extremely low (15/100), multi-timeframe alignment is weak, and ADX (20.63) indicates a very weak trend. Holding to preserve capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:28:12.458254",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions are met: 1. The estimated Risk/Reward ratio is 0.03:1, significantly below the required 2.5:1 minimum. 2. The current 'Session Character' is 'Low - Weak / Choppy' with a 'Session Strength Score' of 31/100, making conditions unfavorable for directional trades. 3. The 'Primary Trend' is 'NEUTRAL' and the 'Confluence Score' is extremely low (10/100), indicating a lack of clear, high-probability opportunities. Adhering to capital preservation directive.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:50:26.995178",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Veto Conditions Met: Low Session Strength & Unfavorable R/R",
+    "Trade Setup Type": null,
+    "Reasoning": "The 'Session Character' is 'Low - Weak / Choppy' (Session Strength Score: 35/100), which vetoes trend-following strategies under current conditions as per trading philosophy. Critically, the 'Estimated R/R Ratio' is 0.00:1, which is below the non-negotiable minimum requirement of 2.5:1, triggering a trade veto. The current price is pinned between Key Support ($2,739.90) and Key Resistance ($2,739.99), offering no viable trade structure. Additionally, the 1h MACD shows a bearish cross, and 'ADDITIONAL CONTEXT' states 'Multi-timeframe alignment is WEAK', further supporting a Hold decision to preserve capital.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:51:03.256834",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Suboptimal Conditions / Multiple Vetoes Met",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions are met. Critically, the estimated Risk/Reward ratio is 0.04:1, far below the 2.5:1 minimum requirement. The current trading session character is 'Low - Weak / Choppy' (Strength Score 36/100), making trend or breakout strategies highly unfavorable. ADX is very low (20.51), indicating a weak trend. The overall confluence score is extremely low (10/100), and multi-timeframe alignment is weak. Staying flat to preserve capital.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:51:41.281640",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Low Conviction / Unfavorable Conditions",
+    "Trade Setup Type": null,
+    "Reasoning": "The estimated Risk/Reward ratio is 0.00:1, which is below the minimum 2.5:1 requirement, triggering a trade veto. Additionally, the current 'Session Character' is 'Low - Weak / Choppy' (Session Strength Score: 34/100), strongly favoring a 'Hold' position. The Confluence Score is extremely low (10/100) and Signal Strength is LOW, indicating a lack of high-probability setup. The market regime is NEUTRAL with weak multi-timeframe alignment. Capital preservation is paramount under these conditions.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:58:48.799600",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Low Session Strength & Veto Conditions Met",
+    "Trade Setup Type": null,
+    "Reasoning": "The current New York session has Low Strength (37/100) and a 'Low - Weak / Choppy' character, which, according to trading philosophy, vetoes trend-following strategies despite the primary bullish market trend. Furthermore, the provided 'Estimated R/R Ratio' is 0.00:1, failing the mandatory minimum 2.5:1 risk-reward requirement. The 'Confluence Score' is also very low at 20/100, with conflicting signals such as a 1h MACD bearish cross and order flow showing ask dominance. Adhering to risk-averse principles, the decision is to Hold and preserve capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T17:59:34.562573",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Trade vetoed: The calculated Risk/Reward ratio (0.01:1) is significantly below the minimum 2.5:1 requirement. Additionally, the current Session Character is 'Low - Weak / Choppy', which vetoes trend or breakout strategies. The market shows a very weak trend (ADX 20.51), extremely low signal confluence (-15), and weak multi-timeframe alignment. Holding to preserve capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:00:20.393264",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unfavorable Risk/Reward and Market Conditions",
+    "Trade Setup Type": null,
+    "Reasoning": "The calculated Risk/Reward ratio is 0.00:1, failing the minimum 2.5:1 requirement. The current trading session character is 'Low - Weak / Choppy' with a strength score of 22/100, making conditions unsuitable for initiating new trades. Additionally, the confluence score is critically low (5/100) and key support/resistance levels are not providing a viable trade structure.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:07:32.033950",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Suboptimal Conditions - Low Session Strength & Poor R/R",
+    "Trade Setup Type": null,
+    "Reasoning": "The current New York session has 'Low - Weak / Choppy' character (Strength 24/100), which vetoes trend-based trades as per trading philosophy. The provided 'Estimated R/R Ratio' is 0.00:1, and an independent calculation of Risk/Reward to the first logical resistance (Upper Bollinger Band at $2,773.24) with an ATR-based stop-loss yields approximately 1:1. Both fail the minimum 2.5:1 R/R requirement, triggering a mandatory veto. Additionally, the Confluence Score is very low (20/100), and there are conflicting short-term signals (1h MACD bearish cross, ask dominance) despite a broader bullish trend. Holding to preserve capital.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:08:19.153761",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market Conditions",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions met: ADX (19.05) is below 20 indicating a weak trend, Session Character is 'Low - Weak / Choppy' which is unfavorable for directional trades, and the estimated Risk/Reward ratio (0.75:1) is significantly below the 2.5:1 minimum. Confluence score is extremely low (5/100) and multi-timeframe alignment is weak.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:09:00.744104",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Market regime is 'NEUTRAL' and Session Character is 'Low - Weak / Choppy' (Session Strength 26/100), leading to a 'Hold' bias and vetoing trend/breakout strategies as per trading philosophy. Critically, the provided 'Estimated R/R Ratio' is 0.00:1, violating the minimum 2.5:1 requirement (Trade Veto Condition). Additionally, the 'Confluence Score' is 0/100 and 'Signal Strength' is LOW. Conditions are suboptimal for deploying capital, prioritizing capital preservation.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:16:37.054582",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Low Session Strength & Unfavorable Risk/Reward",
+    "Trade Setup Type": null,
+    "Reasoning": "The current New York session exhibits Low Strength (26/100) and a 'Low - Weak / Choppy' character, which vetoes trend-following trades despite a bullish primary trend (ADX 38.49). Furthermore, the achievable Risk/Reward ratio (estimated 0.00:1, and confirmed by analysis) is significantly below the required 2.5:1 minimum. Immediate order flow indicates Ask Dominance (-82.05% imbalance), and the overall Confluence Score (20/100) is low. Adhering to capital preservation principles and trade veto conditions, the decision is to Hold.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [
+      "No news processed..."
+    ],
+    "timestamp": "2025-06-10T18:17:27.699761",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market Conditions",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions met: ADX (19.05) is below 20, indicating a weak trend. Session Character is 'Low - Weak / Choppy' with a Session Strength Score of 25/100, making trend/breakout trades unfavorable. The estimated Risk/Reward ratio of 0.01:1 is significantly below the 2.5:1 minimum requirement. Multi-timeframe alignment is weak. Holding to preserve capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:18:05.194680",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions are met. The Session Character is 'Low - Weak / Choppy' and Session Strength is Low (30/100), indicating dangerous and uncertain market conditions, vetoing trend/breakout strategies. Critically, the estimated Risk/Reward Ratio is 0.00:1, which is far below the mandatory 2.5:1 minimum. Additionally, the Confluence Score is extremely low (-5/100) with conflicting active factors (MACD bearish cross, Ask dominance vs. MTF bullish alignment).",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:25:34.383883",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Vetoed: Unfavorable R/R & Weak Session Conditions",
+    "Trade Setup Type": null,
+    "Reasoning": "The decision is 'Hold' due to critical veto conditions being met. Firstly, the 'Estimated R/R Ratio' is 0.02:1, which is significantly below the mandatory minimum of 2.5:1. Secondly, the 'Session Character' is 'Low - Weak / Choppy' with a 'Session Strength Score' of 27/100; these conditions veto trend or breakout strategies. Capital preservation is paramount under these circumstances.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:26:15.990470",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions met: ADX (19.05) is below 20, indicating a weak trend. Session Character is 'Low - Weak / Choppy'. Estimated Risk/Reward Ratio (0.06:1) is significantly below the 2.5:1 minimum. Multi-timeframe alignment is weak. Capital preservation is prioritized.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:27:03.639751",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Market regime is Neutral and Session Character is 'Low - Weak / Choppy' (Strength 32/100), indicating unclear and unfavorable conditions. Confluence Score is critically low (5/100). Furthermore, the Estimated R/R Ratio is 0.00:1, failing the minimum 2.5:1 requirement. Holding to preserve capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:34:21.350668",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Low Session Strength & Unfavorable Risk-Reward",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions met: 1) The current 'Session Character' is 'Low - Weak / Choppy' (Session Strength Score: 31/100), which vetoes trend-based strategies. 2) The 'Estimated R/R Ratio' is 0.00:1, significantly below the minimum required 2.5:1. 3) The 1-hour MACD shows a bearish crossover, which conflicts with the primary bullish trend on the 4-hour and daily timeframes. Capital preservation is prioritized under these suboptimal conditions.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:35:09.009807",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Unclear / Choppy Market",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions met: The estimated Risk/Reward ratio (0.04:1) is significantly below the 2.5:1 minimum. ADX is 19.05, indicating a weak or non-existent trend. The current Session Character is 'Low - Weak / Choppy', which is unsuitable for trend or breakout strategies. Multi-timeframe analysis shows conflicting signals (1h mildly bullish, 4h mixed with price below EMA200, 1d bearish with price below EMAs). Confluence score is very low (15/100). Holding to preserve capital.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:35:51.514965",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Veto - Low Session Strength & Unfavorable Risk/Reward",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions are met. Firstly, the Session Character is 'Low - Weak / Choppy' with a Session Strength Score of 33/100, which vetoes trend-based strategies under current conditions. Secondly, the provided 'Estimated R/R Ratio' is 0.00:1, and independent calculation confirms an achievable Risk/Reward ratio below the minimum 2.5:1 requirement. Additionally, conflicting signals on the 1-hour timeframe (MACD bearish cross vs. bullish EMAs) and a low overall Confluence Score (25/100) further support a 'Hold' decision to preserve capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:43:17.185636",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Veto Conditions Met",
+    "Trade Setup Type": null,
+    "Reasoning": "Trade vetoed. Key veto conditions met: 1) The estimated Risk/Reward ratio (0.75:1) is significantly below the minimum requirement of 2.5:1. 2) The current 'Low - Weak / Choppy' session character (Session Strength 33/100) is unsuitable for trend-following strategies, which would be the indicated approach given the bullish primary trend. Supporting this decision are conflicting signals such as a MACD bearish cross, strong ask-side dominance in the order book, a low confluence score (20/100), and stated weak multi-timeframe alignment.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:43:58.898513",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Confidence": 0,
+    "Scenario": "Suboptimal Conditions / Multiple Vetoes",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions are met. The estimated Risk/Reward ratio (0.03:1) is significantly below the required minimum of 2.5:1. The ADX (19.29) is below 20, indicating a weak or non-existent trend, which is a veto condition unless pursuing a clear range-bound strategy. The current Session Character is 'Low - Weak / Choppy' with a Session Strength Score of 29/100, making conditions unfavorable for trend or breakout trades. Additionally, the Confluence Score is very low (15/100) and multi-timeframe alignment is weak. Staying flat to preserve capital.",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:44:32.569581",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Suboptimal Conditions for Entry",
+    "Trade Setup Type": null,
+    "Reasoning": "The primary reason for holding is the calculated Risk/Reward ratio of 0.00:1, which is significantly below the minimum required 2.5:1; this is due to extremely tight key support ($109,234.95) and resistance ($109,234.96) levels relative to the current price. Secondly, the 'Session Character' is 'Low - Weak / Choppy' with a low Session Strength Score (37/100), making current conditions unsuitable for initiating trend-based trades, which would be the preferred strategy given the bullish primary trend. Thirdly, the overall Confluence Score is low (25/100), indicating insufficient strong, confirming signals for a high-probability setup.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:51:54.789354",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Suboptimal Entry Conditions / Low Confluence",
+    "Trade Setup Type": null,
+    "Reasoning": "The primary veto condition is met as the Estimated R/R Ratio is 0.00:1, far below the minimum 2.5:1 requirement. Additionally, the Confluence Score is very low (15/100) and Signal Strength is LOW. Contradictory signals exist on the 1-hour timeframe, including a MACD bearish cross and an overbought RSI (72.50), which are not conducive for an immediate long entry despite the broader bullish trend. The 4-hour RSI is also overbought (71.80). Waiting for a clearer, higher-probability setup with adequate risk-reward.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:52:39.228696",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Bullish Setup with Unfavorable Risk/Reward",
+    "Trade Setup Type": null,
+    "Reasoning": "The market exhibits several bullish characteristics: a primary bullish trend, high conviction New York session, institutional buying, and bullish technical indicators (MACD cross, Bollinger Band breakout). However, the current price ($164.53) is immediately below a key resistance level and strongest ask zone at $164.76. This results in an estimated Risk/Reward ratio of 0.05:1 to this first significant target, which is critically below the minimum required 2.5:1. This violates a non-negotiable trade veto condition, mandating a 'Hold' signal to preserve capital despite the otherwise bullish context.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T18:53:48.644891",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Low Session Strength and Unfavorable Risk-Reward",
+    "Trade Setup Type": null,
+    "Reasoning": "The current 'Session Character' is 'Low - Weak / Choppy' with a Session Strength Score of 20/100, which vetoes Trend or Breakout strategies as per trading philosophy. The market is in a primary bullish trend, suggesting a Trend Continuation strategy, which is thus vetoed. Additionally, the 'Estimated R/R Ratio' is 0.00:1, which is below the minimum required 2.5:1, triggering another non-negotiable trade veto. Confluence score is also low at 25/100. Holding to preserve capital.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T19:01:16.544231",
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Weak Session / Choppy Conditions",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple veto conditions triggered. Firstly, the Estimated Risk/Reward ratio is 0.00:1, which is below the mandatory minimum of 2.5:1. Secondly, the Current Trading Session character is 'Low - Weak / Choppy' with a Session Strength Score of 22/100, making trend-following or breakout strategies unsuitable and favoring a 'Hold' position. Thirdly, the Confluence Score is critically low (10/100) and Signal Strength is LOW, indicating a lack of a high-probability setup. Price is also at the Strongest Ask Zone ($2,757.70) with immediate support at $2,757.69, offering no viable entry.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T19:02:07.316071",
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Hold",
+    "Entry Price": null,
+    "Take Profit Targets": null,
+    "Stop Loss": null,
+    "Confidence": 0,
+    "Scenario": "Veto Conditions Met / Low Probability Setup",
+    "Trade Setup Type": null,
+    "Reasoning": "Multiple critical veto conditions triggered: 1) The provided Estimated Risk/Reward ratio of 0.03:1 is significantly below the required 2.5:1 minimum. 2) The current 'Low - Weak / Choppy' session character (Session Strength Score: 31/100) vetoes trend or breakout strategies. 3) Conflicting technical signals, such as price trading below the 1-Day EMA200 and ask-dominant order flow (-11.32% imbalance), reduce conviction despite a stated bullish primary trend. Capital preservation is prioritized.",
+    "Relevant News Headlines": [],
+    "timestamp": "2025-06-10T19:03:16.346367",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   }
 ]
