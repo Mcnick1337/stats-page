@@ -1,6 +1,10 @@
 // File: netlify/functions/crypto-proxy.js
 
+// This line is ESSENTIAL. Put it back.
+const fetch = require('node-fetch');
+
 exports.handler = async function (event) {
+    // ... the rest of the function remains the same
     const { symbol, interval, startTime, endTime } = event.queryStringParameters;
 
     if (!symbol || !interval || !startTime || !endTime) {
@@ -26,16 +30,13 @@ exports.handler = async function (event) {
             body: JSON.stringify(bybitList),
         };
     } catch (error) {
-        // --- THIS IS THE CRUCIAL CHANGE ---
-        // We now log the real error on the server and send its message back to the browser.
         console.error("Proxy function crashed:", error);
         return {
             statusCode: 500,
             body: JSON.stringify({
                 error: "The proxy function on the server crashed.",
-                details: error.message, // This will contain the actual reason for the crash.
+                details: error.message,
             }),
         };
-        // ------------------------------------
     }
 };

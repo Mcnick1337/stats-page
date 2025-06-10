@@ -2,5 +2,7 @@
   "name": "stats-page",
   "version": "1.0.0",
   "description": "AI Trading Performance Analysis",
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
 }
