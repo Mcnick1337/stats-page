@@ -173,64 +173,170 @@ function closeSignalModal() {
 }
 
 /**
- * UPDATED: Renders a real candlestick chart with annotations.
+ * NEW HELPER FUNCTION: Calculates a Simple Moving Average (SMA).
+ * @param {Array} data - The array of price data objects.
+ * @param {number} period - The length of the SMA (e.g., 20).
+ * @returns {Array} An array of SMA data points for the chart.
+ */
+function calculateSMA(data, period) {
+    let smaData = [];
+    for (let i = period - 1; i < data.length; i++) {
+        let sum = 0;
+        for (let j = 0; j < period; j++) {
+            sum += data[i - j].c; // Sum of closing prices
+        }
+        smaData.push({
+            x: data[i].x,
+            y: sum / period
+        });
+    }
+    return smaData;
+}
+
+/**
+ * UPDATED: Fetches OHLC and VOLUME data from KuCoin.
+ */
+async function fetchOHLCData(symbol, signalTime) {
+    const startTime = new Date(signalTime.getTime() - 8 * 60 * 60 * 1000).getTime(); // Extend window for more context
+    const url = `/.netlify/functions/crypto-proxy?symbol=${symbol.toUpperCase()}&startTime=${startTime}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (!Array.isArray(data)) {
+            console.error("KuCoin proxy did not return an array:", data);
+            throw new Error(data.error || 'Invalid data received from proxy.');
+        }
+
+        // KuCoin format: [time, open, close, high, low, volume]
+        const parsedData = data.map(d => ({
+            x: parseInt(d[0]) * 1000,
+            o: parseFloat(d[1]),
+            c: parseFloat(d[2]),
+            h: parseFloat(d[3]),
+            l: parseFloat(d[4]),
+            v: parseFloat(d[5]) // <-- We are now parsing VOLUME
+        })).reverse();
+        
+        return parsedData;
+    } catch (error) {
+        console.error("Failed to fetch or parse OHLC data via KuCoin proxy:", error);
+        return null;
+    }
+}
+
+/**
+ * COMPLETE OVERHAUL: Renders a professional-looking, interactive chart.
  */
 function renderSignalDetailChart(signal, ohlcData) {
     const ctx = document.getElementById('signal-detail-chart').getContext('2d');
-    
-    // Destroy previous chart to prevent conflicts
     if (appState.signalDetailChart) {
         appState.signalDetailChart.destroy();
     }
 
+    // --- Prepare Datasets ---
+    const sma20 = calculateSMA(ohlcData, 20); // Calculate 20-period SMA
+    const volumeData = ohlcData.map(d => ({ x: d.x, y: d.v }));
+
+    // --- Annotation Setup ---
     const entryPrice = parseFloat(signal["Entry Price"]);
     const sl = parseFloat(signal["Stop Loss"]);
     const tp1 = parseFloat(signal["Take Profit Targets"][0]);
 
-    // Create annotation lines for the trade setup
     const annotations = {
-        entryLine: { type: 'line', yMin: entryPrice, yMax: entryPrice, borderColor: '#45b7d1', borderWidth: 2, label: { content: `Entry: ${entryPrice.toFixed(2)}`, enabled: true, position: 'start', backgroundColor: 'rgba(69, 183, 209, 0.8)' } },
-        slLine: { type: 'line', yMin: sl, yMax: sl, borderColor: '#ff6b6b', borderWidth: 2, label: { content: `SL: ${sl.toFixed(2)}`, enabled: true, position: 'start', backgroundColor: 'rgba(255, 107, 107, 0.8)' } },
-        tp1Line: { type: 'line', yMin: tp1, yMax: tp1, borderColor: '#4ecdc4', borderWidth: 2, borderDash: [6, 6], label: { content: `TP1: ${tp1.toFixed(2)}`, enabled: true, position: 'end', backgroundColor: 'rgba(78, 205, 196, 0.8)' } }
+        // Entry Line (solid, primary color)
+        entryLine: { type: 'line', yMin: entryPrice, yMax: entryPrice, borderColor: 'rgba(69, 183, 209, 0.8)', borderWidth: 2, label: { content: `Entry: ${entryPrice}`, enabled: true, position: 'end', backgroundColor: 'rgba(69, 183, 209, 0.8)' } },
+        // Stop Loss Line (dashed, red)
+        slLine: { type: 'line', yMin: sl, yMax: sl, borderColor: 'rgba(255, 107, 107, 0.8)', borderWidth: 2, borderDash: [6, 6], label: { content: `SL: ${sl}`, enabled: true, position: 'end', backgroundColor: 'rgba(255, 107, 107, 0.8)' } },
+        // Take Profit Line (dashed, green)
+        tp1Line: { type: 'line', yMin: tp1, yMax: tp1, borderColor: 'rgba(78, 205, 196, 0.8)', borderWidth: 2, borderDash: [6, 6], label: { content: `TP1: ${tp1}`, enabled: true, position: 'end', backgroundColor: 'rgba(78, 205, 196, 0.8)' } },
+        // Arrow pointing at entry candle
+        entryPoint: { type: 'point', xValue: new Date(signal.timestamp).getTime(), yValue: entryPrice, backgroundColor: '#45b7d1', radius: 5, label: { content: signal.Signal, enabled: true, yAdjust: signal.Signal === 'Buy' ? -20 : 20 } }
     };
 
+    // --- Chart Configuration ---
     appState.signalDetailChart = new Chart(ctx, {
-        type: 'candlestick', // The magic happens here!
+        type: 'candlestick',
         data: {
             datasets: [{
-                label: `${signal.symbol} 15m Chart`,
-                data: ohlcData
+                label: `${signal.symbol} 15min`,
+                data: ohlcData,
+                yAxisID: 'y',
+                // Professional Colors
+                color: {
+                    up: '#26a69a', // Green
+                    down: '#ef5350', // Red
+                    unchanged: '#999999',
+                }
+            }, {
+                type: 'bar',
+                label: 'Volume',
+                data: volumeData,
+                yAxisID: 'y_volume', // Assign to the volume axis
+                backgroundColor: volumeData.map((d, i) => ohlcData[i].c > ohlcData[i].o ? 'rgba(38, 166, 154, 0.5)' : 'rgba(239, 83, 80, 0.5)'),
+            }, {
+                type: 'line',
+                label: 'SMA(20)',
+                data: sma20,
+                yAxisID: 'y',
+                borderColor: 'rgba(255, 167, 38, 0.8)',
+                borderWidth: 2,
+                pointRadius: 0,
             }]
         },
         options: {
+            // Use the site's font
+            font: { family: "'Segoe UI', sans-serif" },
+            // Layout and Responsiveness
             responsive: true,
             maintainAspectRatio: false,
+            layout: { padding: { top: 10, bottom: 10 } },
+            // Scales (Price and Volume Axes)
             scales: {
-                x: {
-                    type: 'time',
-                    time: { unit: 'hour' },
-                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                    ticks: { color: '#a0a0a0' }
-                },
-                y: {
-                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                    ticks: { color: '#a0a0a0' }
-                }
+                x: { type: 'time', time: { unit: 'hour', tooltipFormat: 'MMM dd, HH:mm' }, grid: { color: 'rgba(255, 255, 255, 0.1)' }, ticks: { color: '#a0a0a0', maxRotation: 0, autoSkip: true } },
+                y: { type: 'linear', position: 'right', grid: { color: 'rgba(255, 255, 255, 0.1)' }, ticks: { color: '#a0a0a0' }, height: '70%' }, // Main price axis
+                y_volume: { type: 'linear', position: 'right', display: false, height: '30%' } // Volume axis (hidden labels)
             },
+            // Plugins (Tooltip, Zoom, Annotations)
             plugins: {
                 legend: { display: false },
-                annotation: { annotations }, // The annotation plugin still works perfectly
+                // Custom Tooltip
                 tooltip: {
+                    enabled: true,
                     mode: 'index',
                     intersect: false,
-                    bodyFont: { size: 14 }
-                }
+                    backgroundColor: 'rgba(15, 15, 35, 0.9)',
+                    titleColor: '#ffffff',
+                    bodyColor: '#c0c0d0',
+                    callbacks: {
+                        label: function (context) {
+                            const datasetLabel = context.dataset.label || '';
+                            if (datasetLabel === 'Volume') {
+                                return `Vol: ${context.parsed.y.toLocaleString()}`;
+                            }
+                            if (datasetLabel.includes('SMA')) {
+                                return `${datasetLabel}: ${context.parsed.y.toFixed(2)}`;
+                            }
+                            const candle = context.raw;
+                            return [
+                                `O: ${candle.o}`, `H: ${candle.h}`,
+                                `L: ${candle.l}`, `C: ${candle.c}`
+                            ];
+                        }
+                    }
+                },
+                // Zoom and Pan Configuration
+                zoom: {
+                    pan: { enabled: true, mode: 'x' },
+                    zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' }
+                },
+                // Our annotations
+                annotation: { annotations }
             }
         }
     });
-    
-    // Change the disclaimer text
-    document.querySelector('.chart-disclaimer').innerHTML = `<strong>Note:</strong> Chart data is fetched from the KuCoin API.`;
+    document.querySelector('.chart-disclaimer').innerHTML = `<strong>Tip:</strong> You can scroll to zoom and drag to pan the chart.`;
 }
 
 // --- COMPARISON VIEW LOGIC ---
@@ -549,42 +655,4 @@ function updateFullDisplay(aiId) {
 function updateModelInfoPanel(aiId) {
     const info = modelInfoData[aiId];
     document.getElementById('model-info-content').innerHTML = `<h4>${info.title}</h4><p>${info.description}</p>`;
-}
-
-/**
- * FINAL VERSION: Fetches OHLC data from the KuCoin API via our proxy.
- */
-async function fetchOHLCData(symbol, signalTime) {
-    // We only need startTime for the KuCoin API call in the proxy
-    const startTime = new Date(signalTime.getTime() - 2 * 60 * 60 * 1000).getTime();
-
-    // The URL is simpler as we do the conversions in the proxy
-    const url = `/.netlify/functions/crypto-proxy?symbol=${symbol.toUpperCase()}&startTime=${startTime}`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        if (!Array.isArray(data)) {
-            console.error("KuCoin proxy did not return an array:", data);
-            throw new Error(data.error || 'Invalid data received from proxy.');
-        }
-
-        // --- KuCoin data format is different! ---
-        // It is: [time, open, close, high, low, volume]
-        // We must parse it into the format Chart.js expects: {x, o, h, l, c}
-        const parsedData = data.map(d => ({
-            x: parseInt(d[0]) * 1000, // Convert Unix seconds back to milliseconds for Chart.js
-            o: parseFloat(d[1]),     // open
-            h: parseFloat(d[3]),     // high (Note the index is 3)
-            l: parseFloat(d[4]),     // low (Note the index is 4)
-            c: parseFloat(d[2])      // close (Note the index is 2)
-        })).reverse(); // KuCoin also returns newest first, so we reverse it.
-        
-        return parsedData;
-
-    } catch (error) {
-        console.error("Failed to fetch or parse OHLC data via KuCoin proxy:", error);
-        return null;
-    }
 }
