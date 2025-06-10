@@ -234,13 +234,8 @@ function renderSignalDetailChart(signal, ohlcData) {
 
 function renderTradingViewChart(signal, ohlcData) {
     const container = document.getElementById('signal-detail-chart-container');
-    container.innerHTML = ''; // Clear previous chart
+    container.innerHTML = ''; 
 
-    // --- Chart Configuration ---
-    //
-    // THIS IS THE CRITICAL LINE.
-    // Ensure it says "LightweightCharts.createChart", not "Chart.createChart" or anything else.
-    //
     const chart = LightweightCharts.createChart(container, {
         width: container.clientWidth,
         height: 300,
@@ -256,6 +251,9 @@ function renderTradingViewChart(signal, ohlcData) {
         timeScale: { timeVisible: true, secondsVisible: false },
     });
 
+    // --- ADD THIS LINE FOR DEBUGGING ---
+    console.log('The chart object is:', chart);
+    // ------------------------------------
 
     // Make chart responsive
     new ResizeObserver(entries => {
@@ -273,7 +271,7 @@ function renderTradingViewChart(signal, ohlcData) {
         wickDownColor: '#ef5350',
         wickUpColor: '#26a69a',
     });
-    
+
     // Format data for Lightweight Charts: { time, open, high, low, close }
     const chartData = ohlcData.map(d => ({
         time: d.x / 1000, // Library requires Unix timestamp in SECONDS
