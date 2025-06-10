@@ -4073,7 +4073,11 @@
       "No news processed..."
     ],
     "timestamp": "2025-06-10T18:50:25.373861",
-    "symbol": "BTCUSDT"
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   },
   {
     "Signal": "Sell",
@@ -4091,7 +4095,11 @@
       "No news processed..."
     ],
     "timestamp": "2025-06-10T18:51:57.448444",
-    "symbol": "ETHUSDT"
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   },
   {
     "Signal": "Buy",
@@ -4109,6 +4117,10 @@
       "No news processed..."
     ],
     "timestamp": "2025-06-10T18:53:19.583872",
-    "symbol": "SOLUSDT"
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   }
 ]
