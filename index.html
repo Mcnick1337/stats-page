@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Trading Signals Analysis Dashboard</title>
-        <link rel="stylesheet" href="style.css">
-        
-        <!-- Using specific, locked versions to prevent library conflicts -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-        <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Signals Analysis Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Using specific, locked versions to prevent library conflicts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
+</head>
 <body>
     <!-- Floating Emojis -->
     <div class="floating-elements">
@@ -37,11 +37,9 @@
                     <button class="tab-button experimental" data-tab-id="ai-bob-2">AI Bob-2 (Exp)</button>
                     <button class="tab-button experimental" data-tab-id="ai-bob-3">AI Bob-3 (Exp)</button>
                 </div>
-                <!-- NEW: Compare Models Button -->
                 <button id="toggle-comparison-view-btn" class="compare-btn">Compare Models</button>
             </div>
 
-            <!-- Collapsible Model Information Panel -->
             <div class="collapsible-info-panel" id="model-info-container">
                 <button class="collapsible-toggle-button" id="info-toggle-button">
                     <span>Model Information</span>
@@ -50,13 +48,12 @@
                 <div class="collapsible-content" id="model-info-content"></div>
             </div>
 
-            <!-- Tab Content Area -->
             <div id="tab-content-wrapper">
                 <!-- All tab content will be dynamically generated here -->
             </div>
         </div>
         
-        <!-- NEW: A/B Comparison View -->
+        <!-- A/B Comparison View -->
         <div id="comparison-view" class="hidden">
             <header class="comparison-header">
                 <h2>Model Comparison</h2>
@@ -72,27 +69,20 @@
                     <select id="model-select-b"><option value="">Select Model</option></select>
                 </div>
             </div>
-            <div id="comparison-grid">
-                <!-- Comparison results will be injected here -->
-            </div>
+            <div id="comparison-grid"></div>
         </div>
-
     </div>
 
-    <!-- NEW: Signal Detail Modal -->
+    <!-- Signal Detail Modal -->
     <div id="signal-modal" class="modal-overlay hidden">
         <div class="modal-content">
             <button class="modal-close-btn">×</button>
             <h2 id="modal-title">Signal Details</h2>
-            <!-- Updated: Use a div instead of a canvas -->
             <div id="signal-detail-chart-container" class="modal-chart-container"></div>
-            <p class="chart-disclaimer">
-                Chart data from KuCoin API.
-            </p>
+            <p class="chart-disclaimer">Chart data from KuCoin API via proxy.</p>
             <div id="modal-details" class="modal-details-grid"></div>
         </div>
     </div>
-
 
     <footer>
         By Mcnick1 In 2025
