@@ -170,14 +170,16 @@ async function fetchOHLCData(symbol, signalTime) {
 
 function renderTradingViewChart(signal, ohlcData) {
     const container = document.getElementById('signal-detail-chart-container');
-    container.innerHTML = '';
+    container.innerHTML = ''; // Clear previous content
 
+    // --- Chart Configuration ---
     const chart = LightweightCharts.createChart(container, {
         width: container.clientWidth,
         height: 300,
+        // UPDATED: Theming options to match your dark theme
         layout: {
-            backgroundColor: '#1a1a3e',
-            textColor: '#d1d4dc',
+            background: { color: '#1a1a3e' }, // Site background color
+            textColor: '#d1d4dc',             // Site text color
         },
         grid: {
             vertLines: { color: 'rgba(255, 255, 255, 0.1)' },
@@ -187,12 +189,14 @@ function renderTradingViewChart(signal, ohlcData) {
         timeScale: { timeVisible: true, secondsVisible: false },
     });
 
+    // Make chart responsive
     new ResizeObserver(entries => {
         if (entries.length === 0 || entries[0].target !== container) { return; }
         const newRect = entries[0].contentRect;
         chart.applyOptions({ width: newRect.width, height: newRect.height });
     }).observe(container);
 
+    // --- Add Candlestick Series ---
     const candleSeries = chart.addCandlestickSeries({
         upColor: '#26a69a',
         downColor: '#ef5350',
@@ -211,10 +215,27 @@ function renderTradingViewChart(signal, ohlcData) {
     }));
     candleSeries.setData(chartData);
 
+    // --- NEW: Add an Entry Marker Arrow ---
+    const signalTimeInSeconds = new Date(signal.timestamp).getTime() / 1000;
+    const markerColor = signal.Signal === 'Buy' ? '#26a69a' : '#ef5350';
+    const markerShape = signal.Signal === 'Buy' ? 'arrowUp' : 'arrowDown';
+    const markerPosition = signal.Signal === 'Buy' ? 'belowBar' : 'aboveBar';
+
+    candleSeries.setMarkers([
+        {
+            time: signalTimeInSeconds,
+            position: markerPosition,
+            color: markerColor,
+            shape: markerShape,
+            text: signal.Signal.toUpperCase() // Optional: text on hover
+        }
+    ]);
+
+    // --- Add Volume Series ---
     const volumeSeries = chart.addHistogramSeries({
         color: '#26a69a',
         priceFormat: { type: 'volume' },
-        priceScaleId: '',
+        priceScaleId: '', 
         scaleMargins: { top: 0.8, bottom: 0 },
     });
     const volumeData = ohlcData.map(d => ({
@@ -224,6 +245,7 @@ function renderTradingViewChart(signal, ohlcData) {
     }));
     volumeSeries.setData(volumeData);
 
+    // --- Add Price Lines for Entry, SL, TP ---
     const entryPrice = parseFloat(signal["Entry Price"]);
     const sl = parseFloat(signal["Stop Loss"]);
     const tp1 = parseFloat(signal["Take Profit Targets"][0]);
@@ -232,13 +254,14 @@ function renderTradingViewChart(signal, ohlcData) {
     candleSeries.createPriceLine({ price: sl, color: '#ef5350', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true, title: ' SL' });
     candleSeries.createPriceLine({ price: tp1, color: '#26a69a', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true, title: ' TP1' });
 
-    const signalTimeInSeconds = new Date(signal.timestamp).getTime() / 1000;
-    const from = signalTimeInSeconds - (2 * 60 * 60);
-    const to = signalTimeInSeconds + (4 * 60 * 60);
+    // Set the visible range to focus on the signal time
+    const from = signalTimeInSeconds - (2 * 60 * 60); // 2 hours before
+    const to = signalTimeInSeconds + (4 * 60 * 60); // 4 hours after
     chart.timeScale().setVisibleRange({ from, to });
     
     return chart;
 }
+
 
 // --- COMPARISON VIEW LOGIC ---
 function initializeComparisonView() {
