@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Signals Analysis Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Chart.js Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-    <!-- NEW: Chart.js Annotation Plugin for SL/TP lines -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+    <!-- REMOVED ALL Chart.js, zoom, and annotation plugins -->
+    <!-- ADDED the single TradingView Lightweight Charts library -->
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
 </head>
 <body>
     <!-- Floating Emojis -->
@@ -83,13 +80,12 @@
     <!-- NEW: Signal Detail Modal -->
     <div id="signal-modal" class="modal-overlay hidden">
         <div class="modal-content">
-            <button class="modal-close-btn">&times;</button>
+            <button class="modal-close-btn">×</button>
             <h2 id="modal-title">Signal Details</h2>
-            <div class="modal-chart-container">
-                <canvas id="signal-detail-chart"></canvas>
-            </div>
+            <!-- Updated: Use a div instead of a canvas -->
+            <div id="signal-detail-chart-container" class="modal-chart-container"></div>
             <p class="chart-disclaimer">
-                <strong>Note:</strong> This chart is a simplified illustration based on the signal's entry, TP, and SL points. It does not show historical price data.
+                Chart data from KuCoin API.
             </p>
             <div id="modal-details" class="modal-details-grid"></div>
         </div>
