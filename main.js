@@ -93,10 +93,6 @@ function hideComparisonView() {
 }
 
 // --- SIGNAL MODAL & DETAIL CHART ---
-/**
- * UPDATED (MORE ROBUST): Fetches real OHLC data and provides instant feedback and error logging.
- */
-// Global variable to hold the chart instance so we can remove it later
 let activeTradingViewChart = null;
 
 async function openSignalModal(signalId, aiId) {
@@ -109,12 +105,10 @@ async function openSignalModal(signalId, aiId) {
     const modal = document.getElementById('signal-modal');
     const chartContainer = document.getElementById('signal-detail-chart-container');
     
-    // Show modal with loading state
     modal.classList.remove('hidden');
     document.getElementById('modal-title').textContent = `${signal.symbol} - ${signal.Signal} Signal`;
     chartContainer.innerHTML = '<p style="color: #a0a0a0; text-align: center; padding-top: 120px;">Loading chart data...</p>';
     
-    // Populate details
     document.getElementById('modal-details').innerHTML = `
         <div class="signal-param"><span class="label">Entry Price:</span><span class="value">${signal["Entry Price"]}</span></div>
         <div class="signal-param"><span class="label">Stop Loss:</span><span class="value">${signal["Stop Loss"]}</span></div>
@@ -123,7 +117,6 @@ async function openSignalModal(signalId, aiId) {
         <div class="signal-param"><span class="label">Status:</span><span class="value">${signal.performance.status} (${signal.performance.closed_by})</span></div>
     `;
 
-    // Fetch data and render chart
     try {
         const ohlcData = await fetchOHLCData(signal.symbol, new Date(signal.timestamp));
         if (ohlcData && ohlcData.length > 0) {
@@ -140,40 +133,14 @@ async function openSignalModal(signalId, aiId) {
 function closeSignalModal() {
     const modal = document.getElementById('signal-modal');
     modal.classList.add('hidden');
-    
-    // IMPORTANT: Clean up the chart to prevent memory leaks
     if (activeTradingViewChart) {
         activeTradingViewChart.remove();
         activeTradingViewChart = null;
     }
 }
 
-/**
- * NEW HELPER FUNCTION: Calculates a Simple Moving Average (SMA).
- * @param {Array} data - The array of price data objects.
- * @param {number} period - The length of the SMA (e.g., 20).
- * @returns {Array} An array of SMA data points for the chart.
- */
-function calculateSMA(data, period) {
-    let smaData = [];
-    for (let i = period - 1; i < data.length; i++) {
-        let sum = 0;
-        for (let j = 0; j < period; j++) {
-            sum += data[i - j].c; // Sum of closing prices
-        }
-        smaData.push({
-            x: data[i].x,
-            y: sum / period
-        });
-    }
-    return smaData;
-}
-
-/**
- * UPDATED: Fetches OHLC and VOLUME data from KuCoin.
- */
 async function fetchOHLCData(symbol, signalTime) {
-    const startTime = new Date(signalTime.getTime() - 8 * 60 * 60 * 1000).getTime(); // Extend window for more context
+    const startTime = new Date(signalTime.getTime() - 8 * 60 * 60 * 1000).getTime();
     const url = `/.netlify/functions/crypto-proxy?symbol=${symbol.toUpperCase()}&startTime=${startTime}`;
 
     try {
@@ -185,14 +152,13 @@ async function fetchOHLCData(symbol, signalTime) {
             throw new Error(data.error || 'Invalid data received from proxy.');
         }
 
-        // KuCoin format: [time, open, close, high, low, volume]
         const parsedData = data.map(d => ({
             x: parseInt(d[0]) * 1000,
             o: parseFloat(d[1]),
             c: parseFloat(d[2]),
             h: parseFloat(d[3]),
             l: parseFloat(d[4]),
-            v: parseFloat(d[5]) // <-- We are now parsing VOLUME
+            v: parseFloat(d[5])
         })).reverse();
         
         return parsedData;
@@ -202,39 +168,9 @@ async function fetchOHLCData(symbol, signalTime) {
     }
 }
 
-/**
- * COMPLETE OVERHAUL: Renders a professional-looking, interactive chart.
- */
-function renderSignalDetailChart(signal, ohlcData) {
-    const ctx = document.getElementById('signal-detail-chart').getContext('2d');
-    if (appState.signalDetailChart) {
-        appState.signalDetailChart.destroy();
-    }
-
-    // --- Prepare Datasets ---
-    const sma20 = calculateSMA(ohlcData, 20); // Calculate 20-period SMA
-    const volumeData = ohlcData.map(d => ({ x: d.x, y: d.v }));
-
-    // --- Annotation Setup ---
-    const entryPrice = parseFloat(signal["Entry Price"]);
-    const sl = parseFloat(signal["Stop Loss"]);
-    const tp1 = Array.isArray(signal["Take Profit Targets"]) ? parseFloat(signal["Take Profit Targets"][0]) : NaN;
-    if (!isNaN(entry) && !isNaN(sl) && !isNaN(tp1) && Math.abs(entry - sl) > 0) {
-        const rr = Math.abs(tp1 - entry) / Math.abs(entry - sl);
-        totalRR += rr;
-        rrCount++;
-        const profitOrLoss = status === 'win' ? (100 * rr) : -100;
-        if(status === 'win') grossProfit += profitOrLoss; else grossLoss += profitOrLoss;
-        equity += profitOrLoss;
-    }
-    peakEquity = Math.max(peakEquity, equity);
-    maxDrawdown = Math.max(maxDrawdown, (peakEquity - equity) / peakEquity);
-    equityCurveData.push({ x: new Date(signal.timestamp), y: equity });
-}
-
 function renderTradingViewChart(signal, ohlcData) {
     const container = document.getElementById('signal-detail-chart-container');
-    container.innerHTML = ''; 
+    container.innerHTML = '';
 
     const chart = LightweightCharts.createChart(container, {
         width: container.clientWidth,
@@ -251,18 +187,12 @@ function renderTradingViewChart(signal, ohlcData) {
         timeScale: { timeVisible: true, secondsVisible: false },
     });
 
-    // --- ADD THIS LINE FOR DEBUGGING ---
-    console.log('The chart object is:', chart);
-    // ------------------------------------
-
-    // Make chart responsive
     new ResizeObserver(entries => {
         if (entries.length === 0 || entries[0].target !== container) { return; }
         const newRect = entries[0].contentRect;
         chart.applyOptions({ width: newRect.width, height: newRect.height });
     }).observe(container);
 
-    // --- Add Candlestick Series ---
     const candleSeries = chart.addCandlestickSeries({
         upColor: '#26a69a',
         downColor: '#ef5350',
@@ -271,10 +201,9 @@ function renderTradingViewChart(signal, ohlcData) {
         wickDownColor: '#ef5350',
         wickUpColor: '#26a69a',
     });
-
-    // Format data for Lightweight Charts: { time, open, high, low, close }
+    
     const chartData = ohlcData.map(d => ({
-        time: d.x / 1000, // Library requires Unix timestamp in SECONDS
+        time: d.x / 1000,
         open: d.o,
         high: d.h,
         low: d.l,
@@ -282,11 +211,10 @@ function renderTradingViewChart(signal, ohlcData) {
     }));
     candleSeries.setData(chartData);
 
-    // --- Add Volume Series ---
     const volumeSeries = chart.addHistogramSeries({
         color: '#26a69a',
         priceFormat: { type: 'volume' },
-        priceScaleId: '', // Set to an empty string to place on a separate scale
+        priceScaleId: '',
         scaleMargins: { top: 0.8, bottom: 0 },
     });
     const volumeData = ohlcData.map(d => ({
@@ -296,7 +224,6 @@ function renderTradingViewChart(signal, ohlcData) {
     }));
     volumeSeries.setData(volumeData);
 
-    // --- Add Price Lines for Entry, SL, TP ---
     const entryPrice = parseFloat(signal["Entry Price"]);
     const sl = parseFloat(signal["Stop Loss"]);
     const tp1 = parseFloat(signal["Take Profit Targets"][0]);
@@ -305,13 +232,11 @@ function renderTradingViewChart(signal, ohlcData) {
     candleSeries.createPriceLine({ price: sl, color: '#ef5350', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true, title: ' SL' });
     candleSeries.createPriceLine({ price: tp1, color: '#26a69a', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true, title: ' TP1' });
 
-    // Set the visible range to focus on the signal time
     const signalTimeInSeconds = new Date(signal.timestamp).getTime() / 1000;
-    const from = signalTimeInSeconds - (2 * 60 * 60); // 2 hours before
-    const to = signalTimeInSeconds + (4 * 60 * 60); // 4 hours after
+    const from = signalTimeInSeconds - (2 * 60 * 60);
+    const to = signalTimeInSeconds + (4 * 60 * 60);
     chart.timeScale().setVisibleRange({ from, to });
     
-    // Return the chart instance for cleanup
     return chart;
 }
 
@@ -408,10 +333,6 @@ function setupFilterListeners(aiId) {
         });
     });
 }
-
-// --- DATA & RENDERING FUNCTIONS (UNCHANGED CORE LOGIC) ---
-// Note: These functions are copied from the previous response and integrated into the new structure.
-// Minor changes like passing aiId to renderSignalCard are included.
 
 async function fetchSignals(aiId, jsonFilename) {
     const elementsToClear = document.querySelectorAll(`#${aiId} .stat-value, #${aiId} .details-card div, #${aiId} .performance-grid, #${aiId} .signal-grid, #${aiId} .chart-container canvas`);
