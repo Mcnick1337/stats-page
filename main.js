@@ -552,39 +552,39 @@ function updateModelInfoPanel(aiId) {
 }
 
 /**
- * UPDATED: Fetches OHLC data from the Bybit API via our proxy.
+ * FINAL VERSION: Fetches OHLC data from the KuCoin API via our proxy.
  */
 async function fetchOHLCData(symbol, signalTime) {
+    // We only need startTime for the KuCoin API call in the proxy
     const startTime = new Date(signalTime.getTime() - 2 * 60 * 60 * 1000).getTime();
-    const endTime = new Date(signalTime.getTime() + 8 * 60 * 60 * 1000).getTime();
-    const interval = '15'; // Bybit uses '15' for 15 minutes
 
-    // --- Update the URL to call our newly named proxy ---
-    const url = `/.netlify/functions/crypto-proxy?symbol=${symbol.toUpperCase()}&interval=${interval}&startTime=${startTime}&endTime=${endTime}`;
+    // The URL is simpler as we do the conversions in the proxy
+    const url = `/.netlify/functions/crypto-proxy?symbol=${symbol.toUpperCase()}&startTime=${startTime}`;
 
     try {
         const response = await fetch(url);
         const data = await response.json();
 
         if (!Array.isArray(data)) {
-            console.error("Bybit proxy did not return an array:", data);
+            console.error("KuCoin proxy did not return an array:", data);
             throw new Error(data.error || 'Invalid data received from proxy.');
         }
 
-        // Bybit data format is: [timestamp, open, high, low, close, volume, turnover]
-        // We parse it into the format Chart.js expects.
+        // --- KuCoin data format is different! ---
+        // It is: [time, open, close, high, low, volume]
+        // We must parse it into the format Chart.js expects: {x, o, h, l, c}
         const parsedData = data.map(d => ({
-            x: parseInt(d[0]), // timestamp
-            o: parseFloat(d[1]), // open
-            h: parseFloat(d[2]), // high
-            l: parseFloat(d[3]), // low
-            c: parseFloat(d[4])  // close
-        })).reverse(); // Bybit returns data from newest to oldest, so we reverse it.
+            x: parseInt(d[0]) * 1000, // Convert Unix seconds back to milliseconds for Chart.js
+            o: parseFloat(d[1]),     // open
+            h: parseFloat(d[3]),     // high (Note the index is 3)
+            l: parseFloat(d[4]),     // low (Note the index is 4)
+            c: parseFloat(d[2])      // close (Note the index is 2)
+        })).reverse(); // KuCoin also returns newest first, so we reverse it.
         
         return parsedData;
 
     } catch (error) {
-        console.error("Failed to fetch or parse OHLC data via Bybit proxy:", error);
+        console.error("Failed to fetch or parse OHLC data via KuCoin proxy:", error);
         return null;
     }
 }

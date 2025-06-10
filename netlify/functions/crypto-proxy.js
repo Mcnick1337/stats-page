@@ -1,33 +1,39 @@
 // File: netlify/functions/crypto-proxy.js
-
-// This line is ESSENTIAL. Put it back.
 const fetch = require('node-fetch');
 
 exports.handler = async function (event) {
-    // ... the rest of the function remains the same
-    const { symbol, interval, startTime, endTime } = event.queryStringParameters;
+    let { symbol, startTime } = event.queryStringParameters;
 
-    if (!symbol || !interval || !startTime || !endTime) {
+    if (!symbol || !startTime) {
         return { statusCode: 400, body: JSON.stringify({ error: 'Missing parameters.' }) };
     }
 
-    const bybitInterval = '15';
-    const bybitStartTime = startTime;
-    const API_ENDPOINT = `https://api.bybit.com/v5/market/kline?category=linear&symbol=${symbol}&interval=${bybitInterval}&start=${bybitStartTime}&limit=200`;
+    // --- Critical KuCoin-specific changes ---
+    // 1. Convert symbol from "BTCUSDT" to "BTC-USDT"
+    const kucoinSymbol = symbol.replace('USDT', '-USDT');
+    // 2. KuCoin uses timestamps in seconds, not milliseconds
+    const startAt = Math.floor(parseInt(startTime) / 1000);
+    // 3. Set the interval type
+    const type = '15min';
+    // -----------------------------------------
+
+    const API_ENDPOINT = `https://api.kucoin.com/api/v1/market/candles?type=${type}&symbol=${kucoinSymbol}&startAt=${startAt}`;
 
     try {
         const response = await fetch(API_ENDPOINT);
         const data = await response.json();
 
-        if (data.retCode !== 0) {
-            console.error("Bybit API Error:", data.retMsg);
-            return { statusCode: 500, body: JSON.stringify({ error: `Bybit API Error: ${data.retMsg}` }) };
+        // Check for KuCoin's specific error format
+        if (data.code !== '200000') {
+            const errorMessage = `KuCoin API Error: ${data.msg || 'Unknown error'}`;
+            console.error(errorMessage, data);
+            return { statusCode: 500, body: JSON.stringify({ error: errorMessage }) };
         }
 
-        const bybitList = data.result.list;
+        // The data we want is in data.data
         return {
             statusCode: 200,
-            body: JSON.stringify(bybitList),
+            body: JSON.stringify(data.data),
         };
     } catch (error) {
         console.error("Proxy function crashed:", error);
