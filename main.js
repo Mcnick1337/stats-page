@@ -230,7 +230,7 @@ function renderSignalDetailChart(signal, ohlcData) {
     });
     
     // Change the disclaimer text
-    document.querySelector('.chart-disclaimer').innerHTML = `<strong>Note:</strong> Chart data is fetched from the Binance API.`;
+    document.querySelector('.chart-disclaimer').innerHTML = `<strong>Note:</strong> Chart data is fetched from the KuCoin API.`;
 }
 
 // --- COMPARISON VIEW LOGIC ---
