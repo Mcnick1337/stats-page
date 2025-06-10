@@ -1,0 +1,4 @@
+# File: netlify.toml
+[build]
+  # This tells Netlify where your serverless functions are located.
+  functions = "netlify/functions"
