@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Signals Analysis Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <!-- NEW: Chart.js Annotation Plugin for SL/TP lines -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body>
+    <!-- Floating Emojis -->
+    <div class="floating-elements">
+        <div class="floating-element" style="left: 10%; animation-delay: 0s; animation-duration: 25s;">📈</div>
+        <div class="floating-element" style="left: 20%; animation-delay: -5s; animation-duration: 30s;">💹</div>
+        <div class="floating-element" style="left: 30%; animation-delay: -10s; animation-duration: 22s;">📊</div>
+        <div class="floating-element" style="left: 50%; animation-delay: -15s; animation-duration: 28s;">💰</div>
+        <div class="floating-element" style="left: 70%; animation-delay: -8s; animation-duration: 20s;">🚀</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="header-bg"></div>
+            <h1>Trading Signals Dashboard</h1>
+            <p class="subtitle">AI Trading Performance Analysis</p>
+        </header>
+
+        <!-- Main Dashboard View -->
+        <div id="main-dashboard-view">
+            <div class="tabs-container">
+                <div class="tab-nav">
+                    <button class="tab-button active" data-tab-id="ai-max">AI Max</button>
+                    <button class="tab-button" data-tab-id="ai-bob">AI Bob</button>
+                    <button class="tab-button experimental" data-tab-id="ai-bob-2">AI Bob-2 (Exp)</button>
+                    <button class="tab-button experimental" data-tab-id="ai-bob-3">AI Bob-3 (Exp)</button>
+                </div>
+                <!-- NEW: Compare Models Button -->
+                <button id="toggle-comparison-view-btn" class="compare-btn">Compare Models</button>
+            </div>
+
+            <!-- Collapsible Model Information Panel -->
+            <div class="collapsible-info-panel" id="model-info-container">
+                <button class="collapsible-toggle-button" id="info-toggle-button">
+                    <span>Model Information</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="collapsible-content" id="model-info-content"></div>
+            </div>
+
+            <!-- Tab Content Area -->
+            <div id="tab-content-wrapper">
+                <!-- All tab content will be dynamically generated here -->
+            </div>
+        </div>
+        
+        <!-- NEW: A/B Comparison View -->
+        <div id="comparison-view" class="hidden">
+            <header class="comparison-header">
+                <h2>Model Comparison</h2>
+                <button id="exit-comparison-view-btn" class="compare-btn">Exit Comparison</button>
+            </header>
+            <div class="comparison-controls">
+                <div class="control-group">
+                    <label for="model-select-a">Model A:</label>
+                    <select id="model-select-a"><option value="">Select Model</option></select>
+                </div>
+                <div class="control-group">
+                    <label for="model-select-b">Model B:</label>
+                    <select id="model-select-b"><option value="">Select Model</option></select>
+                </div>
+            </div>
+            <div id="comparison-grid">
+                <!-- Comparison results will be injected here -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NEW: Signal Detail Modal -->
+    <div id="signal-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Signal Details</h2>
+            <div class="modal-chart-container">
+                <canvas id="signal-detail-chart"></canvas>
+            </div>
+            <p class="chart-disclaimer">
+                <strong>Note:</strong> This chart is a simplified illustration based on the signal's entry, TP, and SL points. It does not show historical price data.
+            </p>
+            <div id="modal-details" class="modal-details-grid"></div>
+        </div>
+    </div>
+
+
+    <footer>
+        By Mcnick1 In 2025
+    </footer>
+
+    <script src="main.js" defer></script>
+</body>
+</html>
