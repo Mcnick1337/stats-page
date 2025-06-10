@@ -110,24 +110,73 @@ function openSignalModal(signalId, aiId) {
     modal.classList.remove('hidden');
 }
 
-function closeSignalModal() { document.getElementById('signal-modal').classList.add('hidden'); }
+function closeSignalModal() { 
+    document.getElementById('signal-modal').classList.add('hidden'); 
+    // Destroy the chart when the modal is closed to free up memory
+    if (appState.signalDetailChart) {
+        appState.signalDetailChart.destroy();
+    }
+}
 
-function renderSignalDetailChart(signal, aiId) {
+/**
+ * UPDATED: Renders a real candlestick chart with annotations.
+ */
+function renderSignalDetailChart(signal, ohlcData) {
     const ctx = document.getElementById('signal-detail-chart').getContext('2d');
+    
+    // Destroy previous chart to prevent conflicts
+    if (appState.signalDetailChart) {
+        appState.signalDetailChart.destroy();
+    }
+
     const entryPrice = parseFloat(signal["Entry Price"]);
     const sl = parseFloat(signal["Stop Loss"]);
     const tp1 = parseFloat(signal["Take Profit Targets"][0]);
-    const tp2 = parseFloat(signal["Take Profit Targets"][1]);
-    const closePrice = signal.performance.closed_at_price ? parseFloat(signal.performance.closed_at_price) : null;
-    const labels = ['Before', 'Entry', 'Close'];
-    const data = [entryPrice, entryPrice, closePrice || (signal.Signal === "Buy" ? tp1 : sl)];
+
+    // Create annotation lines for the trade setup
     const annotations = {
-        entryLine: { type: 'line', yMin: entryPrice, yMax: entryPrice, borderColor: '#45b7d1', borderWidth: 2, label: { content: `Entry: ${entryPrice}`, enabled: true, position: 'start', backgroundColor: '#45b7d1' } },
-        slLine: { type: 'line', yMin: sl, yMax: sl, borderColor: '#ff6b6b', borderWidth: 2, label: { content: `SL: ${sl}`, enabled: true, position: 'start', backgroundColor: '#ff6b6b' } },
-        tp1Line: { type: 'line', yMin: tp1, yMax: tp1, borderColor: '#4ecdc4', borderWidth: 2, borderDash: [6, 6], label: { content: `TP1: ${tp1}`, enabled: true, position: 'end', backgroundColor: '#4ecdc4' } }
+        entryLine: { type: 'line', yMin: entryPrice, yMax: entryPrice, borderColor: '#45b7d1', borderWidth: 2, label: { content: `Entry: ${entryPrice.toFixed(2)}`, enabled: true, position: 'start', backgroundColor: 'rgba(69, 183, 209, 0.8)' } },
+        slLine: { type: 'line', yMin: sl, yMax: sl, borderColor: '#ff6b6b', borderWidth: 2, label: { content: `SL: ${sl.toFixed(2)}`, enabled: true, position: 'start', backgroundColor: 'rgba(255, 107, 107, 0.8)' } },
+        tp1Line: { type: 'line', yMin: tp1, yMax: tp1, borderColor: '#4ecdc4', borderWidth: 2, borderDash: [6, 6], label: { content: `TP1: ${tp1.toFixed(2)}`, enabled: true, position: 'end', backgroundColor: 'rgba(78, 205, 196, 0.8)' } }
     };
-    if (!isNaN(tp2)) { annotations.tp2Line = { type: 'line', yMin: tp2, yMax: tp2, borderColor: '#96ceb4', borderWidth: 2, borderDash: [6, 6], label: { content: `TP2: ${tp2}`, enabled: true, position: 'end', backgroundColor: '#96ceb4' } }; }
-    appState[aiId].signalDetailChart = new Chart(ctx, { type: 'line', data: { labels, datasets: [{ label: 'Illustrative Price Path', data, borderColor: 'white', tension: 0.1 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { color: 'white' }, grid: { color: 'rgba(255,255,255,0.1)' } }, x: { ticks: { color: 'white' }, grid: { color: 'rgba(255,255,255,0.1)' } } }, plugins: { legend: { display: false }, annotation: { annotations } } } });
+
+    appState.signalDetailChart = new Chart(ctx, {
+        type: 'candlestick', // The magic happens here!
+        data: {
+            datasets: [{
+                label: `${signal.symbol} 15m Chart`,
+                data: ohlcData
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    type: 'time',
+                    time: { unit: 'hour' },
+                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                    ticks: { color: '#a0a0a0' }
+                },
+                y: {
+                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                    ticks: { color: '#a0a0a0' }
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                annotation: { annotations }, // The annotation plugin still works perfectly
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    bodyFont: { size: 14 }
+                }
+            }
+        }
+    });
+    
+    // Change the disclaimer text
+    document.querySelector('.chart-disclaimer').innerHTML = `<strong>Note:</strong> Chart data is fetched from the Binance API.`;
 }
 
 // --- COMPARISON VIEW LOGIC ---
@@ -446,4 +495,42 @@ function updateFullDisplay(aiId) {
 function updateModelInfoPanel(aiId) {
     const info = modelInfoData[aiId];
     document.getElementById('model-info-content').innerHTML = `<h4>${info.title}</h4><p>${info.description}</p>`;
+}
+
+/**
+ * UPDATED: Fetches OHLC data via our own serverless proxy function.
+ */
+async function fetchOHLCData(symbol, signalTime) {
+    const startTime = new Date(signalTime.getTime() - 2 * 60 * 60 * 1000).getTime();
+    const endTime = new Date(signalTime.getTime() + 8 * 60 * 60 * 1000).getTime();
+    const interval = '15m';
+
+    // Call our serverless proxy function (Netlify)
+    const url = `/.netlify/functions/binance-proxy?symbol=${symbol.toUpperCase()}&interval=${interval}&startTime=${startTime}&endTime=${endTime}`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Proxy API error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        if (data.error) {
+            throw new Error(data.error);
+        }
+
+        const parsedData = data.map(d => ({
+            x: d[0],
+            o: parseFloat(d[1]),
+            h: parseFloat(d[2]),
+            l: parseFloat(d[3]),
+            c: parseFloat(d[4])
+        }));
+
+        return parsedData;
+
+    } catch (error) {
+        console.error("Failed to fetch OHLC data via proxy:", error);
+        return null;
+    }
 }
