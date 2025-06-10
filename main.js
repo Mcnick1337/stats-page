@@ -552,39 +552,45 @@ function updateModelInfoPanel(aiId) {
 }
 
 /**
- * UPDATED: Fetches OHLC data via our own serverless proxy function.
+ * UPDATED (MORE ROBUST): Handles API errors gracefully.
+ * Fetches OHLC data via our own serverless proxy function.
  */
 async function fetchOHLCData(symbol, signalTime) {
     const startTime = new Date(signalTime.getTime() - 2 * 60 * 60 * 1000).getTime();
     const endTime = new Date(signalTime.getTime() + 8 * 60 * 60 * 1000).getTime();
     const interval = '15m';
 
-    // Call our serverless proxy function (Netlify)
     const url = `/.netlify/functions/binance-proxy?symbol=${symbol.toUpperCase()}&interval=${interval}&startTime=${startTime}&endTime=${endTime}`;
 
     try {
         const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Proxy API error! Status: ${response.status}`);
-        }
+        // We get the response from our proxy. Now we need to see what's inside.
         const data = await response.json();
 
-        if (data.error) {
-            throw new Error(data.error);
+        // --- THIS IS THE CRUCIAL FIX ---
+        // Check if the data from the API is an array. If not, it's an error.
+        if (!Array.isArray(data)) {
+            // Log the actual error object from Binance to the console for debugging.
+            console.error("Binance API returned an error object, not an array:", data);
+            // Throw an error with the specific message from Binance if it exists.
+            throw new Error(data.msg || 'Invalid data received from API.');
         }
+        // ---------------------------------
 
+        // If the check passes, we know 'data' is an array and can be mapped.
         const parsedData = data.map(d => ({
-            x: d[0],
-            o: parseFloat(d[1]),
-            h: parseFloat(d[2]),
-            l: parseFloat(d[3]),
+            x: d[0], 
+            o: parseFloat(d[1]), 
+            h: parseFloat(d[2]), 
+            l: parseFloat(d[3]), 
             c: parseFloat(d[4])
         }));
-
+        
         return parsedData;
 
     } catch (error) {
-        console.error("Failed to fetch OHLC data via proxy:", error);
-        return null;
+        // This will now catch our more specific error from above.
+        console.error("Failed to fetch or parse OHLC data via proxy:", error);
+        return null; // Return null to signify failure.
     }
 }
