@@ -93,21 +93,75 @@ function hideComparisonView() {
 }
 
 // --- SIGNAL MODAL & DETAIL CHART ---
-function openSignalModal(signalId, aiId) {
+/**
+ * UPDATED (MORE ROBUST): Fetches real OHLC data and provides instant feedback and error logging.
+ */
+async function openSignalModal(signalId, aiId) {
+    console.log(`Attempting to open modal for signalId: ${signalId}, aiId: ${aiId}`);
+
+    // --- 1. Find the signal data first ---
     const signal = appState[aiId].allSignals.find(s => s.timestamp === signalId);
-    if (!signal) return;
-    if (appState[aiId].signalDetailChart) { appState[aiId].signalDetailChart.destroy(); }
+
+    if (!signal) {
+        console.error("Signal not found! The function will now exit.", { signalId, aiId });
+        alert("Error: Could not find the data for the clicked signal.");
+        return;
+    }
+    console.log("Signal found successfully:", signal);
+
+    // --- 2. Find the modal element ---
     const modal = document.getElementById('signal-modal');
+    if (!modal) {
+        console.error("Modal element with id 'signal-modal' not found in the HTML!");
+        return;
+    }
+    console.log("Modal HTML element found.");
+
+    // --- 3. Make the modal visible IMMEDIATELY with a loading state ---
+    // This provides instant user feedback.
+    modal.classList.remove('hidden');
     document.getElementById('modal-title').textContent = `${signal.symbol} - ${signal.Signal} Signal`;
-    renderSignalDetailChart(signal, aiId);
-    document.getElementById('modal-details').innerHTML = `
+
+    const chartCanvas = document.getElementById('signal-detail-chart');
+    const ctx = chartCanvas.getContext('2d');
+    
+    // Clear previous chart and show loading text
+    if (appState.signalDetailChart) {
+        appState.signalDetailChart.destroy();
+    }
+    ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
+    ctx.fillStyle = '#a0a0a0';
+    ctx.textAlign = 'center';
+    ctx.fillText('Loading chart data from proxy...', chartCanvas.width / 2, chartCanvas.height / 2);
+
+    // --- 4. Populate details while chart loads ---
+    const detailsContainer = document.getElementById('modal-details');
+    detailsContainer.innerHTML = `
         <div class="signal-param"><span class="label">Entry Price:</span><span class="value">${signal["Entry Price"]}</span></div>
         <div class="signal-param"><span class="label">Stop Loss:</span><span class="value">${signal["Stop Loss"]}</span></div>
         <div class="signal-param"><span class="label">Take Profit 1:</span><span class="value">${signal["Take Profit Targets"][0] || 'N/A'}</span></div>
-        <div class="signal-param"><span class="label">Take Profit 2:</span><span class="value">${signal["Take Profit Targets"][1] || 'N/A'}</span></div>
         <div class="signal-param"><span class="label">Confidence:</span><span class="value">${signal.Confidence}%</span></div>
-        <div class="signal-param"><span class="label">Status:</span><span class="value">${signal.performance.status} (${signal.performance.closed_by})</span></div>`;
-    modal.classList.remove('hidden');
+        <div class="signal-param"><span class="label">Status:</span><span class="value">${signal.performance.status} (${signal.performance.closed_by})</span></div>
+    `;
+
+    // --- 5. Fetch data and render the chart inside a try...catch block ---
+    try {
+        console.log("Fetching OHLC data...");
+        const ohlcData = await fetchOHLCData(signal.symbol, new Date(signal.timestamp));
+
+        if (ohlcData && ohlcData.length > 0) {
+            console.log("OHLC data received. Rendering chart.");
+            renderSignalDetailChart(signal, ohlcData);
+        } else {
+            console.error("Failed to get valid OHLC data, or data was empty.");
+            ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
+            ctx.fillText('Could not load chart data.', chartCanvas.width / 2, chartCanvas.height / 2);
+        }
+    } catch (error) {
+        console.error("An error occurred during chart fetching or rendering:", error);
+        ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
+        ctx.fillText('An error occurred loading the chart.', chartCanvas.width / 2, chartCanvas.height / 2);
+    }
 }
 
 function closeSignalModal() { 
