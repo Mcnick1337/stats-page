@@ -237,6 +237,10 @@ function renderTradingViewChart(signal, ohlcData) {
     container.innerHTML = ''; // Clear previous chart
 
     // --- Chart Configuration ---
+    //
+    // THIS IS THE CRITICAL LINE.
+    // Ensure it says "LightweightCharts.createChart", not "Chart.createChart" or anything else.
+    //
     const chart = LightweightCharts.createChart(container, {
         width: container.clientWidth,
         height: 300,
@@ -251,6 +255,7 @@ function renderTradingViewChart(signal, ohlcData) {
         crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
         timeScale: { timeVisible: true, secondsVisible: false },
     });
+
 
     // Make chart responsive
     new ResizeObserver(entries => {
