@@ -96,47 +96,26 @@ function hideComparisonView() {
 /**
  * UPDATED (MORE ROBUST): Fetches real OHLC data and provides instant feedback and error logging.
  */
+// Global variable to hold the chart instance so we can remove it later
+let activeTradingViewChart = null;
+
 async function openSignalModal(signalId, aiId) {
-    console.log(`Attempting to open modal for signalId: ${signalId}, aiId: ${aiId}`);
-
-    // --- 1. Find the signal data first ---
     const signal = appState[aiId].allSignals.find(s => s.timestamp === signalId);
-
     if (!signal) {
-        console.error("Signal not found! The function will now exit.", { signalId, aiId });
-        alert("Error: Could not find the data for the clicked signal.");
+        console.error("Signal not found!");
         return;
     }
-    console.log("Signal found successfully:", signal);
 
-    // --- 2. Find the modal element ---
     const modal = document.getElementById('signal-modal');
-    if (!modal) {
-        console.error("Modal element with id 'signal-modal' not found in the HTML!");
-        return;
-    }
-    console.log("Modal HTML element found.");
-
-    // --- 3. Make the modal visible IMMEDIATELY with a loading state ---
-    // This provides instant user feedback.
+    const chartContainer = document.getElementById('signal-detail-chart-container');
+    
+    // Show modal with loading state
     modal.classList.remove('hidden');
     document.getElementById('modal-title').textContent = `${signal.symbol} - ${signal.Signal} Signal`;
-
-    const chartCanvas = document.getElementById('signal-detail-chart');
-    const ctx = chartCanvas.getContext('2d');
+    chartContainer.innerHTML = '<p style="color: #a0a0a0; text-align: center; padding-top: 120px;">Loading chart data...</p>';
     
-    // Clear previous chart and show loading text
-    if (appState.signalDetailChart) {
-        appState.signalDetailChart.destroy();
-    }
-    ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
-    ctx.fillStyle = '#a0a0a0';
-    ctx.textAlign = 'center';
-    ctx.fillText('Loading chart data from proxy...', chartCanvas.width / 2, chartCanvas.height / 2);
-
-    // --- 4. Populate details while chart loads ---
-    const detailsContainer = document.getElementById('modal-details');
-    detailsContainer.innerHTML = `
+    // Populate details
+    document.getElementById('modal-details').innerHTML = `
         <div class="signal-param"><span class="label">Entry Price:</span><span class="value">${signal["Entry Price"]}</span></div>
         <div class="signal-param"><span class="label">Stop Loss:</span><span class="value">${signal["Stop Loss"]}</span></div>
         <div class="signal-param"><span class="label">Take Profit 1:</span><span class="value">${signal["Take Profit Targets"][0] || 'N/A'}</span></div>
@@ -144,31 +123,28 @@ async function openSignalModal(signalId, aiId) {
         <div class="signal-param"><span class="label">Status:</span><span class="value">${signal.performance.status} (${signal.performance.closed_by})</span></div>
     `;
 
-    // --- 5. Fetch data and render the chart inside a try...catch block ---
+    // Fetch data and render chart
     try {
-        console.log("Fetching OHLC data...");
         const ohlcData = await fetchOHLCData(signal.symbol, new Date(signal.timestamp));
-
         if (ohlcData && ohlcData.length > 0) {
-            console.log("OHLC data received. Rendering chart.");
-            renderSignalDetailChart(signal, ohlcData);
+            activeTradingViewChart = renderTradingViewChart(signal, ohlcData);
         } else {
-            console.error("Failed to get valid OHLC data, or data was empty.");
-            ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
-            ctx.fillText('Could not load chart data.', chartCanvas.width / 2, chartCanvas.height / 2);
+            chartContainer.innerHTML = '<p style="color: #ff6b6b; text-align: center; padding-top: 120px;">Could not load chart data.</p>';
         }
     } catch (error) {
-        console.error("An error occurred during chart fetching or rendering:", error);
-        ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
-        ctx.fillText('An error occurred loading the chart.', chartCanvas.width / 2, chartCanvas.height / 2);
+        console.error("Error rendering chart:", error);
+        chartContainer.innerHTML = '<p style="color: #ff6b6b; text-align: center; padding-top: 120px;">An error occurred.</p>';
     }
 }
 
-function closeSignalModal() { 
-    document.getElementById('signal-modal').classList.add('hidden'); 
-    // Destroy the chart when the modal is closed to free up memory
-    if (appState.signalDetailChart) {
-        appState.signalDetailChart.destroy();
+function closeSignalModal() {
+    const modal = document.getElementById('signal-modal');
+    modal.classList.add('hidden');
+    
+    // IMPORTANT: Clean up the chart to prevent memory leaks
+    if (activeTradingViewChart) {
+        activeTradingViewChart.remove();
+        activeTradingViewChart = null;
     }
 }
 
@@ -242,101 +218,98 @@ function renderSignalDetailChart(signal, ohlcData) {
     // --- Annotation Setup ---
     const entryPrice = parseFloat(signal["Entry Price"]);
     const sl = parseFloat(signal["Stop Loss"]);
-    const tp1 = parseFloat(signal["Take Profit Targets"][0]);
+    const tp1 = Array.isArray(signal["Take Profit Targets"]) ? parseFloat(signal["Take Profit Targets"][0]) : NaN;
+    if (!isNaN(entry) && !isNaN(sl) && !isNaN(tp1) && Math.abs(entry - sl) > 0) {
+        const rr = Math.abs(tp1 - entry) / Math.abs(entry - sl);
+        totalRR += rr;
+        rrCount++;
+        const profitOrLoss = status === 'win' ? (100 * rr) : -100;
+        if(status === 'win') grossProfit += profitOrLoss; else grossLoss += profitOrLoss;
+        equity += profitOrLoss;
+    }
+    peakEquity = Math.max(peakEquity, equity);
+    maxDrawdown = Math.max(maxDrawdown, (peakEquity - equity) / peakEquity);
+    equityCurveData.push({ x: new Date(signal.timestamp), y: equity });
+}
 
-    const annotations = {
-        // Entry Line (solid, primary color)
-        entryLine: { type: 'line', yMin: entryPrice, yMax: entryPrice, borderColor: 'rgba(69, 183, 209, 0.8)', borderWidth: 2, label: { content: `Entry: ${entryPrice}`, enabled: true, position: 'end', backgroundColor: 'rgba(69, 183, 209, 0.8)' } },
-        // Stop Loss Line (dashed, red)
-        slLine: { type: 'line', yMin: sl, yMax: sl, borderColor: 'rgba(255, 107, 107, 0.8)', borderWidth: 2, borderDash: [6, 6], label: { content: `SL: ${sl}`, enabled: true, position: 'end', backgroundColor: 'rgba(255, 107, 107, 0.8)' } },
-        // Take Profit Line (dashed, green)
-        tp1Line: { type: 'line', yMin: tp1, yMax: tp1, borderColor: 'rgba(78, 205, 196, 0.8)', borderWidth: 2, borderDash: [6, 6], label: { content: `TP1: ${tp1}`, enabled: true, position: 'end', backgroundColor: 'rgba(78, 205, 196, 0.8)' } },
-        // Arrow pointing at entry candle
-        entryPoint: { type: 'point', xValue: new Date(signal.timestamp).getTime(), yValue: entryPrice, backgroundColor: '#45b7d1', radius: 5, label: { content: signal.Signal, enabled: true, yAdjust: signal.Signal === 'Buy' ? -20 : 20 } }
-    };
+function renderTradingViewChart(signal, ohlcData) {
+    const container = document.getElementById('signal-detail-chart-container');
+    container.innerHTML = ''; // Clear previous chart
 
     // --- Chart Configuration ---
-    appState.signalDetailChart = new Chart(ctx, {
-        type: 'candlestick',
-        data: {
-            datasets: [{
-                label: `${signal.symbol} 15min`,
-                data: ohlcData,
-                yAxisID: 'y',
-                // Professional Colors
-                color: {
-                    up: '#26a69a', // Green
-                    down: '#ef5350', // Red
-                    unchanged: '#999999',
-                }
-            }, {
-                type: 'bar',
-                label: 'Volume',
-                data: volumeData,
-                yAxisID: 'y_volume', // Assign to the volume axis
-                backgroundColor: volumeData.map((d, i) => ohlcData[i].c > ohlcData[i].o ? 'rgba(38, 166, 154, 0.5)' : 'rgba(239, 83, 80, 0.5)'),
-            }, {
-                type: 'line',
-                label: 'SMA(20)',
-                data: sma20,
-                yAxisID: 'y',
-                borderColor: 'rgba(255, 167, 38, 0.8)',
-                borderWidth: 2,
-                pointRadius: 0,
-            }]
+    const chart = LightweightCharts.createChart(container, {
+        width: container.clientWidth,
+        height: 300,
+        layout: {
+            backgroundColor: '#1a1a3e',
+            textColor: '#d1d4dc',
         },
-        options: {
-            // Use the site's font
-            font: { family: "'Segoe UI', sans-serif" },
-            // Layout and Responsiveness
-            responsive: true,
-            maintainAspectRatio: false,
-            layout: { padding: { top: 10, bottom: 10 } },
-            // Scales (Price and Volume Axes)
-            scales: {
-                x: { type: 'time', time: { unit: 'hour', tooltipFormat: 'MMM dd, HH:mm' }, grid: { color: 'rgba(255, 255, 255, 0.1)' }, ticks: { color: '#a0a0a0', maxRotation: 0, autoSkip: true } },
-                y: { type: 'linear', position: 'right', grid: { color: 'rgba(255, 255, 255, 0.1)' }, ticks: { color: '#a0a0a0' }, height: '70%' }, // Main price axis
-                y_volume: { type: 'linear', position: 'right', display: false, height: '30%' } // Volume axis (hidden labels)
-            },
-            // Plugins (Tooltip, Zoom, Annotations)
-            plugins: {
-                legend: { display: false },
-                // Custom Tooltip
-                tooltip: {
-                    enabled: true,
-                    mode: 'index',
-                    intersect: false,
-                    backgroundColor: 'rgba(15, 15, 35, 0.9)',
-                    titleColor: '#ffffff',
-                    bodyColor: '#c0c0d0',
-                    callbacks: {
-                        label: function (context) {
-                            const datasetLabel = context.dataset.label || '';
-                            if (datasetLabel === 'Volume') {
-                                return `Vol: ${context.parsed.y.toLocaleString()}`;
-                            }
-                            if (datasetLabel.includes('SMA')) {
-                                return `${datasetLabel}: ${context.parsed.y.toFixed(2)}`;
-                            }
-                            const candle = context.raw;
-                            return [
-                                `O: ${candle.o}`, `H: ${candle.h}`,
-                                `L: ${candle.l}`, `C: ${candle.c}`
-                            ];
-                        }
-                    }
-                },
-                // Zoom and Pan Configuration
-                zoom: {
-                    pan: { enabled: true, mode: 'x' },
-                    zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' }
-                },
-                // Our annotations
-                annotation: { annotations }
-            }
-        }
+        grid: {
+            vertLines: { color: 'rgba(255, 255, 255, 0.1)' },
+            horzLines: { color: 'rgba(255, 255, 255, 0.1)' },
+        },
+        crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+        timeScale: { timeVisible: true, secondsVisible: false },
     });
-    document.querySelector('.chart-disclaimer').innerHTML = `<strong>Tip:</strong> You can scroll to zoom and drag to pan the chart.`;
+
+    // Make chart responsive
+    new ResizeObserver(entries => {
+        if (entries.length === 0 || entries[0].target !== container) { return; }
+        const newRect = entries[0].contentRect;
+        chart.applyOptions({ width: newRect.width, height: newRect.height });
+    }).observe(container);
+
+    // --- Add Candlestick Series ---
+    const candleSeries = chart.addCandlestickSeries({
+        upColor: '#26a69a',
+        downColor: '#ef5350',
+        borderDownColor: '#ef5350',
+        borderUpColor: '#26a69a',
+        wickDownColor: '#ef5350',
+        wickUpColor: '#26a69a',
+    });
+    
+    // Format data for Lightweight Charts: { time, open, high, low, close }
+    const chartData = ohlcData.map(d => ({
+        time: d.x / 1000, // Library requires Unix timestamp in SECONDS
+        open: d.o,
+        high: d.h,
+        low: d.l,
+        close: d.c
+    }));
+    candleSeries.setData(chartData);
+
+    // --- Add Volume Series ---
+    const volumeSeries = chart.addHistogramSeries({
+        color: '#26a69a',
+        priceFormat: { type: 'volume' },
+        priceScaleId: '', // Set to an empty string to place on a separate scale
+        scaleMargins: { top: 0.8, bottom: 0 },
+    });
+    const volumeData = ohlcData.map(d => ({
+        time: d.x / 1000,
+        value: d.v,
+        color: d.c > d.o ? 'rgba(38, 166, 154, 0.5)' : 'rgba(239, 83, 80, 0.5)',
+    }));
+    volumeSeries.setData(volumeData);
+
+    // --- Add Price Lines for Entry, SL, TP ---
+    const entryPrice = parseFloat(signal["Entry Price"]);
+    const sl = parseFloat(signal["Stop Loss"]);
+    const tp1 = parseFloat(signal["Take Profit Targets"][0]);
+    
+    candleSeries.createPriceLine({ price: entryPrice, color: '#45b7d1', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Solid, axisLabelVisible: true, title: ' Entry' });
+    candleSeries.createPriceLine({ price: sl, color: '#ef5350', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true, title: ' SL' });
+    candleSeries.createPriceLine({ price: tp1, color: '#26a69a', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true, title: ' TP1' });
+
+    // Set the visible range to focus on the signal time
+    const signalTimeInSeconds = new Date(signal.timestamp).getTime() / 1000;
+    const from = signalTimeInSeconds - (2 * 60 * 60); // 2 hours before
+    const to = signalTimeInSeconds + (4 * 60 * 60); // 4 hours after
+    chart.timeScale().setVisibleRange({ from, to });
+    
+    // Return the chart instance for cleanup
+    return chart;
 }
 
 // --- COMPARISON VIEW LOGIC ---
