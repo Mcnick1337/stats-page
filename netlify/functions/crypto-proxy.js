@@ -1,7 +1,5 @@
 // File: netlify/functions/crypto-proxy.js
 
-// NO "require" statement needed here. 'fetch' is globally available.
-
 exports.handler = async function (event) {
     const { symbol, interval, startTime, endTime } = event.queryStringParameters;
 
@@ -19,7 +17,7 @@ exports.handler = async function (event) {
 
         if (data.retCode !== 0) {
             console.error("Bybit API Error:", data.retMsg);
-            return { statusCode: 500, body: JSON.stringify({ error: data.retMsg }) };
+            return { statusCode: 500, body: JSON.stringify({ error: `Bybit API Error: ${data.retMsg}` }) };
         }
 
         const bybitList = data.result.list;
@@ -28,9 +26,16 @@ exports.handler = async function (event) {
             body: JSON.stringify(bybitList),
         };
     } catch (error) {
+        // --- THIS IS THE CRUCIAL CHANGE ---
+        // We now log the real error on the server and send its message back to the browser.
+        console.error("Proxy function crashed:", error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: 'Failed to fetch data from Bybit API.' }),
+            body: JSON.stringify({
+                error: "The proxy function on the server crashed.",
+                details: error.message, // This will contain the actual reason for the crash.
+            }),
         };
+        // ------------------------------------
     }
 };
