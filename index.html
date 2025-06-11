@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Signals Analysis Dashboard</title>
+    <title>Trading Analysis Platform</title>
     <link rel="stylesheet" href="style.css">
     
     <!-- Using specific, locked versions to prevent library conflicts -->
@@ -21,62 +21,152 @@
         <div class="floating-element" style="left: 70%; animation-delay: -8s; animation-duration: 20s;">🚀</div>
     </div>
 
-    <div class="container">
-        <header>
-            <div class="header-bg"></div>
-            <h1>Trading Signals Dashboard</h1>
-            <p class="subtitle">AI Trading Performance Analysis</p>
-        </header>
-
-        <!-- Main Dashboard View -->
-        <div id="main-dashboard-view">
-            <div class="tabs-container">
-                <div class="tab-nav">
-                    <button class="tab-button active" data-tab-id="ai-max">AI Max</button>
-                    <button class="tab-button" data-tab-id="ai-bob">AI Bob</button>
-                    <button class="tab-button experimental" data-tab-id="ai-bob-2">AI Bob-2 (Exp)</button>
-                    <button class="tab-button experimental" data-tab-id="ai-bob-3">AI Bob-3 (Exp)</button>
-                </div>
-                <button id="toggle-comparison-view-btn" class="compare-btn">Compare Models</button>
+    <div class="app-layout">
+        <!-- ==== NEW: Main Sidebar Navigation ==== -->
+        <aside class="app-sidebar">
+            <div class="sidebar-header">
+                <h2>Platform</h2>
             </div>
-
-            <div class="collapsible-info-panel" id="model-info-container">
-                <button class="collapsible-toggle-button" id="info-toggle-button">
-                    <span>Model Information</span>
-                    <span class="arrow">▼</span>
+            <nav class="sidebar-nav">
+                <button class="nav-button active" id="nav-dashboard">
+                    <span>📊</span>
+                    <span>Dashboard</span>
                 </button>
-                <div class="collapsible-content" id="model-info-content"></div>
+                <button class="nav-button" id="nav-strategy-lab">
+                    <span>🧪</span>
+                    <span>Strategy Lab</span>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                By Mcnick1<br>2025
+            </div>
+        </aside>
+
+        <!-- ==== Main Content Area ==== -->
+        <main class="app-content">
+            <!-- ==== VIEW 1: The Original Dashboard ==== -->
+            <div id="view-dashboard">
+                <header>
+                    <div class="header-bg"></div>
+                    <h1>Trading Signals Dashboard</h1>
+                    <p class="subtitle">AI Trading Performance Analysis</p>
+                </header>
+
+                <div id="main-dashboard-view">
+                    <div class="tabs-container">
+                        <div class="tab-nav">
+                            <button class="tab-button active" data-tab-id="ai-max">AI Max</button>
+                            <button class="tab-button" data-tab-id="ai-bob">AI Bob</button>
+                            <button class="tab-button experimental" data-tab-id="ai-bob-2">AI Bob-2 (Exp)</button>
+                            <button class="tab-button experimental" data-tab-id="ai-bob-3">AI Bob-3 (Exp)</button>
+                        </div>
+                        <button id="toggle-comparison-view-btn" class="compare-btn">Compare Models</button>
+                    </div>
+
+                    <div class="collapsible-info-panel" id="model-info-container">
+                        <button class="collapsible-toggle-button" id="info-toggle-button">
+                            <span>Model Information</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="collapsible-content" id="model-info-content"></div>
+                    </div>
+
+                    <div id="tab-content-wrapper">
+                        <!-- Dashboard tab content will be dynamically generated here by main.js -->
+                    </div>
+                </div>
+                
+                <div id="comparison-view" class="hidden">
+                    <header class="comparison-header">
+                        <h2>Model Comparison</h2>
+                        <button id="exit-comparison-view-btn" class="compare-btn">Exit Comparison</button>
+                    </header>
+                    <div class="comparison-controls">
+                        <div class="control-group"><label for="model-select-a">Model A:</label><select id="model-select-a"><option value="">Select Model</option></select></div>
+                        <div class="control-group"><label for="model-select-b">Model B:</label><select id="model-select-b"><option value="">Select Model</option></select></div>
+                    </div>
+                    <div id="comparison-grid"></div>
+                </div>
             </div>
 
-            <div id="tab-content-wrapper">
-                <!-- All tab content will be dynamically generated here -->
-            </div>
-        </div>
-        
-        <!-- A/B Comparison View -->
-        <div id="comparison-view" class="hidden">
-            <header class="comparison-header">
-                <h2>Model Comparison</h2>
-                <button id="exit-comparison-view-btn" class="compare-btn">Exit Comparison</button>
-            </header>
-            <div class="comparison-controls">
-                <div class="control-group">
-                    <label for="model-select-a">Model A:</label>
-                    <select id="model-select-a"><option value="">Select Model</option></select>
+            <!-- ==== VIEW 2: The New Strategy Lab ==== -->
+            <div id="view-strategy-lab" class="hidden">
+                <header>
+                     <div class="header-bg"></div>
+                    <h1>Strategy Lab & Backtester</h1>
+                    <p class="subtitle">Create, test, and validate your own trading strategies</p>
+                </header>
+                
+                <div class="details-card" style="margin-bottom: 30px;">
+                    <h2 class="section-title">Strategy Mixer</h2>
+                    <div class="signal-controls" id="strategy-mixer-controls">
+                        <div class="control-group">
+                            <label for="strategy-name">Strategy Name:</label>
+                            <input type="text" id="strategy-name" placeholder="e.g., High-Confidence BTC Buys">
+                        </div>
+                        <div class="control-group">
+                            <label>AI Models to Use:</label>
+                            <div id="strategy-models-checkboxes"></div> 
+                        </div>
+                        <div class="control-group">
+                            <label for="strategy-symbol">Symbols (comma-separated, blank for all):</label>
+                            <input type="text" id="strategy-symbol" placeholder="BTCUSDT, ETHUSDT, SOLUSDT">
+                        </div>
+                        <div class="control-group">
+                            <label for="strategy-signal-type">Signal Type:</label>
+                            <select id="strategy-signal-type">
+                                <option value="">Any</option>
+                                <option value="Buy">Buy Only</option>
+                                <option value="Sell">Sell Only</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="strategy-min-confidence">Min Confidence (%):</label>
+                            <input type="number" id="strategy-min-confidence" placeholder="e.g., 75" min="0" max="100">
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px; display: flex; gap: 15px; justify-content: center;">
+                         <button id="run-backtest-btn" class="compare-btn">Run Backtest</button>
+                         <button id="save-strategy-btn" class="compare-btn" style="background: linear-gradient(45deg, #4ecdc4, #45b7d1);">Save Strategy</button>
+                    </div>
                 </div>
-                <div class="control-group">
-                    <label for="model-select-b">Model B:</label>
-                    <select id="model-select-b"><option value="">Select Model</option></select>
+            
+                <div class="details-section">
+                    <div class="details-card">
+                        <h3 class="section-title">My Saved Strategies</h3>
+                        <div class="symbol-winrate-list" id="saved-strategies-list">
+                            <p style="text-align:center; color: #a0a0a0;">No strategies saved yet.</p>
+                        </div>
+                    </div>
+                    <div class="details-card">
+                        <h3 class="section-title">Backtest Performance</h3>
+                        <div id="backtest-signal-breakdown">
+                            <p style="text-align:center; color: #a0a0a0;">Configure and run a backtest to see results.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="chart-container details-card" style="margin-bottom: 30px;">
+                     <h3 class="section-title">Backtest Equity Curve</h3>
+                     <canvas id="backtest-equity-chart"></canvas>
+                </div>
+
+                <div class="signal-catalog-section">
+                    <h2 class="section-title">Backtest Signal Log</h2>
+                    <div class="signal-grid" id="backtest-signal-grid">
+                         <p style="text-align:center; color: #a0a0a0;">Signals from the backtest will appear here.</p>
+                    </div>
+                    <div class="pagination-controls" id="backtest-pagination-controls"></div>
                 </div>
             </div>
-            <div id="comparison-grid"></div>
-        </div>
+
+        </main>
     </div>
 
-    <!-- Signal Detail Modal -->
+    <!-- Signal Detail Modal (Global) -->
     <div id="signal-modal" class="modal-overlay hidden">
         <div class="modal-content">
-            <button class="modal-close-btn">×</button>
+            <button class="modal-close-btn" aria-label="Close">×</button>
             <h2 id="modal-title">Signal Details</h2>
             <div id="signal-detail-chart-container" class="modal-chart-container"></div>
             <p class="chart-disclaimer">Chart data from KuCoin API via proxy.</p>
@@ -84,10 +174,7 @@
         </div>
     </div>
 
-    <footer>
-        By Mcnick1 In 2025
-    </footer>
-
+    <!-- The main.js script is now deferred until the end of the body -->
     <script src="main.js" defer></script>
 </body>
 </html>
