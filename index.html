@@ -3,178 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Analysis Platform</title>
+    <title>Trading Signals Analysis Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Using specific, locked versions to prevent library conflicts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
+    <!-- Added Chart.js library for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 </head>
 <body>
-    <!-- Floating Emojis -->
     <div class="floating-elements">
         <div class="floating-element" style="left: 10%; animation-delay: 0s; animation-duration: 25s;">📈</div>
         <div class="floating-element" style="left: 20%; animation-delay: -5s; animation-duration: 30s;">💹</div>
         <div class="floating-element" style="left: 30%; animation-delay: -10s; animation-duration: 22s;">📊</div>
         <div class="floating-element" style="left: 50%; animation-delay: -15s; animation-duration: 28s;">💰</div>
         <div class="floating-element" style="left: 70%; animation-delay: -8s; animation-duration: 20s;">🚀</div>
+        <div class="floating-element" style="left: 80%; animation-delay: -12s; animation-duration: 35s;">⭐</div>
+        <div class="floating-element" style="left: 5%; animation-delay: -3s; animation-duration: 26s;">💎</div>
+        <div class="floating-element" style="left: 90%; animation-delay: -18s; animation-duration: 23s;">💡</div>
     </div>
 
-    <div class="app-layout">
-        <!-- ==== NEW: Main Sidebar Navigation ==== -->
-        <aside class="app-sidebar">
-            <div class="sidebar-header">
-                <h2>Platform</h2>
+    <div class="container">
+        <header>
+            <div class="header-bg"></div>
+            <h1>Trading Signals Dashboard</h1>
+            <p class="subtitle">AI Trading Performance Analysis</p>
+        </header>
+
+        <div class="tabs-container">
+            <div class="tab-nav">
+                <button class="tab-button active" onclick="switchTab(event, 'ai-max')">AI Max</button>
+                <button class="tab-button" onclick="switchTab(event, 'ai-bob')">AI Bob</button>
+                <button class="tab-button experimental" onclick="switchTab(event, 'ai-bob-2')">AI Bob-2 (Exp)</button>
+                <button class="tab-button experimental" onclick="switchTab(event, 'ai-bob-3')">AI Bob-3 (Exp)</button>
             </div>
-            <nav class="sidebar-nav">
-                <button class="nav-button active" id="nav-dashboard">
-                    <span>📊</span>
-                    <span>Dashboard</span>
-                </button>
-                <button class="nav-button" id="nav-strategy-lab">
-                    <span>🧪</span>
-                    <span>Strategy Lab</span>
-                </button>
-            </nav>
-            <div class="sidebar-footer">
-                By Mcnick1<br>2025
-            </div>
-        </aside>
-
-        <!-- ==== Main Content Area ==== -->
-        <main class="app-content">
-            <!-- ==== VIEW 1: The Original Dashboard ==== -->
-            <div id="view-dashboard">
-                <header>
-                    <div class="header-bg"></div>
-                    <h1>Trading Signals Dashboard</h1>
-                    <p class="subtitle">AI Trading Performance Analysis</p>
-                </header>
-
-                <div id="main-dashboard-view">
-                    <div class="tabs-container">
-                        <div class="tab-nav">
-                            <button class="tab-button active" data-tab-id="ai-max">AI Max</button>
-                            <button class="tab-button" data-tab-id="ai-bob">AI Bob</button>
-                            <button class="tab-button experimental" data-tab-id="ai-bob-2">AI Bob-2 (Exp)</button>
-                            <button class="tab-button experimental" data-tab-id="ai-bob-3">AI Bob-3 (Exp)</button>
-                        </div>
-                        <button id="toggle-comparison-view-btn" class="compare-btn">Compare Models</button>
-                    </div>
-
-                    <div class="collapsible-info-panel" id="model-info-container">
-                        <button class="collapsible-toggle-button" id="info-toggle-button">
-                            <span>Model Information</span>
-                            <span class="arrow">▼</span>
-                        </button>
-                        <div class="collapsible-content" id="model-info-content"></div>
-                    </div>
-
-                    <div id="tab-content-wrapper">
-                        <!-- Dashboard tab content will be dynamically generated here by main.js -->
-                    </div>
-                </div>
-                
-                <div id="comparison-view" class="hidden">
-                    <header class="comparison-header">
-                        <h2>Model Comparison</h2>
-                        <button id="exit-comparison-view-btn" class="compare-btn">Exit Comparison</button>
-                    </header>
-                    <div class="comparison-controls">
-                        <div class="control-group"><label for="model-select-a">Model A:</label><select id="model-select-a"><option value="">Select Model</option></select></div>
-                        <div class="control-group"><label for="model-select-b">Model B:</label><select id="model-select-b"><option value="">Select Model</option></select></div>
-                    </div>
-                    <div id="comparison-grid"></div>
-                </div>
-            </div>
-
-            <!-- ==== VIEW 2: The New Strategy Lab ==== -->
-            <div id="view-strategy-lab" class="hidden">
-                <header>
-                     <div class="header-bg"></div>
-                    <h1>Strategy Lab & Backtester</h1>
-                    <p class="subtitle">Create, test, and validate your own trading strategies</p>
-                </header>
-                
-                <div class="details-card" style="margin-bottom: 30px;">
-                    <h2 class="section-title">Strategy Mixer</h2>
-                    <div class="signal-controls" id="strategy-mixer-controls">
-                        <div class="control-group">
-                            <label for="strategy-name">Strategy Name:</label>
-                            <input type="text" id="strategy-name" placeholder="e.g., High-Confidence BTC Buys">
-                        </div>
-                        <div class="control-group">
-                            <label>AI Models to Use:</label>
-                            <div id="strategy-models-checkboxes"></div> 
-                        </div>
-                        <div class="control-group">
-                            <label for="strategy-symbol">Symbols (comma-separated, blank for all):</label>
-                            <input type="text" id="strategy-symbol" placeholder="BTCUSDT, ETHUSDT, SOLUSDT">
-                        </div>
-                        <div class="control-group">
-                            <label for="strategy-signal-type">Signal Type:</label>
-                            <select id="strategy-signal-type">
-                                <option value="">Any</option>
-                                <option value="Buy">Buy Only</option>
-                                <option value="Sell">Sell Only</option>
-                            </select>
-                        </div>
-                        <div class="control-group">
-                            <label for="strategy-min-confidence">Min Confidence (%):</label>
-                            <input type="number" id="strategy-min-confidence" placeholder="e.g., 75" min="0" max="100">
-                        </div>
-                    </div>
-                    <div style="text-align: center; margin-top: 20px; display: flex; gap: 15px; justify-content: center;">
-                         <button id="run-backtest-btn" class="compare-btn">Run Backtest</button>
-                         <button id="save-strategy-btn" class="compare-btn" style="background: linear-gradient(45deg, #4ecdc4, #45b7d1);">Save Strategy</button>
-                    </div>
-                </div>
-            
-                <div class="details-section">
-                    <div class="details-card">
-                        <h3 class="section-title">My Saved Strategies</h3>
-                        <div class="symbol-winrate-list" id="saved-strategies-list">
-                            <p style="text-align:center; color: #a0a0a0;">No strategies saved yet.</p>
-                        </div>
-                    </div>
-                    <div class="details-card">
-                        <h3 class="section-title">Backtest Performance</h3>
-                        <div id="backtest-signal-breakdown">
-                            <p style="text-align:center; color: #a0a0a0;">Configure and run a backtest to see results.</p>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="chart-container details-card" style="margin-bottom: 30px;">
-                     <h3 class="section-title">Backtest Equity Curve</h3>
-                     <canvas id="backtest-equity-chart"></canvas>
-                </div>
-
-                <div class="signal-catalog-section">
-                    <h2 class="section-title">Backtest Signal Log</h2>
-                    <div class="signal-grid" id="backtest-signal-grid">
-                         <p style="text-align:center; color: #a0a0a0;">Signals from the backtest will appear here.</p>
-                    </div>
-                    <div class="pagination-controls" id="backtest-pagination-controls"></div>
-                </div>
-            </div>
-
-        </main>
-    </div>
-
-    <!-- Signal Detail Modal (Global) -->
-    <div id="signal-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button class="modal-close-btn" aria-label="Close">×</button>
-            <h2 id="modal-title">Signal Details</h2>
-            <div id="signal-detail-chart-container" class="modal-chart-container"></div>
-            <p class="chart-disclaimer">Chart data from KuCoin API via proxy.</p>
-            <div id="modal-details" class="modal-details-grid"></div>
         </div>
+
+        <!-- Collapsible Model Information Panel -->
+        <div class="collapsible-info-panel" id="model-info-container">
+            <button class="collapsible-toggle-button" id="info-toggle-button">
+                <span>Model Information</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="collapsible-content" id="model-info-content">
+                <!-- JS will inject content here -->
+            </div>
+        </div>
+
+        <!-- AI Max Tab -->
+        <div id="ai-max" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-value win-rate" id="stat-win-rate-ai-max">0%</div><div class="stat-label">Win Rate</div></div>
+                <div class="stat-card"><div class="stat-value total-signals" id="stat-tradable-signals-ai-max">0</div><div class="stat-label">Tradable Signals</div></div>
+                <div class="stat-card"><div class="stat-value confidence" id="stat-avg-confidence-ai-max">0%</div><div class="stat-label">Avg Confidence</div></div>
+                <div class="stat-card"><div class="stat-value pending" id="stat-too-recent-ai-max">0</div><div class="stat-label">Pending / Active</div></div>
+            </div>
+            <!-- NEW: Equity Curve Chart Section -->
+            <div class="chart-container details-card">
+                 <h3 class="section-title">Hypothetical Equity Curve</h3>
+                 <canvas id="equity-chart-ai-max"></canvas>
+            </div>
+            <div class="symbol-performance">
+                <h2 class="section-title">Signal Type Performance</h2>
+                <div class="performance-grid" id="signal-type-performance-ai-max"></div>
+            </div>
+            <div class="details-section">
+                 <div class="details-card">
+                    <h3 class="section-title">Signal Breakdown</h3>
+                    <div id="signal-breakdown-ai-max"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title">Scenario Performance</h3>
+                     <div id="scenario-performance-ai-max"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title">Performance by Confidence</h3>
+                     <div id="confidence-performance-ai-max"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title">Win Rate by Symbol</h3>
+                    <div class="symbol-winrate-list" id="symbol-winrate-list-ai-max"></div>
+                </div>
+            </div>
+            <div class="signal-controls" id="signal-controls-ai-max">
+                <div class="control-group"><label for="symbol-filter-ai-max">Symbol:</label><input type="text" id="symbol-filter-ai-max" placeholder="e.g., BTCUSDT"></div>
+                <div class="control-group"><label for="signal-type-filter-ai-max">Type:</label><select id="signal-type-filter-ai-max"><option value="">All</option><option value="Buy">Buy</option><option value="Sell">Sell</option></select></div>
+                <div class="control-group"><label for="status-filter-ai-max">Status:</label><select id="status-filter-ai-max"><option value="">All</option><option value="WIN">Win</option><option value="LOSS">Loss</option><option value="PENDING">Pending</option><option value="ACTIVE">Active</option></select></div>
+                <div class="control-group"><label for="min-confidence-filter-ai-max">Min Confidence (%):</label><input type="number" id="min-confidence-filter-ai-max" placeholder="e.g., 50" min="0" max="100"></div>
+                <div class="control-group"><label for="sort-by-ai-max">Sort By:</label><select id="sort-by-ai-max"><option value="timestamp">Timestamp</option><option value="entryPrice">Entry Price</option></select></div>
+                <div class="control-group"><label for="sort-order-ai-max">Order:</label><select id="sort-order-ai-max"><option value="desc">Descending</option><option value="asc">Ascending</option></select></div>
+            </div>
+            <div class="signal-catalog-section">
+                <h2 class="section-title">AI Max - Signal Catalog</h2>
+                <div class="signal-grid" id="signal-grid-ai-max"></div>
+                <div class="pagination-controls" id="pagination-controls-ai-max"></div>
+            </div>
+        </div>
+
+        <!-- AI Bob Tab -->
+        <div id="ai-bob" class="tab-content">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-value win-rate" id="stat-win-rate-ai-bob">0%</div><div class="stat-label">Win Rate</div></div>
+                <div class="stat-card"><div class="stat-value total-signals" id="stat-tradable-signals-ai-bob">0</div><div class="stat-label">Tradable Signals</div></div>
+                <div class="stat-card"><div class="stat-value confidence" id="stat-avg-confidence-ai-bob">0%</div><div class="stat-label">Avg Confidence</div></div>
+                <div class="stat-card"><div class="stat-value pending" id="stat-too-recent-ai-bob">0</div><div class="stat-label">Pending / Active</div></div>
+            </div>
+            <div class="chart-container details-card">
+                 <h3 class="section-title">Hypothetical Equity Curve</h3>
+                 <canvas id="equity-chart-ai-bob"></canvas>
+            </div>
+             <div class="symbol-performance">
+                <h2 class="section-title">Signal Type Performance</h2>
+                 <div class="performance-grid" id="signal-type-performance-ai-bob"></div>
+            </div>
+            <div class="details-section">
+                <div class="details-card">
+                    <h3 class="section-title">Signal Breakdown</h3>
+                     <div id="signal-breakdown-ai-bob"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title">Scenario Performance</h3>
+                    <div id="scenario-performance-ai-bob"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title">Performance by Confidence</h3>
+                    <div id="confidence-performance-ai-bob"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title">Win Rate by Symbol</h3>
+                    <div class="symbol-winrate-list" id="symbol-winrate-list-ai-bob"></div>
+                </div>
+            </div>
+            <div class="signal-controls" id="signal-controls-ai-bob">
+                <div class="control-group"><label for="symbol-filter-ai-bob">Symbol:</label><input type="text" id="symbol-filter-ai-bob" placeholder="e.g., ETHUSDT"></div>
+                <div class="control-group"><label for="signal-type-filter-ai-bob">Type:</label><select id="signal-type-filter-ai-bob"><option value="">All</option><option value="Buy">Buy</option><option value="Sell">Sell</option></select></div>
+                <div class="control-group"><label for="status-filter-ai-bob">Status:</label><select id="status-filter-ai-bob"><option value="">All</option><option value="WIN">Win</option><option value="LOSS">Loss</option><option value="PENDING">Pending</option><option value="ACTIVE">Active</option></select></div>
+                <div class="control-group"><label for="min-confidence-filter-ai-bob">Min Confidence (%):</label><input type="number" id="min-confidence-filter-ai-bob" placeholder="e.g., 50" min="0" max="100"></div>
+                <div class="control-group"><label for="sort-by-ai-bob">Sort By:</label><select id="sort-by-ai-bob"><option value="timestamp">Timestamp</option><option value="entryPrice">Entry Price</option></select></div>
+                <div class="control-group"><label for="sort-order-ai-bob">Order:</label><select id="sort-order-ai-bob"><option value="desc">Descending</option><option value="asc">Ascending</option></select></div>
+            </div>
+            <div class="signal-catalog-section">
+                <h2 class="section-title">AI Bob - Signal Catalog</h2>
+                <div class="signal-grid" id="signal-grid-ai-bob"></div>
+                <div class="pagination-controls" id="pagination-controls-ai-bob"></div>
+            </div>
+        </div>
+        
+        <!-- AI Bob-2 Tab -->
+        <div id="ai-bob-2" class="tab-content">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-value win-rate" id="stat-win-rate-ai-bob-2">0%</div><div class="stat-label">Win Rate</div></div>
+                <div class="stat-card"><div class="stat-value total-signals" id="stat-tradable-signals-ai-bob-2">0</div><div class="stat-label">Tradable Signals</div></div>
+                <div class="stat-card"><div class="stat-value confidence" id="stat-avg-confidence-ai-bob-2">0%</div><div class="stat-label">Avg Confidence</div></div>
+                <div class="stat-card"><div class="stat-value pending" id="stat-too-recent-ai-bob-2">0</div><div class="stat-label">Pending / Active</div></div>
+            </div>
+            <div class="chart-container details-card">
+                 <h3 class="section-title experimental-header">Hypothetical Equity Curve</h3>
+                 <canvas id="equity-chart-ai-bob-2"></canvas>
+            </div>
+             <div class="symbol-performance">
+                <h2 class="section-title experimental-header">Signal Type Performance</h2>
+                 <div class="performance-grid" id="signal-type-performance-ai-bob-2"></div>
+            </div>
+            <div class="details-section">
+                <div class="details-card">
+                    <h3 class="section-title experimental-header">Signal Breakdown</h3>
+                     <div id="signal-breakdown-ai-bob-2"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title experimental-header">Scenario Performance</h3>
+                    <div id="scenario-performance-ai-bob-2"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title experimental-header">Performance by Confidence</h3>
+                    <div id="confidence-performance-ai-bob-2"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title experimental-header">Win Rate by Symbol</h3>
+                    <div class="symbol-winrate-list" id="symbol-winrate-list-ai-bob-2"></div>
+                </div>
+            </div>
+            <div class="signal-controls" id="signal-controls-ai-bob-2">
+                <div class="control-group"><label for="symbol-filter-ai-bob-2">Symbol:</label><input type="text" id="symbol-filter-ai-bob-2" placeholder="e.g., BTCUSDT"></div>
+                <div class="control-group"><label for="signal-type-filter-ai-bob-2">Type:</label><select id="signal-type-filter-ai-bob-2"><option value="">All</option><option value="Buy">Buy</option><option value="Sell">Sell</option></select></div>
+                <div class="control-group"><label for="status-filter-ai-bob-2">Status:</label><select id="status-filter-ai-bob-2"><option value="">All</option><option value="WIN">Win</option><option value="LOSS">Loss</option><option value="PENDING">Pending</option><option value="ACTIVE">Active</option></select></div>
+                <div class="control-group"><label for="min-confidence-filter-ai-bob-2">Min Confidence (%):</label><input type="number" id="min-confidence-filter-ai-bob-2" placeholder="e.g., 50" min="0" max="100"></div>
+                <div class="control-group"><label for="sort-by-ai-bob-2">Sort By:</label><select id="sort-by-ai-bob-2"><option value="timestamp">Timestamp</option><option value="entryPrice">Entry Price</option></select></div>
+                <div class="control-group"><label for="sort-order-ai-bob-2">Order:</label><select id="sort-order-ai-bob-2"><option value="desc">Descending</option><option value="asc">Ascending</option></select></div>
+            </div>
+            <div class="signal-catalog-section">
+                <span class="experimental-title-overlay">Experimental</span>
+                <h2 class="section-title experimental-header">AI Bob-2 - Signal Catalog</h2>
+                <div class="signal-grid" id="signal-grid-ai-bob-2"></div>
+                <div class="pagination-controls" id="pagination-controls-ai-bob-2"></div>
+            </div>
+        </div>
+
+        <!-- AI Bob-3 Tab -->
+        <div id="ai-bob-3" class="tab-content">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-value win-rate" id="stat-win-rate-ai-bob-3">0%</div><div class="stat-label">Win Rate</div></div>
+                <div class="stat-card"><div class="stat-value total-signals" id="stat-tradable-signals-ai-bob-3">0</div><div class="stat-label">Tradable Signals</div></div>
+                <div class="stat-card"><div class="stat-value confidence" id="stat-avg-confidence-ai-bob-3">0%</div><div class="stat-label">Avg Confidence</div></div>
+                <div class="stat-card"><div class="stat-value pending" id="stat-too-recent-ai-bob-3">0</div><div class="stat-label">Pending / Active</div></div>
+            </div>
+             <div class="chart-container details-card">
+                 <h3 class="section-title experimental-header">Hypothetical Equity Curve</h3>
+                 <canvas id="equity-chart-ai-bob-3"></canvas>
+            </div>
+             <div class="symbol-performance">
+                <h2 class="section-title experimental-header">Signal Type Performance</h2>
+                 <div class="performance-grid" id="signal-type-performance-ai-bob-3"></div>
+            </div>
+            <div class="details-section">
+                <div class="details-card">
+                    <h3 class="section-title experimental-header">Signal Breakdown</h3>
+                     <div id="signal-breakdown-ai-bob-3"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title experimental-header">Scenario Performance</h3>
+                    <div id="scenario-performance-ai-bob-3"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title experimental-header">Performance by Confidence</h3>
+                    <div id="confidence-performance-ai-bob-3"></div>
+                </div>
+                <div class="details-card">
+                    <h3 class="section-title experimental-header">Win Rate by Symbol</h3>
+                    <div class="symbol-winrate-list" id="symbol-winrate-list-ai-bob-3"></div>
+                </div>
+            </div>
+            <div class="signal-controls" id="signal-controls-ai-bob-3">
+                <div class="control-group"><label for="symbol-filter-ai-bob-3">Symbol:</label><input type="text" id="symbol-filter-ai-bob-3" placeholder="e.g., BTCUSDT"></div>
+                <div class="control-group"><label for="signal-type-filter-ai-bob-3">Type:</label><select id="signal-type-filter-ai-bob-3"><option value="">All</option><option value="Buy">Buy</option><option value="Sell">Sell</option></select></div>
+                <div class="control-group"><label for="status-filter-ai-bob-3">Status:</label><select id="status-filter-ai-bob-3"><option value="">All</option><option value="WIN">Win</option><option value="LOSS">Loss</option><option value="PENDING">Pending</option><option value="ACTIVE">Active</option></select></div>
+                <div class="control-group"><label for="min-confidence-filter-ai-bob-3">Min Confidence (%):</label><input type="number" id="min-confidence-filter-ai-bob-3" placeholder="e.g., 50" min="0" max="100"></div>
+                <div class="control-group"><label for="sort-by-ai-bob-3">Sort By:</label><select id="sort-by-ai-bob-3"><option value="timestamp">Timestamp</option><option value="entryPrice">Entry Price</option></select></div>
+                <div class="control-group"><label for="sort-order-ai-bob-3">Order:</label><select id="sort-order-ai-bob-3"><option value="desc">Descending</option><option value="asc">Ascending</option></select></div>
+            </div>
+            <div class="signal-catalog-section">
+                <span class="experimental-title-overlay">Experimental</span>
+                <h2 class="section-title experimental-header">AI Bob-3 - Signal Catalog</h2>
+                <div class="signal-grid" id="signal-grid-ai-bob-3"></div>
+                <div class="pagination-controls" id="pagination-controls-ai-bob-3"></div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- The main.js script is now deferred until the end of the body -->
+    <footer>
+        By Mcnick1 In 2025
+    </footer>
+
+    <!-- All JavaScript is now in main.js -->
+    <!-- The 'defer' attribute ensures the script runs after the HTML is parsed -->
     <script src="main.js" defer></script>
 </body>
 </html>
