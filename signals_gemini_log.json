@@ -16504,8 +16504,12 @@
     "timestamp": "2025-06-10T16:02:36.987994",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
+      "status": "WIN",
+      "closed_at_price": 110225.0,
+      "closed_by": "TP1",
+      "mfe_percentage": 1.19,
+      "mae_percentage": -0.53,
+      "evaluation_details": ""
     }
   },
   {
@@ -16526,8 +16530,12 @@
     "timestamp": "2025-06-10T16:04:08.810798",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
+      "status": "WIN",
+      "closed_at_price": 2812.75,
+      "closed_by": "TP1",
+      "mfe_percentage": 3.13,
+      "mae_percentage": -0.38,
+      "evaluation_details": ""
     }
   },
   {
@@ -16548,8 +16556,12 @@
     "timestamp": "2025-06-10T16:05:18.928264",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
+      "status": "WIN",
+      "closed_at_price": 157.2,
+      "closed_by": "TP2",
+      "mfe_percentage": 1.15,
+      "mae_percentage": 0.0,
+      "evaluation_details": ""
     }
   },
   {
@@ -18352,7 +18364,11 @@
       "TON Rises 4.1%, Suggesting Further Upside Potentia..."
     ],
     "timestamp": "2025-06-11T15:48:41.869525",
-    "symbol": "BTCUSDT"
+    "symbol": "BTCUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   },
   {
     "Signal": "Buy",
@@ -18371,7 +18387,11 @@
       "TON Rises 4.1%, Suggesting Further Upside Potentia..."
     ],
     "timestamp": "2025-06-11T15:49:51.124536",
-    "symbol": "ETHUSDT"
+    "symbol": "ETHUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
   },
   {
     "Signal": "Buy",
@@ -18391,6 +18411,68 @@
       "TON Rises 4.1%, Suggesting Further Upside Potentia..."
     ],
     "timestamp": "2025-06-11T15:51:22.050380",
+    "symbol": "SOLUSDT",
+    "performance": {
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
+    }
+  },
+  {
+    "Signal": "Buy",
+    "Entry Price": "109490.00",
+    "Take Profit Targets": [
+      "109655.00",
+      "110090.00"
+    ],
+    "Stop Loss": "109390.00",
+    "Confidence": 45,
+    "Scenario": "Range-Bound",
+    "Trade Setup Type": "Short-term Range Play",
+    "Reasoning": "Price consolidating near high volume node ($109,450) and within a strong bid zone ($109,498), indicating potential immediate support. Significant order book bid dominance (+98.69%) and positive crypto news sentiment (especially ETH-related, with CRYPTO showing high ETH correlation) suggest short-term upside potential within the current range. MACD histogram indicates weakening bearish momentum. Longer-term EMAs (50, 200) provide underlying support. Targeting VWAP and Upper Bollinger Band as initial profit levels. The trade operates on the expectation that immediate support holds due to order flow pressure.",
+    "Relevant News Headlines": [
+      "Ethereum Governance Tokens Spike as SEC Backs \u2018Inn...",
+      "Ether More Favored by Traders as Volatility Agains...",
+      "Don\u2019t Let the Cult of Price Hold Crypto Back..."
+    ],
+    "timestamp": "2025-06-11T16:41:58.342696",
+    "symbol": "BTCUSDT"
+  },
+  {
+    "Signal": "Buy",
+    "Entry Price": "2860.00",
+    "Take Profit Targets": [
+      "2925.00",
+      "2990.00"
+    ],
+    "Stop Loss": "2795.00",
+    "Confidence": 45,
+    "Scenario": "Trend Continuation",
+    "Trade Setup Type": "Swing",
+    "Reasoning": "Strong bullish trend indicated by EMAs (20>50>200 on multiple TFs) and ADX (33.87). MACD confirms bullish momentum. Price is breaking above the upper Bollinger Band, suggesting potential for further upside. News sentiment is supportive. Key risks include overbought RSI on 1H/4H (71-73) and a low overall confluence score (30/100), warranting caution and reflecting in the assigned confidence level.",
+    "Relevant News Headlines": [
+      "Ethereum Governance Tokens Spike as SEC Backs \u2018Inn...",
+      "Ether More Favored by Traders as Volatility Agains..."
+    ],
+    "timestamp": "2025-06-11T16:43:18.112948",
+    "symbol": "ETHUSDT"
+  },
+  {
+    "Signal": "Buy",
+    "Entry Price": "165.50",
+    "Take Profit Targets": [
+      "168.55",
+      "172.05"
+    ],
+    "Stop Loss": "163.45",
+    "Confidence": 45,
+    "Scenario": "Trend Continuation",
+    "Trade Setup Type": "Swing",
+    "Reasoning": "Primary trend is strongly bullish (ADX 43.71) with price above key 1H EMAs and VWAP. Anticipating a minor pullback to the $165.50 support area (near 1H Bollinger Band Middle / VWAP) for an improved entry point before the trend continues. While a short-term MACD bearish cross exists, the broader trend strength, bid dominance, and positive news sentiment support a long position. The daily EMA200 around $173.29 serves as a significant longer-term resistance, with TPs set below it.",
+    "Relevant News Headlines": [
+      "Ethereum Governance Tokens Spike as SEC Backs \u2018Inn...",
+      "Ether More Favored by Traders as Volatility Agains..."
+    ],
+    "timestamp": "2025-06-11T16:44:38.941038",
     "symbol": "SOLUSDT"
   }
 ]

@@ -6096,8 +6096,8 @@
     "timestamp": "2025-06-09T23:00:32.832164",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6113,8 +6113,8 @@
     "timestamp": "2025-06-09T23:01:13.139848",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6130,8 +6130,8 @@
     "timestamp": "2025-06-09T23:01:58.472764",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6151,8 +6151,8 @@
     "timestamp": "2025-06-09T23:08:01.636539",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6168,8 +6168,8 @@
     "timestamp": "2025-06-09T23:08:44.323189",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6185,8 +6185,8 @@
     "timestamp": "2025-06-09T23:09:22.019447",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6202,8 +6202,8 @@
     "timestamp": "2025-06-09T23:15:25.946754",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6219,8 +6219,8 @@
     "timestamp": "2025-06-09T23:16:16.762003",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6236,8 +6236,8 @@
     "timestamp": "2025-06-09T23:16:54.402165",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6253,8 +6253,8 @@
     "timestamp": "2025-06-09T23:22:47.757839",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6270,8 +6270,8 @@
     "timestamp": "2025-06-09T23:23:28.307747",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6287,8 +6287,8 @@
     "timestamp": "2025-06-09T23:24:11.207314",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6304,8 +6304,8 @@
     "timestamp": "2025-06-09T23:30:24.314840",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6321,8 +6321,8 @@
     "timestamp": "2025-06-09T23:31:21.551003",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6338,8 +6338,8 @@
     "timestamp": "2025-06-09T23:31:55.441389",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6359,8 +6359,8 @@
     "timestamp": "2025-06-09T23:38:12.996102",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6376,8 +6376,8 @@
     "timestamp": "2025-06-09T23:39:15.216529",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6393,8 +6393,8 @@
     "timestamp": "2025-06-09T23:40:01.789957",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6410,8 +6410,8 @@
     "timestamp": "2025-06-09T23:46:17.821139",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6427,8 +6427,8 @@
     "timestamp": "2025-06-09T23:47:13.164157",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6448,8 +6448,8 @@
     "timestamp": "2025-06-09T23:48:04.913209",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6465,8 +6465,8 @@
     "timestamp": "2025-06-09T23:54:15.595560",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6486,8 +6486,8 @@
     "timestamp": "2025-06-09T23:55:05.153613",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6503,8 +6503,8 @@
     "timestamp": "2025-06-09T23:55:57.399204",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6520,8 +6520,8 @@
     "timestamp": "2025-06-10T00:02:05.722147",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6541,8 +6541,8 @@
     "timestamp": "2025-06-10T00:02:57.302820",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6562,8 +6562,8 @@
     "timestamp": "2025-06-10T00:03:37.383004",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6579,8 +6579,8 @@
     "timestamp": "2025-06-10T00:09:39.477190",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6596,8 +6596,8 @@
     "timestamp": "2025-06-10T00:10:10.558741",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6613,8 +6613,8 @@
     "timestamp": "2025-06-10T00:11:07.257423",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6630,8 +6630,8 @@
     "timestamp": "2025-06-10T00:17:07.621808",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6647,8 +6647,8 @@
     "timestamp": "2025-06-10T00:18:01.563529",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6664,8 +6664,8 @@
     "timestamp": "2025-06-10T00:19:09.523662",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6681,8 +6681,8 @@
     "timestamp": "2025-06-10T00:25:05.926873",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6698,8 +6698,8 @@
     "timestamp": "2025-06-10T00:25:54.820438",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6715,8 +6715,8 @@
     "timestamp": "2025-06-10T00:26:32.963612",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6732,8 +6732,8 @@
     "timestamp": "2025-06-10T00:32:41.132115",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6749,8 +6749,8 @@
     "timestamp": "2025-06-10T00:33:31.532900",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6766,8 +6766,8 @@
     "timestamp": "2025-06-10T00:34:25.753339",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6787,8 +6787,8 @@
     "timestamp": "2025-06-10T00:40:38.154537",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6804,8 +6804,8 @@
     "timestamp": "2025-06-10T00:41:29.487616",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6825,8 +6825,8 @@
     "timestamp": "2025-06-10T00:42:20.363668",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6842,8 +6842,8 @@
     "timestamp": "2025-06-10T00:48:34.714741",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6859,8 +6859,8 @@
     "timestamp": "2025-06-10T00:49:32.582846",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6876,8 +6876,8 @@
     "timestamp": "2025-06-10T00:50:34.228900",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6893,8 +6893,8 @@
     "timestamp": "2025-06-10T00:56:57.247147",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6910,8 +6910,8 @@
     "timestamp": "2025-06-10T00:57:42.512174",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6927,8 +6927,8 @@
     "timestamp": "2025-06-10T00:58:37.760336",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6944,8 +6944,8 @@
     "timestamp": "2025-06-10T01:04:44.452647",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6961,8 +6961,8 @@
     "timestamp": "2025-06-10T01:05:20.534792",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6978,8 +6978,8 @@
     "timestamp": "2025-06-10T01:06:18.334450",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -6995,8 +6995,8 @@
     "timestamp": "2025-06-10T01:12:27.478315",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7012,8 +7012,8 @@
     "timestamp": "2025-06-10T01:13:03.878376",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7029,8 +7029,8 @@
     "timestamp": "2025-06-10T01:13:48.300954",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7046,8 +7046,8 @@
     "timestamp": "2025-06-10T01:19:45.874106",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7067,8 +7067,8 @@
     "timestamp": "2025-06-10T01:20:38.495630",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7084,8 +7084,8 @@
     "timestamp": "2025-06-10T01:21:31.666617",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7101,8 +7101,8 @@
     "timestamp": "2025-06-10T01:27:37.315348",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7118,8 +7118,8 @@
     "timestamp": "2025-06-10T01:28:21.711961",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7135,8 +7135,8 @@
     "timestamp": "2025-06-10T01:29:06.290208",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7152,8 +7152,8 @@
     "timestamp": "2025-06-10T01:35:07.312382",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7169,8 +7169,8 @@
     "timestamp": "2025-06-10T01:36:07.834700",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7186,8 +7186,8 @@
     "timestamp": "2025-06-10T01:37:01.115753",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7203,8 +7203,8 @@
     "timestamp": "2025-06-10T01:43:01.899733",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7220,8 +7220,8 @@
     "timestamp": "2025-06-10T01:44:06.687696",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7241,8 +7241,8 @@
     "timestamp": "2025-06-10T01:44:52.600232",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7258,8 +7258,8 @@
     "timestamp": "2025-06-10T01:50:54.646555",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7279,8 +7279,8 @@
     "timestamp": "2025-06-10T01:51:55.128211",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7296,8 +7296,8 @@
     "timestamp": "2025-06-10T01:52:30.666061",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7313,8 +7313,8 @@
     "timestamp": "2025-06-10T01:58:41.509458",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7334,8 +7334,8 @@
     "timestamp": "2025-06-10T01:59:58.218280",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7351,8 +7351,8 @@
     "timestamp": "2025-06-10T02:00:40.131904",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7368,8 +7368,8 @@
     "timestamp": "2025-06-10T02:06:50.505460",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7385,8 +7385,8 @@
     "timestamp": "2025-06-10T02:07:36.035874",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7402,8 +7402,8 @@
     "timestamp": "2025-06-10T02:08:25.197957",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7419,8 +7419,8 @@
     "timestamp": "2025-06-10T02:14:30.921375",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7436,8 +7436,8 @@
     "timestamp": "2025-06-10T02:15:09.332759",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7453,8 +7453,8 @@
     "timestamp": "2025-06-10T02:16:11.305799",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7470,8 +7470,8 @@
     "timestamp": "2025-06-10T02:22:09.293771",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7487,8 +7487,8 @@
     "timestamp": "2025-06-10T02:23:03.788498",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7504,8 +7504,8 @@
     "timestamp": "2025-06-10T02:24:00.665759",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7521,8 +7521,8 @@
     "timestamp": "2025-06-10T02:30:07.870417",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7542,8 +7542,8 @@
     "timestamp": "2025-06-10T02:31:03.308201",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7559,8 +7559,8 @@
     "timestamp": "2025-06-10T02:31:50.929403",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7576,8 +7576,8 @@
     "timestamp": "2025-06-10T02:38:01.595102",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7593,8 +7593,8 @@
     "timestamp": "2025-06-10T02:39:19.676082",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7610,8 +7610,8 @@
     "timestamp": "2025-06-10T02:40:00.304977",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7627,8 +7627,8 @@
     "timestamp": "2025-06-10T02:46:24.626054",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7644,8 +7644,8 @@
     "timestamp": "2025-06-10T02:47:15.047328",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7661,8 +7661,8 @@
     "timestamp": "2025-06-10T02:47:59.168610",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7678,8 +7678,8 @@
     "timestamp": "2025-06-10T02:54:23.993981",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7695,8 +7695,8 @@
     "timestamp": "2025-06-10T02:55:18.519504",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7712,8 +7712,8 @@
     "timestamp": "2025-06-10T02:56:07.222604",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7729,8 +7729,8 @@
     "timestamp": "2025-06-10T03:02:31.125266",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7746,8 +7746,8 @@
     "timestamp": "2025-06-10T03:03:12.754663",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7763,8 +7763,8 @@
     "timestamp": "2025-06-10T03:04:02.071457",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7780,8 +7780,8 @@
     "timestamp": "2025-06-10T03:10:26.744398",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7797,8 +7797,8 @@
     "timestamp": "2025-06-10T03:11:09.444780",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7814,8 +7814,8 @@
     "timestamp": "2025-06-10T03:11:49.750472",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7831,8 +7831,8 @@
     "timestamp": "2025-06-10T03:18:06.790041",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7848,8 +7848,8 @@
     "timestamp": "2025-06-10T03:18:56.003679",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7865,8 +7865,8 @@
     "timestamp": "2025-06-10T03:19:50.791861",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7882,8 +7882,8 @@
     "timestamp": "2025-06-10T03:26:03.990994",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7899,8 +7899,8 @@
     "timestamp": "2025-06-10T03:27:07.510411",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7916,8 +7916,8 @@
     "timestamp": "2025-06-10T03:27:58.135628",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7933,8 +7933,8 @@
     "timestamp": "2025-06-10T03:34:16.314480",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7954,8 +7954,8 @@
     "timestamp": "2025-06-10T03:35:33.195844",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7971,8 +7971,8 @@
     "timestamp": "2025-06-10T03:36:21.104742",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -7988,8 +7988,8 @@
     "timestamp": "2025-06-10T03:42:41.550655",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8005,8 +8005,8 @@
     "timestamp": "2025-06-10T03:43:38.657413",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8022,8 +8022,8 @@
     "timestamp": "2025-06-10T03:44:25.420050",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8039,8 +8039,8 @@
     "timestamp": "2025-06-10T03:50:43.321627",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8056,8 +8056,8 @@
     "timestamp": "2025-06-10T03:51:47.225135",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8073,8 +8073,8 @@
     "timestamp": "2025-06-10T03:52:44.117204",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8090,8 +8090,8 @@
     "timestamp": "2025-06-10T03:58:55.331546",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8107,8 +8107,8 @@
     "timestamp": "2025-06-10T03:59:51.211170",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8124,8 +8124,8 @@
     "timestamp": "2025-06-10T04:00:35.180957",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8141,8 +8141,8 @@
     "timestamp": "2025-06-10T04:06:49.432975",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8158,8 +8158,8 @@
     "timestamp": "2025-06-10T04:07:26.112938",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8179,8 +8179,8 @@
     "timestamp": "2025-06-10T04:08:08.021987",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8196,8 +8196,8 @@
     "timestamp": "2025-06-10T04:14:21.876956",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8213,8 +8213,8 @@
     "timestamp": "2025-06-10T04:15:12.082003",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8233,8 +8233,8 @@
     "timestamp": "2025-06-10T04:16:09.020514",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8250,8 +8250,8 @@
     "timestamp": "2025-06-10T04:22:19.247061",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8267,8 +8267,8 @@
     "timestamp": "2025-06-10T04:22:58.345535",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8284,8 +8284,8 @@
     "timestamp": "2025-06-10T04:23:41.406260",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8301,8 +8301,8 @@
     "timestamp": "2025-06-10T04:29:56.393425",
     "symbol": "BTCUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8318,8 +8318,8 @@
     "timestamp": "2025-06-10T04:30:37.131420",
     "symbol": "ETHUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -8335,8 +8335,8 @@
     "timestamp": "2025-06-10T04:31:32.699320",
     "symbol": "SOLUSDT",
     "performance": {
-      "status": "EVALUATION_ERROR",
-      "evaluation_details": "'NoneType' object is not iterable"
+      "status": "TOO_RECENT",
+      "evaluation_details": "Evaluation window not yet complete."
     }
   },
   {
@@ -19035,1757 +19035,6 @@
     "Stop Loss": null,
     "Relevant News Headlines": [],
     "timestamp": "2025-06-11T10:56:06.389016",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Conditions / Veto Rules Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions met: The 'Session Character' is 'Low - Weak / Choppy' (Session Strength 32/100), making trend-following strategies high-risk and subject to veto. The 'Estimated R/R Ratio' is 0.00:1, which is below the mandatory minimum of 2.5:1. Additionally, the 'Confluence Score' is very low (20/100), and there are conflicting signals such as a 1h MACD bearish cross against the primary bullish trend. Multi-timeframe alignment is also reported as WEAK. Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T10:56:43.752489",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Conditions / Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions met: 1. Estimated Risk/Reward ratio (0.05:1) is significantly below the required 2.5:1. 2. Session Character is 'Low - Weak / Choppy' (Strength 36/100), which vetoes trend/breakout strategies. 3. Multi-timeframe alignment is weak; notably, the 1-day price ($164.53) is below its EMA200 ($173.2777), indicating significant overhead resistance despite a stated 'BULLISH' primary trend. 4. Confluence score is very low (10/100) with conflicting signals (e.g., MACD bearish cross vs. stated bullish trend). Price is also below VWAP on 1h, 4h, and 1D timeframes.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T10:57:22.749501",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Probability / Choppy Market Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Session Strength is critically low (16/100, 'Low - Weak / Choppy'), ADX (20.09) indicates a very weak trend, and the Confluence Score is extremely low (-5/100). Most importantly, the estimated Risk/Reward ratio is 0.00:1, failing the minimum 2.5:1 requirement. Holding to preserve capital in suboptimal conditions.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:05:31.186158",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Session Strength & Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Session Strength is critically low (17/100) with 'Low - Weak / Choppy' character, which vetoes trend-based strategies as per trading rules. The estimated Risk/Reward ratio is 0.00:1, significantly below the minimum 2.5:1 requirement, triggering another veto. Additionally, confluence is low (15/100) with conflicting short-term signals (e.g., 1h MACD bearish cross) despite a bullish primary trend.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:06:11.739319",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Conditions / Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple trade veto conditions are met. The provided Estimated Risk/Reward Ratio is 0.01:1, which is critically below the minimum requirement of 2.5:1. The current trading session has a 'Low - Weak / Choppy' character with a very low strength score (20/100), making trend-based strategies highly unfavorable. Additionally, the confluence score is extremely low (10/100) with conflicting technical signals (e.g., 1h MACD bearish cross, 1D price below its EMA200 despite a stated 'Primary Bullish Trend'). Adhering to risk management principles, the decision is to Hold and preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:06:57.602459",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Low Session Strength & Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Session Strength is Low (20/100) indicating dangerous, choppy conditions, strongly favoring 'Hold'. The estimated Risk/Reward ratio is 0.00:1, which violates the minimum 2.5:1 requirement. Market regime is Neutral with ADX at 20.09, suggesting a very weak trend. Confluence of signals is extremely low (-5/100) and contradictory, failing the minimum 3 confirming signals rule.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:15:01.060665",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Low Probability / Choppy Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "The current London session exhibits 'Low - Weak / Choppy' character with a Session Strength Score of 19/100, which strongly advises against trend or breakout strategies. Critically, the provided 'Estimated R/R Ratio' is 0.00:1, falling far below the minimum 2.5:1 requirement, triggering a mandatory trade veto. Additionally, the Confluence Score is very low (15/100), Signal Strength is LOW, and there are conflicting indicators (e.g., 1h bearish MACD cross versus a bullish primary trend) with 'Multi-timeframe alignment is WEAK'. Holding to preserve capital in these suboptimal conditions.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:15:40.883225",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary Veto: The provided 'Estimated R/R Ratio' to the first target is 0.01:1, which is significantly below the mandatory 2.5:1 minimum. Secondary Veto: The 'Session Character' is 'Low - Weak / Choppy' and 'Session Strength Score' is very low (22/100), which vetoes trend or breakout strategies under current conditions. Additional factors supporting 'Hold' include a very low 'Confluence Score' (10/100), conflicting short-term technical signals (MACD bearish cross, ask dominance at current price levels), and 'WEAK' multi-timeframe alignment with the 1-day EMA200 acting as overhead resistance.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:16:26.566191",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Market regime is Neutral with ADX at 20.09, indicating a very weak trend. Current 'London Session' character is 'Low - Weak / Choppy' (Strength 22/100), which vetoes trend/breakout strategies and strongly favors holding. Confluence score is extremely low (5/100) with mixed signals. The provided Estimated R/R Ratio is 0.00:1, which is a hard veto. Staying flat to preserve capital under suboptimal conditions.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:24:32.246196",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Critical Veto: Estimated Risk/Reward ratio is 0.00:1, which is below the minimum 2.5:1 requirement. Additionally, Session Strength is Low (21/100) and Session Character is 'Low - Weak / Choppy', making conditions unfavorable for new positions. The Confluence Score is extremely low (-5/100), and the market regime is Neutral. Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:25:12.512823",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Critical veto conditions triggered: 1) Estimated Risk/Reward ratio of 0.03:1 is significantly below the 2.5:1 minimum requirement. 2) Current Trading Session Character is 'Low - Weak / Choppy' (Session Strength 25/100), which vetoes trend or breakout strategies. 3) Multi-timeframe alignment is weak, with current price below the 1-day EMA200, conflicting with the stated primary bullish trend for a long entry. 4) Confluence Score is extremely low (10/100).",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:25:53.799602",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Conditions / Veto Triggered",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary Veto: Estimated R/R ratio is 0.00:1, far below the 2.5:1 minimum requirement. Additionally, market conditions are unfavorable: Primary Trend is Neutral, ADX is 20.09 (indicating a very weak trend), Session Character is 'Low - Weak / Choppy' (Session Strength 24/100), and Confluence Score is extremely low (5/100). Staying flat to preserve capital.",
-    "Relevant News Headlines": [
-      "BlackRock\u2019s Bitcoin ETF Becomes Fastest Ever To Re...",
-      "Bitget Anti-Scam Report Shows AI-Related Scams Dri...",
-      "Major Crypto Executive Accused Of Involvement In $..."
-    ],
-    "timestamp": "2025-06-11T11:34:12.717463",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Session Strength / Unfavorable Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met. The 'Session Character' is 'Low - Weak / Choppy' (Session Strength Score 23/100), which is unsuitable for trend-following strategies according to the trading framework. The provided 'Estimated R/R Ratio' is 0.00:1, violating the minimum 2.5:1 requirement. The 'Confluence Score' is extremely low (10/100), and the 1-hour MACD shows a bearish cross, creating mixed signals against the higher timeframe bullish trend.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:34:50.627641",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions met: Risk/Reward ratio (0.01:1) is far below the minimum 2.5:1. Session Strength is Low (28/100) with 'Weak / Choppy' character, advising against trend trades. Confluence Score is extremely low (10/100) and multi-timeframe alignment is weak. Staying flat to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:35:30.891917",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Trading Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple VETO conditions are met. The 'Session Character' is 'Low - Weak / Choppy' (Strength: 29/100) and ADX is low (20.10), indicating unfavorable conditions for high-probability trades. Critically, the 'Estimated R/R Ratio' is 0.00:1, violating the minimum 2.5:1 requirement. Additionally, 1h signals (e.g., MACD bearish cross) conflict with the 4h/1d bullish posture, and overall confluence is very low (-5/100). Holding to preserve capital.",
-    "Relevant News Headlines": [
-      "Dimolad Limited Offers Crypto Scam Recovery Servic...",
-      "BlackRock\u2019s Bitcoin ETF Becomes Fastest Ever To Re...",
-      "Bitget Anti-Scam Report Shows AI-Related Scams Dri..."
-    ],
-    "timestamp": "2025-06-11T11:43:39.657159",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Session Character is 'Low - Weak / Choppy' (Strength 25/100), indicating dangerous trading conditions and vetoing trend/breakout strategies. The estimated Risk/Reward ratio is 0.00:1, which is a mandatory veto. Additionally, the market regime is Neutral, Confluence Score is 0/100, and multi-timeframe alignment is weak. Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:44:17.410540",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met. Firstly, the 'Session Character' is 'Low - Weak / Choppy' with a Session Strength Score of 31/100, which advises against trend or breakout strategies. Secondly, the 'Estimated R/R Ratio' is 0.03:1, far below the minimum required 2.5:1. Thirdly, 'Multi-timeframe alignment is WEAK', with the 1-day chart (Price < EMA200) indicating a bearish longer-term context that would conflict with any potential 1-hour bullish setup. The overall 'Confluence Score' is extremely low (15/100).",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:45:09.306075",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Market regime is unclear (Primary Trend: NEUTRAL, ADX: 20.1). Current London Session has 'Low - Weak / Choppy' character (Session Strength 30/100), which vetoes trend/breakout strategies under these conditions. Critically, the estimated Risk/Reward ratio is 0.00:1, violating the minimum 2.5:1 requirement. Additionally, the 1h bearish MACD conflicts with bullish 4h/1d indicators, and the overall confluence score is extremely low (5/100). Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:53:22.486450",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions triggered: 1. Session Character is 'Low - Weak / Choppy' (Session Strength 27/100), making trend-following strategies unsuitable per trading rules. 2. Estimated Risk/Reward Ratio is 0.00:1, significantly below the 2.5:1 minimum requirement. 3. The 1-hour MACD shows a bearish cross, which conflicts with the bullish primary trend on the 4-hour and daily timeframes, violating multi-timeframe alignment for a long position. Capital preservation is prioritized.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:53:59.423065",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Suboptimal Trading Conditions & Veto Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions met: The 'Estimated R/R Ratio' is 0.04:1, far below the 2.5:1 minimum. The 'Session Character' is 'Low - Weak / Choppy' (Session Strength 32/100), which vetoes trend-based strategies. The 'Confluence Score' is extremely low (10/100) and 'Multi-timeframe alignment is WEAK'. Holding to preserve capital.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T11:54:40.879432",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Conditions / Multiple Vetoes",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met, mandating a 'Hold' signal. Specifically: 1) The ADX is 18.68, below the 20 threshold, indicating a weak or non-existent trend. 2) The 'Session Character' is 'Low - Weak / Choppy' with a 'Session Strength Score' of 15/100, making trend or breakout strategies highly unfavorable. 3) The 'Estimated R/R Ratio' is 0.00:1, which is critically below the minimum required 2.5:1. Additionally, the 'Confluence Score' is extremely low at -5/100 and 'Signal Strength' is 'LOW'. Market conditions are unsuitable for deploying capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:03:01.740675",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Vetoed: Low Session Strength & Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "The current 'Low - Weak / Choppy' session character (Session Strength Score 16/100) vetoes trend continuation strategies as per trading rules. Additionally, the provided 'Estimated R/R Ratio' is 0.00:1, failing the mandatory minimum 2.5:1. Low overall Confluence Score (15/100), weak multi-timeframe alignment, and conflicting 1-hour signals (e.g., MACD bearish cross) further support a 'Hold' decision to preserve capital in suboptimal conditions.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:03:45.900504",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met: Low Session Strength & Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Trade vetoed due to Low Session Strength (18/100) with 'Low - Weak / Choppy' character, making trend-following trades unsuitable as per trading philosophy. Critically, the estimated Risk/Reward ratio of 0.03:1 is significantly below the required 2.5:1 minimum. Additionally, overall signal confluence is extremely low (10/100) and multi-timeframe alignment is weak.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:04:38.169630",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Weak Trend and Unfavorable Session Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met: 1. ADX is 18.95 (below 20), indicating a weak trend, which is a veto condition for trend-following strategies. 2. The Current Trading Session has 'Low Strength' (27/100) and 'Low - Weak / Choppy' character, vetoing trend or breakout trades. 3. The estimated Risk/Reward Ratio is 0.00:1, far below the minimum requirement of 2.5:1. 4. Confluence score is extremely low (15/100). Holding to preserve capital and await a higher probability setup.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:12:49.260808",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Session Strength & Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met. The current 'Session Character' is 'Low - Weak / Choppy' with a low Session Strength Score (32/100), which vetoes trend-based strategies under these conditions. Furthermore, the 'Estimated R/R Ratio' is 0.75:1, significantly below the required 2.5:1 minimum, triggering another veto. The Confluence Score (15/100) and Signal Strength (LOW) are also prohibitive, and multi-timeframe alignment is reported as WEAK. Holding to preserve capital and await a higher probability setup.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:13:34.101404",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions met. Primary veto: The calculated Risk/Reward ratio is 0.05:1, significantly below the required minimum of 2.5:1. Secondary veto: The Session Character is 'Low - Weak / Choppy' (Session Strength 24/100), which advises against trend or breakout trades. Confluence score is extremely low (10/100) with conflicting signals (e.g., 1h bearish MACD vs. primary bullish trend) and weak multi-timeframe alignment.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:14:14.613469",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions met: Estimated Risk/Reward Ratio is 0.00:1 (below the 2.5:1 minimum requirement). ADX is 19.21 (below 20), indicating a weak or non-existent trend. Current Trading Session Character is 'Low - Weak / Choppy' with a low Session Strength Score of 32/100, making conditions unfavorable for high-probability trades. Confluence Score is 0/100 and Signal Strength is LOW. Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:22:34.337451",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Suboptimal Risk/Reward and Low Confluence",
-    "Trade Setup Type": null,
-    "Reasoning": "The estimated Risk/Reward ratio of 0.75:1 is below the minimum 2.5:1 requirement, triggering a trade veto. Additionally, the overall confluence score is very low (-5/100) with conflicting technical signals (bullish higher timeframe structure vs. bearish intraday momentum and order flow). The primary trend is neutral and volatility is low, making high-probability setups scarce. Holding to preserve capital.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:23:48.834923",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met - Low R/R & Weak Session",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions met: The estimated Risk/Reward ratio (0.03:1) is significantly below the 2.5:1 minimum requirement. The current 'Low - Weak / Choppy' Session Character (Strength 29/100) vetoes trend-following or breakout trades. Additionally, the overall signal confluence is extremely low (15/100) with conflicting indicators such as a bearish MACD cross against a bullish primary trend.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:24:24.750024",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Probability Setup / R/R Veto",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary veto condition met: The provided Estimated Risk/Reward ratio (0.00:1) is significantly below the 2.5:1 minimum requirement. Additionally, confluence is extremely low (Confluence Score: 15/100), with conflicting short-term indicators (e.g., 1-hour MACD bearish cross, ask dominance) despite a bullish higher-timeframe trend. The ADX (20.4) indicates a weak trend. Holding to preserve capital as per risk-averse institutional trading philosophy.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:32:56.458786",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Triggered - Low Risk/Reward Ratio",
-    "Trade Setup Type": null,
-    "Reasoning": "Trade Veto Condition met: The provided 'Estimated R/R Ratio' in RISK MANAGEMENT METRICS is 0.01:1, which is below the minimum required 2.5:1. Additionally, the 'Confluence Score' is low (25/100) and the 1-hour MACD shows a bearish cross, indicating a suboptimal entry point despite the prevailing bullish higher-timeframe trend. Capital preservation is prioritized.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:34:07.151965",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unfavorable Risk-Reward and Low Confluence",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary reason for holding is the estimated Risk/Reward ratio of 0.75:1, which is significantly below the minimum required 2.5:1, triggering a trade veto. Additionally, the Confluence Score is extremely low (10/100) and Signal Strength is LOW. There are conflicting signals including a 1h MACD bearish cross and Ask dominance, despite the broader bullish trend. Multi-timeframe alignment is noted as weak, with the 1-day price below its EMA200, and the current price is at the Strongest Ask Zone.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:34:50.028602",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met / Suboptimal Setup",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple trade veto conditions are met. Firstly, the 'Estimated R/R Ratio' is 0.00:1, which is below the minimum required 2.5:1. Secondly, a bearish signal on the 1-hour timeframe (MACD bearish cross) contradicts the primary bullish trend on the 4-hour and daily timeframes. Additionally, the overall 'Confluence Score' is very low (25/100) and the system notes 'Multi-timeframe alignment is WEAK', indicating insufficient conviction for a trade despite a generally bullish primary trend and high session strength. ADX at 20.42 also suggests weak trend strength. Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:43:29.770730",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Bullish Trend - Awaiting Optimal Entry",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary veto condition is met as the 'Estimated R/R Ratio' is 0.00:1, which is significantly below the minimum 2.5:1 requirement. Despite a strong bullish primary trend, high ADX (30.05), and supportive session conditions ('High - Strong Conviction'), the provided 'Confluence Score' is low at 30/100. Furthermore, an active factor is 'MACD_BEARISH_CROSS' on the 1-hour timeframe, indicating potential short-term weakness or consolidation, making an immediate long entry suboptimal. Adhering to the principle of patience and waiting for a high-probability setup with adequate risk-reward is essential for capital preservation.",
-    "Relevant News Headlines": [
-      "Analysts Predict Xpfinance (XPF) Will Lead The 202...",
-      "Cango Sheds Chinese Operations In Pivot To Global ...",
-      "Quantum Biopharma Purchases More Bitcoin (BTC) Bri..."
-    ],
-    "timestamp": "2025-06-11T12:44:21.889646",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Triggered - Poor Risk/Reward and Conflicting Signals",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary veto condition is the unacceptable Risk/Reward ratio, with the system providing an 'Estimated R/R Ratio: 0.01:1', which is far below the minimum 2.5:1 requirement. Further supporting a 'Hold' decision are conflicting signals including a 1-hour MACD bearish cross, ask dominance near the current price, a very low overall confluence score (20/100), and stated weak multi-timeframe alignment despite a generally bullish primary trend. Capital preservation is prioritized.",
-    "Relevant News Headlines": [
-      "Analysts Predict Xpfinance (XPF) Will Lead The 202...",
-      "Cango Sheds Chinese Operations In Pivot To Global ...",
-      "Quantum Biopharma Purchases More Bitcoin (BTC) Bri..."
-    ],
-    "timestamp": "2025-06-11T12:45:22.076482",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Risk/Reward and Conflicting Signals",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary reason for holding is the unacceptable Risk/Reward ratio. The provided 'Estimated R/R Ratio' is 0.00:1, and the 'Strongest Ask Zone' is at the current price ($109,604.86), offering no viable profit margin against a logical stop loss to meet the minimum 2.5:1 requirement. Additionally, while the higher timeframe trend is bullish and session strength is high, the 1-hour MACD shows a bearish cross, conflicting with an immediate long entry. The ADX at 20.42 indicates weak trend strength, and the overall 'Confluence Score' (25/100) is low. Capital preservation is paramount under these conditions.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:53:51.764696",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Bullish Trend - Suboptimal Entry Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary VETO: Risk/Reward ratio to the first target is significantly below the required 2.5:1 (system estimates 0.00:1). Despite a strong bullish primary trend (ADX 30.13) and high session strength (78/100), the current setup is compromised by a very low Confluence Score (20/100), price encountering immediate strong resistance at the Strongest Ask Zone ($2,802.88), a 1-hour MACD bearish cross, and ask dominance in the order flow. Holding to preserve capital and await a higher probability opportunity with favorable risk parameters.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T12:54:43.857758",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unfavorable Risk-Reward & Insufficient Confluence",
-    "Trade Setup Type": null,
-    "Reasoning": "The system-provided `Estimated R/R Ratio` is 0.00:1, which is critically below the minimum 2.5:1 requirement (Trade Veto Condition). My independent calculation of R/R to the next major resistance (1D EMA200) also fails to meet this threshold. Furthermore, the `Confluence Score` is exceptionally low at 25/100, indicating a lack of strong, confirming signals. There are conflicting technical factors, including a bearish MACD cross on the 1-hour timeframe despite a broader bullish trend, and significant overhead resistance from the 1-day EMA200. The current price is also at the `Strongest Ask Zone`. Given these suboptimal conditions and clear violation of risk management rules, the decision is to Hold and preserve capital.",
-    "Relevant News Headlines": [
-      "Bitcoin Core 30 to Increase OP_RETURN Data Limit A...",
-      "Virtune AB (Publ) (\"Virtune\") has completed the mo...",
-      "Analysts Predict Xpfinance (XPF) Will Lead The 202..."
-    ],
-    "timestamp": "2025-06-11T12:55:48.575960",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Conditions / Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met: 1) The `Session Character` is 'Low - Weak / Choppy' (Session Strength 18/100), which is unsuitable for trend or breakout strategies. 2) The `Estimated R/R Ratio` is 0.00:1, far below the minimum 2.5:1 requirement. Additionally, ADX (20.72) indicates a very weak trend, and conflicting signals (bullish primary trend vs. 1h MACD bearish cross, ask dominance) contribute to a low confluence score (15/100). Capital preservation is paramount.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:04:12.251505",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Weak Session / Choppy Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "The Session Strength Score is 21/100 and Session Character is 'Low - Weak / Choppy'. This triggers a veto condition for trend or breakout strategies, which would be the primary consideration in the current bullish market regime. Additionally, the 1-hour MACD shows a bearish cross and the Confluence Score is very low (25/100). Holding to preserve capital in dangerous and uncertain session conditions.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:05:05.871113",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Trade Conditions / Veto Triggered",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple critical veto conditions are met. The estimated Risk/Reward ratio (0.02:1) is significantly below the minimum requirement of 2.5:1. The current 'Low - Weak / Choppy' session character (Session Strength Score 23/100) vetoes trend-based strategies. Confluence is very low (20/100) with conflicting signals such as a 1h bearish MACD cross and ask dominance, despite a broader bullish trend. Multi-timeframe alignment is also noted as weak. Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:05:49.373914",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "VETO: Session Character ('Low - Weak / Choppy') is unsuitable for trend trading. VETO: Estimated R/R ratio (0.00:1) is far below the minimum 2.5:1 requirement. Additionally, ADX (20.72) indicates a weak trend, confluence score is extremely low (15/100), and MACD shows a bearish cross, conflicting with the primary bullish trend.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:14:28.240369",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Low Probability Setup / Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Hold signal due to critical veto conditions. Firstly, the Session Character is 'Low - Weak / Choppy' with a Session Strength Score of 27/100, which vetoes trend-following strategies under current dangerous conditions. Secondly, the provided Estimated R/R Ratio is 0.00:1, failing the mandatory minimum 2.5:1 requirement. Thirdly, there is significant Ask Dominance (-94.19% imbalance) at the current price, which coincides with the Strongest Ask Zone, and a MACD bearish cross, creating an unfavorable entry environment despite the broader bullish trend. The overall Confluence Score is also very low (20/100).",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:15:18.316330",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions triggered. The estimated Risk/Reward ratio (0.03:1) is critically below the 2.5:1 minimum requirement. The current 'Session Character' is 'Low - Weak / Choppy', which vetoes trend or breakout strategies under these conditions. Additionally, there are conflicting signals including a 1h MACD bearish cross against a stated bullish primary trend, weak multi-timeframe alignment (1D price below 1D EMA200), and low overall confluence (20/100), making conditions suboptimal for a trade.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:16:08.709205",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Session Strength & Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Session Strength is Low (30/100) and Session Character is 'Low - Weak / Choppy', making trend-based trades unfavorable (VETO). The provided Estimated Risk/Reward Ratio is 0.00:1, far below the minimum 2.5:1 requirement (VETO). ADX is low (20.72) indicating a weak trend, and the Confluence Score is very low (25/100). Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:24:57.235793",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unfavorable Risk/Reward and Suboptimal Market Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Critical veto condition met: The calculated Risk/Reward ratio (0.00:1) is below the minimum 2.5:1 requirement. Furthermore, the 'Session Character' is 'Low - Weak / Choppy' (Session Strength 33/100), which vetoes trend-following strategies under current conditions. A low overall confluence score (20/100) and conflicting short-term signals (e.g., 1h MACD bearish cross against the prevailing uptrend, ask dominance at current price) also support capital preservation.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:25:41.563524",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met / Suboptimal Trading Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple critical veto conditions are met. Firstly, the 'Estimated R/R Ratio' is 0.01:1, which is drastically below the mandatory minimum of 2.5:1. Secondly, the 'Session Character' is 'Low - Weak / Choppy' with a 'Session Strength Score' of 34/100; this vetoes trend-following or breakout strategies, which would be the logical approach given the stated bullish primary trend. Additionally, the 'Confluence Score' is very low at 20/100, with contradictory signals such as a 1h MACD bearish cross and ask dominance, despite the ADX indicating a strong trend. Multi-timeframe alignment is also reported as 'WEAK', with the price on the 1-day chart below its EMA200, suggesting significant overhead resistance. Capital preservation is prioritized under these suboptimal conditions.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:26:29.363609",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Neutral Market, Low Confluence, Unfavorable R/R",
-    "Trade Setup Type": null,
-    "Reasoning": "The market regime is Neutral with a low ADX (20.72), indicating a weak trend. The provided Confluence Score is extremely low (5/100) and Signal Strength is LOW. Critically, the 'Estimated R/R Ratio' is 0.00:1, which violates the minimum 2.5:1 requirement (Trade Veto Condition). Multi-timeframe alignment is weak. Staying flat to preserve capital under these suboptimal conditions.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:35:26.646465",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto: Insufficient Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary veto: The estimated Risk/Reward ratio for a long setup is 0.75:1, which is critically below the minimum 2.5:1 requirement. Supporting this hold decision: the 1h MACD shows a bearish cross conflicting with an immediate long entry, the overall confluence score is low (30/100), and system context indicates 'WEAK' multi-timeframe alignment. Holding to preserve capital and await a higher probability setup.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:36:24.790709",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Conditions / Low R:R",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary veto due to the estimated Risk/Reward ratio of 0.02:1 being significantly below the minimum 2.5:1 requirement. Additionally, multi-timeframe alignment is weak with the current price below the 1-Day EMA200, the 1-hour MACD shows a bearish cross conflicting with a potential long setup, and the overall confluence score is low (25/100). Current price is also in a very tight range between key support and resistance.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:37:21.129337",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Poor Risk-Reward & Low Confluence",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary veto condition is an unachievable Risk/Reward ratio; the provided 'Estimated R/R Ratio' is 0.00:1, and calculations using ATR-based stops against logical targets (e.g., Bollinger Bands) confirm an R/R significantly below the 2.5:1 minimum. Additionally, the overall 'Confluence Score' (15/100) and 'Signal Strength' (LOW) are insufficient for a high-probability setup, despite a bullish primary trend. Conflicting indicators such as a MACD bearish cross and 'ASK_DOMINANCE' further reduce conviction.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [
-      "U.S. CISA adds RoundCube Webmail and Erlang Erlang...",
-      "SunnyMining: The most trusted Bitcoin BTC Dogecoin...",
-      "Crypto-Related Suspicious Activity Reports Jump 8%..."
-    ],
-    "timestamp": "2025-06-11T13:46:05.535567",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Risk/Reward Setup",
-    "Trade Setup Type": null,
-    "Reasoning": "Trade VETO: The calculated Risk/Reward ratio to the first potential take profit target is approximately 0.75:1, which is significantly below the minimum institutional requirement of 2.5:1. Despite a bullish primary trend on higher timeframes (4h, 1d) and ADX indicating trend strength (30.23), immediate conditions warrant caution. These include a 1h MACD bearish cross, current price proximity to a strong ask zone ($2,793.06) with significant volume, a negative order book imbalance (-78.02%), and a low overall confluence score (20/100). Capital preservation is paramount; awaiting a setup with a more favorable risk-reward profile and stronger confirming signals.",
-    "Relevant News Headlines": [
-      "Crypto-Related Suspicious Activity Reports Jump 8%..."
-    ],
-    "timestamp": "2025-06-11T13:47:00.976430",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Poor Risk-Reward & Conflicting Signals",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary Veto: The calculated Risk/Reward ratio (0.02:1) is significantly below the minimum 2.5:1 requirement. Price is caught in an extremely tight range between key support ($165.38) and resistance ($165.45), with VWAP ($165.53) also acting as immediate resistance. Conflicting short-term signals (MACD bearish cross, ask dominance, price below VWAP) and a very low confluence score (20/100) exist despite a strong ADX. Multi-timeframe alignment is noted as weak. Holding to preserve capital as per risk management protocols.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:47:58.060112",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Poor Risk/Reward and Low Confluence",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary VETO: The system's 'Estimated R/R Ratio' is 0.00:1, which is far below the minimum 2.5:1 requirement. This is due to 'Key Support' and 'Key Resistance' levels being virtually identical to the current price. Additionally, the 'Confluence Score' is very low at 25/100, and 'Multi-timeframe alignment' is reported as 'WEAK'. Despite a bullish primary trend and high session strength, these factors indicate a suboptimal trade setup, mandating a 'Hold' to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:56:55.637457",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto: Risk/Reward Below Minimum Threshold",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary veto condition is met: the calculated Risk/Reward ratio to the first potential target ($2837.46 based on Key Resistance) is approximately 0.75:1, which is significantly below the minimum required 2.5:1. Additionally, other factors suggest caution: a bearish MACD cross on the implied 1-hour chart, dominant ask-side order flow at the current price level (Order Book Imbalance: -43.21%, Strongest Ask Zone volume significantly higher than Bid Zone), and a low system-generated confluence score (20/100). Holding to preserve capital and await a higher probability setup.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:57:53.222665",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Poor Risk/Reward for Trend Continuation",
-    "Trade Setup Type": null,
-    "Reasoning": "The trade is vetoed due to the 'Risk/Reward to the first Take Profit target is below 2.5:1' condition. The provided estimated R/R ratio is 0.01:1. While the primary trend is bullish (ADX 41.5) and institutional flow suggests buying, conflicting short-term signals (1h MACD bearish cross, ASK dominance in order flow, 'weak' multi-timeframe alignment as per additional context) and a very low confluence score (25/100) further support a 'Hold' decision to preserve capital and await a higher probability setup.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T13:58:54.045497",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Market Conditions / Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met. The 'Session Character' is 'Low - Weak / Choppy' with a 'Session Strength Score' of 25/100, making trend-following strategies high risk. Critically, the 'Estimated R/R Ratio' is 0.00:1, which is significantly below the minimum 2.5:1 requirement. Additionally, the ADX at 21.02 indicates a weak trend, and the overall 'Confluence Score' is very low (25/100). Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:07:36.170293",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Conditions / Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met. The 'Session Character' is 'Low - Weak / Choppy', which is unsuitable for trend-following strategies. The 1-hour MACD indicates a bearish cross, conflicting with the bullish higher-timeframe (4h/1d) trend. The provided 'Estimated R/R Ratio' is 0.00:1, failing the minimum 2.5:1 requirement. Additionally, the 'Confluence Score' is low (30/100) and 'Additional Context' states 'Multi-timeframe alignment is WEAK'. Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:08:19.075969",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Low R/R and Unfavorable Session Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary veto condition is the extremely low estimated Risk/Reward ratio of 0.03:1, far below the 2.5:1 minimum. Furthermore, the 'Low - Weak / Choppy' session character (Strength 20/100) makes trend trading highly unfavorable, triggering a veto for such strategies. Additional concerns include a MACD bearish cross on the observed timeframe and the 1-day price trading below its key EMA200, reducing confidence in the stated bullish trend. Confluence score is also very low (30/100).",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:09:05.786578",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met: Low Session Strength & Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions met. The Session Character is 'Low - Weak / Choppy' with a Session Strength Score of 37/100, which is unsuitable for trend-based strategies. Crucially, the 'Estimated R/R Ratio' is 0.00:1, falling significantly short of the minimum 2.5:1 requirement. Additionally, the ADX at 21.58 indicates a weak trend, and the 1-hour MACD bearish cross conflicts with the broader bullish trend, further reducing trade viability. Staying flat to preserve capital.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:17:47.914549",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple trade veto conditions are met. Critically, the estimated Risk/Reward ratio of 0.75:1 is significantly below the 2.5:1 minimum requirement. Additionally, the current 'Low - Weak / Choppy' session character (Session Strength 33/100) makes trend-based trading unfavorable. A very low confluence score (20/100), stated weak multi-timeframe alignment, and conflicting internal signals (e.g., MACD bearish cross against the primary bullish trend) further support a 'Hold' decision to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:18:33.329455",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Risk/Reward ratio (0.03:1) is critically below the 2.5:1 minimum, triggering a trade veto. The 'Low - Weak / Choppy' session character (Strength 26/100) also advises against trend trades under current conditions. Holding to preserve capital.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:19:28.082837",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Risk/Reward and Conflicting Short-Term Signals",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary trade veto condition is met: the 'Estimated R/R Ratio' is 0.01:1, which is drastically below the minimum required 2.5:1. Despite a bullish primary trend on higher timeframes (4h, 1d), the 1-hour MACD exhibits a bearish cross, and the current price is trading above the upper Bollinger Band, suggesting potential for a short-term pullback or consolidation rather than an immediate, favorable long entry. The provided 'Confluence Score' of 30/100 is also insufficient for a high-conviction trade. Holding to preserve capital and await a setup with a valid risk-reward profile and stronger signal confluence.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:28:27.949880",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unfavorable Risk/Reward and Low Confluence",
-    "Trade Setup Type": null,
-    "Reasoning": "The system's 'Estimated R/R Ratio: 0.00:1' is below the mandatory 2.5:1 minimum, triggering a trade veto. Additionally, the 'Confluence Score: 25/100' is too low for a high-probability setup, and a MACD bearish cross on the 1-hour chart conflicts with an immediate long entry despite the broader bullish trend. Staying flat to preserve capital.",
-    "Relevant News Headlines": [
-      "Uminers Unveils Key Trends Shaping the Global Cryp...",
-      "Rust-based Myth Stealer Malware Spread via Fake Ga...",
-      "Circle Stock To $300?..."
-    ],
-    "timestamp": "2025-06-11T14:29:18.234065",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met: Critically Low R/R and Adverse Session Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Hold signal due to multiple critical veto conditions being met. The primary veto is the estimated Risk/Reward ratio of 0.05:1, which is drastically below the minimum 2.5:1 requirement. Secondly, the current 'Low - Weak / Choppy' Session Character, with a Session Strength Score of 36/100, advises against trend-following or breakout strategies, which would be the likely approach given the 'BULLISH' primary trend. Supporting this cautious stance are: a bearish MACD cross on the 1-hour chart, the daily price trading below its 200-period EMA (weakening bullish conviction), weak multi-timeframe alignment, and bearish news sentiment.",
-    "Relevant News Headlines": [
-      "Uminers Unveils Key Trends Shaping the Global Cryp...",
-      "Rust-based Myth Stealer Malware Spread via Fake Ga...",
-      "Circle Stock To $300?..."
-    ],
-    "timestamp": "2025-06-11T14:30:12.757052",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto - R/R Below Minimum & Low Confluence",
-    "Trade Setup Type": null,
-    "Reasoning": "Trade vetoed due to an estimated Risk/Reward ratio of 0.00:1, which is below the mandatory 2.5:1 minimum. Additionally, the system's Confluence Score is critically low at 15/100, and Signal Strength is LOW. Current price faces immediate strong resistance at a high-volume ask zone ($110,113.49) with significant order book imbalance (-98.67%), and the 1h MACD shows a bearish cross, making conditions suboptimal for entry despite a bullish higher-timeframe trend and high session strength.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:39:02.937365",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Entry in Strong Uptrend",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary trend is strongly bullish (ADX 31.24) and session conditions are favorable. However, an immediate long entry is suboptimal due to: 1) Price facing a strong ask zone ($2,833.30) with significant order book ask dominance. 2) A bearish MACD cross on the 1-hour chart. 3) The system-provided 'Estimated R/R Ratio: 0.00:1' which violates the minimum 2.5:1 requirement. 4) A low system-provided 'Confluence Score: 25/100'. Holding for a higher probability entry, potentially on a pullback that offers better risk/reward.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:39:59.521033",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low R/R and Conflicting Signals",
-    "Trade Setup Type": null,
-    "Reasoning": "VETO CONDITION MET: The provided 'Estimated R/R Ratio' is 0.02:1, which is critically below the minimum required 2.5:1. Additionally, the 'Confluence Score' is very low (25/100), a 1-hour MACD bearish cross is active, and 'Multi-timeframe alignment is WEAK' (1D price below 1D EMA200). Current price is squeezed between very close bid/ask zones, offering no favorable entry. Waiting for a higher probability setup.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:40:57.026012",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Suboptimal Entry Conditions / R:R Veto",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary veto condition is met: the calculated Risk/Reward ratio to the first potential Take Profit target is significantly below the required 2.5:1, with the system's `Estimated R/R Ratio` being 0.00:1. Despite a bullish primary trend and strong session character, the `Confluence Score (15/100)` and `Signal Strength (LOW)` are insufficient for a high-probability entry. Contradictory signals exist on the 1-hour timeframe, including a MACD bearish cross and strong Ask Dominance with a negative order book imbalance (-67.90%), which conflict with the broader bullish structure. Current price is at the `Strongest Ask Zone`, indicating immediate resistance. Waiting for a clearer setup with favorable risk-reward.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:49:48.215344",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Confluence and Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary reason for holding is the provided Estimated Risk/Reward Ratio of 0.00:1, which is a direct violation of the minimum 2.5:1 requirement (Trade Veto Condition). Additionally, the provided Confluence Score is extremely low (10/100) and Signal Strength is LOW, indicating a mediocre setup not suitable for capital deployment. Conflicting signals on the 1-hour timeframe, such as a MACD bearish cross, RSI in overbought territory (70.03), and Ask Dominance in the order book, further advise caution despite the strong underlying multi-timeframe bullish trend. Adhering to the principle of patience and avoiding suboptimal trades, the decision is to Hold and wait for a higher probability opportunity.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:50:43.220792",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Vetoed: Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary reason for holding is the unacceptable Risk/Reward ratio of 0.01:1, as per 'Estimated R/R Ratio', which violates the minimum 2.5:1 requirement. Further supporting this decision are a low confluence score (30/100), weak multi-timeframe alignment (1D EMA200 acting as overhead resistance, 1h bearish MACD cross), and the current price being tightly range-bound between the Strongest Bid Zone ($166.98) and Strongest Ask Zone ($167.06).",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T14:51:36.892730",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Low Session Strength & Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "The current trading session has Low Strength (17/100) and a 'Low - Weak / Choppy' character, which is unsuitable for trend-following strategies as per trading philosophy. Additionally, a trade setup meeting the minimum 2.5:1 Risk/Reward ratio cannot be identified; the provided 'Estimated R/R Ratio' is 0.00:1. The ADX at 23.43 indicates a developing but not strong trend, and the overall Confluence Score is very low (25/100). Holding to preserve capital due to multiple veto conditions being met.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:00:56.990648",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Veto condition triggered: Session Character is 'Low - Weak / Choppy' (Session Strength 19/100), which is unsuitable for trend or breakout strategies as per trading philosophy. Furthermore, the current price ($2,839.05) is at immediate key resistance ($2,839.27), leading to an estimated Risk/Reward Ratio of 0.00:1, failing the minimum 2.5:1 requirement.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:01:40.770833",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Session Strength and Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met: 1) The 'Session Character' is 'Low - Weak / Choppy' with a 'Session Strength Score' of 20/100, which vetoes trend-following or breakout trades in the current market conditions. 2) The provided 'Estimated R/R Ratio' is 0.02:1, far below the minimum 2.5:1 requirement. Additionally, the 'Confluence Score' is low (30/100) and a bearish MACD cross is present on the 1-hour chart, conflicting with the broader bullish trend.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:02:35.294037",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met: Unfavorable Risk/Reward and Low Session Strength",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple critical veto conditions are met: 1. The 'Session Character' is 'Low - Weak / Choppy' (Session Strength 31/100), which explicitly vetoes Trend or Breakout strategies under current conditions. 2. The 'Estimated R/R Ratio' is 0.00:1, which is significantly below the mandatory minimum of 2.5:1. Current market conditions are unsuitable for a high-probability trade. Holding to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:11:16.407079",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Conditions - Low Session Strength & Poor R/R",
-    "Trade Setup Type": null,
-    "Reasoning": "Session Character is 'Low - Weak / Choppy' (Session Strength 30/100), which vetoes trend-based entries as per trading philosophy. The provided 'Estimated R/R Ratio' is 0.00:1, failing the minimum 2.5:1 requirement. Additionally, the Confluence Score is very low (20/100) and there are conflicting short-term signals (1h MACD bearish cross, strong ask dominance at current price levels) despite the broader bullish trend. Holding to preserve capital and await a higher probability setup.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:11:55.256655",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met - Low R/R & Weak Session",
-    "Trade Setup Type": null,
-    "Reasoning": "Critical veto conditions triggered: Risk/Reward ratio (0.02:1) is far below the required 2.5:1. Session character is 'Low - Weak / Choppy' (Session Strength 27/100), making trend-following trades unfavorable. Low signal confluence (20/100) and weak multi-timeframe alignment also advise caution, prioritizing capital preservation.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:12:28.421401",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met: Low Session Strength & Poor R/R",
-    "Trade Setup Type": null,
-    "Reasoning": "Trade vetoed due to 'Low - Weak / Choppy' Session Character (Session Strength 39/100), which is unsuitable for trend or breakout strategies as per trading philosophy. Critically, the provided 'Estimated R/R Ratio' is 0.00:1, which is below the mandatory 2.5:1 minimum. These conditions necessitate a 'Hold' to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:21:15.509481",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Suboptimal Session for Trend Trading",
-    "Trade Setup Type": null,
-    "Reasoning": "The market is in a clear bullish trend (Primary Trend: BULLISH, ADX: 32.18, MTF alignment). However, a mandatory VETO condition is met: the `Session Character` is 'Low - Weak / Choppy' (Session Strength Score: 35/100), which prohibits Trend or Breakout strategies. Given the trending market regime, these would be the indicated strategies. Therefore, a 'Hold' signal is issued to adhere to risk management protocols and avoid trading in suboptimal, low-probability conditions. Additionally, the `Estimated R/R Ratio` of 0.00:1 based on key immediate support/resistance further supports caution, making it difficult to achieve the minimum 2.5:1 Risk/Reward ratio.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:22:07.853529",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met: Low R/R & Unfavorable Session",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple critical veto conditions are met. The estimated Risk/Reward ratio is 0.02:1, far below the required 2.5:1 minimum. The current 'Low - Weak / Choppy' Session Character (Strength 31/100) vetos trend-following entries despite a high ADX. Furthermore, multi-timeframe alignment is weak (1D price below 1D EMA200), and the 1-hour MACD shows a bearish cross, conflicting with the broader bullish trend.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:23:01.111999",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Trade Setup: Poor Risk-Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "The trade is vetoed due to an extremely unfavorable estimated Risk/Reward ratio of 0.02:1, which is significantly below the minimum 2.5:1 requirement. Further supporting a 'Hold' decision, the Confluence Score is low (25/100), and the 1-hour MACD exhibits a bearish cross, creating conflicting signals on the execution timeframe despite a broader bullish market trend. Key resistance ($109,819.00) is impinging on the current price, offering no viable entry with adequate profit potential.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:32:08.793840",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Poor Risk/Reward Setup",
-    "Trade Setup Type": null,
-    "Reasoning": "A trade is vetoed because the estimated Risk/Reward ratio of 0.75:1 is significantly below the minimum requirement of 2.5:1. Further caution is warranted due to: RSI being overbought on 1h and 4h timeframes, price encountering the strongest ask zone with prevailing ask dominance in the order book, a low overall confluence score (30/100), and conflicting information regarding multi-timeframe alignment (stated as 'WEAK' in context despite generally bullish indicators). Capital preservation dictates holding until a higher probability setup with adequate R/R materializes.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:33:00.400482",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Vetoed: Low Session Strength & Poor R/R",
-    "Trade Setup Type": null,
-    "Reasoning": "The current Session Character is 'Low - Weak / Choppy', which vetoes trend or breakout trades as per trading philosophy. Critically, the estimated Risk/Reward ratio is 0.01:1, far below the minimum requirement of 2.5:1, triggering a mandatory veto. Additionally, the 1-hour MACD shows a bearish cross, conflicting with the broader bullish trend, and the overall confluence score is low (30/100).",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:33:38.462113",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Poor Risk-Reward and Low Confluence",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary trend is bullish, but the estimated Risk/Reward ratio is 0.00:1, which is significantly below the minimum requirement of 2.5:1, triggering a trade veto. Additionally, the Confluence Score is very low (15/100) with conflicting signals on the execution timeframe, including a bearish MACD cross and significant ask dominance (Order Book Imbalance: -83.97%) at the current price. Staying flat to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:42:38.187378",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unfavorable Risk/Reward at Current Levels",
-    "Trade Setup Type": null,
-    "Reasoning": "Market is in a strong bullish trend (Primary Trend: BULLISH, ADX: 32.61) with multi-timeframe bullish alignment. However, RSI is overbought on 1h (73.92) and 4h (73.90) timeframes, and the current price ($2,864.39) is at an immediate key resistance level ($2,864.69) and above the Upper Bollinger Band, suggesting an overextended state. Critically, the provided `Estimated R/R Ratio` is 0.00:1, which is below the mandatory minimum of 2.5:1. This violates a key trade veto condition. Holding to preserve capital and wait for a pullback or consolidation that offers a more favorable entry point with acceptable risk/reward.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:43:30.538907",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low - Weak / Choppy Session Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Key veto conditions triggered: The 'Estimated R/R Ratio' (0.00:1) is significantly below the 2.5:1 minimum requirement. The current 'Session Character' is 'Low - Weak / Choppy', which vetoes trend-based strategies. Additionally, the overall confluence score is low (25/100) and price is at immediate resistance ($166.64 Strongest Ask Zone) with a bearish MACD divergence.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:44:12.362903",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Suboptimal Trade Setup / R&R Veto",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary veto condition is an estimated Risk/Reward Ratio of 0.00:1, as provided by the system, which falls significantly below the mandatory minimum of 2.5:1. Further supporting a hold decision are a low Confluence Score (25/100) indicating insufficient confirming signals, and a bearish MACD cross on the 1-hour timeframe, which advises against an immediate long entry despite the broader bullish trend. Key support and resistance levels used for the R/R estimation are too close to the current price to define a viable trade structure.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:53:23.293182",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Strong Uptrend - Unfavorable Risk/Reward at Current Price",
-    "Trade Setup Type": null,
-    "Reasoning": "The market is in a strong bullish trend with multi-timeframe alignment, strong ADX, and supportive session conditions (High Strength, Institutional Buying). However, a 'Hold' signal is issued due to a Trade Veto Condition: the 'Estimated R/R Ratio' is 0.00:1, which is below the minimum 2.5:1 requirement. This is confirmed by the current price ($2,866.81) being immediately below the 'Strongest Ask Zone' ($2,867.10), offering negligible upside to the first resistance. Additionally, RSI is overbought on 1h (74.18) and 4h (74.03) timeframes, and price is trading above the upper Bollinger Band, suggesting the current rally is extended and a pullback would be necessary for a higher-probability entry with adequate risk/reward.",
-    "Relevant News Headlines": [
-      "Investment giant Guggenheim taps Ripple to expand ...",
-      "cryptoservice 1.4.0...",
-      "TON Rises 4.1%, Suggesting Further Upside Potentia..."
-    ],
-    "timestamp": "2025-06-11T15:54:16.643497",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Suboptimal Risk/Reward and Insufficient Confluence",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary veto condition met: Estimated Risk/Reward ratio (0.02:1) is far below the minimum 2.5:1. Additionally, the confluence score is low (25/100), a bearish MACD cross is present on the 1-hour chart, and multi-timeframe alignment is noted as weak with the 1D EMA200 ($173.30) acting as potential resistance. Current price ($167.28) is also very close to the Strongest Ask Zone ($167.37). Capital preservation is prioritized.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T15:54:55.155484",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met / Suboptimal Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met: 1) The 'Session Character' is 'Low - Weak / Choppy' (Session Strength 19/100), which explicitly vetoes trend-following strategies under current dangerous market conditions. 2) The provided 'Estimated R/R Ratio' is 0.00:1, which is critically below the minimum required 2.5:1. Confluence score is also very low (25/100). Staying flat to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:04:12.213464",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Session Strength and Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "The current New York session has 'Low - Weak / Choppy' character (Strength 23/100), which vetoes trend/breakout strategies as per trading rules. Additionally, the provided Estimated Risk/Reward Ratio is 0.00:1, falling significantly below the minimum 2.5:1 requirement. Despite a bullish primary trend (ADX 33.87), these critical veto conditions, combined with immediate overhead resistance indicated by ASK dominance, make current conditions suboptimal for a new entry, mandating a 'Hold' to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:05:11.975055",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions met: The calculated Risk/Reward ratio (0.07:1 as per input data) is significantly below the 2.5:1 minimum requirement. The current 'New York Session' has 'Low Strength' (21/100) and is characterized as 'Low - Weak / Choppy', which vetoes trend or breakout strategies under current system rules. Confluence score is very low (30/100) and there are conflicting signals, such as a bearish MACD cross on the 1-hour timeframe against the broader bullish trend.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:06:02.177850",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Multiple veto conditions are met. The system's Estimated R/R Ratio is 0.00:1, which is below the required 2.5:1 minimum, triggering a trade veto. The current Trading Session Character is 'Low - Weak / Choppy' (Session Strength Score: 32/100), making trend or breakout strategies unsuitable and strongly favoring 'Hold'. Additionally, the Confluence Score is extremely low (5/100), the Primary Trend is NEUTRAL, and multi-timeframe alignment is weak. Capital preservation is prioritized in these suboptimal conditions.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:14:54.169416",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Low Strength Session & Unfavorable Risk-Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Trade veto conditions met: 1. Session Character is 'Low - Weak / Choppy' (Session Strength Score 34/100), which vetoes trend-following strategies in current conditions. 2. The provided 'Estimated R/R Ratio' is 0.00:1, which is below the minimum required 2.5:1. Additionally, RSI is overbought on 1h and 4h timeframes (71.05 and 72.57 respectively), and the Confluence Score is low (35/100), suggesting a mediocre setup.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:15:39.585805",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Suboptimal Trade Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Key veto condition met: Estimated Risk/Reward ratio (0.02:1) is significantly below the 2.5:1 minimum. Additionally, the current trading session exhibits Low Strength (29/100) and a 'Low - Weak / Choppy' character, which is unsuitable for trend or breakout strategies. The Confluence Score is also critically low (20/100). Holding to preserve capital.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:16:20.346890",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Neutral Market with Low Confluence and Unfavorable R/R",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary Trend is Neutral and ADX (23.28) indicates a weak trend. Confluence Score is extremely low (-5/100) and Signal Strength is LOW. Critically, the Estimated R/R Ratio is 0.00:1, violating the minimum 2.5:1 requirement (TRADE VETO CONDITION). Multi-timeframe alignment is also weak. Conditions are suboptimal, mandating a 'Hold' to preserve capital.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:25:28.359879",
-    "symbol": "BTCUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Poor Risk/Reward & Unfavorable Session Conditions",
-    "Trade Setup Type": null,
-    "Reasoning": "Trade vetoed: Risk/Reward ratio (0.75:1) is below the 2.5:1 minimum. Session Character ('Low - Weak / Choppy' with strength 39/100) also vetoes trend-following trades. Holding to preserve capital despite bullish primary trend and other bullish indicators like MACD and EMAs.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:26:19.407579",
-    "symbol": "ETHUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Unclear / Choppy Market",
-    "Trade Setup Type": null,
-    "Reasoning": "Session Character is 'Low - Weak / Choppy' and Session Strength is low (35/100), making conditions unfavorable for trend or breakout trades. Critically, the 'Estimated R/R Ratio' (0.01:1) is significantly below the 2.5:1 minimum requirement, triggering a trade veto. Additional concerns include a low confluence score (20/100), conflicting technical signals (1h MACD bearish cross, 1D price below its EMA200, ask dominance), and weak multi-timeframe alignment. Holding to preserve capital.",
-    "Relevant News Headlines": [
-      "Ether More Favored by Traders as Volatility Agains...",
-      "Don\u2019t Let the Cult of Price Hold Crypto Back...",
-      "TON Rises 4.1%, Suggesting Further Upside Potentia..."
-    ],
-    "timestamp": "2025-06-11T16:26:58.829930",
-    "symbol": "SOLUSDT",
-    "performance": {
-      "status": "TOO_RECENT",
-      "evaluation_details": "Evaluation window not yet complete."
-    }
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Conflicting Signals & Unfavorable Risk/Reward",
-    "Trade Setup Type": null,
-    "Reasoning": "Primary VETO condition met: The 'Estimated R/R Ratio' is 0.00:1, which is critically below the minimum 2.5:1 requirement. Additionally, the 'Confluence Score' is 0/100 and 'Signal Strength' is LOW. The market exhibits conflicting signals: 1-hour indicators (bearish MACD cross, price below 1h EMA20 and VWAP) are inconsistent with the generally bullish posture on the 4-hour and daily timeframes. The 'Primary Trend' is NEUTRAL, 'Volatility Regime' is LOW, and the current price is simultaneously at the 'Strongest Bid Zone' and 'Strongest Ask Zone', indicating significant indecision and the absence of a clear, high-probability trading opportunity.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:36:19.670427",
     "symbol": "BTCUSDT"
-  },
-  {
-    "Signal": "Hold",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Confidence": 0,
-    "Scenario": "Veto - Unacceptable Risk/Reward & Weak Confirmation",
-    "Trade Setup Type": null,
-    "Reasoning": "The primary reason for holding is the provided 'Estimated R/R Ratio' of 0.00:1, which is below the mandatory 2.5:1 minimum, triggering a trade veto. Additionally, while the primary trend is bullish (ADX: 33.87), the 'ADDITIONAL CONTEXT' indicates 'Multi-timeframe alignment is WEAK'. Current price ($2855.57) is at a 'Strongest Ask Zone', RSI is overbought on 1h (70.47) and 4h (72.30) timeframes, order flow shows ask dominance (Imbalance: -63.78%), and the 'Confluence Score' (30/100) is low. These factors collectively indicate a suboptimal entry point. Awaiting a clearer setup with favorable risk/reward and stronger confirmations.",
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:37:27.461917",
-    "symbol": "ETHUSDT"
-  },
-  {
-    "Signal": "Hold",
-    "Confidence": 0,
-    "Scenario": "Veto Conditions Met",
-    "Trade Setup Type": null,
-    "Reasoning": "Critical veto condition met: The provided Estimated Risk/Reward Ratio of 0.05:1 is significantly below the minimum 2.5:1 requirement. Additionally, the 'Low - Weak / Choppy' Session Character (Strength Score: 38/100) advises against trend-based strategies, which would be typical in the identified 'TRENDING' market regime. Low overall confluence (30/100) and conflicting short-term indicators (e.g., 1h MACD bearish cross) further support a 'Hold' decision to preserve capital.",
-    "Entry Price": null,
-    "Take Profit Targets": null,
-    "Stop Loss": null,
-    "Relevant News Headlines": [],
-    "timestamp": "2025-06-11T16:38:09.691692",
-    "symbol": "SOLUSDT"
   }
 ]
